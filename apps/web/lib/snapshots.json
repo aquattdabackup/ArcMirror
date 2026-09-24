@@ -1,0 +1,430 @@
+[
+  {
+    "hash": "0x376b287a795c449b0bf3f0ec3ffdfad8e913012edecf0a8eb6f00c007a47b24f",
+    "title": "Two logs. One movement.",
+    "question": "Would your indexer count this USDC twice?",
+    "category": "ERC-20 reconciliation",
+    "provenance": "Existing public Arc mainnet transaction. Not created by ArcMirror or its owner.",
+    "capturedAt": "2026-09-24T14:42:49.995Z",
+    "report": {
+      "schemaVersion": "1.0.0",
+      "algorithmVersion": "0.1.0",
+      "chainId": 5042,
+      "txHash": "0x376b287a795c449b0bf3f0ec3ffdfad8e913012edecf0a8eb6f00c007a47b24f",
+      "blockNumber": "22533201",
+      "blockHash": "0x8a3e596129c95a75e8d89bf710d98e55225e84ad8b5919346be7adfffb063884",
+      "txIndex": "4",
+      "status": "confirmed_success",
+      "evidenceLevel": "needs_review",
+      "reasons": [
+        "call_trace_coverage_incomplete"
+      ],
+      "warnings": [],
+      "gas": {
+        "payer": "0x947676b3600af9dd846fca3134b23abec7f92f97",
+        "beneficiary": "0xefd77206fec6a50e653e4dfaac0197b44d00a4fd",
+        "gasUsed": "232784",
+        "effectiveGasPrice": "20050000005",
+        "feeNative18": "4667319201163920",
+        "feeExact": "0.00466731920116392"
+      },
+      "movements": [
+        {
+          "payer": "0x8366a39cc670b4001a1121b8f6a443a643e40951",
+          "payee": "0x881071c158e7a4b2ad6e03e53157d466a23d89ab",
+          "amountNative18": "90000000000000000",
+          "amountExact": "0.09",
+          "amountDisplay6": "0.090000",
+          "dustRemainder18": "0",
+          "sourceLogIndex": "5",
+          "corroboratingLogIndexes": [
+            "6"
+          ],
+          "evidenceLevel": "needs_review"
+        },
+        {
+          "payer": "0x8366a39cc670b4001a1121b8f6a443a643e40951",
+          "payee": "0x947676b3600af9dd846fca3134b23abec7f92f97",
+          "amountNative18": "4409999000000000000",
+          "amountExact": "4.409999",
+          "amountDisplay6": "4.409999",
+          "dustRemainder18": "0",
+          "sourceLogIndex": "9",
+          "corroboratingLogIndexes": [
+            "10"
+          ],
+          "evidenceLevel": "needs_review"
+        }
+      ],
+      "logs": [
+        {
+          "address": "0x000000000022d473030f116ddee9f6b43ac78ba3",
+          "topics": [
+            "0xc6a377bfc4eb120024a8ac08eef205be16b817020812c73223e81d1bdb9708ec",
+            "0x000000000000000000000000947676b3600af9dd846fca3134b23abec7f92f97",
+            "0x000000000000000000000000de51e7752aff8e90c0b45f9b63dc42081ccb5cc8",
+            "0x0000000000000000000000004fca4a51ab4f23a7447b3284fbd7d73289a89fb1"
+          ],
+          "data": "0x000000000000000000000000ffffffffffffffffffffffffffffffffffffffff000000000000000000000000000000000000000000000000000000006adcc3260000000000000000000000000000000000000000000000000000000000000000",
+          "logIndex": "3",
+          "role": "other"
+        },
+        {
+          "address": "0x8366a39cc670b4001a1121b8f6a443a643e40951",
+          "topics": [
+            "0x40e9cecb9f5f1f1c5b9c97dec2917b7ee92e57ba5563708daca94dd84ad7112f",
+            "0x218935b8565c7ad42c0d7a98001bbe185ff7612125735980cbaf3b49debab1e1",
+            "0x0000000000000000000000004fca4a51ab4f23a7447b3284fbd7d73289a89fb1"
+          ],
+          "data": "0x000000000000000000000000000000000000000000000000000000000044aa1ffffffffffffffffffffffffffffffffffffffffffffe8092710cbe54183b13a10000000000000000000000000000000025d7e336d84b2ea9e0af660de51fcf6500000000000000000000000000000000000000000000000015dba887cc46b7910000000000000000000000000000000000000000000000000000000000062f970000000000000000000000000000000000000000000000000000000000000000",
+          "logIndex": "4",
+          "role": "other"
+        },
+        {
+          "address": "0xfffffffffffffffffffffffffffffffffffffffe",
+          "topics": [
+            "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+            "0x0000000000000000000000008366a39cc670b4001a1121b8f6a443a643e40951",
+            "0x000000000000000000000000881071c158e7a4b2ad6e03e53157d466a23d89ab"
+          ],
+          "data": "0x000000000000000000000000000000000000000000000000013fbe85edc90000",
+          "logIndex": "5",
+          "role": "native_movement"
+        },
+        {
+          "address": "0x3600000000000000000000000000000000000000",
+          "topics": [
+            "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+            "0x0000000000000000000000008366a39cc670b4001a1121b8f6a443a643e40951",
+            "0x000000000000000000000000881071c158e7a4b2ad6e03e53157d466a23d89ab"
+          ],
+          "data": "0x0000000000000000000000000000000000000000000000000000000000015f90",
+          "logIndex": "6",
+          "role": "erc20_corroboration"
+        },
+        {
+          "address": "0x69f4dc2408b78ec81bcc0219fa50c955f6a760cc",
+          "topics": [
+            "0x3c0e4e50fe4f6df27e2e086b4c492f4ae3b80628ceb13ebb8cb556112be930ea"
+          ],
+          "data": "0x0000000000000000000000000000000000000000000000000000000000015f90000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000",
+          "logIndex": "7",
+          "role": "other"
+        },
+        {
+          "address": "0xde51e7752aff8e90c0b45f9b63dc42081ccb5cc8",
+          "topics": [
+            "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+            "0x000000000000000000000000947676b3600af9dd846fca3134b23abec7f92f97",
+            "0x0000000000000000000000008366a39cc670b4001a1121b8f6a443a643e40951"
+          ],
+          "data": "0x000000000000000000000000000000000000000000017f6d8ef341abe7c4ec5f",
+          "logIndex": "8",
+          "role": "other"
+        },
+        {
+          "address": "0xfffffffffffffffffffffffffffffffffffffffe",
+          "topics": [
+            "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+            "0x0000000000000000000000008366a39cc670b4001a1121b8f6a443a643e40951",
+            "0x000000000000000000000000947676b3600af9dd846fca3134b23abec7f92f97"
+          ],
+          "data": "0x0000000000000000000000000000000000000000000000003d3376b9aed3f000",
+          "logIndex": "9",
+          "role": "native_movement"
+        },
+        {
+          "address": "0x3600000000000000000000000000000000000000",
+          "topics": [
+            "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+            "0x0000000000000000000000008366a39cc670b4001a1121b8f6a443a643e40951",
+            "0x000000000000000000000000947676b3600af9dd846fca3134b23abec7f92f97"
+          ],
+          "data": "0x0000000000000000000000000000000000000000000000000000000000434a8f",
+          "logIndex": "10",
+          "role": "erc20_corroboration"
+        }
+      ],
+      "memo": null,
+      "totals": {
+        "grossMovementNative18": "4499999000000000000",
+        "grossMovementExact": "4.499999",
+        "interfaceNative18": "4499999000000000000",
+        "naiveNative18": "8999998000000000000",
+        "naiveExact": "8.999998",
+        "phantomEligible": true
+      },
+      "proof": {
+        "logs": "consistent",
+        "trace": "incomplete",
+        "state": "matches",
+        "balances": [
+          {
+            "address": "0x000000000022d473030f116ddee9f6b43ac78ba3",
+            "expectedNative18": "0",
+            "actualNative18": "0",
+            "residualNative18": "0"
+          },
+          {
+            "address": "0x69f4dc2408b78ec81bcc0219fa50c955f6a760cc",
+            "expectedNative18": "0",
+            "actualNative18": "0",
+            "residualNative18": "0"
+          },
+          {
+            "address": "0x8366a39cc670b4001a1121b8f6a443a643e40951",
+            "expectedNative18": "-4499999000000000000",
+            "actualNative18": "-4499999000000000000",
+            "residualNative18": "0"
+          },
+          {
+            "address": "0x881071c158e7a4b2ad6e03e53157d466a23d89ab",
+            "expectedNative18": "90000000000000000",
+            "actualNative18": "90000000000000000",
+            "residualNative18": "0"
+          },
+          {
+            "address": "0x947676b3600af9dd846fca3134b23abec7f92f97",
+            "expectedNative18": "4405331680798836080",
+            "actualNative18": "4405331680798836080",
+            "residualNative18": "0"
+          },
+          {
+            "address": "0xde51e7752aff8e90c0b45f9b63dc42081ccb5cc8",
+            "expectedNative18": "0",
+            "actualNative18": "0",
+            "residualNative18": "0"
+          },
+          {
+            "address": "0xefd77206fec6a50e653e4dfaac0197b44d00a4fd",
+            "expectedNative18": "4667319201163920",
+            "actualNative18": "4667319201163920",
+            "residualNative18": "0"
+          }
+        ]
+      },
+      "limits": [
+        "USDC only; other tokens are visible as raw logs, excluded from totals.",
+        "Gross movement sums count each hop; they are not net wallet income.",
+        "Native call-value tracing does not cover USDC precompile mutations.",
+        "Memo decoding, historical fork coverage and independent provider consensus are not certified.",
+        "Digest commits to this report; it is not a cryptographic proof of blockchain consensus."
+      ],
+      "digest": "0xd45a2905f2105ef8986e6b5881f41e72ab94dacb734c82f1e983a44440c292b2"
+    }
+  },
+  {
+    "hash": "0xa0311ec4a00a190a55d2b32bbf03eb03e656d64c9bdaa306fdc1d9061ae6ad87",
+    "title": "Where did the cent go?",
+    "question": "Follow 0.01 USDC, then account for the gas.",
+    "category": "Native transfer",
+    "provenance": "Existing public Arc mainnet transaction. Not created by ArcMirror or its owner.",
+    "capturedAt": "2026-09-24T14:44:55.374Z",
+    "report": {
+      "schemaVersion": "1.0.0",
+      "algorithmVersion": "0.1.0",
+      "chainId": 5042,
+      "txHash": "0xa0311ec4a00a190a55d2b32bbf03eb03e656d64c9bdaa306fdc1d9061ae6ad87",
+      "blockNumber": "22533201",
+      "blockHash": "0x8a3e596129c95a75e8d89bf710d98e55225e84ad8b5919346be7adfffb063884",
+      "txIndex": "6",
+      "status": "confirmed_success",
+      "evidenceLevel": "verified",
+      "reasons": [
+        "logs_call_values_and_transaction_state_match"
+      ],
+      "warnings": [],
+      "gas": {
+        "payer": "0x5d72be14a8896aef728f23945318861684e8a5d5",
+        "beneficiary": "0xefd77206fec6a50e653e4dfaac0197b44d00a4fd",
+        "gasUsed": "21000",
+        "effectiveGasPrice": "20000000000",
+        "feeNative18": "420000000000000",
+        "feeExact": "0.00042"
+      },
+      "movements": [
+        {
+          "payer": "0x5d72be14a8896aef728f23945318861684e8a5d5",
+          "payee": "0x8475b244a2e78813cfb5216c21604fa89a8f9347",
+          "amountNative18": "10000000000000000",
+          "amountExact": "0.01",
+          "amountDisplay6": "0.010000",
+          "dustRemainder18": "0",
+          "sourceLogIndex": "15",
+          "corroboratingLogIndexes": [],
+          "evidenceLevel": "verified"
+        }
+      ],
+      "logs": [
+        {
+          "address": "0xfffffffffffffffffffffffffffffffffffffffe",
+          "topics": [
+            "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+            "0x0000000000000000000000005d72be14a8896aef728f23945318861684e8a5d5",
+            "0x0000000000000000000000008475b244a2e78813cfb5216c21604fa89a8f9347"
+          ],
+          "data": "0x000000000000000000000000000000000000000000000000002386f26fc10000",
+          "logIndex": "15",
+          "role": "native_movement"
+        }
+      ],
+      "memo": null,
+      "totals": {
+        "grossMovementNative18": "10000000000000000",
+        "grossMovementExact": "0.01",
+        "interfaceNative18": "0",
+        "naiveNative18": "10000000000000000",
+        "naiveExact": "0.01",
+        "phantomEligible": false
+      },
+      "proof": {
+        "logs": "consistent",
+        "trace": "matches",
+        "state": "matches",
+        "balances": [
+          {
+            "address": "0x5d72be14a8896aef728f23945318861684e8a5d5",
+            "expectedNative18": "-10420000000000000",
+            "actualNative18": "-10420000000000000",
+            "residualNative18": "0"
+          },
+          {
+            "address": "0x8475b244a2e78813cfb5216c21604fa89a8f9347",
+            "expectedNative18": "10000000000000000",
+            "actualNative18": "10000000000000000",
+            "residualNative18": "0"
+          },
+          {
+            "address": "0xefd77206fec6a50e653e4dfaac0197b44d00a4fd",
+            "expectedNative18": "420000000000000",
+            "actualNative18": "420000000000000",
+            "residualNative18": "0"
+          }
+        ]
+      },
+      "limits": [
+        "USDC only; other tokens are visible as raw logs, excluded from totals.",
+        "Gross movement sums count each hop; they are not net wallet income.",
+        "Native call-value tracing does not cover USDC precompile mutations.",
+        "Memo decoding, historical fork coverage and independent provider consensus are not certified.",
+        "Digest commits to this report; it is not a cryptographic proof of blockchain consensus."
+      ],
+      "digest": "0x4f44b556293b2576b3ab0ae40e77ee2c9b4fdf7d51a9d92166a9116cf6ce6d21"
+    }
+  },
+  {
+    "hash": "0x37567ff71a01f4966f0c4d5c4155dde45a293fd4450a57ce3c69d96c9777b3de",
+    "title": "Smaller than a microdollar.",
+    "question": "What disappears in a six-decimal view?",
+    "category": "Native dust",
+    "provenance": "Existing public Arc mainnet transaction. Not created by ArcMirror or its owner.",
+    "capturedAt": "2026-09-24T14:44:54.092Z",
+    "report": {
+      "schemaVersion": "1.0.0",
+      "algorithmVersion": "0.1.0",
+      "chainId": 5042,
+      "txHash": "0x37567ff71a01f4966f0c4d5c4155dde45a293fd4450a57ce3c69d96c9777b3de",
+      "blockNumber": "22533229",
+      "blockHash": "0x40380f607c8ac2c2a4ee75582889f15cb29ff1e0bee038158082f623d125dc1b",
+      "txIndex": "0",
+      "status": "confirmed_success",
+      "evidenceLevel": "consistent",
+      "reasons": [
+        "call_trace_unavailable",
+        "state_diff_or_block_unavailable"
+      ],
+      "warnings": [],
+      "gas": {
+        "payer": "0xc875f2277a5112364cc1e5ee9d9247a5d37dcefb",
+        "beneficiary": "0x47b9fb845f2c5b19f241598fe1bb7efcab704e35",
+        "gasUsed": "110540",
+        "effectiveGasPrice": "503051338881",
+        "feeNative18": "55607294999905740",
+        "feeExact": "0.05560729499990574"
+      },
+      "movements": [
+        {
+          "payer": "0xc875f2277a5112364cc1e5ee9d9247a5d37dcefb",
+          "payee": "0x45fce68da4410f4f2dbf73eef669b828acaead0b",
+          "amountNative18": "1",
+          "amountExact": "0.000000000000000001",
+          "amountDisplay6": "<0.000001",
+          "dustRemainder18": "1",
+          "sourceLogIndex": "0",
+          "corroboratingLogIndexes": [],
+          "evidenceLevel": "consistent"
+        }
+      ],
+      "logs": [
+        {
+          "address": "0xfffffffffffffffffffffffffffffffffffffffe",
+          "topics": [
+            "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+            "0x000000000000000000000000c875f2277a5112364cc1e5ee9d9247a5d37dcefb",
+            "0x00000000000000000000000045fce68da4410f4f2dbf73eef669b828acaead0b"
+          ],
+          "data": "0x0000000000000000000000000000000000000000000000000000000000000001",
+          "logIndex": "0",
+          "role": "native_movement"
+        },
+        {
+          "address": "0x8366a39cc670b4001a1121b8f6a443a643e40951",
+          "topics": [
+            "0x40e9cecb9f5f1f1c5b9c97dec2917b7ee92e57ba5563708daca94dd84ad7112f",
+            "0x3a61ada69fbf03fdeb2fa7ab899f2e8e8c63b04117a376dafbb9d54e15c2ba50",
+            "0x00000000000000000000000045fce68da4410f4f2dbf73eef669b828acaead0b"
+          ],
+          "data": "0xfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffefd11000000000000000000000000000000000000000000000527c09a8651d5bbedd800000000000000000000000000000000244db6bb471d27e0e8a2cc6436baf07c00000000000000000000000000000000000000000000000015dba887cc46b7910000000000000000000000000000000000000000000000000000000000062c590000000000000000000000000000000000000000000000000000000000002710",
+          "logIndex": "1",
+          "role": "other"
+        },
+        {
+          "address": "0x8366a39cc670b4001a1121b8f6a443a643e40951",
+          "topics": [
+            "0x40e9cecb9f5f1f1c5b9c97dec2917b7ee92e57ba5563708daca94dd84ad7112f",
+            "0xd84b8a86c0ec11c833a42ea3803ae917d61ea0e7f66edd8b8c2fc1a08498ba25",
+            "0x00000000000000000000000045fce68da4410f4f2dbf73eef669b828acaead0b"
+          ],
+          "data": "0x000000000000000000000000000000000000000000000000000000000001f054fffffffffffffffffffffffffffffffffffffffffffffad83f6579ae2a441228000000000000000000000000000000000bf55a9e631e109db27c6b76d5bc51c1000000000000000000000000000000000000000000000000000019706b2b90ed000000000000000000000000000000000000000000000000000000000005d59600000000000000000000000000000000000000000000000000000000000d94ea",
+          "logIndex": "2",
+          "role": "other"
+        },
+        {
+          "address": "0x8366a39cc670b4001a1121b8f6a443a643e40951",
+          "topics": [
+            "0x1b3d7edb2e9c0b0e7c525b20aaaef0f5940d2ed71663c7d39266ecafac728859",
+            "0x0000000000000000000000000000000000000000000000000000000000000000",
+            "0x00000000000000000000000045fce68da4410f4f2dbf73eef669b828acaead0b",
+            "0x0000000000000000000000003600000000000000000000000000000000000000"
+          ],
+          "data": "0x00000000000000000000000045fce68da4410f4f2dbf73eef669b828acaead0b000000000000000000000000000000000000000000000000000000000000ed65",
+          "logIndex": "3",
+          "role": "other"
+        }
+      ],
+      "memo": null,
+      "totals": {
+        "grossMovementNative18": "1",
+        "grossMovementExact": "0.000000000000000001",
+        "interfaceNative18": "0",
+        "naiveNative18": "1",
+        "naiveExact": "0.000000000000000001",
+        "phantomEligible": false
+      },
+      "proof": {
+        "logs": "consistent",
+        "trace": "unavailable",
+        "state": "unavailable",
+        "balances": []
+      },
+      "limits": [
+        "USDC only; other tokens are visible as raw logs, excluded from totals.",
+        "Gross movement sums count each hop; they are not net wallet income.",
+        "Native call-value tracing does not cover USDC precompile mutations.",
+        "Memo decoding, historical fork coverage and independent provider consensus are not certified.",
+        "Digest commits to this report; it is not a cryptographic proof of blockchain consensus."
+      ],
+      "digest": "0x51c3fec07dd732d5d7156a9e2cabeb6a1453122fa27f4247d491cc18caf7a02d"
+    }
+  }
+]

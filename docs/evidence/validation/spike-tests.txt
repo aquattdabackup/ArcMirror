@@ -1,0 +1,22 @@
+
+> arcmirror@0.1.0 test:spike
+> node --test scripts/spike-evidence.test.mjs
+
+✔ network is mainnet 5042 and ERC-20 decimals is 6 (5.3254ms)
+✔ all five captured transactions are bound to their successful receipt and block (4.9085ms)
+✔ native EOA transfer is exactly 0.01 USDC and gas is separate (0.3395ms)
+✔ two observed USDC interface logs each have their own equal-scaled system log (0.335ms)
+✔ native dust is one raw unit and has no ERC-20 corroboration (1.5892ms)
+✔ native call trace matches the system movement (0.4906ms)
+✔ native state delta identity balances for sender, recipient and fee beneficiary (0.317ms)
+✔ ERC-20 native balance identity agrees with system logs plus fee (0.2297ms)
+✔ ERC-20 counterexample: summing native call values misses real balance movements (0.2648ms)
+✔ primary provider trace unavailability is explicit (0.2239ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 10
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 923.4329

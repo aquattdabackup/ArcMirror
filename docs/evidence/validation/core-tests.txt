@@ -1,0 +1,49 @@
+
+> arcmirror@0.1.0 test
+> tsx --test packages/core/test/*.test.ts packages/rpc/test/*.test.ts
+
+✔ native transfer: one movement with separate exact fee (13.5928ms)
+✔ interface pair counts one economic movement (3.2785ms)
+✔ identical movements remain distinct and match one-to-one (2.3931ms)
+✔ nearest unmatched log wins, no adjacency requirement (1.686ms)
+✔ multi-hop payer is log sender, not tx.from (1.2152ms)
+✔ dust never silently displays zero (1.0587ms)
+✔ large uint256 and non-six-decimal values stay exact (2.1216ms)
+✔ same event on unrelated emitter cannot count as USDC (0.8056ms)
+✔ unmatched interface evidence is never counted and hides phantom comparison (1.1331ms)
+✔ malformed transfer data is surfaced (1.1745ms)
+✔ duplicate log index rejects report rather than double count (0.9776ms)
+✔ foreign transaction/block receipt or log rejected (1.1783ms)
+✔ failed receipt keeps fee and has no movement (0.7167ms)
+✔ failed receipt with contradictory transfers needs review (0.8504ms)
+✔ pending, not found, missing receipt, RPC failure and wrong chain distinct (1.7549ms)
+✔ invalid hash and absent receipt status cannot produce success (1.226ms)
+✔ missing native log for nonzero tx value is incomplete (0.7443ms)
+✔ canonical digest ignores key insertion and log input order (3.109ms)
+✔ three-way native reconciliation verified only when all match (6.2058ms)
+✔ state residual and missing account balances remain visible (2.7654ms)
+✔ reverted ancestor excludes descendant calls (1.3815ms)
+✔ delegatecall value is not a second native movement (1.6338ms)
+✔ trace root mismatch cannot be verified (1.3417ms)
+✔ precompile call coverage never overclaims verification (1.3212ms)
+✔ log-only fallback has explicit unavailable reasons (0.6952ms)
+✔ actual mainnet native sample reconciles with real traces (3.3569ms)
+✔ actual composed mainnet ERC-20 sample preserves trace limitation (7.6532ms)
+✔ failed receipt with any surviving logs is contradictory (1.0323ms)
+✔ hex casing cannot disguise a duplicate log index (0.6157ms)
+✔ frozen mainnet vector 0x37567ff71a01 (15.4399ms)
+✔ frozen mainnet vector 0x376b287a795c (10.6942ms)
+✔ frozen mainnet vector 0xa0311ec4a00a (2.4825ms)
+✔ wrong chain provider skipped, fallback succeeds (25.061ms)
+✔ 429 falls back without exposing provider details (0.8085ms)
+✔ all failures give a sanitized error (0.631ms)
+✔ invalid hash never contacts RPC (0.2277ms)
+✔ unsupported trace does not erase a fetched receipt (1.5864ms)
+ℹ tests 37
+ℹ suites 0
+ℹ pass 37
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 4517.7665

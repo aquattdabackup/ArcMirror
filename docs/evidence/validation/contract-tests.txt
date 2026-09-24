@@ -1,0 +1,22 @@
+No files changed, compilation skipped
+
+Ran 16 tests for test/ArcMirrorLab.t.sol:LabTest
+[PASS] testBatch() (gas: 120430)
+[PASS] testCannotCallForwarder() (gas: 39342)
+[PASS] testCapsRejected() (gas: 102765)
+[PASS] testDust() (gas: 85360)
+[PASS] testFuzzBatchConserves(uint128) (runs: 256, μ: 126146, ~: 126143)
+[PASS] testInsufficientUSDCAtomicity() (gas: 203526)
+[PASS] testIntentionalFailure() (gas: 26213)
+[PASS] testInvalidRecipient() (gas: 3916)
+[PASS] testMissingAllowance() (gas: 89655)
+[PASS] testNativeMultiHop() (gas: 95115)
+[PASS] testReentrancyRejected() (gas: 325251)
+[PASS] testRejectedRecipientRollsBack() (gas: 183668)
+[PASS] testSweepFixedDestination() (gas: 77620)
+[PASS] testTwoIdenticalAndRepeated() (gas: 306711)
+[PASS] testUnlimitedAllowanceRejected() (gas: 90175)
+[PASS] testZeroAmountsRejected() (gas: 123658)
+Suite result: ok. 16 passed; 0 failed; 0 skipped; finished in 22.83ms (39.46ms CPU time)
+
+Ran 1 test suite in 24.39ms (22.83ms CPU time): 16 tests passed, 0 failed, 0 skipped (16 total tests)

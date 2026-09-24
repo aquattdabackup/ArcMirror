@@ -1,0 +1,18 @@
+✔ network is mainnet 5042 and ERC-20 decimals is 6 (11.3031ms)
+✔ all five captured transactions are bound to their successful receipt and block (7.6472ms)
+✔ native EOA transfer is exactly 0.01 USDC and gas is separate (0.7405ms)
+✔ two observed USDC interface logs each have their own equal-scaled system log (2.2763ms)
+✔ native dust is one raw unit and has no ERC-20 corroboration (7.1479ms)
+✔ native call trace matches the system movement (1.5611ms)
+✔ native state delta identity balances for sender, recipient and fee beneficiary (0.6091ms)
+✔ ERC-20 native balance identity agrees with system logs plus fee (0.9583ms)
+✔ ERC-20 counterexample: summing native call values misses real balance movements (1.1205ms)
+✔ primary provider trace unavailability is explicit (0.4283ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 10
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1344.631

@@ -1,0 +1,106 @@
+{
+  "observedAt": "2026-09-24T14:44:49.339Z",
+  "txHash": "0xa0311ec4a00a190a55d2b32bbf03eb03e656d64c9bdaa306fdc1d9061ae6ad87",
+  "capabilities": [
+    {
+      "endpoint": "https://rpc.blockdaemon.mainnet.arc.io",
+      "chain": {
+        "jsonrpc": "2.0",
+        "id": 1,
+        "result": "0x13b2"
+      },
+      "callTrace": {
+        "jsonrpc": "2.0",
+        "id": 6,
+        "error": {
+          "code": -32601,
+          "message": "Method not found"
+        }
+      },
+      "stateDiff": {
+        "jsonrpc": "2.0",
+        "id": 7,
+        "error": {
+          "code": -32601,
+          "message": "Method not found"
+        }
+      }
+    },
+    {
+      "endpoint": "https://rpc.drpc.mainnet.arc.io",
+      "chain": {
+        "id": 2,
+        "jsonrpc": "2.0",
+        "result": "0x13b2"
+      },
+      "callTrace": {
+        "id": 8,
+        "jsonrpc": "2.0",
+        "result": {
+          "from": "0x5d72be14a8896aef728f23945318861684e8a5d5",
+          "gas": "0x5208",
+          "gasUsed": "0x5208",
+          "to": "0x8475b244a2e78813cfb5216c21604fa89a8f9347",
+          "input": "0x",
+          "value": "0x2386f26fc10000",
+          "type": "CALL"
+        }
+      },
+      "stateDiff": {
+        "id": 9,
+        "jsonrpc": "2.0",
+        "result": {
+          "post": {
+            "0x5d72be14a8896aef728f23945318861684e8a5d5": {
+              "balance": "0x288d3b16d024cf2dd",
+              "nonce": 7140
+            },
+            "0x8475b244a2e78813cfb5216c21604fa89a8f9347": {
+              "balance": "0x2386f26fc10000"
+            },
+            "0xefd77206fec6a50e653e4dfaac0197b44d00a4fd": {
+              "balance": "0x6771c370c76a30d7ce7"
+            }
+          },
+          "pre": {
+            "0x5d72be14a8896aef728f23945318861684e8a5d5": {
+              "balance": "0x288f8b65c50dc32dd",
+              "nonce": 7139
+            },
+            "0x8475b244a2e78813cfb5216c21604fa89a8f9347": {
+              "balance": "0x0"
+            },
+            "0xefd77206fec6a50e653e4dfaac0197b44d00a4fd": {
+              "balance": "0x6771c358e79c43f3ce7",
+              "nonce": 1
+            }
+          }
+        }
+      }
+    },
+    {
+      "endpoint": "https://rpc.quicknode.mainnet.arc.io",
+      "chain": {
+        "jsonrpc": "2.0",
+        "id": 3,
+        "result": "0x13b2"
+      },
+      "callTrace": {
+        "jsonrpc": "2.0",
+        "id": 4,
+        "error": {
+          "code": -32601,
+          "message": "method not supported: debug_traceTransaction"
+        }
+      },
+      "stateDiff": {
+        "jsonrpc": "2.0",
+        "id": 5,
+        "error": {
+          "code": -32601,
+          "message": "method not supported: debug_traceTransaction"
+        }
+      }
+    }
+  ]
+}

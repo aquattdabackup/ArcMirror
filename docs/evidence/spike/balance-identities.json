@@ -1,0 +1,73 @@
+{
+  "native": {
+    "txHash": "0xa0311ec4a00a190a55d2b32bbf03eb03e656d64c9bdaa306fdc1d9061ae6ad87",
+    "rows": [
+      {
+        "address": "0x5d72be14a8896aef728f23945318861684e8a5d5",
+        "expected": "-10420000000000000",
+        "actual": "-10420000000000000",
+        "residual": "0"
+      },
+      {
+        "address": "0x8475b244a2e78813cfb5216c21604fa89a8f9347",
+        "expected": "10000000000000000",
+        "actual": "10000000000000000",
+        "residual": "0"
+      },
+      {
+        "address": "0xefd77206fec6a50e653e4dfaac0197b44d00a4fd",
+        "expected": "420000000000000",
+        "actual": "420000000000000",
+        "residual": "0"
+      }
+    ]
+  },
+  "erc20": {
+    "txHash": "0x376b287a795c449b0bf3f0ec3ffdfad8e913012edecf0a8eb6f00c007a47b24f",
+    "rows": [
+      {
+        "address": "0x8366a39cc670b4001a1121b8f6a443a643e40951",
+        "expected": "-4499999000000000000",
+        "actual": "-4499999000000000000",
+        "residual": "0"
+      },
+      {
+        "address": "0x881071c158e7a4b2ad6e03e53157d466a23d89ab",
+        "expected": "90000000000000000",
+        "actual": "90000000000000000",
+        "residual": "0"
+      },
+      {
+        "address": "0x947676b3600af9dd846fca3134b23abec7f92f97",
+        "expected": "4405331680798836080",
+        "actual": "4405331680798836080",
+        "residual": "0"
+      },
+      {
+        "address": "0xefd77206fec6a50e653e4dfaac0197b44d00a4fd",
+        "expected": "4667319201163920",
+        "actual": "4667319201163920",
+        "residual": "0"
+      },
+      {
+        "address": "0x000000000022d473030f116ddee9f6b43ac78ba3",
+        "expected": "0",
+        "actual": "0",
+        "residual": "0"
+      },
+      {
+        "address": "0x69f4dc2408b78ec81bcc0219fa50c955f6a760cc",
+        "expected": "0",
+        "actual": "0",
+        "residual": "0"
+      },
+      {
+        "address": "0xde51e7752aff8e90c0b45f9b63dc42081ccb5cc8",
+        "expected": "0",
+        "actual": "0",
+        "residual": "0"
+      }
+    ],
+    "callValueCoverage": "incomplete: all call values are zero"
+  }
+}

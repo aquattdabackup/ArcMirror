@@ -1,0 +1,32 @@
+{
+  "name": "arcmirror",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "apps/web",
+    "packages/core"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace @arcmirror/web",
+    "build": "npm run build --workspace @arcmirror/core && npm run build --workspace @arcmirror/web",
+    "start": "npm run start --workspace @arcmirror/web",
+    "test": "tsx --test packages/core/test/*.test.ts packages/rpc/test/*.test.ts",
+    "test:spike": "node --test scripts/spike-evidence.test.mjs",
+    "typecheck": "tsc --noEmit && npm run typecheck --workspace @arcmirror/web",
+    "verify": "tsx scripts/verify.ts",
+    "vectors": "tsx scripts/generate-vectors.ts"
+  },
+  "dependencies": {
+    "viem": "2.56.8",
+    "zod": "^4.0.0"
+  },
+  "devDependencies": {
+    "tsx": "4.23.15",
+    "typescript": "~5.9.3",
+    "@types/node": "^24.0.0"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

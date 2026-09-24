@@ -1,0 +1,127 @@
+{
+  "provenance": "Existing public mainnet transaction; not created by ArcMirror or the project owner.",
+  "observedAt": "2026-09-24T14:42:51.316Z",
+  "endpoint": "https://rpc.mainnet.arc.io",
+  "chainId": 5042,
+  "tx": {
+    "jsonrpc": "2.0",
+    "id": 17,
+    "result": {
+      "type": "0x2",
+      "chainId": "0x13b2",
+      "nonce": "0x2d2",
+      "gas": "0xf618",
+      "maxFeePerGas": "0xdf8475800",
+      "maxPriorityFeePerGas": "0x2540be400",
+      "to": "0x026f38407f79d5e98d5217c1c9c7188a4eff63d3",
+      "value": "0x146fa600fbcc564800",
+      "accessList": [],
+      "input": "0x",
+      "r": "0xb8d2b0460cc812ab5a38ebb19ecbb997aea388c5f29e723ce15c455397c8ce0e",
+      "s": "0x33166d4216faea5e44ed12ceb4659792e7126fc08988943f331a429c2d853c23",
+      "yParity": "0x1",
+      "v": "0x1",
+      "hash": "0x96a99dc0c9730b9976ded8c4822f45dc1df6020a5e10ac780f85aac7ec5dcfd9",
+      "blockHash": "0x8a3e596129c95a75e8d89bf710d98e55225e84ad8b5919346be7adfffb063884",
+      "blockNumber": "0x157d451",
+      "transactionIndex": "0x2",
+      "from": "0x1ab4973a48dc892cd9971ece8e01dcc7688f8f23",
+      "gasPrice": "0x6fc23ac00",
+      "blockTimestamp": "0x6ab536a7"
+    }
+  },
+  "receipt": {
+    "jsonrpc": "2.0",
+    "id": 18,
+    "result": {
+      "type": "0x2",
+      "status": "0x1",
+      "cumulativeGasUsed": "0x39dd2",
+      "logs": [
+        {
+          "address": "0xfffffffffffffffffffffffffffffffffffffffe",
+          "topics": [
+            "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+            "0x0000000000000000000000001ab4973a48dc892cd9971ece8e01dcc7688f8f23",
+            "0x000000000000000000000000026f38407f79d5e98d5217c1c9c7188a4eff63d3"
+          ],
+          "data": "0x0000000000000000000000000000000000000000000000146fa600fbcc564800",
+          "blockHash": "0x8a3e596129c95a75e8d89bf710d98e55225e84ad8b5919346be7adfffb063884",
+          "blockNumber": "0x157d451",
+          "blockTimestamp": "0x6ab536a7",
+          "transactionHash": "0x96a99dc0c9730b9976ded8c4822f45dc1df6020a5e10ac780f85aac7ec5dcfd9",
+          "transactionIndex": "0x2",
+          "logIndex": "0x2",
+          "removed": false
+        }
+      ],
+      "logsBloom": "0x00000000000000000000000000000400000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000008080000000000000000000000400000000000000000000000000000002000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002000000000008000000000000000000000000000000000000000000400000000000000000000000000000000000000000000000000200000000400000",
+      "transactionHash": "0x96a99dc0c9730b9976ded8c4822f45dc1df6020a5e10ac780f85aac7ec5dcfd9",
+      "transactionIndex": "0x2",
+      "blockHash": "0x8a3e596129c95a75e8d89bf710d98e55225e84ad8b5919346be7adfffb063884",
+      "blockNumber": "0x157d451",
+      "gasUsed": "0x5208",
+      "effectiveGasPrice": "0x6fc23ac00",
+      "from": "0x1ab4973a48dc892cd9971ece8e01dcc7688f8f23",
+      "to": "0x026f38407f79d5e98d5217c1c9c7188a4eff63d3",
+      "contractAddress": null
+    }
+  },
+  "callTrace": {
+    "jsonrpc": "2.0",
+    "id": 19,
+    "error": {
+      "code": -32601,
+      "message": "method not supported: debug_traceTransaction"
+    }
+  },
+  "stateDiff": {
+    "jsonrpc": "2.0",
+    "id": 20,
+    "error": {
+      "code": -32601,
+      "message": "method not supported: debug_traceTransaction"
+    }
+  },
+  "block": {
+    "jsonrpc": "2.0",
+    "id": 21,
+    "result": {
+      "hash": "0x8a3e596129c95a75e8d89bf710d98e55225e84ad8b5919346be7adfffb063884",
+      "parentHash": "0xe38cb2c9193308c913080fcc55f63c35e705de3ee3b53e9f25285f5fa0d6e6de",
+      "sha3Uncles": "0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347",
+      "miner": "0xefd77206fec6a50e653e4dfaac0197b44d00a4fd",
+      "stateRoot": "0x5538917ef23917f3b8fd0ff1d4c12a3e3d84f9c105a5f6719c224e9824efa2c5",
+      "transactionsRoot": "0x5915c12022aa7cc446fdb31062b756e2fff1c17dbc935dac31ee35dc3b140a20",
+      "receiptsRoot": "0x605319febc831eac5d174188bae2e044495dd96ffdd037d57b970bc7c2733d28",
+      "logsBloom": "0x0001000020000400000004000000040800000000000000000002000100000000000000000000020100004001000000000001000006040000040000000008040100000000000040000020021808000002050000000000402040800000000000000011420000000000210000040000000000000000000000300000401008000040000000440200000000400020b208002000080000100000000000000000000000200000000000000000200020000000001400000200800000000000080000400020002402000000000008011000100000000800000000000000002004000000400002000020000000004000100100000020000204000000000200000042400400",
+      "difficulty": "0x0",
+      "number": "0x157d451",
+      "gasLimit": "0x1c9c380",
+      "gasUsed": "0xca05d",
+      "timestamp": "0x6ab536a7",
+      "extraData": "0x00000004a817c800",
+      "mixHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "nonce": "0x0000000000000000",
+      "baseFeePerGas": "0x4a817c800",
+      "withdrawalsRoot": "0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421",
+      "blobGasUsed": "0x0",
+      "excessBlobGas": "0x0",
+      "parentBeaconBlockRoot": "0xe38cb2c9193308c913080fcc55f63c35e705de3ee3b53e9f25285f5fa0d6e6de",
+      "requestsHash": "0xe3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": "0x1237",
+      "uncles": [],
+      "transactions": [
+        "0xd04565dfbeb30e0c8bb298aaecfe196126477aeecc133137ddc0b95ce75afd66",
+        "0x15e4b5b8c53305b6c315b90013bc3ae1fa4f6bc45e42e3c7e0f11bb68a4b1373",
+        "0x96a99dc0c9730b9976ded8c4822f45dc1df6020a5e10ac780f85aac7ec5dcfd9",
+        "0x9dc66d8eaba16cd4b23baaceaa9523927d93bcb522bba54542642359d8fa371c",
+        "0x376b287a795c449b0bf3f0ec3ffdfad8e913012edecf0a8eb6f00c007a47b24f",
+        "0x379701fc19d50e58fa76d46dfc76784c3f5c2ee8882dde542c3e1900a76bb743",
+        "0xa0311ec4a00a190a55d2b32bbf03eb03e656d64c9bdaa306fdc1d9061ae6ad87",
+        "0x7b26ebfbce8b84bf6963944dc6b81f556aa40b2f3f9172cdb6225ff31ec91556"
+      ],
+      "withdrawals": []
+    }
+  }
+}

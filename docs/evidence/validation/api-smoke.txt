@@ -1,0 +1,8 @@
+{
+  "base": "http://127.0.0.1:3000",
+  "health": "pass",
+  "snapshots": 3,
+  "invalidHash": "pass",
+  "unknownHash": "pass",
+  "securityHeaders": "pass"
+}

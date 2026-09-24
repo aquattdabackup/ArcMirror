@@ -1,0 +1,27 @@
+{
+  "observedAt": "2026-09-24T14:44:55.375Z",
+  "samples": [
+    {
+      "hash": "0x37567ff71a01f4966f0c4d5c4155dde45a293fd4450a57ce3c69d96c9777b3de",
+      "kind": "contains-native-dust",
+      "status": "0x1",
+      "block": "0x157d46d",
+      "logCount": 4,
+      "gasUsed": "0x1afcc",
+      "effectiveGasPrice": "0x7520324481",
+      "value": "0x1"
+    },
+    {
+      "hash": "0xa0311ec4a00a190a55d2b32bbf03eb03e656d64c9bdaa306fdc1d9061ae6ad87",
+      "kind": "native-transfer-code-check",
+      "status": "0x1",
+      "block": "0x157d451",
+      "logCount": 1,
+      "gasUsed": "0x5208",
+      "effectiveGasPrice": "0x4a817c800",
+      "value": "0x2386f26fc10000"
+    }
+  ],
+  "dustFound": true,
+  "failedFound": false
+}

@@ -1,0 +1,13 @@
+node_modules
+.local-tools
+artifacts
+contracts
+vectors
+docs/evidence
+.git
+.env
+.env.*
+!.env.example
+**/.next
+**/dist
+**/*.tsbuildinfo
