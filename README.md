@@ -121,4 +121,4 @@ Read [AGENTS.md](AGENTS.md) and [the portable handoff](docs/HANDOFF.md). They pr
 
 ## License
 
-License selection awaits the owner's confirmation. No MIT license has been applied. Packages are private and Solidity currently uses `UNLICENSED`; source visibility does not grant an open-source license.
+[MIT](LICENSE), approved by the owner on 2026-09-25. Builder: [aquattdabackup](https://github.com/aquattdabackup). npm packages remain private; no npm publication has been performed.

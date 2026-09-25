@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: UNLICENSED
+// SPDX-License-Identifier: MIT
 pragma solidity 0.8.28;
 import {ArcMirrorLab, ArcMirrorForwarder} from "../src/ArcMirrorLab.sol";
 interface Vm {function deal(address,uint256) external;function etch(address,bytes calldata) external;function expectRevert(bytes4) external;function prank(address) external;}

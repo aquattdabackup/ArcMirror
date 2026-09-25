@@ -17,7 +17,7 @@ The actual browser-generated ERC-20 JSON matched its entire fixture and a fresh 
 3. Vercel destination is explicitly approved by the owner. Project arcmirror exists in **Luong Tuan's projects** (`luong-tuans-projects-a65355dc`), ID `prj_Fl4rD67BDh21Zi4pj7UeMdaT9alh`. Connector deployment needs no CLI login. Production is now READY at https://arcmirror-six.vercel.app via authenticated CLI upload; anonymous APIs passed. Read task_on_progress.md for remaining browser/export checks.
 4. After deployment, perform public anonymous UI/API/mobile/export/explorer smoke checks and record only the real URL and result.
 5. When the owner prepares wallets: confirm two immutable public recipients, use local encrypted signing, show exact values/gas before signing, deploy Lab and record five real owner-created scenarios. No wallet or key exists in this repo.
-6. Confirm MIT and public builder profile, prepare the grant pack after production/mainnet evidence exists; the owner submits.
+6. MIT and public builder profile aquattdabackup are confirmed. Prepare the grant pack after production/mainnet evidence exists; the owner submits.
 
 ## Facts that must survive handoff
 
@@ -25,7 +25,7 @@ The actual browser-generated ERC-20 JSON matched its entire fixture and a fresh 
 - Every meaningful increment now requires a prompt small commit, plus a push when access permits. If push is blocked, report local vs remote clearly.
 - Public native example has matching logs, call values and balance changes. ERC-20 example has matching logs/state but zero native call values through a precompile: **needs_review**, never verified.
 - Public production is READY at https://arcmirror-six.vercel.app; API smoke passed, browser/export verification continues. No deployed Lab, owner-created demos, npm publication or grant submission.
-- No MIT license has been granted; packages remain private and Solidity UNLICENSED.
+- Owner approved MIT and public builder profile aquattdabackup on 2026-09-25. MIT is applied; npm packages remain private.
 - P2 features are deferred. Avoid extra features while release/account steps remain unresolved.
 
 ## Where to look

@@ -2,7 +2,7 @@
 
 A small experiment contract with two immutable recipients, a 0.01 USDC per-call cap, a reentrancy guard, exact ERC-20 allowances, native forwarding, duplicate transfers, dust, batch and an explicit revert path. It has no owner/admin withdrawal role. Forced native balances may only be swept to the fixed first recipient.
 
-**Not deployed.** Public recipient addresses and user-controlled signing are pending. No deployment address or transaction hash exists yet. The `UNLICENSED` SPDX marker is temporary while the owner decides the license.
+**Not deployed.** Public recipient addresses and user-controlled signing are pending. No deployment address or transaction hash exists yet. Source is licensed under [MIT](../LICENSE), approved by the owner on 2026-09-25.
 
 Run from this directory with Foundry:
 

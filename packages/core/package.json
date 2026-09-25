@@ -14,7 +14,7 @@
     "zod": "^4.0.0"
   },
   "description": "Pure, deterministic Arc mainnet USDC evidence analyzer.",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "files": [

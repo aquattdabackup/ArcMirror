@@ -19,7 +19,7 @@ Read `architecture.md`, `task_on_progress.md`, and `docs/HANDOFF.md` before expl
 
 - Do not request keys, seeds, passwords or tokens in chat. Wallet signing stays local to the owner.
 - No funds move until exact chain, recipients, amounts and gas have been reviewed and signed by the owner.
-- No MIT license, npm publication or final grant submission without the required owner action. License remains undecided.
+- Owner approved MIT License and the public builder profile https://github.com/aquattdabackup on 2026-09-25. Do not ask again. npm publication and final grant submission still require their own owner action.
 - Owner explicitly approved uploading source and deploying a new `arcmirror` project in Vercel team **Luong Tuan's projects** (`luong-tuans-projects-a65355dc`) on 2026-09-25. This resolves the earlier automatic review rejection; do not ask again for this destination. Do not modify unrelated projects or change billing.
 - Public third-party transactions are valid example evidence, but not the owner's five requested mainnet demos.
 - Native call-value traces cannot verify USDC precompile mutations. Preserve `needs_review` where coverage is incomplete.

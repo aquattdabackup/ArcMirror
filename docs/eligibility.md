@@ -10,7 +10,7 @@ The page still describes 20 awards of 500 USDC, a working mainnet deployment, pu
 | --- | --- |
 | No previous Circle/Arc funding | Owner explicitly confirmed on 2026-09-24 that ArcMirror has not received Circle/Arc funding. Do not infer eligibility from an ambiguous answer. |
 | Public repository | Confirmed through GitHub REST API: [aquattdabackup/ArcMirror](https://github.com/aquattdabackup/ArcMirror), public, default branch main. |
-| Public builder profile | Candidate inferred from remote: [aquattdabackup](https://github.com/aquattdabackup). Owner must confirm use in submission. |
+| Public builder profile | Owner explicitly approved [aquattdabackup](https://github.com/aquattdabackup) on 2026-09-25. |
 | Separate Arc reward wallet | Not supplied or verified. Must be different from the demo burner. |
 | Mainnet live product | Analyzer and web app implemented and tested locally; public production hosting pending. |
 | User demo wallet | User answered that preparation is not yet available; no address or signing performed. |

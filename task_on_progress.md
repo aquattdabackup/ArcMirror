@@ -32,7 +32,7 @@ ERC-20/precompile movements can have all zero native call values: logs and state
 
 - Vercel build issue resolved via authenticated official CLI full-repository upload. Connector inline uploads flattened the web subtree and lost outside source/lockfile. Persisted project settings in docs/deployment-settings.json; root apps/web, outside-source enabled. Build completed in 24s and READY. Root .vercel/.env.local are ignored (CLI-generated OIDC credential must never be printed or committed).
 - GitHub and Vercel authorization/login are resolved. No more account permission questions are needed for these destinations.
-- MIT and builder profile confirmation remain pending; no license selected or npm publication.
+- Owner approved MIT and public builder profile aquattdabackup on 2026-09-25. License files, package metadata/lockfile and Solidity SPDX markers updated; npm publication remains disabled.
 - Wallets remain deferred: need funded burner, two distinct immutable recipients and separate reward address before user-signed mainnet demos. No keys in chat.
 
 ## Remaining work

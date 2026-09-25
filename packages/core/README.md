@@ -21,6 +21,8 @@ console.log(report.evidenceLevel, report.digest === reportDigest(report));
 
 Native log emitters are authoritative for movements. Interface logs corroborate them one-to-one using exact scaled values and nearest log index. Receipt fees are separate. A `verified` report means three supported representations agree, not that the RPC is independently trustworthy. Native USDC precompile changes are outside call-value coverage and require review.
 
-Build output, declarations and this README can be packaged independently with `npm pack --workspace @arcmirror/core`. Publishing is deliberately disabled by `private: true` pending the owner's npm and license approval. Do not remove that guard automatically.
+Build output, declarations and this README can be packaged independently with `npm pack --workspace @arcmirror/core`. Publishing is deliberately disabled by `private: true` pending the owner's npm publication approval. Do not remove that guard automatically.
+
+Licensed under [MIT](LICENSE).
 
 Tests run from repository root with `npm test`; real fixtures live in `vectors/`. No memo parsing or all-history support is claimed.
