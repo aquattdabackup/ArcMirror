@@ -1,0 +1,60 @@
+{
+  "checkedAt": "2026-09-25T14:16:25.569Z",
+  "base": "https://arcmirror-six.vercel.app",
+  "pages": [
+    {
+      "path": "/",
+      "status": 200,
+      "htmlContainsArcMirror": true,
+      "milliseconds": 1500
+    },
+    {
+      "path": "/how-it-works",
+      "status": 200,
+      "htmlContainsArcMirror": true,
+      "milliseconds": 1655
+    },
+    {
+      "path": "/tx/0xa0311ec4a00a190a55d2b32bbf03eb03e656d64c9bdaa306fdc1d9061ae6ad87",
+      "status": 200,
+      "htmlContainsArcMirror": true,
+      "milliseconds": 2311
+    }
+  ],
+  "live": [
+    {
+      "hash": "0xa0311ec4a00a190a55d2b32bbf03eb03e656d64c9bdaa306fdc1d9061ae6ad87",
+      "http": 200,
+      "source": "live",
+      "status": "confirmed_success",
+      "evidenceLevel": "verified",
+      "digest": "0x4f44b556293b2576b3ab0ae40e77ee2c9b4fdf7d51a9d92166a9116cf6ce6d21",
+      "reasons": [
+        "logs_call_values_and_transaction_state_match"
+      ],
+      "exactFixtureMatch": true,
+      "milliseconds": 967
+    },
+    {
+      "hash": "0x376b287a795c449b0bf3f0ec3ffdfad8e913012edecf0a8eb6f00c007a47b24f",
+      "http": 200,
+      "source": "live",
+      "status": "confirmed_success",
+      "evidenceLevel": "needs_review",
+      "digest": "0xd45a2905f2105ef8986e6b5881f41e72ab94dacb734c82f1e983a44440c292b2",
+      "reasons": [
+        "call_trace_coverage_incomplete"
+      ],
+      "exactFixtureMatch": true,
+      "milliseconds": 561
+    }
+  ],
+  "apiSmoke": {
+    "health": "pass",
+    "snapshots": 3,
+    "invalidHash": "pass",
+    "unknownHash": "pass",
+    "securityHeaders": "pass"
+  },
+  "scope": "Point-in-time HTTP/API/live RPC recheck. No new browser/device, load, uptime or independent security audit claim."
+}
