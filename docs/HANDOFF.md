@@ -12,6 +12,10 @@
 
 The working product reads Arc mainnet; its website is on Vercel. The Lab is locally tested but **not deployed**. Three saved examples are existing third-party transactions, not the owner's five demos. Native example is Verified; the ERC-20 precompile example correctly remains Needs Review.
 
+## Active feature expansion
+
+Owner requested more relevant features and approved the order: CSV payout reconciliation, local JSON report inspector/comparison, Dust Lab. Complete/test/deploy this work before resuming funding. See docs/feature-expansion.md and task_on_progress.md for current milestone status. The program has no published feature cap/freeze before submission; post-submission review of updates is unspecified.
+
 ## Exact next work
 
 1. Check git status/log and origin/main. MIT milestone 272baa9 and production-evidence milestone 4bfa74d are pushed; application-draft/handoff c188a8b is also pushed. Owner requires prompt milestone commits.

@@ -1,6 +1,6 @@
 # Current task
 
-Continue ArcMirror v2 through owner-created mainnet demos and grant preparation. Software-first is authorized. Four public wallet addresses are now supplied; burner funding and owner-local signing are pending. Website is live at https://arcmirror-six.vercel.app.
+Current milestone: owner requested and approved payout CSV reconciliation first, then a browser JSON inspector/comparison and Dust Lab (2026-09-25). Build, test, commit and deploy these focused additions before resuming funding. Continue ArcMirror v2 through owner-created mainnet demos and grant preparation afterward. Software-first is authorized. Four public wallet addresses are now supplied; burner funding and owner-local signing are pending. Website is live at https://arcmirror-six.vercel.app.
 
 ## Owner decisions and Git
 
@@ -18,6 +18,12 @@ Continue ArcMirror v2 through owner-created mainnet demos and grant preparation.
 - Blockscout opened correct transaction/status/block/fee. ArcScan reached Cloudflare challenge; clipboard copy reports success but independent read is denied. Record these limits, not universal browser passes.
 - Native example Verified; ERC-20 precompile example stays Needs Review despite logs/state agreement. Native call-value trace cannot certify those precompile mutations. Dune already deduplicates these representations; do not claim exclusive novelty.
 
+## Feature expansion progress
+
+CSV milestone is implemented: /tools/reconcile imports/pastes local CSV, matches exact payer/recipient/amount one-to-one, shows missing/mismatched and unassigned movements, preserves evidence grade, links the source report and exports reconciliation JSON. Core precision/reconciliation are independent package subpaths.
+
+Validation: 44 application tests passed, build passed after fixing Turbopack runtime import extensions (standalone TypeScript build rewrites .ts to .js). ESM subpath imports passed. Local production browser at 1440px/390px: sample 2/2 matched; uploaded one-wei mismatch 0/1 matched, exact amount retained; errors/console empty; width 390/390, no overlay. UI copy encoding corrected afterward; typecheck re-run. Screenshots are in ignored artifacts/tools-check; final deploy evidence will follow the complete tool set. Still to implement: JSON inspector/comparison, Dust Lab; then final browser tests, production deployment and application draft update.
+
 ## Latest readiness recheck
 
 At 2026-09-25T14:16:25Z, production API smoke passed again; home/methodology/native report returned HTTP 200. Native and ERC-20 live endpoint reports exactly matched full golden vectors with the intended Verified/Needs Review grades. Evidence: docs/evidence/production/readiness-recheck.json. This is point-in-time functional verification, not load/uptime or security certification. No runtime code changed, so unrelated suites were not repeated.
@@ -27,7 +33,7 @@ At 2026-09-25T14:16:25Z, production API smoke passed again; home/methodology/nat
 1. English draft is ready at docs/application-draft.md: 100-word description, longer description, real links, reviewer tour and requirement matrix; Lab/demo fields remain pending; reward address is supplied locally and should be entered by the owner into the final application. Official grant and Arc/Dune sources rechecked 2026-09-25. DoraHacks registration reached Human Verification; no form fields inspected or submitted.
 2. Owner supplied burner, two recipients and reward address; all four are distinct/checksummed. Mapping is in ignored artifacts/owner-wallets.json, not public Git. Mainnet read-only check found zero balance/empty code, burner nonce 0. Constructor/init code is prepared in ignored artifacts/lab-deployment-unsigned.json. Ordinary estimate failed for insufficient balance; zero-gas-price simulation estimated 806827 gas (~0.0162172227 USDC at observed price), not an executable fee approval. See docs/wallet-preflight.md. Owner uses MetaMask and has no USDC. Official network/Portal funding guidance is in docs/funding.md; actual onramp availability/quote is unverified. Owner explicitly chose to continue obtaining USDC and the mainnet Lab/five-demo path after discussing costs. Do not re-open the scope decision. No exact purchase amount/provider/fee or deployment transaction has been approved or signed. User completes the crypto purchase and local signing; agent provides checks/guidance. Portal has no direct off-ramp. Await a reviewed funding quote/deposit; then rerun ordinary estimates and prepare exact owner-local signing. No transaction sent.
 3. Complete final application matrix/link check after those artifacts exist; owner presses Submit.
-4. P2 memo/CSV/dust tool/MCP/OG/Dune/video remain deferred. Do not add unrelated features.
+4. CSV reconciliation, report inspector/comparison and Dust Lab are now authorized. Acceptance: exact bigint, one-to-one matching, local file processing, explicit evidence limits, usable desktop/mobile flows, tests and deployment evidence. Memo/MCP/OG/Dune/video remain deferred. The official Microgrants page does not state a feature cap or freeze before submission; this is an inference of fit, not organizer approval. Post-submission update review is unspecified. See docs/feature-expansion.md.
 
 ## Operation and handoff
 
