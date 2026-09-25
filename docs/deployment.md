@@ -27,7 +27,7 @@ Reproducible settings: [deployment-settings.json](deployment-settings.json). Wit
 
 ## Contract, after wallet preparation
 
-See `contracts/README.md`. Confirm two distinct immutable public recipient addresses from the owner. Compile with pinned Solidity 0.8.28 and Cancun settings; run Foundry tests. Read the current [Arc deployment guide](https://docs.arc.io/integrate/deploy-on-arc) and recheck chain ID 5042 before preparing a signed transaction.
+See `contracts/README.md`. Two distinct immutable recipient addresses have been supplied; read [wallet preflight](wallet-preflight.md) and the ignored address-only local file. Recheck them against the unsigned payload before signing. Compile with pinned Solidity 0.8.28 and Cancun settings; run Foundry tests. Read the current [Arc deployment guide](https://docs.arc.io/integrate/deploy-on-arc) and recheck chain ID 5042 before preparing a signed transaction.
 
 Prepare the exact constructor arguments, bytecode, chain, estimated gas and maximum deployment cost for review. Use an encrypted local Foundry account or a user-controlled wallet. The user enters credentials and signs locally. Never put private keys in chat, command arguments, source or `.env`.
 
@@ -37,7 +37,7 @@ Once deployment is mined, record actual address, hash, ABI, compiler settings an
 
 - Public website, anonymous APIs, desktop/mobile flows and actual browser file download: complete. ArcScan content and clipboard read remain limited by external browser challenges/permissions.
 - Lab deployed and mainnet behavior checked; five owner-created transactions recorded.
-- MIT and builder profile confirmed; separate reward wallet still pending.
+- MIT and builder profile confirmed; reward address supplied locally. Burner funding/signing remains pending.
 - README and snapshots use real confirmed artifacts.
 - Final history secret scan, dependency review, tests and build complete.
 - [English application draft](application-draft.md) prepared; program page rechecked 2026-09-25. Finalize pending Lab/demo/reward fields and recheck links before submission.

@@ -1,6 +1,6 @@
 # Arc Microgrants application draft
 
-**Draft, not submitted.** Prepared 2026-09-25 from the working read-only product and measured mainnet evidence. The owner-requested Lab deployment, five owner-created scenarios and separate reward address are still pending. Do not describe them as delivered or replace them with third-party examples.
+**Draft, not submitted.** Prepared 2026-09-25 from the working read-only product and measured mainnet evidence. The owner-requested Lab deployment, five owner-created scenarios are still pending. The separate reward address has been supplied locally for owner entry at submission. Do not describe them as delivered or replace them with third-party examples.
 
 ## Short description
 
@@ -30,7 +30,7 @@ The website is live on Vercel and reads Arc mainnet, chain 5042. The MIT core is
 | Dust mainnet example | [Report](https://arcmirror-six.vercel.app/tx/0x37567ff71a01f4966f0c4d5c4155dde45a293fd4450a57ce3c69d96c9777b3de); existing third-party activity |
 | Lab contract / source verification | **Pending.** No deployment address or transaction exists. |
 | Five owner-created demos | **Pending.** Do not substitute the public examples above. |
-| Reward address | **Pending owner preparation.** Separate from demo burner. |
+| Reward address | **Supplied locally.** Distinct from demo burner; owner enters it in the application. Not published in this repo. |
 | Reproduction evidence | [Downloaded report](evidence/production/downloaded-report.json), [fresh CLI match](evidence/production/live-verify.txt), [public production checks](evidence/production/browser-checks.json) |
 
 ## Reviewer tour: under one minute
@@ -58,7 +58,7 @@ Program requirements were rechecked on the [official page](https://community.arc
 | Description of product and Arc usage | Descriptions above. |
 | Public builder profile | Confirmed profile linked above. |
 | No previous Circle/Arc funding | Owner explicitly confirmed. |
-| Payout / submission | Reward address pending; owner reviews and submits. |
+| Payout / submission | Reward address supplied locally; owner enters it, reviews and submits. |
 | Additional owner requirements | Deploy/verify Lab and capture five owner-created mainnet scenarios before closing the original brief. |
 
 ## Before the owner submits

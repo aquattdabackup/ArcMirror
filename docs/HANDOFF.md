@@ -14,13 +14,13 @@ The working product reads Arc mainnet; its website is on Vercel. The Lab is loca
 
 ## Exact next work
 
-1. Check git status/log and origin/main. MIT milestone 272baa9 and production-evidence milestone 4bfa74d are pushed; the application-draft/handoff milestone follows them. Owner requires prompt milestone commits.
-2. [English application draft](application-draft.md) is ready, including 100-word description and reviewer tour. Lab/demos/reward wallet remain pending. Official grant page rechecked 2026-09-25; DoraHacks requires human verification. Recheck and finalize after real owner-created mainnet artifacts exist.
-3. When the owner prepares wallets, obtain only public burner/recipient/reward addresses. Review exact chain, constructor, amounts and gas; owner signs locally. Record real Lab deployment/source verification and five confirmed owner-created scenarios.
+1. Check git status/log and origin/main. MIT milestone 272baa9 and production-evidence milestone 4bfa74d are pushed; application-draft/handoff c188a8b is also pushed. Owner requires prompt milestone commits.
+2. [English application draft](application-draft.md) is ready, including 100-word description and reviewer tour. Lab/demos and burner funding remain pending; the reward address is supplied locally. Official grant page rechecked 2026-09-25; DoraHacks requires human verification. Recheck and finalize after real owner-created mainnet artifacts exist.
+3. Four addresses have been supplied and validated; do not ask again in this workspace. Read docs/wallet-preflight.md and ignored artifacts/owner-wallets.json. The burner is empty. Owner uses MetaMask and has no USDC; docs/funding.md records the official funding route. Await owner funding, rerun ordinary gas/chain/nonce checks and review exact constructor/amounts/gas before owner-local signing. The prepared unsigned payload and predicted address are not a deployment. Record real Lab deployment/source verification and five confirmed owner-created scenarios afterward.
 4. Update vectors/docs/application matrix from actual receipts. Owner performs final submission. No npm publication is authorized.
 
 ## Portable context
 
 architecture.md maps code; task_on_progress.md tracks remaining work; docs/product-brief.vi.md preserves the original prompt. Deployment settings and signing runbook: docs/deployment.md. Owner actions: docs/user-setup.md. Secrets and generated tooling/build caches remain ignored.
 
-Optional offline Git bundle: artifacts/ArcMirror-handoff.bundle, generated after the latest push from main only. Confirm its head before using it; GitHub is the canonical source. No Codex-specific skill installation or original chat attachment is required for another AI to resume.
+Optional offline Git bundle: artifacts/ArcMirror-handoff.bundle, generated after the latest push from main only. Confirm its head before using it; GitHub is the canonical source. No Codex-specific skill installation or original chat attachment is required for another AI to resume software work. The ignored address-only file is local; on another machine the owner must transfer it or supply the four public addresses again.

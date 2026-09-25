@@ -11,7 +11,7 @@ The [official Arc Microgrants page](https://community.arc.io/public/events/arc-m
 | Builder profile | Owner approved [aquattdabackup](https://github.com/aquattdabackup); public profile REST 200. |
 | Working mainnet analysis | [Production](https://arcmirror-six.vercel.app), [validation](validation.md): real chain 5042 data and live re-verification passed. Website is hosted on Vercel; no Lab deployment is claimed. |
 | Owner's requested demos | Lab is tested locally; no deployment or five owner-created transactions yet. |
-| Reward wallet | Pending; owner requested a separate address from demo burner. |
+| Reward wallet | Owner supplied a distinct checksummed address; retained locally for final application entry. Payout verification is not performed. |
 | Submission | Not submitted; owner reviews and submits. |
 
-Software-first, GitHub access, Vercel destination, MIT and builder profile are explicitly authorized and resolved. Wallet preparation/signing remains deferred. The final application must distinguish the working read-only product from the undeployed Lab and must not claim the complete original brief is finished.
+Software-first, GitHub access, Vercel destination, MIT and builder profile are explicitly authorized and resolved. Wallet addresses are supplied; burner funding and signing remain pending. The final application must distinguish the working read-only product from the undeployed Lab and must not claim the complete original brief is finished.

@@ -37,7 +37,7 @@
 - Frozen investigation: `docs/evidence/spike`, documented by `docs/spike-findings.md`. Read-only collection scripts never sign transactions.
 - `vectors`: three third-party mainnet samples, explicitly not owner-created demos.
 - `docs/validation.md`: actual checks. `docs/deployment.md`: deployment settings/remaining owner steps. `task_on_progress.md`: temporary task status.
-- Owner confirmed no Circle/Arc funding and authorized software-first; wallets remain deferred. Owner approved MIT and builder profile aquattdabackup on 2026-09-25. Root/core license files and Solidity SPDX markers use MIT; npm packages remain private.
+- Owner confirmed no Circle/Arc funding and authorized software-first; public wallet addresses are supplied; funding and signing remain pending. Address mapping and unsigned deployment payload stay in ignored artifacts, outside the public repo. Owner approved MIT and builder profile aquattdabackup on 2026-09-25. Root/core license files and Solidity SPDX markers use MIT; npm packages remain private.
 
 ## Agent continuity
 
