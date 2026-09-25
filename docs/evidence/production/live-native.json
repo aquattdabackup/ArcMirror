@@ -1,0 +1,9 @@
+{
+  "url": "https://arcmirror-six.vercel.app",
+  "source": "live",
+  "txHash": "0xa0311ec4a00a190a55d2b32bbf03eb03e656d64c9bdaa306fdc1d9061ae6ad87",
+  "status": "confirmed_success",
+  "evidenceLevel": "verified",
+  "digest": "0x4f44b556293b2576b3ab0ae40e77ee2c9b4fdf7d51a9d92166a9116cf6ce6d21",
+  "exactFixtureMatch": true
+}

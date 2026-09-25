@@ -30,7 +30,7 @@
 - Basic CSP permits Next.js inline bootstrap/styles. No analytics, wallet connection or arbitrary endpoint request API.
 - `npm ci`, `npm test`, `npm run test:spike`, `npm run typecheck`, `npm run build`, `npm start`.
 - `forge test -vv` in contracts. Local mock is not an Arc simulator.
-- Public repo: https://github.com/aquattdabackup/ArcMirror. Public hosting is pending; deployment details must be verified after authorization.
+- Public repo: https://github.com/aquattdabackup/ArcMirror. Public website: https://arcmirror-six.vercel.app, Vercel project arcmirror in the approved Luong Tuan's projects team. Linked monorepo root apps/web includes outside source; CLI full-repository upload preserves the workspace. Settings: docs/deployment-settings.json.
 
 ## Evidence and handoff
 

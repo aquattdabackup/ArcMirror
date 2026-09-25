@@ -1,0 +1,15 @@
+
+> arcmirror@0.1.0 verify
+> tsx scripts/verify.ts 0x376b287a795c449b0bf3f0ec3ffdfad8e913012edecf0a8eb6f00c007a47b24f --report docs/evidence/production/downloaded-report.json
+
+{
+  "mode": "live RPC",
+  "txHash": "0x376b287a795c449b0bf3f0ec3ffdfad8e913012edecf0a8eb6f00c007a47b24f",
+  "status": "confirmed_success",
+  "evidenceLevel": "needs_review",
+  "digest": "0xd45a2905f2105ef8986e6b5881f41e72ab94dacb734c82f1e983a44440c292b2",
+  "reasons": [
+    "call_trace_coverage_incomplete"
+  ]
+}
+MATCH: digest and canonical report agree.

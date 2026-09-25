@@ -4,7 +4,7 @@
 
 **Production is READY:** https://arcmirror-six.vercel.app
 
-Deployed on 2026-09-25 to the owner's explicitly approved Vercel team. Project: `prj_Fl4rD67BDh21Zi4pj7UeMdaT9alh`; deployment: `dpl_BiNChHapbCXuHziRDX9gcg3uFxE6`. GitHub login/push and Vercel CLI login are complete. [Deployment record](evidence/production/deployment.json) and [anonymous API smoke result](evidence/production/api-smoke.txt). Public browser/export verification is in progress.
+Deployed on 2026-09-25 to the owner's explicitly approved Vercel team. Project: `prj_Fl4rD67BDh21Zi4pj7UeMdaT9alh`; deployment: `dpl_BiNChHapbCXuHziRDX9gcg3uFxE6`. GitHub login/push and Vercel CLI login are complete. [Deployment record](evidence/production/deployment.json) and [anonymous API smoke result](evidence/production/api-smoke.txt). Public desktop/mobile flows and an ordinary JSON file save passed; [browser checks](evidence/production/browser-checks.json) records the ArcScan challenge and clipboard-read limitation.
 
 The connector's inline-file deployments built only the web subtree, leaving out the workspace lockfile and shared source. The official authenticated CLI upload preserved the full monorepo and built successfully. Use CLI deployments from repository root with the project linked. Failed diagnostic builds were not promoted as working releases.
 
@@ -35,9 +35,9 @@ Once deployment is mined, record actual address, hash, ABI, compiler settings an
 
 ## Release checklist still requiring real evidence
 
-- Public website and anonymous API smoke test: complete. Browser/export release checks are in progress.
+- Public website, anonymous APIs, desktop/mobile flows and actual browser file download: complete. ArcScan content and clipboard read remain limited by external browser challenges/permissions.
 - Lab deployed and mainnet behavior checked; five owner-created transactions recorded.
-- License and builder profile confirmed; separate reward wallet prepared.
+- MIT and builder profile confirmed; separate reward wallet still pending.
 - README and snapshots use real confirmed artifacts.
 - Final history secret scan, dependency review, tests and build complete.
 - Grant page/link check and English application pack after production/mainnet work.

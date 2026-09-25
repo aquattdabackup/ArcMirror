@@ -1,33 +1,26 @@
 # Continue ArcMirror with another AI
 
-## Paste this into the next coding agent
+## Paste into the next coding agent
 
-> Continue this ArcMirror workspace. First read AGENTS.md, architecture.md, task_on_progress.md and docs/HANDOFF.md; consult docs/product-brief.vi.md only for requirement details. Preserve the owner's software-first authorization. Check git status/log and the exact current blockers before editing. Continue useful authorized work, make small verified milestone commits and push when credentials permit. Update the project memory and this handoff before stopping. Report progress in Vietnamese. Never claim deployment, mainnet signing or submission without real evidence.
+> Continue ArcMirror. Read AGENTS.md, architecture.md, task_on_progress.md and docs/HANDOFF.md first. Preserve all confirmed owner decisions. Check git status/log and origin/main, continue unfinished work without restarting completed milestones, make small verified commits and push them. Update portable project memory before stopping. Report in Vietnamese. Never invent deployment, wallet signatures, mainnet demos or grant submission.
 
-## Current deliverable
+## Ready now
 
-The working analyzer, Next.js application, RPC adapter, CLI, mainnet fixtures and locally tested Lab contract are implemented. Implementation commit: **`dc8035c`**; handoff commit: **`a250839`**. Both are pushed to GitHub. Local build, TypeScript, 37 application tests, 10 spike tests and 16 Foundry tests passed (256 fuzz runs). Read `docs/validation.md` for outputs and actual local browser checks.
+[Live website](https://arcmirror-six.vercel.app) and [public MIT repository](https://github.com/aquattdabackup/ArcMirror). Owner approved MIT and [builder profile](https://github.com/aquattdabackup). GitHub/Vercel access works; no account or destination approval is outstanding.
 
-The actual browser-generated ERC-20 JSON matched its entire fixture and a fresh mainnet CLI analysis. Browser disk download and clipboard read could not be fully certified on the automated Windows surface. Do not repeat all tests just to understand the project; investigate the remaining release checks at deployment time.
+37 application tests, 10 spike tests, 16 Foundry tests including 256 fuzz runs, build/typecheck passed. Public desktop/mobile/API flows and actual JSON file download passed. Downloaded file matched the full fixture and fresh mainnet CLI analysis. Read [validation](validation.md) for evidence and external ArcScan/clipboard-read limits.
 
-## Continue in this order
+The working product reads Arc mainnet; its website is on Vercel. The Lab is locally tested but **not deployed**. Three saved examples are existing third-party transactions, not the owner's five demos. Native example is Verified; the ERC-20 precompile example correctly remains Needs Review.
 
-1. Inspect `git status --short`, `git log -3 --oneline`, and `git log --oneline origin/main..HEAD`. Preserve local milestone commits. Push only through normal authorized GitHub access; do not bypass approval or use unrelated credentials.
-2. GitHub authentication is resolved: GCM has aquattdabackup and the repo-local username selects it. Push verified milestone commits normally. No global account was replaced.
-3. Vercel destination is explicitly approved by the owner. Project arcmirror exists in **Luong Tuan's projects** (`luong-tuans-projects-a65355dc`), ID `prj_Fl4rD67BDh21Zi4pj7UeMdaT9alh`. Connector deployment needs no CLI login. Production is now READY at https://arcmirror-six.vercel.app via authenticated CLI upload; anonymous APIs passed. Read task_on_progress.md for remaining browser/export checks.
-4. After deployment, perform public anonymous UI/API/mobile/export/explorer smoke checks and record only the real URL and result.
-5. When the owner prepares wallets: confirm two immutable public recipients, use local encrypted signing, show exact values/gas before signing, deploy Lab and record five real owner-created scenarios. No wallet or key exists in this repo.
-6. MIT and public builder profile aquattdabackup are confirmed. Prepare the grant pack after production/mainnet evidence exists; the owner submits.
+## Exact next work
 
-## Facts that must survive handoff
+1. Check whether the production-evidence and application-draft milestones have been committed/pushed; task_on_progress.md is authoritative. Owner requires prompt milestone commits.
+2. Finish the English application draft using only real URLs/evidence, clearly pending Lab/demos/reward wallet. Official grant page rechecked 2026-09-25; recheck before submission.
+3. When the owner prepares wallets, obtain only public burner/recipient/reward addresses. Review exact chain, constructor, amounts and gas; owner signs locally. Record real Lab deployment/source verification and five confirmed owner-created scenarios.
+4. Update vectors/docs/application matrix from actual receipts. Owner performs final submission. No npm publication is authorized.
 
-- Owner already confirmed no Circle/Arc funding and software-first implementation. Do not re-ask.
-- Every meaningful increment now requires a prompt small commit, plus a push when access permits. If push is blocked, report local vs remote clearly.
-- Public native example has matching logs, call values and balance changes. ERC-20 example has matching logs/state but zero native call values through a precompile: **needs_review**, never verified.
-- Public production is READY at https://arcmirror-six.vercel.app; API smoke passed, browser/export verification continues. No deployed Lab, owner-created demos, npm publication or grant submission.
-- Owner approved MIT and public builder profile aquattdabackup on 2026-09-25. MIT is applied; npm packages remain private.
-- P2 features are deferred. Avoid extra features while release/account steps remain unresolved.
+## Portable context
 
-## Where to look
+architecture.md maps code; task_on_progress.md tracks remaining work; docs/product-brief.vi.md preserves the original prompt. Deployment settings and signing runbook: docs/deployment.md. Owner actions: docs/user-setup.md. Secrets and generated tooling/build caches remain ignored.
 
-`architecture.md` maps the code. `docs/spike-findings.md` explains the measured Arc behavior. `docs/validation.md` contains checked results. `docs/deployment.md` and `docs/user-setup.md` explain owner-only steps. All important context is now in the repository; the next agent does not need access to the original chat attachment or Codex-specific skill installation.
+Optional offline Git bundle: artifacts/ArcMirror-handoff.bundle, generated after the latest push from main only. Confirm its head before using it; GitHub is the canonical source. No Codex-specific skill installation or original chat attachment is required for another AI to resume.

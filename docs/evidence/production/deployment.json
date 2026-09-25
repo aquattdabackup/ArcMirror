@@ -14,5 +14,5 @@
   "configuration": "docs/deployment-settings.json",
   "buildDurationReported": "24 seconds",
   "anonymousApiSmoke": "passed",
-  "browserSmoke": "in progress"
+  "browserSmoke": "passed core flows and real JSON file download; ArcScan/clipboard-read limitations documented in browser-checks.json"
 }

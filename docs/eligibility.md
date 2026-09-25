@@ -1,23 +1,17 @@
-ï»¿# Eligibility checkpoint
+# Eligibility checkpoint
 
-Checked: **2026-09-24**. Status: **software-first implementation authorized; submission eligibility still incomplete**.
+Checked: **2026-09-25**. Software is live; the owner-created mainnet demo stage and final submission remain incomplete.
 
-Source: [official Arc Microgrants page](https://community.arc.io/public/events/arc-microgrants-f8tijfjhyq).
+The [official Arc Microgrants page](https://community.arc.io/public/events/arc-microgrants-f8tijfjhyq) still lists 20 awards of 500 USDC, deadline October 14, 2026 at 23:59 ET and decisions by October 21. It requires a working mainnet project, public repo/profile, short description and no prior Circle/Arc funding; ownership and screening rules also apply. Recheck before submission; dates/counts can change.
 
-The page still describes 20 awards of 500 USDC, a working mainnet deployment, public repository and public builder profile. The deadline remains October 14, 2026 at 23:59 ET, with decisions by October 21. No material change to the supplied grant summary was found. Dates and award counts may change; check again before submission. The page additionally specifies ownership/submission rights, screening, and one submission per project.
-
-| Gate | Evidence / current state |
+| Item | Actual evidence |
 | --- | --- |
-| No previous Circle/Arc funding | Owner explicitly confirmed on 2026-09-24 that ArcMirror has not received Circle/Arc funding. Do not infer eligibility from an ambiguous answer. |
-| Public repository | Confirmed through GitHub REST API: [aquattdabackup/ArcMirror](https://github.com/aquattdabackup/ArcMirror), public, default branch main. |
-| Public builder profile | Owner explicitly approved [aquattdabackup](https://github.com/aquattdabackup) on 2026-09-25. |
-| Separate Arc reward wallet | Not supplied or verified. Must be different from the demo burner. |
-| Mainnet live product | Analyzer and web app implemented and tested locally; public production hosting pending. |
-| User demo wallet | User answered that preparation is not yet available; no address or signing performed. |
-| Submission | Not submitted. Final submission belongs to the user. |
+| Prior funding | Owner explicitly confirmed no Circle/Arc funding. |
+| Public repository/license | [ArcMirror](https://github.com/aquattdabackup/ArcMirror), GitHub REST 200, public main branch, MIT detected. |
+| Builder profile | Owner approved [aquattdabackup](https://github.com/aquattdabackup); public profile REST 200. |
+| Working mainnet analysis | [Production](https://arcmirror-six.vercel.app), [validation](validation.md): real chain 5042 data and live re-verification passed. Website is hosted on Vercel; no Lab deployment is claimed. |
+| Owner's requested demos | Lab is tested locally; no deployment or five owner-created transactions yet. |
+| Reward wallet | Pending; owner requested a separate address from demo burner. |
+| Submission | Not submitted; owner reviews and submits. |
 
-The owner explicitly authorized building and testing software before wallet preparation, overriding the original pre-code order. Wallets, mainnet signing and production release remain separate pending steps.
-
-A Vercel connector successfully listed an existing team. This establishes account visibility, not successful deployment or permission to use a paid plan. No new account is currently required for the investigation.
-
-Owner explicitly authorized building and testing software before wallet preparation on 2026-09-24. This overrides the original pre-code order; reward wallet and user-signed demo transactions remain pending.
+Software-first, GitHub access, Vercel destination, MIT and builder profile are explicitly authorized and resolved. Wallet preparation/signing remains deferred. The final application must distinguish the working read-only product from the undeployed Lab and must not claim the complete original brief is finished.

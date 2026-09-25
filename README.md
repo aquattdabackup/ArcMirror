@@ -6,7 +6,7 @@ Explorers show you what happened. ArcMirror shows you why the numbers add up, an
 
 ArcMirror explains Arc mainnet USDC movements, exact gas costs and their source evidence. Native USDC uses 18 decimals; the ERC-20 interface uses 6. Adding both log streams can count a movement twice. Paste a transaction hash or open a saved real example. No wallet, signature or payment is required to use the analyzer.
 
-**Status:** deployed on Arc mainnet as a read-only analyzer. Owner-signed Lab scenarios remain pending. This is an onchain evidence analysis tool, not an audit service, custody service or refund guarantee.
+**Status:** live read-only analyzer for Arc mainnet, hosted on Vercel. Owner-signed Lab scenarios remain pending. This is an onchain evidence analysis tool, not an audit service, custody service or refund guarantee.
 
 - [Repository](https://github.com/aquattdabackup/ArcMirror)
 - [Live website](https://arcmirror-six.vercel.app) (production); local address: http://localhost:3000
@@ -103,7 +103,7 @@ flowchart LR
 
 ## Checks actually run
 
-37 analyzer/vector/RPC tests, 10 spike evidence tests and 16 Foundry tests passed (including 256 fuzz runs). Type checking, standalone core packaging and the Next.js production build passed. Local desktop/mobile UI, APIs and live digest comparisons were checked. Production dependency audit and source secret scan returned no findings. Browser-generated JSON matched its fixture and live RPC; browser file saving remains unverified because the test browser canceled downloads. Details and outputs are in [validation](docs/validation.md).
+37 analyzer/vector/RPC tests, 10 spike evidence tests and 16 Foundry tests passed (including 256 fuzz runs). Type checking, standalone core packaging and the Next.js production build passed. Local and public production desktop/mobile UI, APIs and live digest comparisons were checked. Production dependency audit and source secret scan returned no findings. An ordinary Edge download saved the report to disk; its entire JSON and digest matched the fixture and fresh mainnet RPC. ArcScan challenged the automated browser, and independent clipboard read was denied. Details and outputs are in [validation](docs/validation.md).
 
 ## Limits and deployment status
 
@@ -111,7 +111,7 @@ flowchart LR
 - Historical fork/genesis coverage is not certified. Unusual trace types and precompile movements require review.
 - RPC endpoints may throttle or lose tracer support. Cache and rate limits are in-process (not distributed): 256 reports / one-hour TTL, 8 concurrent analyses, 30 client and 120 global requests per minute per instance. Hosting-level limits are still needed for a larger deployment.
 - Basic CSP/security headers are configured. Inline scripts/styles remain allowed for the Next.js bootstrap; nonce-based CSP is not implemented.
-- Contract mock tests do not emulate Arc's native/ERC-20 shared balance or mainnet system logs. Mainnet validation, production smoke tests and at least five owner-created transactions remain required.
+- Contract mock tests do not emulate Arc's native/ERC-20 shared balance or mainnet system logs. The read-only production smoke passed. Lab validation on mainnet and at least five owner-created transactions remain required.
 - Gitleaks and dependency checks are recorded in [validation](docs/validation.md); these are not an audit.
 - [Deployment and owner setup](docs/deployment.md), [eligibility](docs/eligibility.md). The user performs the final grant submission.
 

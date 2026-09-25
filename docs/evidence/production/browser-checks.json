@@ -1,0 +1,44 @@
+{
+  "checkedAt": "2026-09-25",
+  "baseUrl": "https://arcmirror-six.vercel.app",
+  "deploymentId": "dpl_BiNChHapbCXuHziRDX9gcg3uFxE6",
+  "browser": "Microsoft Edge 154, agent-browser 0.38.1; isolated profile; main UI checks repeated InPrivate with extensions disabled",
+  "authentication": "No Vercel or ArcMirror sign-in; no wallet",
+  "viewports": [
+    [
+      1440,
+      1000
+    ],
+    [
+      390,
+      844
+    ]
+  ],
+  "checks": {
+    "home": "pass; invalid input shows full-hash guidance; valid native hash navigates to Verified report",
+    "erc20": "pass; 2 movements, 4.499999 USDC; Needs Review for incomplete precompile call-value coverage",
+    "flowDetails": "pass; expanded 0.09 USDC exposes 90000000000000000 raw units, native log5, interface log6 and both original logs",
+    "sourceLogs": "pass; 8 logs with distinct native/interface/other roles",
+    "balanceProof": "pass; exact expected/observed values with zero residuals; grade remains Needs Review",
+    "phantomComparison": "pass; 8.999998 versus 4.499999 USDC",
+    "reverifyLive": "pass; UI returned same report digest",
+    "native": "pass; Verified, chain5042; fresh live API report exactly matched fixture",
+    "dust": "pass; exact 0.000000000000000001 USDC, raw1, no paired interface log",
+    "unknownHash": "pass; Transaction not found for all-zero hash",
+    "methodology": "pass; mobile screenshot inspected",
+    "responsive": "pass; no document horizontal overflow on tested home/report/methodology views",
+    "normalRouteConsole": "no page errors or console output in clean InPrivate session before external explorer/negative-case navigation",
+    "download": "pass; ordinary Download JSON click saved 8190-byte file in Windows Downloads; copied unchanged to downloaded-report.json; entire vector and fresh live CLI matched",
+    "copyLink": "button reported success; independent clipboard read denied by browser permission",
+    "blockscout": "pass; correct Arc Mainnet transaction, Success, block22533201, exact fee0.00466731920116392 USDC",
+    "arcscan": "correct canonical URL reached Cloudflare security verification; transaction contents not verified",
+    "github": "REST200; repository public, main default branch, MIT detected; owner profile REST200"
+  },
+  "downloadDigest": "0xd45a2905f2105ef8986e6b5881f41e72ab94dacb734c82f1e983a44440c292b2",
+  "limits": [
+    "Viewport emulation, not physical devices",
+    "ArcScan challenge not bypassed",
+    "Clipboard contents not independently read",
+    "No owner-signed mainnet demos or deployed Lab"
+  ]
+}

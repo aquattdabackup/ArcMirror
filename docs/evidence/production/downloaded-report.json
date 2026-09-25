@@ -1,0 +1,206 @@
+{
+  "schemaVersion": "1.0.0",
+  "algorithmVersion": "0.1.0",
+  "chainId": 5042,
+  "txHash": "0x376b287a795c449b0bf3f0ec3ffdfad8e913012edecf0a8eb6f00c007a47b24f",
+  "blockNumber": "22533201",
+  "blockHash": "0x8a3e596129c95a75e8d89bf710d98e55225e84ad8b5919346be7adfffb063884",
+  "txIndex": "4",
+  "status": "confirmed_success",
+  "evidenceLevel": "needs_review",
+  "reasons": [
+    "call_trace_coverage_incomplete"
+  ],
+  "warnings": [],
+  "gas": {
+    "payer": "0x947676b3600af9dd846fca3134b23abec7f92f97",
+    "beneficiary": "0xefd77206fec6a50e653e4dfaac0197b44d00a4fd",
+    "gasUsed": "232784",
+    "effectiveGasPrice": "20050000005",
+    "feeNative18": "4667319201163920",
+    "feeExact": "0.00466731920116392"
+  },
+  "movements": [
+    {
+      "payer": "0x8366a39cc670b4001a1121b8f6a443a643e40951",
+      "payee": "0x881071c158e7a4b2ad6e03e53157d466a23d89ab",
+      "amountNative18": "90000000000000000",
+      "amountExact": "0.09",
+      "amountDisplay6": "0.090000",
+      "dustRemainder18": "0",
+      "sourceLogIndex": "5",
+      "corroboratingLogIndexes": [
+        "6"
+      ],
+      "evidenceLevel": "needs_review"
+    },
+    {
+      "payer": "0x8366a39cc670b4001a1121b8f6a443a643e40951",
+      "payee": "0x947676b3600af9dd846fca3134b23abec7f92f97",
+      "amountNative18": "4409999000000000000",
+      "amountExact": "4.409999",
+      "amountDisplay6": "4.409999",
+      "dustRemainder18": "0",
+      "sourceLogIndex": "9",
+      "corroboratingLogIndexes": [
+        "10"
+      ],
+      "evidenceLevel": "needs_review"
+    }
+  ],
+  "logs": [
+    {
+      "address": "0x000000000022d473030f116ddee9f6b43ac78ba3",
+      "topics": [
+        "0xc6a377bfc4eb120024a8ac08eef205be16b817020812c73223e81d1bdb9708ec",
+        "0x000000000000000000000000947676b3600af9dd846fca3134b23abec7f92f97",
+        "0x000000000000000000000000de51e7752aff8e90c0b45f9b63dc42081ccb5cc8",
+        "0x0000000000000000000000004fca4a51ab4f23a7447b3284fbd7d73289a89fb1"
+      ],
+      "data": "0x000000000000000000000000ffffffffffffffffffffffffffffffffffffffff000000000000000000000000000000000000000000000000000000006adcc3260000000000000000000000000000000000000000000000000000000000000000",
+      "logIndex": "3",
+      "role": "other"
+    },
+    {
+      "address": "0x8366a39cc670b4001a1121b8f6a443a643e40951",
+      "topics": [
+        "0x40e9cecb9f5f1f1c5b9c97dec2917b7ee92e57ba5563708daca94dd84ad7112f",
+        "0x218935b8565c7ad42c0d7a98001bbe185ff7612125735980cbaf3b49debab1e1",
+        "0x0000000000000000000000004fca4a51ab4f23a7447b3284fbd7d73289a89fb1"
+      ],
+      "data": "0x000000000000000000000000000000000000000000000000000000000044aa1ffffffffffffffffffffffffffffffffffffffffffffe8092710cbe54183b13a10000000000000000000000000000000025d7e336d84b2ea9e0af660de51fcf6500000000000000000000000000000000000000000000000015dba887cc46b7910000000000000000000000000000000000000000000000000000000000062f970000000000000000000000000000000000000000000000000000000000000000",
+      "logIndex": "4",
+      "role": "other"
+    },
+    {
+      "address": "0xfffffffffffffffffffffffffffffffffffffffe",
+      "topics": [
+        "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+        "0x0000000000000000000000008366a39cc670b4001a1121b8f6a443a643e40951",
+        "0x000000000000000000000000881071c158e7a4b2ad6e03e53157d466a23d89ab"
+      ],
+      "data": "0x000000000000000000000000000000000000000000000000013fbe85edc90000",
+      "logIndex": "5",
+      "role": "native_movement"
+    },
+    {
+      "address": "0x3600000000000000000000000000000000000000",
+      "topics": [
+        "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+        "0x0000000000000000000000008366a39cc670b4001a1121b8f6a443a643e40951",
+        "0x000000000000000000000000881071c158e7a4b2ad6e03e53157d466a23d89ab"
+      ],
+      "data": "0x0000000000000000000000000000000000000000000000000000000000015f90",
+      "logIndex": "6",
+      "role": "erc20_corroboration"
+    },
+    {
+      "address": "0x69f4dc2408b78ec81bcc0219fa50c955f6a760cc",
+      "topics": [
+        "0x3c0e4e50fe4f6df27e2e086b4c492f4ae3b80628ceb13ebb8cb556112be930ea"
+      ],
+      "data": "0x0000000000000000000000000000000000000000000000000000000000015f90000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000",
+      "logIndex": "7",
+      "role": "other"
+    },
+    {
+      "address": "0xde51e7752aff8e90c0b45f9b63dc42081ccb5cc8",
+      "topics": [
+        "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+        "0x000000000000000000000000947676b3600af9dd846fca3134b23abec7f92f97",
+        "0x0000000000000000000000008366a39cc670b4001a1121b8f6a443a643e40951"
+      ],
+      "data": "0x000000000000000000000000000000000000000000017f6d8ef341abe7c4ec5f",
+      "logIndex": "8",
+      "role": "other"
+    },
+    {
+      "address": "0xfffffffffffffffffffffffffffffffffffffffe",
+      "topics": [
+        "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+        "0x0000000000000000000000008366a39cc670b4001a1121b8f6a443a643e40951",
+        "0x000000000000000000000000947676b3600af9dd846fca3134b23abec7f92f97"
+      ],
+      "data": "0x0000000000000000000000000000000000000000000000003d3376b9aed3f000",
+      "logIndex": "9",
+      "role": "native_movement"
+    },
+    {
+      "address": "0x3600000000000000000000000000000000000000",
+      "topics": [
+        "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+        "0x0000000000000000000000008366a39cc670b4001a1121b8f6a443a643e40951",
+        "0x000000000000000000000000947676b3600af9dd846fca3134b23abec7f92f97"
+      ],
+      "data": "0x0000000000000000000000000000000000000000000000000000000000434a8f",
+      "logIndex": "10",
+      "role": "erc20_corroboration"
+    }
+  ],
+  "memo": null,
+  "totals": {
+    "grossMovementNative18": "4499999000000000000",
+    "grossMovementExact": "4.499999",
+    "interfaceNative18": "4499999000000000000",
+    "naiveNative18": "8999998000000000000",
+    "naiveExact": "8.999998",
+    "phantomEligible": true
+  },
+  "proof": {
+    "logs": "consistent",
+    "trace": "incomplete",
+    "state": "matches",
+    "balances": [
+      {
+        "address": "0x000000000022d473030f116ddee9f6b43ac78ba3",
+        "expectedNative18": "0",
+        "actualNative18": "0",
+        "residualNative18": "0"
+      },
+      {
+        "address": "0x69f4dc2408b78ec81bcc0219fa50c955f6a760cc",
+        "expectedNative18": "0",
+        "actualNative18": "0",
+        "residualNative18": "0"
+      },
+      {
+        "address": "0x8366a39cc670b4001a1121b8f6a443a643e40951",
+        "expectedNative18": "-4499999000000000000",
+        "actualNative18": "-4499999000000000000",
+        "residualNative18": "0"
+      },
+      {
+        "address": "0x881071c158e7a4b2ad6e03e53157d466a23d89ab",
+        "expectedNative18": "90000000000000000",
+        "actualNative18": "90000000000000000",
+        "residualNative18": "0"
+      },
+      {
+        "address": "0x947676b3600af9dd846fca3134b23abec7f92f97",
+        "expectedNative18": "4405331680798836080",
+        "actualNative18": "4405331680798836080",
+        "residualNative18": "0"
+      },
+      {
+        "address": "0xde51e7752aff8e90c0b45f9b63dc42081ccb5cc8",
+        "expectedNative18": "0",
+        "actualNative18": "0",
+        "residualNative18": "0"
+      },
+      {
+        "address": "0xefd77206fec6a50e653e4dfaac0197b44d00a4fd",
+        "expectedNative18": "4667319201163920",
+        "actualNative18": "4667319201163920",
+        "residualNative18": "0"
+      }
+    ]
+  },
+  "limits": [
+    "USDC only; other tokens are visible as raw logs, excluded from totals.",
+    "Gross movement sums count each hop; they are not net wallet income.",
+    "Native call-value tracing does not cover USDC precompile mutations.",
+    "Memo decoding, historical fork coverage and independent provider consensus are not certified.",
+    "Digest commits to this report; it is not a cryptographic proof of blockchain consensus."
+  ],
+  "digest": "0xd45a2905f2105ef8986e6b5881f41e72ab94dacb734c82f1e983a44440c292b2"
+}
