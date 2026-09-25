@@ -1,0 +1,9 @@
+{
+  "framework": "nextjs",
+  "rootDirectory": "apps/web",
+  "sourceFilesOutsideRootDirectory": true,
+  "nodeVersion": "24.x",
+  "installCommand": "if [ -f package-lock.json ]; then npm ci; else npm ci --prefix ../..; fi",
+  "buildCommand": "npm run build",
+  "outputDirectory": null
+}

@@ -4,11 +4,11 @@ Implement ArcMirror v2 through production/mainnet validation and grant preparati
 
 ## Git state and owner workflow
 
-- Implementation `dc8035c` and handoff `a250839` are both pushed to GitHub; `origin/main` was verified at `a250839`.
+- Implementation `dc8035c`, handoff `a250839`, and access milestone `d6e739f` are pushed to GitHub.
 - Owner requires small commits at every completed milestone, followed by push when access permits. Root `AGENTS.md` records this for future agents.
 - Owner chose local GitHub sign-in as `aquattdabackup`. GCM now has that credential; repo-local credential username is set to aquattdabackup. No global account was replaced. The earlier aquattda403 and missing-login blockers are resolved.
 - Owner explicitly approved Vercel source upload and production deployment to Luong Tuan's projects, project arcmirror. Do not ask for this approval again.
-- Vercel project created: `prj_Fl4rD67BDh21Zi4pj7UeMdaT9alh`. Target alias: `arcmirror-luong-tuans-projects-a65355dc.vercel.app`. No READY deployment yet: build diagnosis is in progress.
+- Vercel project created: `prj_Fl4rD67BDh21Zi4pj7UeMdaT9alh`. Production is READY at https://arcmirror-six.vercel.app, deployment `dpl_BiNChHapbCXuHziRDX9gcg3uFxE6`. Anonymous API smoke passed; public browser/export checks are next.
 
 ## Completed software
 
@@ -30,22 +30,22 @@ ERC-20/precompile movements can have all zero native call values: logs and state
 
 ## Current deployment diagnosis and owner-only items
 
-- Vercel connector deployment works without CLI login. First two builds (`dpl_5zQE1cKg6XjCCy3beTxLwQjxvLAv`, `dpl_374YBF635QWAih4sGmKR7k4mtY7Y`) failed npm ci with missing_lock_file. Source payload included32 files, root package-lock and packages. Diagnosing rootDirectory/encoding with an explicit UTF-8 payload and sanitized file-location output; do not mark URL live until READY.
-- GitHub and Vercel destination approvals are resolved. CLI login is not currently needed for Vercel connector deployment.
+- Vercel build issue resolved via authenticated official CLI full-repository upload. Connector inline uploads flattened the web subtree and lost outside source/lockfile. Persisted project settings in docs/deployment-settings.json; root apps/web, outside-source enabled. Build completed in 24s and READY. Root .vercel/.env.local are ignored (CLI-generated OIDC credential must never be printed or committed).
+- GitHub and Vercel authorization/login are resolved. No more account permission questions are needed for these destinations.
 - MIT and builder profile confirmation remain pending; no license selected or npm publication.
 - Wallets remain deferred: need funded burner, two distinct immutable recipients and separate reward address before user-signed mainnet demos. No keys in chat.
 
 ## Remaining work
 
 - Commit and push each completed milestone promptly; continue updating this handoff.
-- Resolve Vercel build, then anonymous production/mobile/API/export/explorer checks.
+- Finish anonymous production desktop/mobile/export/explorer checks. API smoke already passed.
 - After wallets ready: prepare reviewed deployment/signatures, source verification, five owner-created confirmed scenarios and vectors.
 - Only after production/mainnet work: English application pack/requirements matrix, final link/deadline check; user presses Submit.
 - P2 memo/CSV/dust tool/MCP/OG/Dune/video not implemented. Do not add features while production is blocked.
 
 ## Handoff
 
-Start with AGENTS.md and docs/HANDOFF.md, then architecture.md, docs/validation.md, docs/deployment.md and docs/spike-findings.md. npm.cmd required on Windows; tooling may require sandbox escalation. Foundry and gitleaks binaries in ignored .local-tools. No funds moved, contract deployed, website deployed, npm publication or grant submission.
+Start with AGENTS.md and docs/HANDOFF.md, then architecture.md, docs/validation.md, docs/deployment.md and docs/spike-findings.md. npm.cmd required on Windows; tooling may require sandbox escalation. Foundry and gitleaks binaries in ignored .local-tools. No funds moved, contract deployed, npm publication or grant submission. Website is deployed and READY.
 
 The previous local next start served 127.0.0.1:3000 (tool session 35852); processes may disappear between user turns, so probe before reusing. The previous persistent browser PowerShell session 12855 owned agent-browser sessions arcmirror and arc-export-final. Browsers launched from short-lived exec cells can disappear; use persistent parent or verify session state. Keep browser snapshots separate from production evidence.
 

@@ -1,0 +1,18 @@
+{
+  "checkedAt": "2026-09-25",
+  "url": "https://arcmirror-six.vercel.app",
+  "target": "production",
+  "readyState": "READY",
+  "deploymentId": "dpl_BiNChHapbCXuHziRDX9gcg3uFxE6",
+  "deploymentUrl": "https://arcmirror-i1k19q9yl-luong-tuans-projects-a65355dc.vercel.app",
+  "projectId": "prj_Fl4rD67BDh21Zi4pj7UeMdaT9alh",
+  "teamId": "team_Yg9wzjkNzBRPceQM3wdOWbLs",
+  "framework": "Next.js 16.3.6",
+  "nodeVersion": "24.x",
+  "applicationSourceCommit": "dc8035c",
+  "repositoryHeadAtDeploy": "d6e739f",
+  "configuration": "docs/deployment-settings.json",
+  "buildDurationReported": "24 seconds",
+  "anonymousApiSmoke": "passed",
+  "browserSmoke": "in progress"
+}

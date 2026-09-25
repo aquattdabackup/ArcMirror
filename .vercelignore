@@ -3,7 +3,7 @@ node_modules
 artifacts
 contracts
 vectors
-docs/evidence
+docs/
 .git
 .env
 .env.*

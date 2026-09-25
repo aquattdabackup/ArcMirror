@@ -2,24 +2,28 @@
 
 ## Current state
 
-The Next.js production build and core build run locally. The owner explicitly approved the Vercel destination on 2026-09-25, resolving the earlier automatic approval rejection. GitHub login as aquattdabackup and source push are complete.
+**Production is READY:** https://arcmirror-six.vercel.app
 
-Vercel project **arcmirror** has been created in **Luong Tuan's projects**, team `team_Yg9wzjkNzBRPceQM3wdOWbLs`, project `prj_Fl4rD67BDh21Zi4pj7UeMdaT9alh`. Target alias: `arcmirror-luong-tuans-projects-a65355dc.vercel.app`. Builds are not READY yet; root lockfile detection is being diagnosed. Do not treat the alias as a verified live product yet. The connector can deploy without CLI login.
+Deployed on 2026-09-25 to the owner's explicitly approved Vercel team. Project: `prj_Fl4rD67BDh21Zi4pj7UeMdaT9alh`; deployment: `dpl_BiNChHapbCXuHziRDX9gcg3uFxE6`. GitHub login/push and Vercel CLI login are complete. [Deployment record](evidence/production/deployment.json) and [anonymous API smoke result](evidence/production/api-smoke.txt). Public browser/export verification is in progress.
+
+The connector's inline-file deployments built only the web subtree, leaving out the workspace lockfile and shared source. The official authenticated CLI upload preserved the full monorepo and built successfully. Use CLI deployments from repository root with the project linked. Failed diagnostic builds were not promoted as working releases.
 
 ## Approved website configuration
 
-Use the existing [GitHub repository](https://github.com/aquattdabackup/ArcMirror). Use the newly created Vercel project `arcmirror` in the approved team. Do not modify unrelated projects or upgrade billing.
+Use the existing [GitHub repository](https://github.com/aquattdabackup/ArcMirror). Use the existing Vercel project `arcmirror` in the approved team. Do not modify unrelated projects or upgrade billing.
 
 - Framework: Next.js.
 - Root Directory: `apps/web`.
 - Include source files outside Root Directory: enabled (workspace imports use `packages/core` and `packages/rpc`).
-- Install: npm with repository `package-lock.json` (`npm ci` at workspace root).
-- Build: default Next.js `next build` from `apps/web`.
+- Install: `if [ -f package-lock.json ]; then npm ci; else npm ci --prefix ../..; fi`, using the root lockfile whether install starts in root or apps/web.
+- Build: `npm run build` from `apps/web` (runs next build); default output directory.
 - Node: a supported Node 22+ version; local testing used Node 24.
 - Optional server-only variables: `ARC_RPC_URLS`, `ARC_TRACE_RPC_URLS`; public defaults work without a key at observation time.
 - No wallet key, deploy key or reward wallet belongs in application environment variables.
 
 After deployment, record the real project/deployment ID, production URL, commit and timestamp. Open in an unauthenticated browser; test home, all examples, malformed/unknown hashes, how-it-works, JSON download, re-verify live, health/examples/analyze APIs, mobile layout and explorer links. Check headers and browser errors. Update README only with links verified against the deployed build.
+
+Reproducible settings: [deployment-settings.json](deployment-settings.json). With Vercel CLI 59.26.0 authenticated, link the repository to this project and run `vercel deploy --prod --yes --scope luong-tuans-projects-a65355dc`. The generated `.vercel` and `.env.local` are ignored; never commit their credentials.
 
 ## Contract, after wallet preparation
 
@@ -31,7 +35,7 @@ Once deployment is mined, record actual address, hash, ABI, compiler settings an
 
 ## Release checklist still requiring real evidence
 
-- Public website and anonymous production smoke test.
+- Public website and anonymous API smoke test: complete. Browser/export release checks are in progress.
 - Lab deployed and mainnet behavior checked; five owner-created transactions recorded.
 - License and builder profile confirmed; separate reward wallet prepared.
 - README and snapshots use real confirmed artifacts.

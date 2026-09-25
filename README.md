@@ -6,10 +6,10 @@ Explorers show you what happened. ArcMirror shows you why the numbers add up, an
 
 ArcMirror explains Arc mainnet USDC movements, exact gas costs and their source evidence. Native USDC uses 18 decimals; the ERC-20 interface uses 6. Adding both log streams can count a movement twice. Paste a transaction hash or open a saved real example. No wallet, signature or payment is required to use the analyzer.
 
-**Status:** working local production build; public hosting and owner-signed mainnet Lab scenarios are pending. This is an onchain evidence analysis tool, not an audit service, custody service or refund guarantee.
+**Status:** deployed on Arc mainnet as a read-only analyzer. Owner-signed Lab scenarios remain pending. This is an onchain evidence analysis tool, not an audit service, custody service or refund guarantee.
 
 - [Repository](https://github.com/aquattdabackup/ArcMirror)
-- Website: not deployed yet. Local address: http://localhost:3000
+- [Live website](https://arcmirror-six.vercel.app) (production); local address: http://localhost:3000
 - Lab contract: tested locally, not deployed; no mainnet deployment address exists.
 - [Validation](docs/validation.md), [spike findings](docs/spike-findings.md), [existing tools and overlap](docs/landscape.md)
 

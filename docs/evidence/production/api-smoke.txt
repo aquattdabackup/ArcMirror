@@ -1,0 +1,8 @@
+{
+  "base": "https://arcmirror-six.vercel.app",
+  "health": "pass",
+  "snapshots": 3,
+  "invalidHash": "pass",
+  "unknownHash": "pass",
+  "securityHeaders": "pass"
+}
