@@ -20,7 +20,7 @@ Read `architecture.md`, `task_on_progress.md`, and `docs/HANDOFF.md` before expl
 - Do not request keys, seeds, passwords or tokens in chat. Wallet signing stays local to the owner.
 - No funds move until exact chain, recipients, amounts and gas have been reviewed and signed by the owner.
 - No MIT license, npm publication or final grant submission without the required owner action. License remains undecided.
-- Vercel source upload was explicitly rejected by automatic approval review for missing destination/account approval. Do not bypass via another deploy tool or Git-triggered deployment. Obtain explicit permission for the existing team/project destination in `docs/deployment.md`.
+- Owner explicitly approved uploading source and deploying a new `arcmirror` project in Vercel team **Luong Tuan's projects** (`luong-tuans-projects-a65355dc`) on 2026-09-25. This resolves the earlier automatic review rejection; do not ask again for this destination. Do not modify unrelated projects or change billing.
 - Public third-party transactions are valid example evidence, but not the owner's five requested mainnet demos.
 - Native call-value traces cannot verify USDC precompile mutations. Preserve `needs_review` where coverage is incomplete.
 - Secret-scan staged source and full Git history before publication. Ignore build outputs, downloaded tools, credentials and environment files.

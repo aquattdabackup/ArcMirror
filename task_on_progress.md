@@ -4,11 +4,11 @@ Implement ArcMirror v2 through production/mainnet validation and grant preparati
 
 ## Git state and owner workflow
 
-- Implementation is committed locally as `dc8035c`. GitHub `origin/main` is still `b7533fc` because no push succeeded.
-- The owner now explicitly requires small commits at every completed milestone and pushes when access permits. This is recorded in root `AGENTS.md` for every future agent.
-- `docs/HANDOFF.md` contains a portable continuation prompt; `docs/product-brief.vi.md` preserves the original supplied specification. The next AI does not need this conversation.
-- The first push attempt was not executed because automatic approval review hit its usage limit. On the owner's explicit continuation, normal review succeeded and Git ran, but GitHub returned 403: account `aquattda` lacks write access to `aquattdabackup/ArcMirror`.
-- A noninteractive retry targeting `aquattdabackup` found no stored credential and did not push. No global credentials were changed. Owner must log into that account locally or grant the current account write access.
+- Implementation `dc8035c` and handoff `a250839` are both pushed to GitHub; `origin/main` was verified at `a250839`.
+- Owner requires small commits at every completed milestone, followed by push when access permits. Root `AGENTS.md` records this for future agents.
+- Owner chose local GitHub sign-in as `aquattdabackup`. GCM now has that credential; repo-local credential username is set to aquattdabackup. No global account was replaced. The earlier aquattda403 and missing-login blockers are resolved.
+- Owner explicitly approved Vercel source upload and production deployment to Luong Tuan's projects, project arcmirror. Do not ask for this approval again.
+- Vercel project created: `prj_Fl4rD67BDh21Zi4pj7UeMdaT9alh`. Target alias: `arcmirror-luong-tuans-projects-a65355dc.vercel.app`. No READY deployment yet: build diagnosis is in progress.
 
 ## Completed software
 
@@ -28,18 +28,17 @@ Desktop/mobile local UI, source logs, amount expansion, phantom comparison, bala
 
 ERC-20/precompile movements can have all zero native call values: logs and state match but call coverage is incomplete. Never promote this example to verified. Native example does reconcile all 3 supported views. Native 18 / ERC 6, emitter addresses and chain 5042 measured from mainnet. Memo identity and genesis/fork coverage unverified. Dune already deduplicates these streams.
 
-## Blockers requiring owner actions
+## Current deployment diagnosis and owner-only items
 
-0. GitHub push needs account access as described above. An async question asks whether to log in as aquattdabackup or grant aquattda write access; awaiting the owner's choice.
-1. Automatic review explicitly rejected `vercel_deploy_to_vercel` because source upload destination/account was not explicitly approved. Visible team: Luong Tuan's projects (`luong-tuans-projects-a65355dc`). No ArcMirror project existed; no website has been deployed. Do not bypass rejection via another deploy tool or indirect Git automation. The concrete source is tested and committed. An async question now asks for explicit permission to create `arcmirror` in this team; awaiting reply.
-2. Vercel CLI is logged out; connector visibility does not imply CLI auth. Interactive login may be needed after destination approval.
-3. MIT and builder profile aquattdabackup await confirmation. All packages private; Solidity UNLICENSED; no LICENSE yet.
-4. Need owner-controlled funded burner, two distinct immutable recipient addresses and separate reward wallet. Never accept keys/seeds in chat. All spending is user-signed after exact amounts/gas review.
+- Vercel connector deployment works without CLI login. First two builds (`dpl_5zQE1cKg6XjCCy3beTxLwQjxvLAv`, `dpl_374YBF635QWAih4sGmKR7k4mtY7Y`) failed npm ci with missing_lock_file. Source payload included32 files, root package-lock and packages. Diagnosing rootDirectory/encoding with an explicit UTF-8 payload and sanitized file-location output; do not mark URL live until READY.
+- GitHub and Vercel destination approvals are resolved. CLI login is not currently needed for Vercel connector deployment.
+- MIT and builder profile confirmation remain pending; no license selected or npm publication.
+- Wallets remain deferred: need funded burner, two distinct immutable recipients and separate reward address before user-signed mainnet demos. No keys in chat.
 
 ## Remaining work
 
-- Keep committing each completed milestone locally. Resolve GitHub access, scan the final staged source/history, then push all local commits to the authorized origin. Record the actual remote hash. Do not trigger Vercel deployment until the separate destination question is approved.
-- After hosting permission/login: create new project with root apps/web and outside-root source enabled; anonymous production/mobile/API/export/explorer checks.
+- Commit and push each completed milestone promptly; continue updating this handoff.
+- Resolve Vercel build, then anonymous production/mobile/API/export/explorer checks.
 - After wallets ready: prepare reviewed deployment/signatures, source verification, five owner-created confirmed scenarios and vectors.
 - Only after production/mainnet work: English application pack/requirements matrix, final link/deadline check; user presses Submit.
 - P2 memo/CSV/dust tool/MCP/OG/Dune/video not implemented. Do not add features while production is blocked.

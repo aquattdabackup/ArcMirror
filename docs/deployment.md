@@ -2,13 +2,13 @@
 
 ## Current state
 
-The Next.js production build and core build run locally. No ArcMirror Vercel project, production URL or Lab deployment has been created. Do not substitute local screenshots for production validation.
+The Next.js production build and core build run locally. The owner explicitly approved the Vercel destination on 2026-09-25, resolving the earlier automatic approval rejection. GitHub login as aquattdabackup and source push are complete.
 
-Automatic approval review rejected the connector deployment action because uploading source to the connected Vercel account had not been explicitly authorized. Do not retry through a different tool until the owner authorizes this destination. The visible destination is **Luong Tuan's projects**, slug `luong-tuans-projects-a65355dc`. CLI authentication is currently absent; connector visibility does not imply CLI login.
+Vercel project **arcmirror** has been created in **Luong Tuan's projects**, team `team_Yg9wzjkNzBRPceQM3wdOWbLs`, project `prj_Fl4rD67BDh21Zi4pj7UeMdaT9alh`. Target alias: `arcmirror-luong-tuans-projects-a65355dc.vercel.app`. Builds are not READY yet; root lockfile detection is being diagnosed. Do not treat the alias as a verified live product yet. The connector can deploy without CLI login.
 
-## Website, after owner destination approval
+## Approved website configuration
 
-Use the existing [GitHub repository](https://github.com/aquattdabackup/ArcMirror). Create a new Vercel project named `arcmirror` in the approved team. Do not modify unrelated projects or upgrade billing.
+Use the existing [GitHub repository](https://github.com/aquattdabackup/ArcMirror). Use the newly created Vercel project `arcmirror` in the approved team. Do not modify unrelated projects or upgrade billing.
 
 - Framework: Next.js.
 - Root Directory: `apps/web`.

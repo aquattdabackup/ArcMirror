@@ -6,15 +6,15 @@
 
 ## Current deliverable
 
-The working analyzer, Next.js application, RPC adapter, CLI, mainnet fixtures and locally tested Lab contract are implemented. Implementation commit: **`dc8035c`**. Local build, TypeScript, 37 application tests, 10 spike tests and 16 Foundry tests passed (256 fuzz runs). Read `docs/validation.md` for outputs and actual local browser checks.
+The working analyzer, Next.js application, RPC adapter, CLI, mainnet fixtures and locally tested Lab contract are implemented. Implementation commit: **`dc8035c`**; handoff commit: **`a250839`**. Both are pushed to GitHub. Local build, TypeScript, 37 application tests, 10 spike tests and 16 Foundry tests passed (256 fuzz runs). Read `docs/validation.md` for outputs and actual local browser checks.
 
 The actual browser-generated ERC-20 JSON matched its entire fixture and a fresh mainnet CLI analysis. Browser disk download and clipboard read could not be fully certified on the automated Windows surface. Do not repeat all tests just to understand the project; investigate the remaining release checks at deployment time.
 
 ## Continue in this order
 
 1. Inspect `git status --short`, `git log -3 --oneline`, and `git log --oneline origin/main..HEAD`. Preserve local milestone commits. Push only through normal authorized GitHub access; do not bypass approval or use unrelated credentials.
-2. Resolve the recorded GitHub authentication outcome in `task_on_progress.md`. The first ordinary push used account `aquattda`, which GitHub denied write access to repository owner `aquattdabackup` (HTTP 403). A noninteractive repository-owner credential retry found no saved login. The owner must log in locally or grant the current account write access. No push has succeeded.
-3. Get explicit Vercel destination approval for a new `arcmirror` project in **Luong Tuan's projects** (`luong-tuans-projects-a65355dc`). Do not interpret generic continuation as resolving the previous explicit rejection. See `docs/deployment.md` for ready-to-use root/build settings. CLI login is currently absent.
+2. GitHub authentication is resolved: GCM has aquattdabackup and the repo-local username selects it. Push verified milestone commits normally. No global account was replaced.
+3. Vercel destination is explicitly approved by the owner. Project arcmirror exists in **Luong Tuan's projects** (`luong-tuans-projects-a65355dc`), ID `prj_Fl4rD67BDh21Zi4pj7UeMdaT9alh`. Connector deployment needs no CLI login. Builds currently fail while locating the root lockfile; follow the current diagnosis in `task_on_progress.md`, then complete deployment without re-asking permission.
 4. After deployment, perform public anonymous UI/API/mobile/export/explorer smoke checks and record only the real URL and result.
 5. When the owner prepares wallets: confirm two immutable public recipients, use local encrypted signing, show exact values/gas before signing, deploy Lab and record five real owner-created scenarios. No wallet or key exists in this repo.
 6. Confirm MIT and public builder profile, prepare the grant pack after production/mainnet evidence exists; the owner submits.
@@ -24,7 +24,7 @@ The actual browser-generated ERC-20 JSON matched its entire fixture and a fresh 
 - Owner already confirmed no Circle/Arc funding and software-first implementation. Do not re-ask.
 - Every meaningful increment now requires a prompt small commit, plus a push when access permits. If push is blocked, report local vs remote clearly.
 - Public native example has matching logs, call values and balance changes. ERC-20 example has matching logs/state but zero native call values through a precompile: **needs_review**, never verified.
-- No public website, deployed Lab, owner-created demos, npm publication or grant submission exists yet.
+- No READY public deployment yet; the Vercel project exists and build diagnosis is underway. No deployed Lab, owner-created demos, npm publication or grant submission.
 - No MIT license has been granted; packages remain private and Solidity UNLICENSED.
 - P2 features are deferred. Avoid extra features while release/account steps remain unresolved.
 
