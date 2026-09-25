@@ -113,7 +113,7 @@ flowchart LR
 - Basic CSP/security headers are configured. Inline scripts/styles remain allowed for the Next.js bootstrap; nonce-based CSP is not implemented.
 - Contract mock tests do not emulate Arc's native/ERC-20 shared balance or mainnet system logs. The read-only production smoke passed. Lab validation on mainnet and at least five owner-created transactions remain required.
 - Gitleaks and dependency checks are recorded in [validation](docs/validation.md); these are not an audit.
-- [Deployment and owner setup](docs/deployment.md), [eligibility](docs/eligibility.md). The user performs the final grant submission.
+- [Deployment and owner setup](docs/deployment.md), [eligibility](docs/eligibility.md), [application draft](docs/application-draft.md). The draft marks pending Lab/demo/reward-wallet fields; the user performs the final grant submission.
 
 ## Continue with another coding agent
 

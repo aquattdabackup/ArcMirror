@@ -14,8 +14,8 @@ The working product reads Arc mainnet; its website is on Vercel. The Lab is loca
 
 ## Exact next work
 
-1. Check whether the production-evidence and application-draft milestones have been committed/pushed; task_on_progress.md is authoritative. Owner requires prompt milestone commits.
-2. Finish the English application draft using only real URLs/evidence, clearly pending Lab/demos/reward wallet. Official grant page rechecked 2026-09-25; recheck before submission.
+1. Check git status/log and origin/main. MIT milestone 272baa9 and production-evidence milestone 4bfa74d are pushed; the application-draft/handoff milestone follows them. Owner requires prompt milestone commits.
+2. [English application draft](application-draft.md) is ready, including 100-word description and reviewer tour. Lab/demos/reward wallet remain pending. Official grant page rechecked 2026-09-25; DoraHacks requires human verification. Recheck and finalize after real owner-created mainnet artifacts exist.
 3. When the owner prepares wallets, obtain only public burner/recipient/reward addresses. Review exact chain, constructor, amounts and gas; owner signs locally. Record real Lab deployment/source verification and five confirmed owner-created scenarios.
 4. Update vectors/docs/application matrix from actual receipts. Owner performs final submission. No npm publication is authorized.
 

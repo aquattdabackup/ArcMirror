@@ -40,5 +40,5 @@ Once deployment is mined, record actual address, hash, ABI, compiler settings an
 - MIT and builder profile confirmed; separate reward wallet still pending.
 - README and snapshots use real confirmed artifacts.
 - Final history secret scan, dependency review, tests and build complete.
-- Grant page/link check and English application pack after production/mainnet work.
+- [English application draft](application-draft.md) prepared; program page rechecked 2026-09-25. Finalize pending Lab/demo/reward fields and recheck links before submission.
 - Owner presses the final submission button.

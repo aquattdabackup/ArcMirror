@@ -6,7 +6,7 @@ Continue ArcMirror v2 through owner-created mainnet demos and grant preparation.
 
 - No prior Circle/Arc funding confirmed. Owner approved MIT and builder profile https://github.com/aquattdabackup on 2026-09-25. No need to re-ask.
 - Small verified milestone commits and prompt pushes are required. GitHub authentication as aquattdabackup works through repo-local credential selection; global account was not replaced.
-- Latest pushed milestone before this production-evidence update: 272baa9 (MIT/profile). Earlier milestones: dc8035c implementation, a250839 handoff, d6e739f access, 0c77b1e production deployment/API smoke. Check git status/log and origin/main for the latest exact state.
+- Pushed milestones: 272baa9 MIT/profile and 4bfa74d production browser/export evidence. Earlier: dc8035c implementation, a250839 handoff, d6e739f access, 0c77b1e deployment/API smoke. The application-draft/handoff milestone accompanies this checkout; check git status/log and origin/main for its exact hash.
 - Vercel team Luong Tuan's projects/project arcmirror is approved. Current deployment dpl_BiNChHapbCXuHziRDX9gcg3uFxE6 is READY. There is no active approval/authentication blocker; the temporary automatic-review usage error was resolved by the later successful run.
 
 ## Completed and verified
@@ -20,7 +20,7 @@ Continue ArcMirror v2 through owner-created mainnet demos and grant preparation.
 
 ## Remaining work
 
-1. Commit/push this verified production-evidence update. Prepare a concise English application draft with honest pending Lab/demo/reward-address fields; rechecked official grant page on 2026-09-25. No submission.
+1. English draft is ready at docs/application-draft.md: 100-word description, longer description, real links, reviewer tour and requirement matrix; Lab/demo/reward fields are explicitly pending. Official grant and Arc/Dune sources rechecked 2026-09-25. DoraHacks registration reached Human Verification; no form fields inspected or submitted.
 2. Once owner supplies funded burner, two distinct controlled public recipients and separate reward address: prepare exact chain 5042 transaction/constructor/gas for owner-local signing. Deploy Lab, verify source if supported, then record five owner-created confirmed scenarios and vectors.
 3. Complete final application matrix/link check after those artifacts exist; owner presses Submit.
 4. P2 memo/CSV/dust tool/MCP/OG/Dune/video remain deferred. Do not add unrelated features.
@@ -29,7 +29,7 @@ Continue ArcMirror v2 through owner-created mainnet demos and grant preparation.
 
 Read AGENTS.md, architecture.md, docs/HANDOFF.md and only targeted source. Original specification is docs/product-brief.vi.md. Current deployment settings in docs/deployment-settings.json; use linked official Vercel CLI from repo root. Connector inline uploads lost workspace files. .vercel and .env.local are ignored; never print their credentials.
 
-Use npm.cmd on Windows. Gitleaks/Foundry are in ignored .local-tools. Node tooling can require sandbox escalation; preserve actual failures vs checks that later passed. The production browser ran in persistent PowerShell 36116, agent-browser arc-anonymous, isolated Edge InPrivate CDP 9335; sessions can expire. Don't assume old sessions exist. Short-lived exec parents can kill their browser daemons.
+Use npm.cmd on Windows. Gitleaks/Foundry are in ignored .local-tools. Node tooling can require sandbox escalation; preserve actual failures vs checks that later passed. Production browser sessions were closed after verification. For future checks, use an isolated browser profile and a persistent parent process: short-lived exec parents can kill browser daemons. Installed Edge succeeded at normal file download where cached Chromium failed.
 
 No funds moved, contract deployed, npm package published or grant submitted. Keep this file until the remaining original task is complete. Before handing off, update docs/HANDOFF.md, commit/push and regenerate ignored artifacts/ArcMirror-handoff.bundle from main only (not --all).
 
