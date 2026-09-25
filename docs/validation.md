@@ -15,7 +15,7 @@ Checked locally on **2026-09-25**. These are actual local build/RPC/browser chec
 | Production dependency audit | 0 reported vulnerabilities | [npm result](evidence/validation/dependency-audit.json) |
 | Source publication scan | Gitleaks: no leaks in Git-visible source files | [result](evidence/validation/gitleaks-publication.json) |
 | Exact staged-source scan | Gitleaks: no leaks before commit | [result](evidence/validation/gitleaks-staged.json) |
-| Initial full Git history scan | Gitleaks: no leaks in initial public history | [result](evidence/validation/gitleaks-history.json) |
+| Full pre-push Git history scan | Gitleaks: no leaks in both the initial and implementation commits | [result](evidence/validation/gitleaks-history.json) |
 
 ## Browser checks
 
@@ -37,7 +37,7 @@ Chromium's download helper and a normal download click both reported **Failed - 
 
 ## Security scan scope
 
-The first broad directory scan included ignored generated Next.js preview/action keys and downloaded tool documentation examples (8 findings). These were inspected as generated/tool files, not application credentials. The publication scan used the exact Git-visible source list, excluding ignored `.next`, `.local-tools`, real env files and artifacts; it returned no findings. Do not publish build caches or tool directories. A staged-source and complete-history scan is required again immediately before pushing.
+The first broad directory scan included ignored generated Next.js preview/action keys and downloaded tool documentation examples (8 findings). These were inspected as generated/tool files, not application credentials. The publication scan used the exact Git-visible source list, excluding ignored `.next`, `.local-tools`, real env files and artifacts; it returned no findings. Do not publish build caches or tool directories. The exact staged source and complete history including implementation commit `dc8035c` were subsequently scanned without findings. Repeat these checks for later milestone changes before pushing.
 
 The dependency scan and tests are not a security audit. Rate limits/cache are per process, CSP permits inline bootstrap/styles, public providers can throttle, and no independent provider consensus or full historical coverage is claimed.
 

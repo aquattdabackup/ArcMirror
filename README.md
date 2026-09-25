@@ -115,6 +115,10 @@ flowchart LR
 - Gitleaks and dependency checks are recorded in [validation](docs/validation.md); these are not an audit.
 - [Deployment and owner setup](docs/deployment.md), [eligibility](docs/eligibility.md). The user performs the final grant submission.
 
+## Continue with another coding agent
+
+Read [AGENTS.md](AGENTS.md) and [the portable handoff](docs/HANDOFF.md). They preserve the owner's decisions, small-commit workflow, current blockers and next steps. [Project memory](task_on_progress.md) records local versus remote Git state; the [original brief](docs/product-brief.vi.md) is included for agents without access to this chat.
+
 ## License
 
 License selection awaits the owner's confirmation. No MIT license has been applied. Packages are private and Solidity currently uses `UNLICENSED`; source visibility does not grant an open-source license.

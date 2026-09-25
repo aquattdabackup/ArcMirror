@@ -38,3 +38,7 @@
 - `vectors`: three third-party mainnet samples, explicitly not owner-created demos.
 - `docs/validation.md`: actual checks. `docs/deployment.md`: deployment settings/remaining owner steps. `task_on_progress.md`: temporary task status.
 - Owner confirmed no Circle/Arc funding and authorized software-first; wallets remain deferred. License unconfirmed, private npm packages and Solidity UNLICENSED.
+
+## Agent continuity
+
+Root `AGENTS.md` records owner instructions to commit every completed milestone, push when authorized access works, and maintain portable handoff context. New agents start with it, `docs/HANDOFF.md` and `task_on_progress.md`; the original prompt is retained in `docs/product-brief.vi.md`. Git authentication and deployment approvals are tracked separately from software completion.
