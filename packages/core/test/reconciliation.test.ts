@@ -1,7 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
-import { parsePayoutCsv } from "../src/reconciliation";
+import { parsePayoutCsv, reconcilePayouts } from "../src/reconciliation";
 import { parseUsdc, precisionBreakdown, MAX_UINT256 } from "../src/precision";
 import type { Report } from "../src/types";
 const report: Report = JSON.parse(
@@ -17,6 +17,24 @@ const first = report.movements[0];
 const header = "id,payer,recipient,amount_usdc\n";
 const line = (id: string, amount = "0.09") =>
   `${id},${first.payer},${first.payee},${amount}`;
+test("CSV matches mainnet canonical movements once, preserves evidence grade and excludes gas", () => {
+  const csv =
+    header +
+    report.movements
+      .map((m, i) => `${i},${m.payer},${m.payee},${m.amountExact}`)
+      .join("\n");
+  const result = reconcilePayouts(parsePayoutCsv(csv), report);
+  assert.deepEqual(result.counts, {
+    expected: 2,
+    matched: 2,
+    amountMismatch: 0,
+    missing: 0,
+    unassigned: 0,
+  });
+  assert.equal(result.matchedTotalExact, "4.499999");
+  assert.equal(result.evidenceLevel, "needs_review");
+  assert.equal(result.rows[0].movement?.sourceLogIndex, "5");
+});
 test("CSV accepts BOM, CRLF and quoted fields, rejects malformed/ambiguous input", () => {
   assert.equal(
     parsePayoutCsv(
