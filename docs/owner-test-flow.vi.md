@@ -161,7 +161,17 @@ npm.cmd test
 npm.cmd run test:spike
 npm.cmd run typecheck
 npm.cmd run build
+```
+
+Sau khi build xong, giữ server chạy ở Terminal A:
+
+```powershell
 npm.cmd start
+```
+
+Mở Terminal B trong cùng thư mục để chạy smoke test:
+
+```powershell
 node scripts/smoke.mjs http://127.0.0.1:3000
 ```
 
