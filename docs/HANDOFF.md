@@ -14,7 +14,7 @@ The working product reads Arc mainnet; its website is on Vercel. The Lab is loca
 
 ## Active feature expansion
 
-Owner requested more relevant features and approved the order: CSV payout reconciliation, local JSON report inspector/comparison, Dust Lab. Complete/test/deploy this work before resuming funding. See docs/feature-expansion.md and task_on_progress.md for current milestone status. The program has no published feature cap/freeze before submission; post-submission review of updates is unspecified.
+Owner requested more relevant features and approved the order: CSV payout reconciliation, local JSON report inspector/comparison, Dust Lab. CSV was committed/pushed as a2787c8. JSON inspector and Dust Lab are implemented with local checks in progress; consult task_on_progress.md before restarting any work. Finish verification and deploy before resuming funding. See docs/feature-expansion.md and task_on_progress.md for current milestone status. The program has no published feature cap/freeze before submission; post-submission review of updates is unspecified.
 
 ## Exact next work
 

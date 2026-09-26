@@ -110,13 +110,18 @@ export function TransactionReport({ initial }: { initial: Result }) {
           </h1>
         </div>
         <div className="report-actions">
-          <Link className="button" href={"/tools/reconcile?tx=" + r.txHash}>Reconcile CSV</Link>
+          <Link className="button" href={"/tools/reconcile?tx=" + r.txHash}>
+            Reconcile CSV
+          </Link>
           <button className="button" onClick={copy}>
             Copy link
           </button>
           <button className="button primary" onClick={download}>
             Download JSON
           </button>
+          <Link className="button" href="/tools/inspect">
+            Inspect saved JSON
+          </Link>
         </div>
       </div>
       <div className="transaction-meta">

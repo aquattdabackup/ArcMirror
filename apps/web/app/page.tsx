@@ -178,6 +178,19 @@ export default function Home() {
           ArcMirror. Owner-created lab examples are planned.
         </p>
       </section>
+      <section className="shell tools-home">
+        <div>
+          <span className="eyebrow">PUT THE EVIDENCE TO WORK</span>
+          <h2>A workbench for exact answers.</h2>
+          <p>
+            Reconcile a payout CSV, compare downloaded reports, or explore the
+            smallest USDC amounts.
+          </p>
+        </div>
+        <Link href="/tools" className="button primary">
+          Open the tools <Arrow />
+        </Link>
+      </section>
       <section className="shell why-section">
         <div className="why-heading">
           <div className="eyebrow">BUILT TO BE CHECKED</div>

@@ -20,10 +20,19 @@ for (const example of examples.data) {
   assert.equal(value.data.report.status, 'confirmed_success');
   assert.match(value.data.report.digest, /^0x[0-9a-f]{64}$/);
 }
+const pages = [
+  ['/tools', 'From numbers'], ['/tools/reconcile', 'Expected. Observed.'],
+  ['/tools/inspect', 'Trust starts'], ['/tools/dust', 'Every last digit'],
+];
+for (const [path, content] of pages) {
+  const response = await fetch(new URL(path, base), {signal: AbortSignal.timeout(30000)});
+  assert.equal(response.status, 200, path);
+  assert.ok((await response.text()).includes(content), path + ' expected heading');
+}
 const invalid = await request('/api/analyze/not-a-hash');
 assert.equal(invalid.response.status, 400);
 assert.equal(invalid.data.report.status, 'unsupported_format');
 const unknown = await request('/api/analyze/0x' + '0'.repeat(64));
 assert.equal(unknown.response.status, 404);
 assert.equal(unknown.data.report.status, 'not_found');
-console.log(JSON.stringify({base:base.origin,health:'pass',snapshots:3,invalidHash:'pass',unknownHash:'pass',securityHeaders:'pass'},null,2));
+console.log(JSON.stringify({base:base.origin,health:'pass',snapshots:3,invalidHash:'pass',unknownHash:'pass',securityHeaders:'pass',toolPages:pages.length},null,2));

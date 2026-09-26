@@ -119,6 +119,7 @@ export function ReconcileTool({
             <textarea
               id="payout-csv"
               rows={9}
+            maxLength={CSV_MAX_BYTES}
               spellCheck={false}
               value={csv}
               onChange={(e) => {

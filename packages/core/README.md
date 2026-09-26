@@ -32,3 +32,5 @@ Tests run from repository root with `npm test`; real fixtures live in `vectors/`
 `@arcmirror/core/reconciliation` exports `parsePayoutCsv` and `reconcilePayouts`. CSV columns are `id,payer,recipient,amount_usdc`; limits are 500 payments and 256 KB. A row matches one canonical movement by payer, recipient and exact 18-decimal amount. Failed receipts or incomplete log evidence are rejected. Evidence grades remain unchanged.
 
 `@arcmirror/core/precision` exports `parseUsdc` and `precisionBreakdown`; arithmetic uses bigint, never floating-point money.
+
+`@arcmirror/core/inspection` exports `inspectReportJson` and `compareReports`. Inspection validates a bounded schema 1.0.0 Arc report without stripping unknown fields, then checks its digest. This is structure/integrity, not authenticity or evidence validation. Comparison returns up to 200 JSON-pointer paths; array order matters.

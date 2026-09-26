@@ -40,7 +40,7 @@ export default async function ReconcilePage({
       <ReconcileTool
         sample={sample}
         sampleCsv={csv}
-        initialHash={typeof tx === "string" ? tx.slice(0, 66) : ""}
+        initialHash={typeof tx === "string" ? tx.slice(0, 256) : ""}
       />
     </div>
   );

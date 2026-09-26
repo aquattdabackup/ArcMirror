@@ -15,6 +15,10 @@
     "./precision": {
       "types": "./dist/precision.d.ts",
       "import": "./dist/precision.js"
+    },
+    "./inspection": {
+      "types": "./dist/inspection.d.ts",
+      "import": "./dist/inspection.js"
     }
   },
   "dependencies": {
