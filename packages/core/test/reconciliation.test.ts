@@ -57,6 +57,14 @@ test("exact matches take priority over mismatch candidates regardless of CSV ord
   assert.equal(mismatch.rows[0].candidates[0].amountExact, "0.09");
   assert.equal(mismatch.counts.unassigned, 2);
 });
+test("wrong payer or recipient is not a match", () => {
+  const rows = parsePayoutCsv(header + line("A"));
+  rows[0].payer = first.payee;
+  assert.equal(reconcilePayouts(rows, report).counts.matched, 0);
+  rows[0].payer = first.payer;
+  rows[0].recipient = first.payer;
+  assert.equal(reconcilePayouts(rows, report).counts.matched, 0);
+});
 test("CSV accepts BOM, CRLF and quoted fields, rejects malformed/ambiguous input", () => {
   assert.equal(
     parsePayoutCsv(
