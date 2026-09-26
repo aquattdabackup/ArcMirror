@@ -140,3 +140,51 @@ export function inspectReportJson(input: string): InspectedReport {
     digestMatches: computedDigest === report.digest.toLowerCase(),
   };
 }
+export interface ReportDifference {
+  path: string;
+  before: string;
+  after: string;
+}
+/** JSON-pointer paths, bounded output; array order is significant to the digest. */
+export function compareReports(before: Report, after: Report) {
+  const differences: ReportDifference[] = [];
+  let truncated = false;
+  const render = (value: unknown) =>
+    value === undefined ? "(absent)" : canonicalJson(value);
+  function visit(a: unknown, b: unknown, path: string) {
+    if (truncated || render(a) === render(b)) return;
+    if (
+      a !== null &&
+      b !== null &&
+      typeof a === "object" &&
+      typeof b === "object" &&
+      Array.isArray(a) === Array.isArray(b)
+    ) {
+      const aa = a as Record<string, unknown>,
+        bb = b as Record<string, unknown>;
+      for (const key of new Set([...Object.keys(aa), ...Object.keys(bb)]))
+        visit(
+          aa[key],
+          bb[key],
+          path + "/" + key.replaceAll("~", "~0").replaceAll("/", "~1"),
+        );
+      return;
+    }
+    if (differences.length === 200) {
+      truncated = true;
+      return;
+    }
+    differences.push({
+      path: path || "/",
+      before: render(a),
+      after: render(b),
+    });
+  }
+  visit(before, after, "");
+  return {
+    sameTransaction: before.txHash.toLowerCase() === after.txHash.toLowerCase(),
+    sameAlgorithm: before.algorithmVersion === after.algorithmVersion,
+    differences,
+    truncated,
+  };
+}
