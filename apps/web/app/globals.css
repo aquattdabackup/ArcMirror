@@ -2625,3 +2625,62 @@ small {
 .hero-small {
   font-size: 13px;
 }
+
+/* Readable typography: landing page and explanatory copy. */
+.hero-description {
+  font-size: 18px;
+  line-height: 1.65;
+}
+
+.visual-top,
+.visual-ledger,
+.visual-cta,
+.visual-footnote {
+  font-size: 13px;
+}
+
+.pill,
+.coin small,
+.orbit-tag,
+.visual-ledger strong small {
+  font-size: 12px;
+}
+
+.visual-subtitle,
+.ledger-final {
+  font-size: 14px;
+}
+
+.orbit-tag span {
+  font-size: 11px;
+}
+
+.principle-inner p,
+.section-heading p,
+.why-items p {
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.principle-inner > div,
+.step-number,
+.card-top,
+.card-top .mono,
+.card-top .category,
+.card-bottom,
+.caption {
+  font-size: 12px;
+}
+
+.example-card p {
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.site-footer p {
+  font-size: 13px;
+}
+
+.footer-note > span {
+  font-size: 12px;
+}
