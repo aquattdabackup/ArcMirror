@@ -26,3 +26,9 @@ Build output, declarations and this README can be packaged independently with `n
 Licensed under [MIT](LICENSE).
 
 Tests run from repository root with `npm test`; real fixtures live in `vectors/`. No memo parsing or all-history support is claimed.
+
+## Payment tools
+
+`@arcmirror/core/reconciliation` exports `parsePayoutCsv` and `reconcilePayouts`. CSV columns are `id,payer,recipient,amount_usdc`; limits are 500 payments and 256 KB. A row matches one canonical movement by payer, recipient and exact 18-decimal amount. Failed receipts or incomplete log evidence are rejected. Evidence grades remain unchanged.
+
+`@arcmirror/core/precision` exports `parseUsdc` and `precisionBreakdown`; arithmetic uses bigint, never floating-point money.
