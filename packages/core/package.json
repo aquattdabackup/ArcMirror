@@ -8,6 +8,10 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js"
     },
+    "./reconciliation": {
+      "types": "./dist/reconciliation.d.ts",
+      "import": "./dist/reconciliation.js"
+    },
     "./precision": {
       "types": "./dist/precision.d.ts",
       "import": "./dist/precision.js"
