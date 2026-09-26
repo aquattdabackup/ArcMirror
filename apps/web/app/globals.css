@@ -2684,3 +2684,97 @@ small {
 .footer-note > span {
   font-size: 12px;
 }
+
+/* Readable typography: transaction report and evidence. */
+.breadcrumb {
+  font-size: 13px;
+}
+
+.transaction-meta,
+.transaction-meta code,
+.snapshot-banner {
+  font-size: 14px;
+}
+
+.badge,
+.metric > span,
+.metric > small,
+.count {
+  font-size: 12px;
+}
+
+.metric > strong small {
+  font-size: 13px;
+}
+
+.panel-heading .eyebrow {
+  font-size: 12px;
+}
+
+.tabs button,
+.gas-row summary,
+.logs-list summary {
+  font-size: 14px;
+}
+
+.movement-number,
+.movement-party > small,
+.movement-value > small {
+  font-size: 11px;
+}
+
+.movement-party .mono,
+.movement-value strong small,
+.movement-detail,
+.detail-grid code,
+.movement-detail pre,
+.address,
+.gas-row summary > span:last-child,
+.gas-row .movement-detail code,
+.evidence-panel .reason,
+.digest-box code,
+.limitations {
+  font-size: 13px;
+}
+
+.movement-value strong {
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+.detail-grid small,
+.address span,
+.gas-row summary small,
+.phantom-numbers span,
+.digest-box > span {
+  font-size: 12px;
+}
+
+.evidence-panel > p,
+.proof-checks > div,
+.evidence-panel .text-link,
+.logs-list pre,
+.proof-export p,
+.notice {
+  font-size: 14px;
+}
+
+.phantom p,
+.method-grid p,
+.method-section > p,
+.evidence-explain p {
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.phantom .button {
+  font-size: 14px;
+  min-height: 46px;
+}
+
+.phantom-numbers strong small,
+.method-grid code,
+.reconciled > small,
+.logs-list summary code {
+  font-size: 13px;
+}
