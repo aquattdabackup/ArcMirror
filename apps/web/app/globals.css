@@ -2566,3 +2566,62 @@ th:first-child {
     font-size: 14px;
   }
 }
+
+/* Readable typography: shared foundations and controls. */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+code,
+pre,
+small {
+  font-size: 13px;
+}
+
+.site-header nav {
+  font-size: 15px;
+}
+
+.beta {
+  font-size: 11px;
+}
+
+.eyebrow {
+  font-size: 12px;
+}
+
+.button,
+.text-button,
+.text-link {
+  font-size: 14px;
+  line-height: 1.35;
+}
+
+.button,
+.search button {
+  min-height: 46px;
+}
+
+.search label {
+  font-size: 14px;
+}
+
+.search input {
+  font-size: 15px;
+}
+
+.search button {
+  font-size: 14px;
+}
+
+.form-hint,
+.form-error,
+.hero-small {
+  font-size: 13px;
+}
