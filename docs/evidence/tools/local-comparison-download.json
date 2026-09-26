@@ -1,0 +1,13 @@
+{
+  "kind": "arcmirror-report-comparison",
+  "leftDigest": "0xd45a2905f2105ef8986e6b5881f41e72ab94dacb734c82f1e983a44440c292b2",
+  "rightDigest": "0xd45a2905f2105ef8986e6b5881f41e72ab94dacb734c82f1e983a44440c292b2",
+  "leftIntegrity": true,
+  "rightIntegrity": true,
+  "source": "fresh RPC",
+  "sameTransaction": true,
+  "sameAlgorithm": true,
+  "differences": [],
+  "truncated": false,
+  "limit": "Field equality and digest integrity do not establish authenticity or consensus."
+}
