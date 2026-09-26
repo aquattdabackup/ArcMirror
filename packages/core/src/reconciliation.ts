@@ -100,3 +100,79 @@ export function parsePayoutCsv(input: string): ExpectedPayment[] {
     };
   });
 }
+
+/** Match exact rows first, so an incorrect amount never consumes a later exact match. */
+export function reconcilePayouts(expected: ExpectedPayment[], report: Report) {
+  if (
+    report.chainId !== 5042 ||
+    report.status !== "confirmed_success" ||
+    report.proof.logs !== "consistent"
+  )
+    throw Error(
+      "Reconciliation requires a successful Arc mainnet receipt with consistent movement logs. No payment conclusion is available for this report.",
+    );
+  if (!expected.length || expected.length > CSV_MAX_ROWS)
+    throw Error("Use 1 to 500 expected payments.");
+  const available = new Set(report.movements.map((_, i) => i));
+  const sameParties = (p: ExpectedPayment, m: Movement) =>
+    p.payer.toLowerCase() === m.payer.toLowerCase() &&
+    p.recipient.toLowerCase() === m.payee.toLowerCase();
+  const rows: ReconciledPayment[] = expected.map((p) => {
+    const i = report.movements.findIndex(
+      (m, i) =>
+        available.has(i) &&
+        sameParties(p, m) &&
+        p.amountNative18 === m.amountNative18,
+    );
+    if (i >= 0) {
+      available.delete(i);
+      return {
+        ...p,
+        status: "matched",
+        movement: report.movements[i],
+        candidates: [],
+      };
+    }
+    return { ...p, status: "missing", movement: null, candidates: [] };
+  });
+  for (const row of rows) {
+    if (row.status === "matched") continue;
+    row.candidates = [...available]
+      .map((i) => report.movements[i])
+      .filter((m) => sameParties(row, m));
+    if (row.candidates.length) row.status = "amount_mismatch";
+  }
+  const unassigned = [...available].map((i) => report.movements[i]);
+  return {
+    schemaVersion: "1.0.0",
+    kind: "arcmirror-payout-reconciliation",
+    txHash: report.txHash,
+    reportDigest: report.digest,
+    evidenceLevel: report.evidenceLevel,
+    counts: {
+      expected: rows.length,
+      matched: rows.filter((r) => r.status === "matched").length,
+      amountMismatch: rows.filter((r) => r.status === "amount_mismatch").length,
+      missing: rows.filter((r) => r.status === "missing").length,
+      unassigned: unassigned.length,
+    },
+    expectedTotalExact: exactAmount(
+      expected.reduce((sum, p) => sum + BigInt(p.amountNative18), 0n),
+    ),
+    matchedTotalExact: exactAmount(
+      rows.reduce(
+        (sum, r) => sum + (r.movement ? BigInt(r.movement.amountNative18) : 0n),
+        0n,
+      ),
+    ),
+    gasExact: report.gas?.feeExact ?? null,
+    rows,
+    unassigned,
+    limits: [
+      "One expected row matches at most one canonical movement in this transaction; gas is excluded.",
+      "Matched amounts do not prove invoice identity, recipient ownership or settlement outside this transaction.",
+      "Amount-mismatch candidates are not assigned; several expectations can reference the same candidate.",
+      ...report.limits,
+    ],
+  };
+}
