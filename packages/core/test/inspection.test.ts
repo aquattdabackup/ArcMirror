@@ -34,3 +34,24 @@ test("modified content fails old digest, but recomputed digest is only integrity
   assert.equal(inspectReportJson(JSON.stringify(fake)).digestMatches, true);
   assert.notEqual(fake.digest, base.digest);
 });
+test("rejects malformed, oversized, wrong-chain, future-schema, extra-field and unsafe amount reports", () => {
+  for (const value of [
+    { ...base, chainId: 5042002 },
+    { ...base, schemaVersion: "2" },
+    { ...base, extra: true },
+    {
+      ...base,
+      movements: [{ ...base.movements[0], amountNative18: 9007199254740993 }],
+    },
+    { ...base, totals: { ...base.totals, naiveNative18: "1e30" } },
+  ])
+    assert.throws(
+      () => inspectReportJson(JSON.stringify(value)),
+      /Unsupported/,
+    );
+  assert.throws(() => inspectReportJson("{"), /Invalid JSON/);
+  assert.throws(
+    () => inspectReportJson(" ".repeat(REPORT_MAX_BYTES + 1)),
+    /exceeds/,
+  );
+});
