@@ -42,6 +42,21 @@ test("duplicate expected rows cannot reuse a movement; genuine duplicate movemen
   doubled.movements.push({ ...first, sourceLogIndex: "99" });
   assert.equal(reconcilePayouts(rows, doubled).counts.matched, 2);
 });
+test("exact matches take priority over mismatch candidates regardless of CSV order", () => {
+  const result = reconcilePayouts(
+    parsePayoutCsv(header + line("wrong", "0.1") + "\n" + line("right")),
+    report,
+  );
+  assert.equal(result.rows[0].status, "missing");
+  assert.equal(result.rows[1].status, "matched");
+  const mismatch = reconcilePayouts(
+    parsePayoutCsv(header + line("wrong", "0.090000000000000001")),
+    report,
+  );
+  assert.equal(mismatch.rows[0].status, "amount_mismatch");
+  assert.equal(mismatch.rows[0].candidates[0].amountExact, "0.09");
+  assert.equal(mismatch.counts.unassigned, 2);
+});
 test("CSV accepts BOM, CRLF and quoted fields, rejects malformed/ambiguous input", () => {
   assert.equal(
     parsePayoutCsv(
