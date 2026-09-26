@@ -24,6 +24,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           </Link>
           <nav aria-label="Main navigation">
             <Link href="/#examples">Examples</Link>
+            <Link href="/tools">Tools</Link>
             <Link href="/how-it-works">How it works</Link>
             <a
               className="repo-link"
