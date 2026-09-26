@@ -35,6 +35,13 @@ test("CSV matches mainnet canonical movements once, preserves evidence grade and
   assert.equal(result.evidenceLevel, "needs_review");
   assert.equal(result.rows[0].movement?.sourceLogIndex, "5");
 });
+test("duplicate expected rows cannot reuse a movement; genuine duplicate movements can match separately", () => {
+  const rows = parsePayoutCsv(header + line("A") + "\n" + line("B"));
+  assert.equal(reconcilePayouts(rows, report).counts.matched, 1);
+  const doubled = structuredClone(report);
+  doubled.movements.push({ ...first, sourceLogIndex: "99" });
+  assert.equal(reconcilePayouts(rows, doubled).counts.matched, 2);
+});
 test("CSV accepts BOM, CRLF and quoted fields, rejects malformed/ambiguous input", () => {
   assert.equal(
     parsePayoutCsv(
