@@ -3,6 +3,7 @@ import assert from "node:assert/strict";
 import { readdirSync, readFileSync } from "node:fs";
 import {
   inspectReportJson,
+  compareReports,
   REPORT_MAX_BYTES,
 } from "../src/inspection";
 import { reportDigest } from "../src/index";
@@ -54,4 +55,17 @@ test("rejects malformed, oversized, wrong-chain, future-schema, extra-field and 
     () => inspectReportJson(" ".repeat(REPORT_MAX_BYTES + 1)),
     /exceeds/,
   );
+});
+test("comparison pinpoints evidence changes and identifies unrelated transactions", () => {
+  const changed = structuredClone(base);
+  changed.proof.trace = "unavailable";
+  changed.digest = reportDigest(changed);
+  const result = compareReports(base, changed);
+  assert.equal(result.sameTransaction, true);
+  assert.deepEqual(result.differences.map((d) => d.path).sort(), [
+    "/digest",
+    "/proof/trace",
+  ]);
+  assert.equal(compareReports(reports[0], reports[1]).sameTransaction, false);
+  assert.deepEqual(compareReports(base, structuredClone(base)).differences, []);
 });
