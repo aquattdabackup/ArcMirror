@@ -65,6 +65,18 @@ test("wrong payer or recipient is not a match", () => {
   rows[0].recipient = first.payer;
   assert.equal(reconcilePayouts(rows, report).counts.matched, 0);
 });
+test("incomplete logs, failed receipt and wrong chain cannot produce payment matches", () => {
+  const rows = parsePayoutCsv(header + line("A"));
+  for (const changed of [
+    { chainId: 5042002 },
+    { status: "confirmed_failed" },
+    { proof: { ...report.proof, logs: "incomplete" } },
+  ])
+    assert.throws(
+      () => reconcilePayouts(rows, { ...report, ...changed } as Report),
+      /successful Arc/,
+    );
+});
 test("CSV accepts BOM, CRLF and quoted fields, rejects malformed/ambiguous input", () => {
   assert.equal(
     parsePayoutCsv(
