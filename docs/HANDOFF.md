@@ -14,6 +14,10 @@ Owner requested feature expansion before further funding work. Completed in orde
 
 The app reads Arc mainnet, chain 5042; Lab remains **not deployed**. Three saved transactions are third-party examples, not the owner's five demos. ERC-20 precompile evidence remains Needs Review. Digest integrity does not establish authenticity. See docs/validation.md.
 
+## Commit history clarification
+
+The owner requested smaller commits. A retrospective series of 55 focused commits was merged from `history/workbench-granular` into main; original published commits remain in history. docs/commit-map.md lists each hash, the merge and tree-equality checks. This changes history organization only; the deployed source is still aebf0c6. Future commits should separate independent core, tests, UI/routes, package, documentation and evidence work, as AGENTS.md now specifies.
+
 ## Exact next work
 
 1. Check working tree and origin/main. Documentation/evidence handoff follows the implementation commits; consult git log for the final hash. The ignored bundle is regenerated after the handoff push; verify its head against main before using it.

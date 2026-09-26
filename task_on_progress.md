@@ -20,6 +20,10 @@ The owner-requested feature expansion is delivered and deployed. Continue the or
 - Public smoke checked all tool routes and APIs. Public browser: CSV 2/2 with 4.499999 USDC and Needs Review; JSON tamper identifies /evidenceLevel, fresh RPC identical; dust one native unit x1000 = 0.000000000000001 USDC. Desktop/mobile inspected; no app console errors, framework overlays or mobile page overflow. See docs/evidence/tools/checks.json and docs/validation.md.
 - React review: clear client/server boundaries, labelled inputs, alerts, bounded local imports, no uploaded file content, stale results cleared, disabled controls during async work. Existing analyzer algorithm/schema unchanged. No new dependency required.
 
+## Commit granularity follow-up
+
+Owner requested a much finer breakdown. The three published workbench commits were reconstructed as 55 focused, nonempty commits on `history/workbench-granular` and merged into main while preserving all original ancestors. Merge a5bb53a and the detailed branch are pushed. No force-push or deployment change. A temporary automatic-review usage-limit failure was resolved by the successful retry; no blocker remains. All 49 tests and root/web typecheck passed on the reconstructed checkout. The reconstructed tree exactly matched `3ee528f`; follow-up commits only add commit-map/continuity instructions. See docs/commit-map.md for every hash and validation scope. Future work follows the finer granularity in AGENTS.md.
+
 ## Grant fit
 
 Official Microgrants rules allow prototypes/experiments and evaluate Arc relevance, technical credibility, quality and potential. No published feature cap or freeze before submission was found; fit is our inference, not organizer approval or an award guarantee. Post-submission review of updates is unspecified. DoraHacks form fields/additional terms are still behind human verification. docs/feature-expansion.md records source/limits. docs/application-draft.md has a revised 100-word description and working tool tour. No grant submitted.
