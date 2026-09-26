@@ -66,9 +66,10 @@ export default function ToolsPage() {
         ))}
       </div>
       <p className="tool-privacy">
-        Your files stay in this browser. Only a transaction hash is sent when
-        you request a report. Dust Lab runs entirely offline after the page
-        loads.
+        Built-in examples are optional starters. Bring your own payout CSV,
+        report JSON, Arc mainnet transaction hash, or exact amount. Your files
+        stay in this browser; only a transaction hash is sent when you request
+        a report. Dust Lab runs entirely offline after the page loads.
       </p>
     </div>
   );
