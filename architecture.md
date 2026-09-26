@@ -7,7 +7,10 @@
 - `packages/rpc/src/index.ts`: bounded JSON-RPC adapter, chain checks, fallback endpoints, optional callTracer/prestateTracer. Only configured server URLs; no client-supplied URL.
 - `apps/web/lib/service.ts`: snapshots first unless live requested, bounded in-process cache/deduplication/concurrency/rate limits; `server-only` import.
 - `apps/web/components/report.tsx`: evidence/flow/log/state views, live refresh preserving old evidence on transport failure, download/copy controls.
-- Routes `/`, `/tx/[hash]`, `/how-it-works`; `/api/health`, `/api/examples`, `/api/analyze/[hash]`.
+- `packages/core/src/reconciliation.ts`: bounded CSV parsing and exact one-to-one payout matching. `precision.ts`: decimal parsing and 18/6-decimal arithmetic. Both are package subpath exports; the standalone build rewrites TypeScript import extensions to ESM JavaScript.
+- `apps/web/components/tools/reconcile.tsx`: local CSV input, hash-only report fetch and reconciliation JSON export; `/tools` links the workbench.
+- `packages/core/src/inspection.ts`: bounded strict report schema, digest integrity check and capped field comparison. Report file processing and Dust Lab run locally in client components; only an explicit live check sends a hash to the existing API.
+- Routes `/tools`, `/tools/reconcile`, `/tools/inspect`, `/tools/dust`, `/`, `/tx/[hash]`, `/how-it-works`; `/api/health`, `/api/examples`, `/api/analyze/[hash]`.
 - `scripts/verify.ts`: live or fixture verification; checks report digest and lists changed fields.
 - `scripts/generate-vectors.ts`: regenerates expected reports/snapshots from frozen public evidence. Tests deep-compare vectors offline.
 - `contracts/src/ArcMirrorLab.sol`: fixed immutable recipients, bounded scenarios, exact ERC-20 allowances, no admin, fixed-recipient sweep. No deployment exists.
