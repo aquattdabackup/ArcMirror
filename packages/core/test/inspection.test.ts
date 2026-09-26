@@ -69,3 +69,13 @@ test("comparison pinpoints evidence changes and identifies unrelated transaction
   assert.equal(compareReports(reports[0], reports[1]).sameTransaction, false);
   assert.deepEqual(compareReports(base, structuredClone(base)).differences, []);
 });
+test("comparison bounds noisy differences instead of rendering an unbounded list", () => {
+  const changed = structuredClone(base);
+  changed.logs = Array.from({ length: 300 }, (_, i) => ({
+    ...base.logs[0],
+    logIndex: String(i + 200),
+  }));
+  const result = compareReports(base, changed);
+  assert.equal(result.differences.length, 200);
+  assert.equal(result.truncated, true);
+});
