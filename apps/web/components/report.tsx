@@ -110,6 +110,7 @@ export function TransactionReport({ initial }: { initial: Result }) {
           </h1>
         </div>
         <div className="report-actions">
+          <Link className="button" href={"/tools/reconcile?tx=" + r.txHash}>Reconcile CSV</Link>
           <button className="button" onClick={copy}>
             Copy link
           </button>
