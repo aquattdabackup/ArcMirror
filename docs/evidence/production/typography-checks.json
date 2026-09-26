@@ -1,0 +1,58 @@
+{
+  "checkedAt": "2026-09-26",
+  "baseUrl": "https://arcmirror-six.vercel.app",
+  "deploymentId": "dpl_3DA59KxitWPbdYPhxizCsEkTAyu3",
+  "sourceCommit": "93ba99b",
+  "browser": "agent-browser 0.38.1",
+  "viewports": [
+    [
+      1440,
+      1000
+    ],
+    [
+      390,
+      844
+    ]
+  ],
+  "computedStyles": {
+    "homeDesktop": {
+      "body": "17px",
+      "navigation": "15px",
+      "heroDescription": "18px"
+    },
+    "homeMobileProduction": {
+      "body": "16px",
+      "navigation": "13px",
+      "heroDescription": "17px"
+    },
+    "reportDesktopLocal": {
+      "movementAddress": "13px",
+      "movementAmount": "15px"
+    },
+    "reportMobileProduction": {
+      "movementAddress": "12px",
+      "movementAmount": "14px",
+      "tab": "13px"
+    },
+    "reconciliationMobileProduction": {
+      "intro": "17px",
+      "label": "14px",
+      "input": "16px"
+    }
+  },
+  "checks": {
+    "localBuild": "pass",
+    "productionSmoke": "pass",
+    "meaningfulContent": "pass",
+    "frameworkOverlay": "none",
+    "consoleErrors": "none on checked routes",
+    "horizontalOverflow": "none on checked desktop and mobile routes",
+    "visualInspection": "pass for local home, transaction report and payout reconciliation screenshots",
+    "runtimeErrors": "none returned for the deployment after smoke checks"
+  },
+  "limits": [
+    "Viewport emulation, not physical devices",
+    "Local screenshots are kept in ignored artifacts and are not publication evidence",
+    "Unchanged transaction algorithms and contract code were not re-tested for this CSS-only release"
+  ]
+}
