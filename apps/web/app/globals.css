@@ -2778,3 +2778,56 @@ small {
 .logs-list summary code {
   font-size: 13px;
 }
+
+/* Readable typography: local analysis tools and data tables. */
+.tool-heading > p {
+  font-size: 18px;
+  line-height: 1.65;
+}
+
+.tool-card > p,
+.dust-total p {
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.tool-card label,
+.tool-evidence,
+.tool-table,
+.tool-catalog .text-link,
+.tool-privacy,
+.tool-toolbar,
+.inspection-summary > p,
+.inspection-summary dd,
+.tool-note {
+  font-size: 14px;
+}
+
+.tool-card label small,
+.tool-card input[type="file"],
+.field-help,
+.tool-stats small,
+.tool-table summary,
+.unassigned-row code,
+.diff-table code,
+.dust-presets .button,
+.dust-equation > span,
+.dust-total dt {
+  font-size: 13px;
+}
+
+.tool-card input:not([type="checkbox"]),
+.tool-card textarea {
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.tool-table th,
+.inspection-summary dt,
+.dust-legend {
+  font-size: 12px;
+}
+
+.dust-total dd {
+  font-size: 17px;
+}
