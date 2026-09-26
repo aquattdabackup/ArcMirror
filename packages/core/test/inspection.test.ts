@@ -26,3 +26,11 @@ test("all mainnet exports pass strict shape and digest; whitespace/key order do 
     assert.deepEqual(result.report, report);
   }
 });
+test("modified content fails old digest, but recomputed digest is only integrity not authenticity", () => {
+  const fake = structuredClone(base);
+  fake.evidenceLevel = "verified";
+  assert.equal(inspectReportJson(JSON.stringify(fake)).digestMatches, false);
+  fake.digest = reportDigest(fake);
+  assert.equal(inspectReportJson(JSON.stringify(fake)).digestMatches, true);
+  assert.notEqual(fake.digest, base.digest);
+});
