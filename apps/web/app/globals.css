@@ -2436,3 +2436,133 @@ th:first-child {
   overflow-wrap: anywhere;
   font-size: 11px;
 }
+
+.dust-presets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+.dust-presets .button {
+  font-size: 11px;
+  padding: 10px 12px;
+  margin: 0;
+}
+.dust-presets [aria-pressed="true"] {
+  background: var(--green);
+  color: white;
+}
+.dust-visual {
+  background: #eef4ed;
+}
+.dust-visual h2 {
+  margin: 22px 0 30px;
+  font-size: 34px;
+}
+.dust-digits {
+  font: clamp(14px, 1.5vw, 22px) var(--mono);
+  overflow-wrap: anywhere;
+  letter-spacing: -0.025em;
+  line-height: 1.8;
+}
+.dust-six {
+  color: #1a624c;
+  background: #cce6d6;
+}
+.dust-twelve {
+  color: #754b15;
+  background: #eee2c8;
+}
+.dust-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-size: 10px;
+  margin: 15px 0 27px;
+}
+.dust-legend span:first-child {
+  border-left: 4px solid #7bac8e;
+  padding-left: 7px;
+}
+.dust-legend span:last-child {
+  border-left: 4px solid #c6a567;
+  padding-left: 7px;
+}
+.dust-equation {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4px;
+}
+.dust-equation > span {
+  color: var(--muted);
+  font-size: 11px;
+}
+.dust-equation > strong {
+  font-size: 18px;
+  font-weight: 400;
+  margin-top: 5px;
+}
+.dust-total {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 35px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 28px;
+}
+.dust-total h3 {
+  font-size: 26px;
+  margin-bottom: 15px;
+}
+.dust-total p {
+  font-size: 14px;
+}
+.dust-total dl {
+  margin: 0;
+}
+.dust-total dt {
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 5px;
+}
+.dust-total dd {
+  font: 16px/1.6 var(--mono);
+  margin: 0 0 20px;
+  overflow-wrap: anywhere;
+}
+.tools-home {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  padding-top: 35px;
+  padding-bottom: 45px;
+}
+.tools-home h2 {
+  font-size: 36px;
+  margin: 14px 0;
+}
+.tools-home p {
+  max-width: 620px;
+}
+.tools-home .button {
+  flex-shrink: 0;
+}
+.report-actions {
+  flex-wrap: wrap;
+}
+@media (max-width: 760px) {
+  .dust-total {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 22px;
+  }
+  .tools-home {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .dust-digits {
+    font-size: 14px;
+  }
+}
