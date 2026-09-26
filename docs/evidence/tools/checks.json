@@ -1,0 +1,31 @@
+{
+  "checkedAt": "2026-09-26T01:06:00.935189+00:00",
+  "sourceCommit": "aebf0c6",
+  "deploymentId": "dpl_5grr6VLEgkj31Kovwz7fw3aWUXaV",
+  "browser": "Isolated Microsoft Edge via agent-browser 0.38.1; InPrivate, extensions disabled",
+  "public": {
+    "base": "https://arcmirror-six.vercel.app",
+    "authentication": "No sign-in or wallet",
+    "workbench": "Three feature links rendered at 1440px; HTTP 200 for all four tool routes",
+    "csv": "Example loaded and API-backed reconciliation completed: 2/2 matches, 4.499999 USDC, gas 0.00466731920116392 separate, Needs Review retained; logs 5/6 and 9/10",
+    "inspectorTamper": "Uploaded report B changed evidenceLevel to verified: one changed field /evidenceLevel and digest warning",
+    "inspectorLive": "A vs fresh RPC returned complete equality; matching report digest d45a2905f2105ef8986e6b5881f41e72ab94dacb734c82f1e983a44440c292b2",
+    "dust": "One native unit repeated 1000 times: exact sum 0.000000000000001 USDC, truncated sum zero, remainder preserved",
+    "responsive": "Inspector and Dust Lab at 390x844: document width <= viewport, no framework overlays",
+    "console": "No page errors or application console output during tool checks"
+  },
+  "local": {
+    "base": "http://127.0.0.1:3000",
+    "csv": "Uploaded duplicate CSV matches 1/2 expectations and cannot reuse log 5; one-wei mismatch matches 0/1",
+    "inspector": "Original/tampered, identical files and fresh RPC checked; malformed JSON clears old comparison",
+    "dust": "One-unit, below-micro and exact-micro cases checked; fractional repeat count rejected",
+    "downloads": "Three actual browser downloads saved in Windows Downloads and parsed from disk; copies prefixed local- are evidence from the local production build",
+    "checks": "49 tests; typecheck; local production build; standalone ESM imports; extended API/page smoke"
+  },
+  "limits": [
+    "Point-in-time functional checks, not load/uptime or independent security certification",
+    "Viewport emulation, not physical devices",
+    "Native precompile trace coverage stays incomplete; no authenticity or consensus claim from digest",
+    "No owner funds moved, Lab deployed, npm package published or grant submitted"
+  ]
+}
