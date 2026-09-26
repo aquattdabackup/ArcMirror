@@ -4,7 +4,7 @@
 
 **Production is READY:** https://arcmirror-six.vercel.app
 
-Deployed on 2026-09-25 to the owner's explicitly approved Vercel team. Project: `prj_Fl4rD67BDh21Zi4pj7UeMdaT9alh`; deployment: `dpl_BiNChHapbCXuHziRDX9gcg3uFxE6`. GitHub login/push and Vercel CLI login are complete. [Deployment record](evidence/production/deployment.json) and [anonymous API smoke result](evidence/production/api-smoke.txt). Public desktop/mobile flows and an ordinary JSON file save passed; [browser checks](evidence/production/browser-checks.json) records the ArcScan challenge and clipboard-read limitation.
+Latest release deployed on 2026-09-26 to the owner's approved Vercel team from commit `aebf0c6`. Project: `prj_Fl4rD67BDh21Zi4pj7UeMdaT9alh`; deployment: `dpl_5grr6VLEgkj31Kovwz7fw3aWUXaV`. It includes payout reconciliation, the report inspector and Dust Lab. See the [deployment record](evidence/tools/deployment.json), [API/page smoke](evidence/tools/api-smoke.json) and [tool verification](evidence/tools/checks.json). Earlier analyzer/explorer/download evidence remains in [production checks](evidence/production/browser-checks.json), including ArcScan and clipboard limitations. GitHub/Vercel access works.
 
 The connector's inline-file deployments built only the web subtree, leaving out the workspace lockfile and shared source. The official authenticated CLI upload preserved the full monorepo and built successfully. Use CLI deployments from repository root with the project linked. Failed diagnostic builds were not promoted as working releases.
 
