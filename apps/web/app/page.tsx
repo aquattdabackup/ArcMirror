@@ -128,7 +128,8 @@ export default function Home() {
             </h2>
           </div>
           <p>
-            Explore confirmed mainnet activity.
+            Start with three saved mainnet cases, or analyze your own hash
+            above.
             <br />
             Snapshots stay available when an RPC does not.
           </p>
@@ -174,8 +175,9 @@ export default function Home() {
           ))}
         </div>
         <p className="caption">
-          These are existing public transactions, not transactions created by
-          ArcMirror. Owner-created lab examples are planned.
+          These reusable starter cases come from existing public activity.
+          ArcMirror also analyzes other Arc mainnet transaction hashes;
+          owner-created Lab cases are planned.
         </p>
       </section>
       <section className="shell tools-home">

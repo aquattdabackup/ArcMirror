@@ -49,7 +49,8 @@ export function Search({ compact = false }: { compact?: boolean }) {
         </p>
       ) : (
         <p className="form-hint">
-          Read-only. No wallet connection. No payment required.
+          Analyze any Arc mainnet transaction hash. Read-only; no wallet or
+          payment required.
         </p>
       )}
     </form>
