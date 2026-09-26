@@ -1,0 +1,74 @@
+{
+  "schemaVersion": "1.0.0",
+  "kind": "arcmirror-payout-reconciliation",
+  "txHash": "0x376b287a795c449b0bf3f0ec3ffdfad8e913012edecf0a8eb6f00c007a47b24f",
+  "reportDigest": "0xd45a2905f2105ef8986e6b5881f41e72ab94dacb734c82f1e983a44440c292b2",
+  "evidenceLevel": "needs_review",
+  "counts": {
+    "expected": 2,
+    "matched": 1,
+    "amountMismatch": 0,
+    "missing": 1,
+    "unassigned": 1
+  },
+  "expectedTotalExact": "0.18",
+  "matchedTotalExact": "0.09",
+  "gasExact": "0.00466731920116392",
+  "rows": [
+    {
+      "id": "duplicate-0",
+      "payer": "0x8366a39cc670b4001a1121b8f6a443a643e40951",
+      "recipient": "0x881071c158e7a4b2ad6e03e53157d466a23d89ab",
+      "amountNative18": "90000000000000000",
+      "status": "matched",
+      "movement": {
+        "payer": "0x8366a39cc670b4001a1121b8f6a443a643e40951",
+        "payee": "0x881071c158e7a4b2ad6e03e53157d466a23d89ab",
+        "amountNative18": "90000000000000000",
+        "amountExact": "0.09",
+        "amountDisplay6": "0.090000",
+        "dustRemainder18": "0",
+        "sourceLogIndex": "5",
+        "corroboratingLogIndexes": [
+          "6"
+        ],
+        "evidenceLevel": "needs_review"
+      },
+      "candidates": []
+    },
+    {
+      "id": "duplicate-1",
+      "payer": "0x8366a39cc670b4001a1121b8f6a443a643e40951",
+      "recipient": "0x881071c158e7a4b2ad6e03e53157d466a23d89ab",
+      "amountNative18": "90000000000000000",
+      "status": "missing",
+      "movement": null,
+      "candidates": []
+    }
+  ],
+  "unassigned": [
+    {
+      "payer": "0x8366a39cc670b4001a1121b8f6a443a643e40951",
+      "payee": "0x947676b3600af9dd846fca3134b23abec7f92f97",
+      "amountNative18": "4409999000000000000",
+      "amountExact": "4.409999",
+      "amountDisplay6": "4.409999",
+      "dustRemainder18": "0",
+      "sourceLogIndex": "9",
+      "corroboratingLogIndexes": [
+        "10"
+      ],
+      "evidenceLevel": "needs_review"
+    }
+  ],
+  "limits": [
+    "One expected row matches at most one canonical movement in this transaction; gas is excluded.",
+    "Matched amounts do not prove invoice identity, recipient ownership or settlement outside this transaction.",
+    "Amount-mismatch candidates are not assigned; several expectations can reference the same candidate.",
+    "USDC only; other tokens are visible as raw logs, excluded from totals.",
+    "Gross movement sums count each hop; they are not net wallet income.",
+    "Native call-value tracing does not cover USDC precompile mutations.",
+    "Memo decoding, historical fork coverage and independent provider consensus are not certified.",
+    "Digest commits to this report; it is not a cryptographic proof of blockchain consensus."
+  ]
+}
