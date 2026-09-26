@@ -20,7 +20,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <header className="site-header shell">
           <Link href="/" className="brand">
             <Mark />
-            ArcMirror<span className="beta">BETA</span>
+            ArcMirror
           </Link>
           <nav aria-label="Main navigation">
             <Link href="/#examples">Examples</Link>

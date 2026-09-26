@@ -149,15 +149,6 @@ small {
   transform: rotate(-26deg);
   border-color: #5c9079;
 }
-.beta {
-  font: 9px var(--mono);
-  letter-spacing: 1px;
-  color: var(--muted);
-  border: 1px solid var(--line);
-  padding: 3px 5px;
-  border-radius: 3px;
-  margin-left: 1px;
-}
 .site-header nav {
   display: flex;
   align-items: center;
@@ -1690,9 +1681,6 @@ th:first-child {
     transform: scale(0.85);
     width: 29px;
   }
-  .beta {
-    font-size: 7px;
-  }
   .site-header nav {
     gap: 16px;
     font-size: 10px;
@@ -2586,10 +2574,6 @@ small {
 
 .site-header nav {
   font-size: 15px;
-}
-
-.beta {
-  font-size: 11px;
 }
 
 .eyebrow {
