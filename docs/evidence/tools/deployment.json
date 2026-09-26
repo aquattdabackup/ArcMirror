@@ -1,0 +1,12 @@
+{
+  "deployedAt": "2026-09-26",
+  "sourceCommit": "aebf0c6",
+  "deploymentId": "dpl_5grr6VLEgkj31Kovwz7fw3aWUXaV",
+  "readyState": "READY",
+  "target": "production",
+  "url": "https://arcmirror-six.vercel.app",
+  "immutableUrl": "https://arcmirror-otn65rl31-luong-tuans-projects-a65355dc.vercel.app",
+  "team": "luong-tuans-projects-a65355dc",
+  "method": "Authenticated Vercel CLI from full linked monorepo; no billing change",
+  "build": "Next.js 16.3.6 compiled, TypeScript passed, all tool routes generated"
+}

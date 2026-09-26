@@ -1,0 +1,17 @@
+{
+  "kind": "arcmirror-precision-simulation",
+  "rawNative18": "1",
+  "exact": "0.000000000000000001",
+  "interfaceUnits6": "0",
+  "truncated6": "0.000000",
+  "dustRaw18": "1",
+  "dustExact": "0.000000000000000001",
+  "count": 1000,
+  "totalExact": "0.000000000000001",
+  "totalAfterPerAmountTruncation": "0",
+  "accumulatedDustExact": "0.000000000000001",
+  "limits": [
+    "Arithmetic illustration only. No transaction or onchain balance is represented.",
+    "Six-decimal truncation per amount is a model, not a prediction of contract or indexer behavior."
+  ]
+}

@@ -1,10 +1,10 @@
 # Arc Microgrants application draft
 
-**Draft, not submitted.** Prepared 2026-09-25 from the working read-only product and measured mainnet evidence. The owner-requested Lab deployment, five owner-created scenarios are still pending. The separate reward address has been supplied locally for owner entry at submission. Do not describe them as delivered or replace them with third-party examples.
+**Draft, not submitted.** Updated 2026-09-26 from the working read-only product and measured mainnet evidence. The owner-requested Lab deployment, five owner-created scenarios are still pending. The separate reward address has been supplied locally for owner entry at submission. Do not describe them as delivered or replace them with third-party examples.
 
 ## Short description
 
-ArcMirror makes Arc mainnet USDC movements understandable and reproducible. It reconciles native transfer logs with their ERC-20 counterparts, counts each movement once, and separates gas from transferred value. Every amount links to its original evidence, with exact integer precision preserved in downloadable JSON. Users can compare logs, supported call traces, and transaction-local balance changes, then rerun the report through a command-line verifier. Missing or unsupported evidence stays visible instead of becoming a false verification claim. The live, read-only app needs no wallet connection. Its MIT-licensed core and public mainnet vectors give other Arc builders a reusable starting point for integration.
+ArcMirror turns Arc mainnet USDC transactions into inspectable payment evidence. It reconciles native and ERC-20 logs without double counting, preserves exact amounts, and separates gas. Teams can match payout CSVs against individual transactions, identify missing matches and amount mismatches, and export results with original source log references. Builders can inspect downloaded JSON, compare changed fields, fetch fresh evidence, and explore 18-versus-6-decimal precision in Dust Lab. Files stay in the browser; no wallet connection is required. Unsupported evidence remains Needs Review. The MIT core, public mainnet vectors and CLI make results reproducible, while digest checks establish integrity rather than blockchain consensus.
 
 ## Project description
 
@@ -15,6 +15,8 @@ The product combines three practical capabilities:
 1. **Trace an amount to its source.** Expand a movement to see raw units, emitter addresses and original paired logs. The comparison control makes accidental double counting visible. This is not a claim that deduplication is new: [Dune already excludes the duplicate USDC interface stream](https://docs.dune.com/data-catalog/curated/token-transfers/arc/arc-token-transfers). Our focus is an interactive explanation of an individual transaction.
 2. **Inspect what the evidence can support.** Logs, supported native call values and transaction-local balance changes are shown together. Missing traces and unexplained residuals remain visible. Our real ERC-20 example stays Needs Review because native call values do not cover its precompile movements, even though logs and state agree.
 3. **Reproduce the result.** Export versioned JSON containing exact amounts and a canonical digest; rerun the same core through the CLI with live RPC or public golden vectors. A matching digest means matching reports, not independent consensus or a security audit.
+
+The [workbench](https://arcmirror-six.vercel.app/tools) extends this evidence into practical workflows. Payout reconciliation matches a local CSV to canonical movements by payer, recipient and exact amount; it preserves duplicate identities and distinguishes missing matches, amount differences and unassigned movements. One transaction is the scope; invoice identity and split-payment settlement are not inferred. The report inspector checks local JSON structure/digest and compares individual fields with another file or fresh RPC evidence. Dust Lab makes 18/6-decimal truncation and accumulated remainders visible through exact arithmetic, explicitly labelled simulation. Local files are not uploaded. These additions are built and checked, not roadmap promises.
 
 The website is live on Vercel and reads Arc mainnet, chain 5042. The MIT core is built as an independent package but has not been published to npm. Next steps are owner-signed Lab examples, broader supported-case vectors, and feedback from integrators. Those measured results could support a later Circle Grant Program proposal; no future award or production certification is claimed. [Validation](validation.md) and the [landscape survey](landscape.md) document the current scope.
 
@@ -33,7 +35,14 @@ The website is live on Vercel and reads Arc mainnet, chain 5042. The MIT core is
 | Reward address | **Supplied locally.** Distinct from demo burner; owner enters it in the application. Not published in this repo. |
 | Reproduction evidence | [Downloaded report](evidence/production/downloaded-report.json), [fresh CLI match](evidence/production/live-verify.txt), [public production checks](evidence/production/browser-checks.json) |
 
-## Reviewer tour: under one minute
+## Workbench tour: about one minute
+
+1. Open [Payout reconciliation](https://arcmirror-six.vercel.app/tools/reconcile), choose **Try mainnet example**: two expected movements match 4.499999 USDC, with gas separate and Needs Review preserved. The ids are illustrative, not real invoice claims.
+2. Duplicate the first row using a new id and reconcile again: it cannot reuse the same movement. Change an amount by one native base unit to expose a mismatch.
+3. Open [Report inspector](https://arcmirror-six.vercel.app/tools/inspect), load the example into A and compare with fresh RPC. Import an edited report in B to see its changed fields and digest warning.
+4. Open [Dust Lab](https://arcmirror-six.vercel.app/tools/dust), select **One native unit** and inspect the exact remainder and repeated-amount sum. Follow the real mainnet evidence link.
+
+## Transaction evidence tour
 
 1. Open the [home page](https://arcmirror-six.vercel.app) and choose **Two logs. One movement.**
 2. Expand the 0.090000 USDC movement to see native log 5 and interface log 6, with exact raw amounts.
@@ -60,6 +69,10 @@ Program requirements were rechecked on the [official page](https://community.arc
 | No previous Circle/Arc funding | Owner explicitly confirmed. |
 | Payout / submission | Reward address supplied locally; owner enters it, reviews and submits. |
 | Additional owner requirements | Deploy/verify Lab and capture five owner-created mainnet scenarios before closing the original brief. |
+
+## Feature expansion and rules
+
+The [official program page](https://community.arc.io/public/events/arc-microgrants-f8tijfjhyq) lists Arc relevance, technical credibility, quality and further potential; it has no published feature-count cap or freeze before submission. We infer these relevant improvements fit its scope. That is not organizer approval or a guarantee of selection. The post-submission update-review policy is unspecified; submit the tested, deployed feature set. See [feature expansion research](feature-expansion.md).
 
 ## Before the owner submits
 

@@ -2,29 +2,30 @@
 
 ## Paste into the next coding agent
 
-> Continue ArcMirror. Read AGENTS.md, architecture.md, task_on_progress.md and docs/HANDOFF.md first. Preserve all confirmed owner decisions. Check git status/log and origin/main, continue unfinished work without restarting completed milestones, make small verified commits and push them. Update portable project memory before stopping. Report in Vietnamese. Never invent deployment, wallet signatures, mainnet demos or grant submission.
+> Continue ArcMirror. Read AGENTS.md, architecture.md, task_on_progress.md and docs/HANDOFF.md first. Preserve owner decisions. Check git status/log and origin/main, continue unfinished work without rebuilding completed milestones, make small verified commits and push them. Update portable memory before stopping. Report in Vietnamese. Never invent deployment, signatures, owner-created mainnet demos or grant submission.
 
-## Ready now
+## Current release
 
-[Live website](https://arcmirror-six.vercel.app) and [public MIT repository](https://github.com/aquattdabackup/ArcMirror). Owner approved MIT and [builder profile](https://github.com/aquattdabackup). GitHub/Vercel access works; no account or destination approval is outstanding.
+[Live website](https://arcmirror-six.vercel.app), [tools](https://arcmirror-six.vercel.app/tools), [public MIT repo](https://github.com/aquattdabackup/ArcMirror). Builder aquattdabackup and the existing Vercel destination are approved; access works.
 
-37 application tests, 10 spike tests, 16 Foundry tests including 256 fuzz runs, build/typecheck passed. Public desktop/mobile/API flows and actual JSON file download passed. Downloaded file matched the full fixture and fresh mainnet CLI analysis. Production HTTP/API and two full live reports passed again at 2026-09-25T14:16:25Z. Read [validation](validation.md) for evidence and external ArcScan/clipboard-read limits.
+Owner requested feature expansion before further funding work. Completed in order: CSV payout reconciliation (`a2787c8`), local JSON report inspector/comparison and Dust Lab (`aebf0c6`), both pushed. Deployment `dpl_5grr6VLEgkj31Kovwz7fw3aWUXaV` is READY from aebf0c6. See docs/evidence/tools for actual local/public evidence and source limits. Do not restart these features.
 
-The working product reads Arc mainnet; its website is on Vercel. The Lab is locally tested but **not deployed**. Three saved examples are existing third-party transactions, not the owner's five demos. Native example is Verified; the ERC-20 precompile example correctly remains Needs Review.
+49 application tests, typecheck, core ESM imports and local/remote production builds passed. Existing 10 spike and 16 Foundry tests (256 fuzz runs) were previously passing; contracts/spike did not change. Browser verification covered desktop/mobile, local CSV/JSON imports, exact duplicate/mismatch behavior, modified digests, fresh mainnet comparison, dust arithmetic and all three actual exported files. No funds moved or wallet connection added.
 
-## Active feature expansion
-
-Owner requested more relevant features and approved the order: CSV payout reconciliation, local JSON report inspector/comparison, Dust Lab. CSV was committed/pushed as a2787c8. JSON inspector and Dust Lab are implemented with local checks in progress; consult task_on_progress.md before restarting any work. Finish verification and deploy before resuming funding. See docs/feature-expansion.md and task_on_progress.md for current milestone status. The program has no published feature cap/freeze before submission; post-submission review of updates is unspecified.
+The app reads Arc mainnet, chain 5042; Lab remains **not deployed**. Three saved transactions are third-party examples, not the owner's five demos. ERC-20 precompile evidence remains Needs Review. Digest integrity does not establish authenticity. See docs/validation.md.
 
 ## Exact next work
 
-1. Check git status/log and origin/main. MIT milestone 272baa9 and production-evidence milestone 4bfa74d are pushed; application-draft/handoff c188a8b is also pushed. Owner requires prompt milestone commits.
-2. [English application draft](application-draft.md) is ready, including 100-word description and reviewer tour. Lab/demos and burner funding remain pending; the reward address is supplied locally. Official grant page rechecked 2026-09-25; DoraHacks requires human verification. Recheck and finalize after real owner-created mainnet artifacts exist.
-3. Four addresses have been supplied and validated; do not ask again in this workspace. Read docs/wallet-preflight.md and ignored artifacts/owner-wallets.json. The burner is empty. Owner uses MetaMask and has no USDC; docs/funding.md records the official funding route. Owner has now explicitly chosen to continue buying USDC and the original mainnet Lab/demo path. No exact purchase quote or signed deployment is approved. User performs the purchase and local signing; await reviewed funding/deposit, rerun ordinary gas/chain/nonce checks and review exact constructor/amounts/gas before owner-local signing. The prepared unsigned payload and predicted address are not a deployment. Record real Lab deployment/source verification and five confirmed owner-created scenarios afterward.
-4. Update vectors/docs/application matrix from actual receipts. Owner performs final submission. No npm publication is authorized.
+1. Check working tree and origin/main. Documentation/evidence handoff follows the implementation commits; consult git log for the final hash. The ignored bundle is regenerated after the handoff push; verify its head against main before using it.
+2. Feature expansion is delivered. Review docs/application-draft.md (updated 100-word description and tool tour) and docs/feature-expansion.md. Published grant rules do not cap features or freeze improvements before submission; post-submission update review is unspecified. Additional features do not guarantee selection. DoraHacks form remains behind human verification.
+3. Resume the original mainnet Lab/five-demo stage when the owner is ready. Four public addresses are already validated in ignored artifacts/owner-wallets.json; never ask for secrets. Owner uses MetaMask and has no USDC. They previously chose to obtain USDC, then prioritized these features. Read docs/funding.md and docs/wallet-preflight.md. No exact purchase quote/provider/amount, funds transfer or signed deployment is approved.
+4. User purchases/funds/signs locally. Once funded, recheck live chain, balance, nonce and ordinary gas estimate. Review exact recipients, constructor arguments, amounts and gas before owner signing. The existing unsigned payload and predicted address are not a deployment. Record the real Lab address/source verification and five confirmed owner-created scenarios afterward.
+5. Finalize the application with real artifacts and recheck official rules/links. Owner submits. No npm publication or final submission is authorized.
 
-## Portable context
+## Portable context and operation
 
-architecture.md maps code; task_on_progress.md tracks remaining work; docs/product-brief.vi.md preserves the original prompt. Deployment settings and signing runbook: docs/deployment.md. Owner actions: docs/user-setup.md. Secrets and generated tooling/build caches remain ignored.
+Use npm.cmd on Windows. CLI deployment from linked repository root includes shared workspace source; connector inline-file upload previously omitted it. Use only the existing approved arcmirror project/team. Never print .env/.vercel credentials. See docs/deployment.md.
 
-Optional offline Git bundle: artifacts/ArcMirror-handoff.bundle, generated after the latest push from main only. Confirm its head before using it; GitHub is the canonical source. No Codex-specific skill installation or original chat attachment is required for another AI to resume software work. The ignored address-only file is local; on another machine the owner must transfer it or supply the four public addresses again.
+Project memory and original brief are in architecture.md, task_on_progress.md and docs/product-brief.vi.md. The ignored bundle artifacts/ArcMirror-handoff.bundle contains main only; GitHub is canonical. The address-only local file must be transferred privately to another machine if needed. No Codex-specific skill or original chat is needed to resume.
+
+Browser note: use an isolated Edge profile with a persistent parent process. After a download, select the actual app tab again; the Edge download-hub target cannot emulate viewport metrics. Functional tests on that popup target are not desktop viewport evidence. Screenshots recorded as desktop use the real app target.

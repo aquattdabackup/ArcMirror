@@ -1,46 +1,40 @@
 # Current task
 
-Current milestone: owner requested and approved payout CSV reconciliation first, then a browser JSON inspector/comparison and Dust Lab (2026-09-25). Build, test, commit and deploy these focused additions before resuming funding. Continue ArcMirror v2 through owner-created mainnet demos and grant preparation afterward. Software-first is authorized. Four public wallet addresses are now supplied; burner funding and owner-local signing are pending. Website is live at https://arcmirror-six.vercel.app.
+The owner-requested feature expansion is delivered and deployed. Continue the original ArcMirror mainnet Lab/five-demo and grant-preparation work when the owner is ready for funding/signing. Do not rebuild completed features.
 
-## Owner decisions and Git
+## Owner decisions
 
-- No prior Circle/Arc funding confirmed. Owner approved MIT and builder profile https://github.com/aquattdabackup on 2026-09-25. No need to re-ask.
-- Small verified milestone commits and prompt pushes are required. GitHub authentication as aquattdabackup works through repo-local credential selection; global account was not replaced.
-- Pushed milestones: 272baa9 MIT/profile and 4bfa74d production browser/export evidence. Earlier: dc8035c implementation, a250839 handoff, d6e739f access, 0c77b1e deployment/API smoke. Application draft/handoff c188a8b, wallet preparation abca5a7 and cost clarification b606f4a are pushed; check git status/log and origin/main for its exact hash.
-- Vercel team Luong Tuan's projects/project arcmirror is approved. Current deployment dpl_BiNChHapbCXuHziRDX9gcg3uFxE6 is READY. There is no active approval/authentication blocker; the temporary automatic-review usage error was resolved by the later successful run.
+- No prior Circle/Arc funding. Software-first authorized. MIT and builder profile aquattdabackup approved. English product/docs, Vietnamese updates.
+- Commit each coherent verified milestone and promptly push. GitHub aquattdabackup access works; no authentication blocker. Never force-push.
+- Existing Vercel project arcmirror in Luong Tuan's projects is approved; no billing changes.
+- Owner previously chose to obtain USDC, then prioritized extra features. Latest feature order was CSV reconciliation, JSON inspector/comparison, Dust Lab; completed.
+- Keys/signatures/purchases stay with the owner. No transaction is approved until chain, recipients, exact amounts and gas are reviewed locally.
 
-## Completed and verified
+## Completed release
 
-- Core bigint analyzer, Next pages/APIs, server-only bounded RPC service, CLI verifier, 3 third-party mainnet vectors; locally tested Lab contract.
-- 37 application tests, 10 spike tests, 16 Foundry tests including 256 fuzz runs; typecheck/build/package checks passed. Production dependency audit 0. No new runtime-code changes in license/production-evidence milestones.
-- MIT applied to root/core LICENSE, package/lock metadata, Solidity SPDX. Package dry run now includes 7 files. Packages remain private; no npm publication.
-- Anonymous public production APIs and desktop/mobile browser flows passed. Ordinary Edge Download JSON saved 8190 bytes to disk; unchanged file equals entire fixture, and fresh live CLI matched its digest. Mainnet live refresh returned matching digest. Details/screenshots in docs/evidence/production and docs/validation.md.
-- Blockscout opened correct transaction/status/block/fee. ArcScan reached Cloudflare challenge; clipboard copy reports success but independent read is denied. Record these limits, not universal browser passes.
-- Native example Verified; ERC-20 precompile example stays Needs Review despite logs/state agreement. Native call-value trace cannot certify those precompile mutations. Dune already deduplicates these representations; do not claim exclusive novelty.
+- `a2787c8`: exact one-to-one CSV payout reconciliation, local file parsing, mismatch/missing/unassigned evidence and JSON export; pushed.
+- `aebf0c6`: bounded local JSON schema/digest inspection, field comparison/fresh RPC, exact Dust Lab simulation, navigation and docs; pushed.
+- Deployment `dpl_5grr6VLEgkj31Kovwz7fw3aWUXaV`, READY from aebf0c6, public https://arcmirror-six.vercel.app/tools. Full monorepo CLI upload preserves shared source. Final documentation/evidence handoff commit follows; check git log for its hash.
+- 49 application tests passed; typecheck, standalone core subpath imports and local/remote builds passed. Existing 10 spike and 16 Foundry/256-fuzz checks previously passed; those components did not change.
+- Local browser checked CSV duplicate/one-wei mismatches, tampered/invalid/equal JSON and fresh RPC, dust presets/invalid count, and three real JSON downloads read back from disk.
+- Public smoke checked all tool routes and APIs. Public browser: CSV 2/2 with 4.499999 USDC and Needs Review; JSON tamper identifies /evidenceLevel, fresh RPC identical; dust one native unit x1000 = 0.000000000000001 USDC. Desktop/mobile inspected; no app console errors, framework overlays or mobile page overflow. See docs/evidence/tools/checks.json and docs/validation.md.
+- React review: clear client/server boundaries, labelled inputs, alerts, bounded local imports, no uploaded file content, stale results cleared, disabled controls during async work. Existing analyzer algorithm/schema unchanged. No new dependency required.
 
-## Feature expansion progress
+## Grant fit
 
-CSV milestone is implemented: /tools/reconcile imports/pastes local CSV, matches exact payer/recipient/amount one-to-one, shows missing/mismatched and unassigned movements, preserves evidence grade, links the source report and exports reconciliation JSON. Core precision/reconciliation are independent package subpaths.
+Official Microgrants rules allow prototypes/experiments and evaluate Arc relevance, technical credibility, quality and potential. No published feature cap or freeze before submission was found; fit is our inference, not organizer approval or an award guarantee. Post-submission review of updates is unspecified. DoraHacks form fields/additional terms are still behind human verification. docs/feature-expansion.md records source/limits. docs/application-draft.md has a revised 100-word description and working tool tour. No grant submitted.
 
-Validation: 44 application tests passed, build passed after fixing Turbopack runtime import extensions (standalone TypeScript build rewrites .ts to .js). ESM subpath imports passed. Local production browser at 1440px/390px: sample 2/2 matched; uploaded one-wei mismatch 0/1 matched, exact amount retained; errors/console empty; width 390/390, no overlay. UI copy encoding corrected afterward; typecheck re-run. Screenshots are in ignored artifacts/tools-check; final deploy evidence will follow the complete tool set. CSV is committed and pushed as a2787c8. JSON inspector/comparison and Dust Lab are now implemented. 49 tests, typecheck, production build and standalone inspector import pass. Local browser: original vs tampered report pinpoints /evidenceLevel and digest mismatch; original vs original and fresh RPC are identical; actual comparison and dust JSON downloads validated. Dust one-wei and micro-USDC arithmetic pass. All three local JSON downloads are validated, including one-use matching for duplicate expectations. Remaining: commit/push the inspector/Dust Lab milestone, deploy, verify public tools and update application draft/handoff. Final typecheck after small copy/input bounds passed.
+## Remaining original work / exact next action
 
-## Latest readiness recheck
+1. Review the delivered tools and application draft with the owner. Do not add unrelated features without a new request.
+2. For mainnet Lab work, read docs/funding.md and docs/wallet-preflight.md; the owner uses MetaMask and has no USDC. Four distinct/checksummed public addresses are in ignored artifacts/owner-wallets.json. Do not ask for them again locally; never publish the mapping or request secrets.
+3. User performs any purchase/funding. No exact quote/provider/amount or signed deployment is approved. Once funded, recheck chain 5042, balance, nonce and ordinary gas estimate. Existing artifacts/lab-deployment-unsigned.json is only an unsigned preparation, not a real deployment. Review exact constructor/recipients/amounts/gas before owner-local signing.
+4. Deploy/source-verify the Lab and record five confirmed owner-created scenarios. Third-party examples are not substitutes. Then finalize application fields/links; owner submits. npm publication is not authorized.
 
-At 2026-09-25T14:16:25Z, production API smoke passed again; home/methodology/native report returned HTTP 200. Native and ERC-20 live endpoint reports exactly matched full golden vectors with the intended Verified/Needs Review grades. Evidence: docs/evidence/production/readiness-recheck.json. This is point-in-time functional verification, not load/uptime or security certification. No runtime code changed, so unrelated suites were not repeated.
+## Continuity and operation
 
-## Remaining work
+Read AGENTS.md, architecture.md and docs/HANDOFF.md; original brief is docs/product-brief.vi.md. Keep this task file because the original mainnet/grant task remains open. Use npm.cmd on Windows. Gitleaks/Foundry are in ignored .local-tools. Never print .env/.vercel credentials.
 
-1. English draft is ready at docs/application-draft.md: 100-word description, longer description, real links, reviewer tour and requirement matrix; Lab/demo fields remain pending; reward address is supplied locally and should be entered by the owner into the final application. Official grant and Arc/Dune sources rechecked 2026-09-25. DoraHacks registration reached Human Verification; no form fields inspected or submitted.
-2. Owner supplied burner, two recipients and reward address; all four are distinct/checksummed. Mapping is in ignored artifacts/owner-wallets.json, not public Git. Mainnet read-only check found zero balance/empty code, burner nonce 0. Constructor/init code is prepared in ignored artifacts/lab-deployment-unsigned.json. Ordinary estimate failed for insufficient balance; zero-gas-price simulation estimated 806827 gas (~0.0162172227 USDC at observed price), not an executable fee approval. See docs/wallet-preflight.md. Owner uses MetaMask and has no USDC. Official network/Portal funding guidance is in docs/funding.md; actual onramp availability/quote is unverified. Owner explicitly chose to continue obtaining USDC and the mainnet Lab/five-demo path after discussing costs. Do not re-open the scope decision. No exact purchase amount/provider/fee or deployment transaction has been approved or signed. User completes the crypto purchase and local signing; agent provides checks/guidance. Portal has no direct off-ramp. Await a reviewed funding quote/deposit; then rerun ordinary estimates and prepare exact owner-local signing. No transaction sent.
-3. Complete final application matrix/link check after those artifacts exist; owner presses Submit.
-4. CSV reconciliation, report inspector/comparison and Dust Lab are now authorized. Acceptance: exact bigint, one-to-one matching, local file processing, explicit evidence limits, usable desktop/mobile flows, tests and deployment evidence. Memo/MCP/OG/Dune/video remain deferred. The official Microgrants page does not state a feature cap or freeze before submission; this is an inference of fit, not organizer approval. Post-submission update review is unspecified. See docs/feature-expansion.md.
+Before stopping: commit/push the final documentation/evidence, verify clean Git state, regenerate and verify artifacts/ArcMirror-handoff.bundle from main only. GitHub is canonical. No need to redeploy docs-only changes. The isolated browser and local production server were closed after checks. Edge download popup targets can disrupt viewport controls, so reselect the real app tab for future checks.
 
-## Operation and handoff
-
-Read AGENTS.md, architecture.md, docs/HANDOFF.md and only targeted source. Original specification is docs/product-brief.vi.md. Current deployment settings in docs/deployment-settings.json; use linked official Vercel CLI from repo root. Connector inline uploads lost workspace files. .vercel and .env.local are ignored; never print their credentials.
-
-Use npm.cmd on Windows. Gitleaks/Foundry are in ignored .local-tools. Node tooling can require sandbox escalation; preserve actual failures vs checks that later passed. Production browser sessions were closed after verification. For future checks, use an isolated browser profile and a persistent parent process: short-lived exec parents can kill browser daemons. Installed Edge succeeded at normal file download where cached Chromium failed.
-
-Latest wallet milestone reran Foundry: 16 passed including 256 fuzz cases. No funds moved, contract deployed, npm package published or grant submitted. Keep this file until the remaining original task is complete. Before handing off, update docs/HANDOFF.md, commit/push and regenerate ignored artifacts/ArcMirror-handoff.bundle from main only (not --all).
-
-Last updated 2026-09-25.
+Last updated 2026-09-26.
