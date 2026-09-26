@@ -2831,3 +2831,147 @@ small {
 .dust-total dd {
   font-size: 17px;
 }
+
+/* Readable typography: preserve the larger scale on narrow screens. */
+@media (max-width: 600px) {
+  body {
+    font-size: 16px;
+  }
+
+  .site-header nav {
+    gap: 14px;
+    font-size: 13px;
+  }
+
+  .hero-copy .eyebrow,
+  .visual-top,
+  .visual-top .pill {
+    font-size: 11px;
+  }
+
+  .hero-description {
+    font-size: 17px;
+  }
+
+  .search label,
+  .search button {
+    font-size: 13px;
+  }
+
+  .search input,
+  .tool-card input:not([type="checkbox"]),
+  .tool-card textarea {
+    font-size: 16px;
+  }
+
+  .hero-small,
+  .principle-inner > div,
+  .step-number,
+  .visual-ledger > div,
+  .card-bottom {
+    font-size: 12px;
+  }
+
+  .principle-inner p,
+  .section-heading p,
+  .why-items p,
+  .example-card p {
+    font-size: 14px;
+  }
+
+  .category,
+  .example-card .category {
+    font-size: 12px !important;
+  }
+
+  .caption,
+  .footer-note > span {
+    font-size: 11px;
+  }
+
+  .site-footer p,
+  .breadcrumb,
+  .transaction-meta {
+    font-size: 12px;
+  }
+
+  .report-actions .button,
+  .transaction-meta code,
+  .snapshot-banner,
+  .tabs button,
+  .gas-row summary,
+  .gas-row summary > strong {
+    font-size: 13px;
+  }
+
+  .metric > span,
+  .movement-number,
+  .movement-party > small,
+  .movement-value > small {
+    font-size: 11px;
+  }
+
+  .metric > small,
+  .movement-party .mono,
+  .movement-value strong small,
+  .detail-grid small,
+  .address,
+  .logs-list summary code {
+    font-size: 12px;
+  }
+
+  .movement summary {
+    grid-template-columns: 18px minmax(0, 1fr) minmax(0, 1fr);
+    gap: 12px 10px;
+    padding: 22px 0;
+  }
+
+  .movement-value {
+    grid-column: 2 / -1;
+    grid-row: 2;
+    text-align: left;
+  }
+
+  .movement-value strong {
+    font-size: 14px;
+  }
+
+  .movement-detail,
+  .movement-detail p,
+  .detail-grid code,
+  .movement-detail pre,
+  .gas-row .movement-detail code {
+    font-size: 13px;
+  }
+
+  .detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .address {
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .proof-checks > div,
+  .proof-export p,
+  .limitations,
+  .logs-list summary,
+  .method-grid code {
+    font-size: 13px;
+  }
+
+  .method-grid p,
+  .method-section > p,
+  .evidence-explain p {
+    font-size: 14px;
+  }
+
+  .tool-heading > p {
+    font-size: 17px;
+  }
+
+  .dust-digits {
+    font-size: 16px;
+  }
+}
