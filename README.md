@@ -52,6 +52,16 @@ These are **existing public third-party transactions**, captured on September 24
 
 In the web app, open `/tx/<hash>`, click a movement amount for source logs, toggle the double-count comparison, then download JSON. Gas is a separate row. The movement total counts every hop once and is not net wallet income.
 
+## Tools for payment operations and builders
+
+Open the [workbench](https://arcmirror-six.vercel.app/tools):
+
+- **Payout reconciliation** (`/tools/reconcile`): import a CSV with `id,payer,recipient,amount_usdc`, or paste it locally. Compare up to 500 expected rows against one successful Arc transaction. Exact payer/recipient/amount matches consume one canonical movement each; duplicate expectations cannot reuse a movement. Missing, amount-mismatch candidates and unassigned movements remain visible. Gas is separate; Needs Review is preserved. Export the reconciliation as JSON. The sample uses illustrative ids, not actual invoices.
+- **Report inspector** (`/tools/inspect`): load up to two report JSON files (2 MB each), validate the supported structure, recompute the canonical digest and inspect changed field paths. Optionally request fresh mainnet evidence by hash. A matching digest does not establish authenticity: fabricated content can be hashed too. Exports identify integrity and source.
+- **Dust Lab** (`/tools/dust`): explore exact 18/6-decimal decomposition and the accumulated remainder if each repeated amount were truncated. This is an arithmetic simulation; no transaction is created.
+
+Files stay in browser memory, with no upload or persistent storage. Only the transaction hash is sent when fetching evidence. One expected row matches one movement in one transaction; split payments, invoice identity, recipient ownership and offchain settlement are not inferred.
+
 ## How the numbers are calculated
 
 1. Require chain ID **5042**, a 32-byte hash and matching transaction/receipt/block/log identifiers. Success requires receipt status `0x1`.
@@ -95,7 +105,7 @@ flowchart LR
   Report --> Browser
 ```
 
-- `apps/web`: `/`, `/tx/[hash]`, `/how-it-works`; `/api/health`, `/api/examples`, `/api/analyze/<hash>`.
+- `apps/web`: `/`, `/tx/[hash]`, `/how-it-works`, `/tools` and its reconciliation/inspector/dust routes; `/api/health`, `/api/examples`, `/api/analyze/<hash>`.
 - `packages/core`: pure analyzer with compiled ESM/declarations, independent of UI and network.
 - `packages/rpc`: server/CLI RPC adapter, chain checks, fallback, timeout and bounded responses.
 - `contracts`: immutable-recipient ArcMirrorLab and Foundry tests; owner-signed deployment pending.
@@ -103,11 +113,11 @@ flowchart LR
 
 ## Checks actually run
 
-37 analyzer/vector/RPC tests, 10 spike evidence tests and 16 Foundry tests passed (including 256 fuzz runs). Type checking, standalone core packaging and the Next.js production build passed. Local and public production desktop/mobile UI, APIs and live digest comparisons were checked. Production dependency audit and source secret scan returned no findings. An ordinary Edge download saved the report to disk; its entire JSON and digest matched the fixture and fresh mainnet RPC. ArcScan challenged the automated browser, and independent clipboard read was denied. Details and outputs are in [validation](docs/validation.md).
+49 analyzer/vector/RPC/tool tests, 10 spike evidence tests and 16 Foundry tests passed (including 256 fuzz runs). Type checking, standalone core packaging and the Next.js production build passed. Local and public production desktop/mobile UI, APIs and live digest comparisons were checked. Production dependency audit and source secret scan returned no findings. An ordinary Edge download saved the report to disk; its entire JSON and digest matched the fixture and fresh mainnet RPC. ArcScan challenged the automated browser, and independent clipboard read was denied. Details and outputs are in [validation](docs/validation.md).
 
 ## Limits and deployment status
 
-- No memo decoding, invoice CSV reconciliation, Dune query, MCP endpoint or OG sharing card. Memo bytecode existence alone has not established identity or semantics.
+- No memo decoding, Dune query, MCP endpoint or OG sharing card. Memo bytecode existence alone has not established identity or semantics.
 - Historical fork/genesis coverage is not certified. Unusual trace types and precompile movements require review.
 - RPC endpoints may throttle or lose tracer support. Cache and rate limits are in-process (not distributed): 256 reports / one-hour TTL, 8 concurrent analyses, 30 client and 120 global requests per minute per instance. Hosting-level limits are still needed for a larger deployment.
 - Basic CSP/security headers are configured. Inline scripts/styles remain allowed for the Next.js bootstrap; nonce-based CSP is not implemented.
