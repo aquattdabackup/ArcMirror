@@ -15,6 +15,12 @@ ArcMirror explains Arc mainnet USDC movements, exact gas costs and their source 
 
 ## Try the software
 
+Start on the [live website](https://arcmirror-six.vercel.app) and choose **Follow a real 0.01 USDC transfer in one minute**. Read **What can I conclude?**, expand a movement or its network fee, then use **Copy link** to share the explanation. The recipient receives 0.01 USDC; the sender's 0.00042 USDC gas cost is separate. The report distinguishes receipt success from evidence completeness.
+
+For a double-count investigation, open the ERC-20 example and choose **See why two logs are not two payments**. It compares 8.999998 USDC from adding both log streams with 4.499999 USDC across canonical movements. That sum includes every hop, not a recipient's net income. Needs Review remains visible because call-value coverage is incomplete.
+
+### Run locally
+
 Use Node.js 22 or newer (tested with Node 24). On Windows, use `npm.cmd` if PowerShell blocks `npm.ps1`.
 
 ```sh
@@ -52,7 +58,9 @@ These are **existing public third-party transactions**, captured on September 24
 
 In the web app, open `/tx/<hash>`, click a movement amount for source logs, toggle the double-count comparison, then download JSON. Gas is a separate row. The movement total counts every hop once and is not net wallet income.
 
-## Tools for payment operations and builders
+## Optional follow-up tools
+
+The analyzer is the primary product. You do not need a CSV, JSON file or simulator to understand or share a transaction. Use reconciliation only if you have an independently prepared list of expected transfers, Inspector when checking a saved report, and Dust Lab when implementing exact amounts in an integration. These workflows are hypotheses about user needs, not evidence of adoption; see the [product review](docs/product-review.md).
 
 Open the [workbench](https://arcmirror-six.vercel.app/tools):
 
