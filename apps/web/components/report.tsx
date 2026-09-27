@@ -5,6 +5,7 @@ import type { Report } from "../../../packages/core/src/types";
 import type { Result } from "../lib/service";
 import { Arrow, Check } from "./icons";
 import { Search } from "./search";
+import { ReportGuide } from "./report-guide";
 const short = (s: string) => s.slice(0, 8) + "…" + s.slice(-6);
 const label = (s: string) => s.replaceAll("_", " ");
 const reasons: Record<string, string> = {
@@ -104,24 +105,18 @@ export function TransactionReport({ initial }: { initial: Result }) {
         <div>
           <div className="eyebrow">ARC MAINNET · CHAIN 5042</div>
           <h1>
-            Every movement,
+            What happened
             <br />
-            <em>in the open.</em>
+            <em>to this USDC?</em>
           </h1>
         </div>
         <div className="report-actions">
-          <Link className="button" href={"/tools/reconcile?tx=" + r.txHash}>
-            Reconcile CSV
-          </Link>
           <button className="button" onClick={copy}>
             Copy link
           </button>
           <button className="button primary" onClick={download}>
             Download JSON
           </button>
-          <Link className="button" href="/tools/inspect">
-            Inspect saved JSON
-          </Link>
         </div>
       </div>
       <div className="transaction-meta">
@@ -167,7 +162,7 @@ export function TransactionReport({ initial }: { initial: Result }) {
       ) : null}
       <div className="metrics">
         <div className="metric">
-          <span>Transaction status</span>
+          <span>1. Did the transaction succeed?</span>
           <strong className={"status-" + r.status}>
             {r.status === "confirmed_success"
               ? "Confirmed success"
@@ -182,7 +177,7 @@ export function TransactionReport({ initial }: { initial: Result }) {
           </small>
         </div>
         <div className="metric">
-          <span>USDC across all movements</span>
+          <span>2. How much moved across all hops?</span>
           <strong>
             {confirmed ? r.totals.grossMovementExact : "—"} <small>USDC</small>
           </strong>
@@ -192,13 +187,23 @@ export function TransactionReport({ initial }: { initial: Result }) {
           </small>
         </div>
         <div className="metric">
-          <span>Gas paid separately</span>
+          <span>3. What did the network fee cost?</span>
           <strong>
             {r.gas?.feeExact ?? "—"} <small>USDC</small>
           </strong>
           <small>Receipt gas used × effective price</small>
         </div>
       </div>
+      <ReportGuide report={r} />
+      {confirmed ? (
+        <nav className="report-reading-path" aria-label="Read this report">
+          <a href="#money-trail" onClick={() => setTab("flow")}>Follow the money</a>
+          {r.status === "confirmed_success" && r.totals.phantomEligible ? (
+            <a href="#double-count" onClick={() => setPhantom(true)}>See why two logs are not two payments</a>
+          ) : null}
+          <a href="#share-report">Share or check the result</a>
+        </nav>
+      ) : null}
       {!confirmed ? (
         <div className="empty-state">
           <h2>
@@ -222,7 +227,7 @@ export function TransactionReport({ initial }: { initial: Result }) {
       ) : (
         <>
           <div className="analysis-grid">
-            <section className="panel flow-panel">
+            <section className="panel flow-panel" id="money-trail">
               <div className="panel-heading">
                 <div>
                   <span className="eyebrow">THE MONEY TRAIL</span>
@@ -310,6 +315,19 @@ export function TransactionReport({ initial }: { initial: Result }) {
                             From <Address value={m.payer} /> to{" "}
                             <Address value={m.payee} />
                           </p>
+                          {m.corroboratingLogIndexes.length ? (
+                            <p>
+                              The system log and paired ERC-20 log describe this same transfer.
+                              Count {m.amountExact} USDC once, not once per log.
+                            </p>
+                          ) : null}
+                          {m.dustRemainder18 !== "0" ? (
+                            <p>
+                              A six-decimal display leaves out part of this amount.
+                              The exact value above preserves it. Building a balance display?{" "}
+                              <Link className="text-link" href="/tools/dust">Check rounding in Dust Lab</Link>.
+                            </p>
+                          ) : null}
                           <pre>
                             {JSON.stringify(
                               r.logs.filter(
@@ -417,7 +435,7 @@ export function TransactionReport({ initial }: { initial: Result }) {
                 </div>
               )}
             </section>
-            <aside className="panel evidence-panel">
+            <aside className="panel evidence-panel" id="evidence-check">
               <span className="eyebrow">EVIDENCE CHECK</span>
               <div className={"evidence-title " + r.evidenceLevel}>
                 {r.evidenceLevel === "verified" ? (
@@ -467,9 +485,10 @@ export function TransactionReport({ initial }: { initial: Result }) {
               </Link>
             </aside>
           </div>
-          {r.totals.phantomEligible ? (
+          {r.status === "confirmed_success" && r.totals.phantomEligible ? (
             <section
               className={"phantom panel " + (phantom ? "phantom-on" : "")}
+              id="double-count"
             >
               <div>
                 <div className="eyebrow">PHANTOM DOUBLE COUNT</div>
@@ -482,6 +501,7 @@ export function TransactionReport({ initial }: { initial: Result }) {
                   The same USDC appears through two interfaces.
                   <br />
                   Summing both representations inflates the result.
+                  This can make a payment report look larger than the recorded movements.
                 </p>
                 <button
                   className="button"
@@ -513,14 +533,26 @@ export function TransactionReport({ initial }: { initial: Result }) {
           ) : null}
         </>
       )}
-      <section className="proof-export panel">
+      <section className="proof-export panel" id="share-report">
         <div>
           <div className="eyebrow">TAKE THE EVIDENCE WITH YOU</div>
-          <h2>A shareable, reproducible report.</h2>
+          <h2>Send someone an explanation they can check.</h2>
           <p>
-            Algorithm {r.algorithmVersion} · schema {r.schemaVersion}. Download
-            this JSON, then compare it using your own RPC.
+            Use Copy link to share this transaction. The reader can inspect each
+            amount and choose Re-verify live to request current evidence.
           </p>
+          <p>
+            Need to keep or compare a saved report? Download JSON, then{" "}
+            <Link className="text-link" href="/tools/inspect">check the saved file</Link>.
+            Developers can also rerun it using their own RPC with the command here.
+            Algorithm {r.algorithmVersion} · schema {r.schemaVersion}.
+          </p>
+          {r.status === "confirmed_success" && r.proof.logs === "consistent" && r.movements.length > 0 ? (
+            <p>
+              Have a separate list of expected transfers for this transaction?{" "}
+              <Link className="text-link" href={"/tools/reconcile?tx=" + r.txHash}>Check your payment list</Link>.
+            </p>
+          ) : null}
         </div>
         <div className="digest-box">
           <span className="mono">KECCAK256 / CANONICAL REPORT</span>
