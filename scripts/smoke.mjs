@@ -21,8 +21,8 @@ for (const example of examples.data) {
   assert.match(value.data.report.digest, /^0x[0-9a-f]{64}$/);
 }
 const pages = [
-  ['/tools', 'From numbers'], ['/tools/reconcile', 'Expected. Observed.'],
-  ['/tools/inspect', 'Trust starts'], ['/tools/dust', 'Every last digit'],
+  ['/tools', 'What do you'], ['/tools/reconcile', 'Were the expected'],
+  ['/tools/inspect', 'Does this saved report'], ['/tools/dust', 'Does rounding hide'],
 ];
 for (const [path, content] of pages) {
   const response = await fetch(new URL(path, base), {signal: AbortSignal.timeout(30000)});
