@@ -1,6 +1,6 @@
 # Current task
 
-The owner-requested feature expansion is delivered and deployed. Continue the original ArcMirror mainnet Lab/five-demo and grant-preparation work when the owner is ready for funding/signing. Do not rebuild completed features.
+Current priority (2026-09-27): correct product focus after the owner reported unclear usefulness of the three tools. Defer funding/signing work. Lead with the original P0 transaction explanation, not the optional workbench. See docs/product-review.md for the requirements/gap audit and acceptance criteria. Existing tools work technically; usability and real demand are not established by passing tests.
 
 ## Owner decisions
 
