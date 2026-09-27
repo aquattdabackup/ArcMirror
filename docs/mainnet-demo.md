@@ -4,6 +4,14 @@ Prepared 2026-09-27. The burner is funded; the Lab is **not deployed** and no ow
 
 ArcMirror analyzes transaction hashes. It does not connect a wallet, deploy contracts or send money. Use MetaMask for the direct native transfer and Remix with MetaMask for contract interactions. After each confirmed receipt, paste the hash into [ArcMirror](https://arcmirror-six.vercel.app), select **Analyze**, inspect the result and **Download JSON**. Do one transaction at a time.
 
+## Recording order
+
+Prepare the tabs and compiled contract before recording. A clean video can show the deployment once, then each of the five scenarios below. If the deployment already has a confirmed receipt, begin with its address and the two immutable recipient getters instead of deploying it again. The deployment is a setup transaction; it is separate from the five demos.
+
+For each scenario: show the called action and small amount, review the MetaMask confirmation (Arc mainnet, burner, transaction value and fee), sign locally only when those fields match this runbook, wait for the confirmed receipt, copy its transaction hash, then switch to ArcMirror and analyze that hash. Keep the receipt/hash visible long enough for the viewer to connect the wallet action to the report. State the observed outcome and actual gas fee; don't imply a simulation is a mined transaction. If ArcMirror says **Needs Review**, explain what evidence is missing rather than calling the result verified.
+
+Before recording, hide recovery phrases, QR codes, wallet passwords and unrelated accounts. Never show or enter secret wallet material. The fee is real. The proposed principal across the five transfers is 0.006 USDC; gas is additional and must be refreshed in MetaMask at recording time. Rehearse the screen order without signing extra mainnet transactions.
+
 The local preparation is available in ignored `artifacts/demo-remix/`: unchanged source at `src/ArcMirrorLab.sol`, `USDC-transfer.abi`, `ArcMirrorLab.abi`, `Lab-failure-transaction.abi` and an unsigned `review.json` with the supplied public recipients. Transfer these address-only files privately for another-machine handoff. They contain no deployment address, signature or secret.
 
 ## 1. Prepare the wallet and deployment
@@ -37,13 +45,13 @@ For step 2, load a `.abi` file containing this interface via Remix's **Add Contr
 [{"type":"function","name":"transfer","stateMutability":"nonpayable","inputs":[{"name":"to","type":"address"},{"name":"amount","type":"uint256"}],"outputs":[{"type":"bool"}]}]
 ```
 
-Step 5 needs care: the source function is `pure`, so its normal Remix button performs an **eth_call**. A red simulation error has no mined hash and does not count as a mainnet demo. To request a transaction, load the following ABI against the already verified Lab address. It deliberately describes the same selector as nonpayable to make the wallet send a transaction; it does not alter the deployed source.
+Step 5 needs care: the source function is `pure`, so its normal Remix button performs an **eth_call**. A simulation error has no mined hash and does not count as a mainnet demo. To request a transaction, load the following ABI against the already verified Lab address. It deliberately describes the same selector as nonpayable so Remix presents a transaction action; it does not alter the deployed source.
 
 ```json
 [{"type":"function","name":"intentionalFailure","stateMutability":"nonpayable","inputs":[],"outputs":[]}]
 ```
 
-First simulate and verify the expected `IntentionalFailure()` revert. Ordinary gas estimation is expected to reject this call. Review a separate explicit gas bound (proposed **100000 gas**) and a fresh fee cap with the owner. Only this known deliberate-revert scenario may proceed despite its expected simulation warning; an unexpected error in any other step stops that step. If the wallet blocks sending, stop and prepare an owner-reviewed alternative; do not claim the simulation was a mined failure. Confirm the actual failed receipt and revert reason afterward, including that it was not an out-of-gas failure.
+First simulate and verify the expected `IntentionalFailure()` revert. Ordinary gas estimation is expected to reject this call. A proposed explicit gas bound is **100000 gas**, with a fresh fee cap reviewed before signing. MetaMask added a transaction-protection feature in September 2026, and its documentation lists Arc among the supported networks. Wallet behavior depends on account and protection mode; the simulation can warn about the intentional revert. Do not disable wallet protections to make a demo work. Only submit if MetaMask clearly offers the expected transaction for owner review and the owner deliberately approves the known revert, zero value and bounded fee. If the wallet blocks submission or its preview is unclear, stop; an on-screen simulation or an unsigned/rejected request is not the failed-transaction demo. Confirm the real receipt status is 0 and inspect its revert reason afterward, including that it was not an out-of-gas failure. [MetaMask simulation guidance](https://support.metamask.io/manage-crypto/transactions/simulations/).
 
 ## 3. Inspect and record each result
 
