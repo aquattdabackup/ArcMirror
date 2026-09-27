@@ -1,6 +1,6 @@
 # Current task
 
-Current priority (2026-09-27): the product-focus correction is implemented, tested and deployed. The owner reported unclear usefulness of the three tools; the original P0 transaction explanation now leads, and tools explain their specific follow-up jobs. Next: the owner tries the short transaction walkthrough and reports remaining confusion. Defer funding/signing; do not add unrelated features. See docs/product-review.md. Technical checks do not establish usability or demand.
+Current priority (2026-09-27): the owner resumed mainnet preparation and requested a USDC balance check plus the demo procedure. The burner is funded; the five-scenario runbook and local Remix files are prepared. No signature, broadcast, Lab deployment or owner demo has occurred. Next: refresh/review the exact deployment request with the owner, who signs locally in MetaMask. Product-focus correction is delivered; owner usability acceptance remains open. Do not add unrelated features.
 
 ## Owner decisions
 
@@ -9,6 +9,14 @@ Current priority (2026-09-27): the product-focus correction is implemented, test
 - Existing Vercel project arcmirror in Luong Tuan's projects is approved; no billing changes.
 - Owner previously chose to obtain USDC, then prioritized extra features. Latest feature order was CSV reconciliation, JSON inspector/comparison, Dust Lab; completed.
 - Keys/signatures/purchases stay with the owner. No transaction is approved until chain, recipients, exact amounts and gas are reviewed locally.
+
+## Funded wallet and demo preparation (2026-09-27)
+
+- At 08:13:10 UTC (15:13 Vietnam), chain 5042, block 22998025: burner 5.409448 USDC. Native 18-decimal and ERC-20 6-decimal views agree; dRPC confirms the same native balance and block hash. Confirmed/pending nonce 0; burner code empty. Evidence: ignored artifacts/wallet-preflight-current.json. Do not repeat old funding instructions.
+- Ordinary funded estimates succeeded: deployment 806827 gas, native 0.001 transfer 21000, ERC-20 1000 raw transfer 74814. Price 20000000001; deployment about 0.01614 USDC, buffered gas 968193 about 0.01936 at that price. Later signatures require fresh quotes; remaining Lab calls need the deployed address. No full-demo fee or signed cap is approved.
+- Preflight d457345 and demo runbook/funding correction fd6d9fa are pushed. docs/mainnet-demo.md proposes native + ERC-20 + nativeForward + batch + intentional failure, total transferred value 0.006 USDC plus gas. It explains hop totals, Lab as CSV payer, and why a pure eth_call failure is not a mined demo.
+- Ignored artifacts/demo-remix contains unchanged source, three ABIs and review.json with public recipients. The failure transaction ABI retains the selector but uses nonpayable metadata; proposed 100000 gas still needs a fresh fee cap and owner review. Do not override unexpected errors or count simulation as a transaction.
+- Checks: source keccak matches compiled metadata; creation data matches saved hash/constructor; 18/6-decimal amounts and 0.006 total checked; failure ABI selector matches the pure source function. Staged docs and full Git history secret-scanned with no findings. App/contract source unchanged; application/Foundry tests were not rerun.
 
 ## Product-focus correction delivered (2026-09-27)
 
@@ -41,10 +49,10 @@ Official Microgrants rules allow prototypes/experiments and evaluate Arc relevan
 
 ## Remaining original work / exact next action
 
-1. Review the new core path with the owner: homepage one-minute example → What can I conclude? → Follow the money → original amount/gas sources → Copy link. Then the ERC-20 double-count explanation. Ask for the exact unclear step, not new feature ideas. See docs/owner-test-flow.vi.md; usability acceptance remains open.
-2. Resume mainnet Lab work only when the owner returns to it after product review. Read docs/funding.md and docs/wallet-preflight.md; the last reported wallet state was MetaMask with no USDC. Four distinct/checksummed public addresses are in ignored artifacts/owner-wallets.json. Do not ask for them again locally; never publish the mapping or request secrets.
-3. User performs any purchase/funding. No exact quote/provider/amount or signed deployment is approved. Once funded, recheck chain 5042, balance, nonce and ordinary gas estimate. Existing artifacts/lab-deployment-unsigned.json is only an unsigned preparation, not a real deployment. Review exact constructor/recipients/amounts/gas before owner-local signing.
-4. Deploy/source-verify the Lab and record five confirmed owner-created scenarios. Third-party examples are not substitutes. Then finalize application fields/links; owner submits. npm publication is not authorized.
+1. Follow docs/mainnet-demo.md. Owner opens Remix in the MetaMask browser, selects burner/Arc 5042, and compiles ArcMirrorLab using the recorded source path/settings. Agent refreshes balance/nonce/gas, compares creation data and presents exact recipient/value/fee details before owner-local signing. No extra deposit is indicated for deployment at the checked balance/fee.
+2. Addresses remain in ignored artifacts/owner-wallets.json. Do not ask again locally, publish the mapping or request secrets. artifacts/lab-deployment-unsigned.json is historical preparation with an expired quote and only a predicted address; recompute if nonce changes. Only a confirmed receipt supplies a real deployment address.
+3. Confirm deployment receipt/code/immutable recipients/source, then execute five scenarios one at a time under owner review/signing. Collect actual receipts/reports/vectors; preserve Needs Review for incomplete coverage. Third-party examples do not count as owner demos. Memo remains separate P2 work.
+4. Collect concrete usability feedback during the owner's real report walkthrough; technical checks do not establish comprehension. Finalize application links with real evidence; owner submits. npm publication remains unauthorized.
 
 ## Continuity and operation
 
