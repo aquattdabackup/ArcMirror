@@ -1,6 +1,6 @@
 # Current task
 
-Current priority (2026-09-27): correct product focus after the owner reported unclear usefulness of the three tools. Defer funding/signing work. Lead with the original P0 transaction explanation, not the optional workbench. See docs/product-review.md for the requirements/gap audit and acceptance criteria. Existing tools work technically; usability and real demand are not established by passing tests.
+Current priority (2026-09-27): the product-focus correction is implemented, tested and deployed. The owner reported unclear usefulness of the three tools; the original P0 transaction explanation now leads, and tools explain their specific follow-up jobs. Next: the owner tries the short transaction walkthrough and reports remaining confusion. Defer funding/signing; do not add unrelated features. See docs/product-review.md. Technical checks do not establish usability or demand.
 
 ## Owner decisions
 
@@ -10,11 +10,19 @@ Current priority (2026-09-27): correct product focus after the owner reported un
 - Owner previously chose to obtain USDC, then prioritized extra features. Latest feature order was CSV reconciliation, JSON inspector/comparison, Dust Lab; completed.
 - Keys/signatures/purchases stay with the owner. No transaction is approved until chain, recipients, exact amounts and gas are reviewed locally.
 
-## Completed release
+## Product-focus correction delivered (2026-09-27)
+
+- Focus audit `d7a34b9`; report explanation `2a4d1c9`; six regression checks `c323dc1`; homepage `2f0897e`; task-based tools catalog `59a4290`; independent tool routes `f9bbe4c`, `5765fec`, `f430b87`; standard test integration `229ba77`. All pushed.
+- Deployment `dpl_AZbqQjnSuDLdtwLrjnojFko2jiEC` is READY from `229ba77`, aliased to https://arcmirror-six.vercel.app. Local/remote production build and typecheck passed; npm test passed 49 existing plus 6 report-guide checks. Core schema, algorithm and contract unchanged.
+- Production verified native amount/source/gas, ERC-20 double-count comparison with Needs Review, current-hash continuity into CSV, custom dust arithmetic and mobile layout. Unknown hash has no confirmed-payment guide or reconciliation action. No captured browser errors/console entries; deployment error-log query empty. Evidence and screenshots: docs/evidence/product-focus, committed/pushed in `a96c1bc`.
+- Smoke initially expected old page headings; `5ef87ab` corrected them and production smoke passed. README `26fb451`, application draft `cfe3604` and owner walkthrough/feature review `761ccfa` restore the primary product focus. No funds moved or grant submitted.
+- Automatic approval review briefly hit its usage limit; after owner continuation, the same approved checks succeeded. No remaining approval blocker. Browser and dev server closed. Next.js-generated local AGENTS/CLAUDE files were removed; production build restored next-env.d.ts. Preserve the pre-existing, unrelated LICENSE indentation change.
+
+## Earlier release details
 
 - `a2787c8`: exact one-to-one CSV payout reconciliation, local file parsing, mismatch/missing/unassigned evidence and JSON export; pushed.
 - `aebf0c6`: bounded local JSON schema/digest inspection, field comparison/fresh RPC, exact Dust Lab simulation, navigation and docs; pushed.
-- The workbench release was first deployed as `dpl_5grr6VLEgkj31Kovwz7fw3aWUXaV` from `aebf0c6`. The current production deployment is `dpl_55YdtVKkThygJ2gxd5oegeGi3LpQ`, READY from application source `701edfa`, at https://arcmirror-six.vercel.app. Full monorepo CLI upload preserves shared source.
+- The workbench release was first deployed as `dpl_5grr6VLEgkj31Kovwz7fw3aWUXaV` from `aebf0c6`, followed by the sticky-header release `dpl_55YdtVKkThygJ2gxd5oegeGi3LpQ` from `701edfa`. The current production deployment is recorded in the correction section above. Full monorepo CLI upload preserves shared source.
 - Readable typography shipped in five focused commits: shared controls `ff95384`, landing page `ea3d628`, transaction evidence `05f65cd`, analysis tools `8cde6a3`, and responsive mobile layout `93ba99b`. Body copy is 17px desktop/16px mobile; high-value report and form text now stays in a 12–16px range. The mobile movement summary uses two rows instead of compressing four columns.
 - Obsolete static BETA branding was removed in `a429cff`. Production confirms the header text is exactly ArcMirror with no `.beta` element or BETA text. The complete Vietnamese owner walkthrough is `docs/owner-test-flow.vi.md` from `7a72162`; it covers product flow, expected values, negative cases, tools, API/CLI/contract checks, bug isolation and a report template.
 - Sticky navigation shipped in `6e9682c`; desktop and 390px mobile checks confirmed top=0 after deep scrolling, correct anchor offset and no overflow. Home copy `51516f0` and tools copy `701edfa` now state that saved examples are optional starters: the analyzer accepts other Arc mainnet hashes, reconciliation accepts owner CSV/hash input, Inspector accepts owner JSON and Dust Lab accepts custom exact amounts.
@@ -33,8 +41,8 @@ Official Microgrants rules allow prototypes/experiments and evaluate Arc relevan
 
 ## Remaining original work / exact next action
 
-1. Review the delivered tools and application draft with the owner. Do not add unrelated features without a new request.
-2. For mainnet Lab work, read docs/funding.md and docs/wallet-preflight.md; the owner uses MetaMask and has no USDC. Four distinct/checksummed public addresses are in ignored artifacts/owner-wallets.json. Do not ask for them again locally; never publish the mapping or request secrets.
+1. Review the new core path with the owner: homepage one-minute example → What can I conclude? → Follow the money → original amount/gas sources → Copy link. Then the ERC-20 double-count explanation. Ask for the exact unclear step, not new feature ideas. See docs/owner-test-flow.vi.md; usability acceptance remains open.
+2. Resume mainnet Lab work only when the owner returns to it after product review. Read docs/funding.md and docs/wallet-preflight.md; the last reported wallet state was MetaMask with no USDC. Four distinct/checksummed public addresses are in ignored artifacts/owner-wallets.json. Do not ask for them again locally; never publish the mapping or request secrets.
 3. User performs any purchase/funding. No exact quote/provider/amount or signed deployment is approved. Once funded, recheck chain 5042, balance, nonce and ordinary gas estimate. Existing artifacts/lab-deployment-unsigned.json is only an unsigned preparation, not a real deployment. Review exact constructor/recipients/amounts/gas before owner-local signing.
 4. Deploy/source-verify the Lab and record five confirmed owner-created scenarios. Third-party examples are not substitutes. Then finalize application fields/links; owner submits. npm publication is not authorized.
 
@@ -42,6 +50,6 @@ Official Microgrants rules allow prototypes/experiments and evaluate Arc relevan
 
 Read AGENTS.md, architecture.md and docs/HANDOFF.md; original brief is docs/product-brief.vi.md. Keep this task file because the original mainnet/grant task remains open. Use npm.cmd on Windows. Gitleaks/Foundry are in ignored .local-tools. Never print .env/.vercel credentials.
 
-Before stopping: commit/push the final documentation/evidence, verify clean Git state, regenerate and verify artifacts/ArcMirror-handoff.bundle from main only. GitHub is canonical. No need to redeploy docs-only changes. The isolated browser and local production server were closed after checks. Edge download popup targets can disrupt viewport controls, so reselect the real app tab for future checks.
+Before stopping: commit/push final documentation/evidence and verify no task changes remain uncommitted; preserve the unrelated LICENSE change. Regenerate and verify artifacts/ArcMirror-handoff.bundle from main only. GitHub is canonical. Consult git log for the final handoff hash. No need to redeploy docs/test-only follow-ups. The isolated browser and local server were closed after checks. Edge download popup targets can disrupt viewport controls, so reselect the real app tab for future checks.
 
-Last updated 2026-09-26.
+Last updated 2026-09-27.

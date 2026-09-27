@@ -41,4 +41,6 @@ Do not add more features to compensate for unclear value. Keep existing useful i
 
 ## Program fit
 
+The correction is now delivered and checked on production; see [verification evidence](evidence/product-focus/checks.json). The tables above record the gaps identified before that correction. Owner feedback on the revised one-minute flow remains the next acceptance step.
+
 The official page still requires an already working Arc mainnet project and evaluates Arc relevance, technical credibility, build quality and further potential. It does not ask for these three tools or reward a stated feature count. No organizer acceptance of ArcMirror is claimed. A Vercel deployment plus read-only mainnet access is real software evidence, but does not establish organizer acceptance or satisfy the owner's separate Lab/five-demo requirement. The final application remains unsubmitted.
