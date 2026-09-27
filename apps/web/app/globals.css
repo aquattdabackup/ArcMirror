@@ -2193,6 +2193,16 @@ th:first-child {
   gap: 12px;
   margin-bottom: 15px;
 }
+.tool-use-case {
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 16px 0;
+}
+.tool-use-case dt { font-weight: 600; margin-top: 14px; }
+.tool-use-case dd { margin: 4px 0 0; color: var(--muted); }
+.tool-page > .tool-note { margin-bottom: 28px; }
+.tool-page > .tool-note h2 { font-size: 24px; }
+.tool-page > .tool-note p { font-size: 16px; line-height: 1.7; margin-top: 12px; }
 .tool-card h2 {
   font-size: 28px;
 }
