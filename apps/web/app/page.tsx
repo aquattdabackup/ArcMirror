@@ -12,24 +12,30 @@ export default function Home() {
             <span className="status-dot" /> ARC MAINNET / USDC EVIDENCE
           </div>
           <h1>
-            One movement.
+            Understand
             <br />
-            Every trace
+            your USDC
             <br />
-            <em>accounted for.</em>
+            <em>transaction.</em>
           </h1>
           <p className="hero-description">
-            Two representations. One USDC balance.
-            <br />
-            See where the money went, what gas cost, and why the numbers add up.
+            Checking an Arc payment? See who received what, what gas cost,
+            and whether the evidence supports the result. Paste a transaction
+            hash from your wallet or explorer.
           </p>
           <Search />
+          <p className="caption">
+            No hash yet?{" "}
+            <Link className="text-link" href={"/tx/" + native.hash}>
+              Follow a real 0.01 USDC transfer in one minute →
+            </Link>
+          </p>
           <div className="hero-small">
             <span>
-              <Check /> Exact integer amounts
+              <Check /> See the actual gas fee
             </span>
             <span>
-              <Check /> Reproducible reports
+              <Check /> Check where each amount comes from
             </span>
           </div>
         </div>
@@ -41,7 +47,7 @@ export default function Home() {
           </div>
           <div className="visual-title">Follow the cent.</div>
           <div className="visual-subtitle">
-            One transfer. Three matching views.
+            The recipient gets 0.01 USDC. Gas is an additional cost.
           </div>
           <div className="orbit">
             <span className="orbit-line" />
@@ -77,7 +83,7 @@ export default function Home() {
             </div>
           </div>
           <Link href={"/tx/" + native.hash} className="visual-cta">
-            Inspect the evidence <Arrow />
+            See the transfer and its fee <Arrow />
           </Link>
           <div className="visual-footnote">
             Public transaction · snapshot from September 24, 2026
@@ -87,32 +93,32 @@ export default function Home() {
       <section className="principle-strip">
         <div className="shell principle-inner">
           <p>
-            A receipt is a starting point.
+            One hash. Three questions.
             <br />
-            <strong>Understanding it should be simple.</strong>
+            <strong>Start with the transaction report.</strong>
           </p>
           <div>
             <span className="step-number">01</span>
             <span>
-              Follow each
+              Who received what,
               <br />
-              USDC movement
+              and what was the fee?
             </span>
           </div>
           <div>
             <span className="step-number">02</span>
             <span>
-              Inspect its
+              Are the amounts
               <br />
-              original evidence
+              counted correctly?
             </span>
           </div>
           <div>
             <span className="step-number">03</span>
             <span>
-              Export and
+              What evidence
               <br />
-              re-run the proof
+              can I share?
             </span>
           </div>
         </div>
@@ -128,10 +134,8 @@ export default function Home() {
             </h2>
           </div>
           <p>
-            Start with three saved mainnet cases, or analyze your own hash
-            above.
-            <br />
-            Snapshots stay available when an RPC does not.
+            Start with a payment and its gas fee. Then investigate why a
+            report can count money twice, or display a tiny amount as zero.
           </p>
         </div>
         <div className="example-grid">
@@ -182,15 +186,16 @@ export default function Home() {
       </section>
       <section className="shell tools-home">
         <div>
-          <span className="eyebrow">PUT THE EVIDENCE TO WORK</span>
-          <h2>A workbench for exact answers.</h2>
+          <span className="eyebrow">OPTIONAL / AFTER YOUR TRANSACTION REPORT</span>
+          <h2>Have a payment list or a saved report?</h2>
           <p>
-            Reconcile a payout CSV, compare downloaded reports, or explore the
-            smallest USDC amounts.
+            Check expected transfers against one transaction, compare a saved
+            report, or test rounding while building an Arc integration.
+            You can understand and share a transaction without these tools.
           </p>
         </div>
-        <Link href="/tools" className="button primary">
-          Open the tools <Arrow />
+        <Link href="/tools" className="button">
+          Find the relevant tool <Arrow />
         </Link>
       </section>
       <section className="shell why-section">
