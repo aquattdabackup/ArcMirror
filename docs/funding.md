@@ -1,6 +1,8 @@
 # Funding the demo burner
 
-Owner context (2026-09-25): MetaMask is available; the owner does not yet have USDC. Four public addresses are already supplied locally. Only the burner needs funding to proceed with deployment; the recipients and reward address do not need a deposit for this preparation stage.
+**Update 2026-09-27:** the burner now has confirmed mainnet USDC. Do not repeat the purchase steps below. See the current [wallet preflight](wallet-preflight.md) and [five-scenario demo runbook](mainnet-demo.md).
+
+Historical owner context (2026-09-25): MetaMask is available; the owner does not yet have USDC. Four public addresses are already supplied locally. Only the burner needs funding to proceed with deployment; the recipients and reward address do not need a deposit for this preparation stage.
 
 ## Add Arc mainnet to MetaMask
 
@@ -30,7 +32,7 @@ After a deposit is confirmed on Arc mainnet, tell the agent or provide its publi
 
 ## Cost and withdrawal clarification
 
-The owner asked whether personal spending is necessary and whether a $5 deposit can be recovered. **No $5 deposit is required or approved.** The 0.0162172227 USDC figure is a deployment-only simulation at an observed gas price. Total costs still require estimates for five scenarios, the ERC-20 approval, and any funding/withdrawal route. Consumed transaction gas is a cost, including gas used by an intentionally reverted demo; USDC sent to owner-controlled recipient wallets remains owner-controlled principal.
+The owner asked whether personal spending is necessary and whether a $5 deposit can be recovered. **No $5 deposit is required or approved.** The 0.0162172227 USDC figure is a deployment-only simulation at an observed gas price. Total costs still require estimates for five scenarios, an ERC-20 approval only if the optional duplicate-transfer scenario is chosen, and any funding/withdrawal route. Consumed transaction gas is a cost, including gas used by an intentionally reverted demo; USDC sent to owner-controlled recipient wallets remains owner-controlled principal.
 
 A USDC wallet deposit is not a project fee. The remaining balance can be transferred subject to network fees, but converting it back to cash requires an available off-ramp/exchange and may involve minimum amounts, bridge fees and purchase/sale fees. The [official Portal announcement](https://www.arc.io/blog/arc-portal-the-easiest-place-to-get-started-on-arc), rechecked 2026-09-25, explicitly says off-ramp is not yet available. No end-to-end cash withdrawal route or fee quote has been verified for this owner. Do not promise full recovery of a $5 purchase.
 
