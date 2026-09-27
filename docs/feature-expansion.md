@@ -2,6 +2,8 @@
 
 Owner approved on 2026-09-25: payout CSV reconciliation, then local report inspection/comparison and Dust Lab. Funding/signing can wait while software work proceeds.
 
+On 2026-09-27 the owner reported that these tools were hard to understand and their value was unclear. They remain optional follow-up workflows; the original P0 transaction analyzer takes priority. Passing implementation tests does not validate customer usefulness. See [product focus review](product-review.md) for the reassessment and concrete use cases. Funding/signing work is deferred while product clarity is corrected.
+
 ## Program fit
 
 Rechecked the [official Arc Microgrants page](https://community.arc.io/public/events/arc-microgrants-f8tijfjhyq) on 2026-09-25. It accepts prototypes, tiny apps and experimental infrastructure, including hackathon continuations. It evaluates Arc relevance, technical credibility, quality and further potential. It requires a working mainnet project at submission; it states no minimum/maximum feature count or prohibition on improvements before submitting. We infer these focused additions fit the published scope; the organizer has not explicitly approved ArcMirror or guaranteed an award. Updates after submission are not explicitly addressed, and rolling review means we should deploy and verify the advertised features before submitting. The registration form remains behind human verification; its additional terms are not certified here.

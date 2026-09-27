@@ -4,6 +4,10 @@ Tài liệu này dành cho chủ dự án tự đi qua toàn bộ sản phẩm, 
 
 ## 1. Hệ thống hoạt động như thế nào
 
+Ưu tiên kiểm tra từ 2026-09-27: chưa cần dùng ba Tools. Tại trang chủ chọn **Follow a real 0.01 USDC transfer in one minute**, đọc **What can I conclude?**, chọn **Follow the money**, mở số tiền và phí, rồi dùng **Copy link**. Bạn cần giải thích lại được: ai gửi cho ai, số tiền nhận, phí riêng bao nhiêu và bằng chứng có đủ không. Nếu chưa trả lời được thì luồng chính vẫn chưa đạt yêu cầu dễ hiểu, kể cả khi các test kỹ thuật đều qua.
+
+Với ví dụ ERC-20, chọn **See why two logs are not two payments**. So sánh `8.999998` với `4.499999` và đọc lý do vẫn **Needs Review**. Các phần Tools phía sau chỉ dành cho nhu cầu cụ thể: có danh sách thanh toán riêng, có báo cáo JSON cần kiểm tra, hoặc đang viết code xử lý decimals. Không cần nạp ví để thực hiện flow này.
+
 ```mermaid
 flowchart LR
   U[Người dùng nhập transaction hash] --> W[Next.js UI]
