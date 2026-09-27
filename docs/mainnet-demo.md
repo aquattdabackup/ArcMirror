@@ -25,6 +25,10 @@ The local preparation is available in ignored `artifacts/demo-remix/`: unchanged
 
 The latest read-only deployment estimate was about **0.01614 USDC**, or **0.01936 USDC using a 20% gas-limit buffer at the same quoted price**. Fees must be refreshed, including the max fee shown by MetaMask. This is a deployment estimate, not an estimate for the whole demo. [Arc fee accounting](https://docs.arc.io/arc/references/gas-and-fees).
 
+### If Remix's estimate says insufficient funds
+
+Do not immediately add funds or increase Remix's gas limit. The gas limit is a count of computation units; it cannot fix a `maxFeePerGas` below Arc's current block base fee. In the owner's 2026-09-27 request, the fee cap was 0.10501705 Gwei while the live base fee was 20 Gwei, so Arc rejected the estimate. The on-chain burner balance was 5.409448 USDC, and the same deployment estimated at 806827 gas with valid 20/21 Gwei caps. If Remix offers **Force sending**, that only requests the wallet to proceed after estimation failed; it does not itself authorize you to sign. Continue to the MetaMask review only to inspect/edit the fee. If MetaMask offers a gas-fee pencil, select **Advanced**, refresh the fee quote, and ensure the max fee is at least the current base fee (the 20 Gwei observation is historical). A proposed snapshot cap of 21 Gwei with a 968193 gas limit would allow at most 0.020332053 USDC at that cap. Submit only if the chain, sender, constructor addresses, zero value and current fee all match; otherwise cancel. [MetaMask fee editing](https://support.metamask.io/th/configure/transactions/how-to-customize-gas-settings/).
+
 ## 2. Create the five owner transactions
 
 Deployment is a prerequisite and does not count as one of these five. Proposed transfer value is **0.006 USDC total**, plus gas for deployment and the five transactions. Value goes to A/B; it is not a fee. Recovering it later requires control of those recipient wallets and another transaction fee.

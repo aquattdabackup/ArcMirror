@@ -16,6 +16,12 @@ Observed gas price: 20000000001 native base units per gas. Deployment with the b
 
 The existing unsigned creation data exactly matches the compiled artifact plus the supplied constructor recipients, with the same init-code hash recorded below. Nothing was signed or broadcast. Address-specific evidence remains local in ignored `artifacts/wallet-preflight-current.json`. No additional funding is indicated for the next deployment step at this observation. Refresh each quote before signing and treat the older preparation below as historical.
 
+### Remix error diagnosis: 2026-09-27 09:09 UTC
+
+The owner pasted Remix's deployment estimate error. Its transaction data has both constructor recipient arguments and value `0x0`; Remix then records **Transaction canceled by user**, so this attempt was not broadcast and did not deploy the Lab. The request set `maxFeePerGas` to `0x6426eda` = **105017050 wei / 0.10501705 Gwei**. At block 23004692, live Arc base fee was **20 Gwei**. Both primary and dRPC rejected that fee as below the block base fee. This explains the misleading generic `insufficient funds` estimate message; it is not fixed by changing the gas limit or topping up the account.
+
+The burner balance still reads **5.409448 USDC** at the same block; native and ERC-20 views agree. The exact deployment estimates at that block: with `maxFeePerGas = 20 Gwei` and priority fee 0, **806827 gas**; with max fee 21 Gwei and priority fee 1 Gwei, **806827 gas**. With a 968193 gas limit and a 21 Gwei fee cap, the transaction maximum is **0.020332053 USDC**. This is a snapshot, not an evergreen quote. If MetaMask lets the owner edit fees on the confirmation screen, refresh the base fee and set the cap at or above it; do not sign if the fee remains below the current base fee. Remix's gas-limit field controls gas units, not fee per gas. The missing-address `value=""` console entry in the screenshot is separate from the latest request, whose transaction data contains both arguments.
+
 ## Historical check: 2026-09-25
 
 Checked 2026-09-25. The owner supplied a burner, two recipients and a separate reward address. All four pass EIP-55 checksum validation and are distinct. Addresses are owner-supplied; no wallet signature or ownership challenge was performed.
