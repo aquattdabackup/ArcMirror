@@ -77,4 +77,16 @@ React review: interactive file/arithmetic components are client boundaries; rout
 
 ## Workbench production release (2026-09-26)
 
+The current production release is the 2026-09-27 product-focus correction below. This workbench section records the earlier release.
+
 Commit `aebf0c6` was deployed as `dpl_5grr6VLEgkj31Kovwz7fw3aWUXaV` and aliased to https://arcmirror-six.vercel.app. Remote build/TypeScript passed; install audit reported zero vulnerabilities. Extended anonymous smoke passed all four tool pages, API snapshots and negative cases/security headers. Public browser CSV reconciliation, tampered-report detection, fresh-RPC equality and one-unit dust arithmetic passed. Inspector and Dust Lab had no horizontal overflow at 390px and no framework overlays; application errors/console were empty. See [structured checks](evidence/tools/checks.json), [deployment](evidence/tools/deployment.json) and screenshots in the same directory. Actual export files prefixed `local-` were validated on the local production build, not claimed as new public downloads.
+
+## Product-focus correction (2026-09-27)
+
+Source `229ba77` is live as `dpl_AZbqQjnSuDLdtwLrjnojFko2jiEC`, READY; Vercel inspect reports a 27-second build. The primary route now explains receipt outcome, exact amounts and separate gas before technical details, and links the money trail, double-count comparison and sharing workflow. Optional tools explain who needs them and what their results do and do not establish. The [requirements review](product-review.md) records why passing technical tests had not established usefulness.
+
+All 49 existing application tests plus 6 report-guide checks passed. The new checks cover exact dust, evidence incompleteness, failed/unconfirmed states and successful calls without movement evidence. Typecheck and local/remote builds passed. The production smoke originally expected old headings; after correcting those expectations, all API/page checks passed. No core algorithm/schema or contract logic changed.
+
+Production browser verification followed the native example from home to the exact amount's log, opened the ERC-20 comparison (8.999998 versus 4.499999, still Needs Review), and carried that hash into reconciliation. Custom Dust Lab inputs 0.0000009 x10 returned exact0.000009 against truncated0. Mobile pages had no horizontal overflow; the guide remained below the sticky header. Page/console errors and the post-check Vercel error-level query were empty. See [full checks](evidence/product-focus/checks.json), [production home](evidence/product-focus/home-desktop.png) and [mobile explanation](evidence/product-focus/guide-mobile.png).
+
+This validates the revised implementation, not audience demand or owner comprehension. The owner still needs to try the new short walkthrough. Funding/signing is deferred; Lab, five owner-signed examples and memo support remain incomplete.

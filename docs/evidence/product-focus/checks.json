@@ -1,0 +1,36 @@
+{
+  "checkedAt": "2026-09-27",
+  "purpose": "Restore the original transaction-explanation workflow after owner feedback about unclear tool value",
+  "applicationSourceCommit": "229ba77",
+  "deploymentId": "dpl_AZbqQjnSuDLdtwLrjnojFko2jiEC",
+  "productionUrl": "https://arcmirror-six.vercel.app",
+  "local": {
+    "tests": "49 core/vector/RPC/tool tests and 6 new report-guide rendering checks passed; npm test now includes both",
+    "reportStateCoverage": "Exact native amount and gas; ERC-20 Needs Review retained; exact dust; failed receipt does not claim settlement; pending/not_found/rpc_error/unsupported_format/insufficient_evidence have no confirmed-payment guide; success without movements does not establish payment",
+    "typecheck": "passed",
+    "build": "passed; all 11 static pages generated",
+    "browser": "Native and ERC-20 guides inspected; home and all optional tool pages checked at 390px without horizontal overflow; tools catalog inspected at 1280px",
+    "reactReview": "ReportGuide derives text directly from Report, has no effect or new fetch, and preserves evidence grades. Route metadata/server boundaries and existing client tool state remain intact; native anchor links and labelled sections provide navigation. No added dependency."
+  },
+  "production": {
+    "deployment": "READY; inspect reported 27s build; alias confirmed",
+    "apiSmoke": "passed: chain 5042 health, three snapshots, invalid/unknown hashes, security headers and all four tool pages",
+    "smokeCorrection": "Initial run expected obsolete tool headings; updated only those heading expectations in 5ef87ab, then reran successfully",
+    "nativeFlow": "Home's one-minute link opened the real native report; guide showed 0.01 USDC plus separate 0.00042 USDC gas; expanding the amount exposed native raw10000000000000000 and source log15",
+    "erc20Flow": "Guided double-count link opened the comparison: 8.999998 naive versus 4.499999 canonical USDC; Needs Review retained",
+    "reconciliationLink": "Check your payment list carried the exact current ERC-20 hash into the transaction input",
+    "dustCustomInput": "0.0000009 USDC x10 produced exact total0.000009, per-amount-truncated sum0 and omitted remainder0.000009; explicitly labelled simulation",
+    "mobile": "390px home, catalog, reconcile, inspect, dust and unknown-hash page had no horizontal overflow; no framework overlays on the evaluated routes",
+    "unknownHash": "No confirmed-payment guide or payment-list action on the unknown-hash report",
+    "stickyGuide": "At390px report guide top108.046875px remained below header bottom88px; no overflow",
+    "browserErrors": "No captured page errors or console entries in the production verification session",
+    "runtimeErrorScan": "No error-level log entries for this deployment in the last-hour query after the resumed production checks"
+  },
+  "limits": [
+    "These are functional/rendering checks, not evidence of user adoption or proof that the owner finds the revised flow understandable.",
+    "Failed/pending guide behavior was exercised with local rendering tests, not owner-created mainnet transactions.",
+    "Lab deployment, five owner-signed demos and memo support remain incomplete. No funds moved and no application was submitted.",
+    "Public RPC availability and incomplete ERC-20 call-value coverage remain existing limitations.",
+    "An automatic approval-review usage-limit interruption was resolved on retry after the owner requested continuation."
+  ]
+}
