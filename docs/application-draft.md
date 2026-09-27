@@ -4,7 +4,7 @@
 
 ## Short description
 
-ArcMirror turns Arc mainnet USDC transactions into inspectable payment evidence. It reconciles native and ERC-20 logs without double counting, preserves exact amounts, and separates gas. Teams can match payout CSVs against individual transactions, identify missing matches and amount mismatches, and export results with original source log references. Builders can inspect downloaded JSON, compare changed fields, fetch fresh evidence, and explore 18-versus-6-decimal precision in Dust Lab. Files stay in the browser; no wallet connection is required. Unsupported evidence remains Needs Review. The MIT core, public mainnet vectors and CLI make results reproducible, while digest checks establish integrity rather than blockchain consensus.
+ArcMirror helps people understand an Arc mainnet USDC transaction: who sent what to whom, what gas cost, and why two logs may describe one transfer. Paste a hash or open a real example without connecting a wallet. Each amount links to its source evidence. The report separates receipt success from verification, preserves tiny amounts, and keeps unsupported coverage visible as Needs Review. Share a transaction link, download the report, or rerun the analysis. Developers can reuse the MIT core and public test vectors. Optional payment-list and saved-report checks support follow-up investigations; they do not establish invoice settlement or independent consensus.
 
 ## Project description
 
@@ -35,7 +35,19 @@ The website is live on Vercel and reads Arc mainnet, chain 5042. The MIT core is
 | Reward address | **Supplied locally.** Distinct from demo burner; owner enters it in the application. Not published in this repo. |
 | Reproduction evidence | [Downloaded report](evidence/production/downloaded-report.json), [fresh CLI match](evidence/production/live-verify.txt), [public production checks](evidence/production/browser-checks.json) |
 
-## Workbench tour: about one minute
+## Primary tour: one transaction in about one minute
+
+Updated 2026-09-27 after owner feedback on unclear tool usefulness. See [product review](product-review.md). Funding/signing remains deferred while product clarity is reviewed.
+
+1. On the [home page](https://arcmirror-six.vercel.app), choose **Follow a real 0.01 USDC transfer in one minute**.
+2. Read **What can I conclude?**: the recipient receives 0.01 USDC and the transaction sender pays 0.00042 USDC in gas separately.
+3. Select **Follow the money**, expand the movement and inspect the system log. Expand the fee to see its receipt inputs.
+4. Read the evidence checks, then use **Copy link**. No CSV, JSON or wallet is needed for this path.
+5. For the Arc-specific double-count problem, use the ERC-20 investigation below.
+
+This is a proposed walkthrough, not a measured claim that all visitors understand the product within one minute. Owner feedback remains necessary.
+
+## Optional workbench checks
 
 1. Open [Payout reconciliation](https://arcmirror-six.vercel.app/tools/reconcile), choose **Try mainnet example**: two expected movements match 4.499999 USDC, with gas separate and Needs Review preserved. The ids are illustrative, not real invoice claims.
 2. Duplicate the first row using a new id and reconcile again: it cannot reuse the same movement. Change an amount by one native base unit to expose a mismatch.
