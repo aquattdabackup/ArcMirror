@@ -1,5 +1,23 @@
 # Owner wallet and unsigned deployment checkpoint
 
+## Current check: 2026-09-27
+
+The owner resumed mainnet preparation and requested a balance check. At **08:13:10 UTC / 15:13:10 Vietnam time**, primary RPC chain 5042, block **22998025**, reported **5.409448 USDC** in the burner. The ERC-20 interface returned 5409448 raw units (6 decimals), agreeing with the native 5409448000000000000 raw units (18 decimals). These are two views of one balance, not funds to add together. dRPC independently returned the same native balance and block hash. Confirmed/pending nonce were both 0; burner code was empty.
+
+Ordinary, funded `eth_estimateGas` succeeded without a balance override or zero-gas-price simulation:
+
+| Draft operation | Gas estimate | Fee at observed price | Gas limit with 20% buffer |
+| --- | ---: | ---: | ---: |
+| Lab deployment, value 0 | 806827 | 0.016136540000806827 USDC | 968193 |
+| Native transfer, 0.001 USDC | 21000 | 0.000420000000021 USDC | 25200 |
+| ERC-20 transfer, 1000 raw units = 0.001 USDC | 74814 | 0.001496280000074814 USDC | 89777 |
+
+Observed gas price: 20000000001 native base units per gas. Deployment with the buffered gas limit would cost at most **0.019363860000968193 USDC at that price**. This is not a submitted fee cap or a current quote for a later signature. The burner covers these estimates individually. Calls to the not-yet-deployed Lab still require fresh estimation after deployment; no complete-demo fee has been measured.
+
+The existing unsigned creation data exactly matches the compiled artifact plus the supplied constructor recipients, with the same init-code hash recorded below. Nothing was signed or broadcast. Address-specific evidence remains local in ignored `artifacts/wallet-preflight-current.json`. No additional funding is indicated for the next deployment step at this observation. Refresh each quote before signing and treat the older preparation below as historical.
+
+## Historical check: 2026-09-25
+
 Checked 2026-09-25. The owner supplied a burner, two recipients and a separate reward address. All four pass EIP-55 checksum validation and are distinct. Addresses are owner-supplied; no wallet signature or ownership challenge was performed.
 
 The address mapping is retained locally in ignored `artifacts/owner-wallets.json`; it is not published to GitHub. The reward address is for the application, not a constructor argument. For a handoff to another machine, the owner must transfer this address-only file or supply the public addresses again. Never include keys or seeds.
@@ -20,8 +38,8 @@ A separate read-only estimate with simulated gas price zero succeeded: **806827 
 
 No balance override, signature, transaction broadcast or mainnet state change was made. After funding, rerun the ordinary estimate, chain/nonce/balance/code checks and current fee quote; present exact recipients, deployment data, gas limit and fee cap for the owner's local review and signature. Do not broadcast the saved payload automatically.
 
-## Next owner action and continuation
+## Historical funding status and continuation
 
-The burner needs real USDC on **Arc mainnet**. Recipient and reward wallets do not need funding for this check. The owner uses MetaMask and has no USDC. See [funding steps](funding.md); provider availability and an actual purchase quote remain unchecked. Do not assume testnet faucet funds or USDC on another network pay Arc mainnet gas.
+At the September 25 check, the burner needed real USDC on **Arc mainnet** and the owner reported using MetaMask with no USDC. The funded September 27 observation above supersedes that status. Recipient and reward wallets do not need funding for the demo. The [funding steps](funding.md) remain background information; do not repeat a purchase merely because this older check was empty.
 
 [Official network configuration](https://docs.arc.io/arc/references/connect-to-arc) confirms chain 5042, native USDC and the mainnet RPC. The [current Arc deployment tutorial](https://docs.arc.io/integrate/deploy-on-arc) describes Arc Foundry and testnet examples; do not copy its testnet chain or private-key command into this production workflow. Owner-local wallet signing or an encrypted keystore remains required.
