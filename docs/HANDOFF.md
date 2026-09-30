@@ -6,6 +6,10 @@
 
 ## Current state: 2026-09-30
 
+Latest task: owner requested a thorough check against newly pasted Microgrants rules. [Technical eligibility review](eligibility-review-2026-09-30.md) finds no unresolved technical entry blocker, with [fresh structured evidence](evidence/eligibility-review/2026-09-30.json). Four review commits b444f4b, e6dbf70, 6e00183 and 34a32f6 are pushed. README trace-coverage wording was narrowed and the application draft now foregrounds an owner-created report. No runtime change/redeployment. Fresh checks: 14 public/API/RPC/source checks, 60 application + 10 spike + 16 Foundry tests, typecheck, dependency audit (zero known production vulnerabilities) and documentation links passed. Baseline public tree matched all 164 files at 9797ac0.
+
+New browser interaction could not run because the Cua kernel failed Windows sandbox setup; fresh claims are HTTP/API/RPC only. Production encrypted environment values were not reread. DoraHacks still returned Human Verification/405, so actual form fields and owner screening/declarations remain unverified. The pinned source's old pending comment is explained by current deployment documentation; do not silently change its hash or redeploy to fix a comment.
+
 [Production](https://arcmirror-six.vercel.app), [public MIT source](https://github.com/aquattdabackup/ArcMirror), [mainnet proof](mainnet-evidence.md). The owner completed native, ERC-20, nativeForward, batch and a mined intentionalFailure. All five production live reports match captured RPC analysis; secondary receipts corroborate them. Deployment manifest and reproducible verifier live under contracts/deployments and scripts/verify-deployment.mjs. Tests: 60 pass; root/web typecheck passes; public API/page smoke passes.
 
 The latest work publishes evidence, tests and documentation. It does not change app/contract execution code or require redeploy. Last recorded UI deployment is dpl_AZbqQjnSuDLdtwLrjnojFko2jiEC from 229ba77. Existing report guides, reconciliation, Inspector, Dust Lab, readable text and sticky header are already delivered. Do not rebuild them.
@@ -22,7 +26,7 @@ The owner then requested a complete video script and chose five minutes. [Record
 
 ## Exact next owner steps
 
-Prepare the tabs and CSV from the [five-minute recording script](video-demo-script.vi.md), download the batch report, rehearse once with a timer, and record. No additional mainnet transaction is needed. Review [application draft](application-draft.md), enter the separate reward wallet in the form and submit after reviewing declarations/human verification. Official program deadline rechecked September 30: October 14, 2026 23:59 ET; recheck before submission. No final submission performed.
+Open the official DoraHacks form, complete Human Verification, review actual fields/terms and the [application draft](application-draft.md), enter the separate reward wallet and submit once after confirming required declarations. For the owner's video, use the [five-minute recording script](video-demo-script.vi.md), prepare tabs/CSV/batch JSON and rehearse. No additional mainnet transaction is needed; the reviewed public rules do not mandate video. Deadline rechecked September 30: October 14, 2026 23:59 ET (October 15, 2026 10:59 Vietnam); recheck before submission. No final submission performed.
 
 ## Git and operation
 
