@@ -1,6 +1,6 @@
 # ArcMirror empirical spike
 
-Checked: **2026-09-24**. Status: **read-only investigation validated; owner-signed experiment incomplete**.
+Historical investigation checked **2026-09-24**. The read-only spike was validated then; the subsequently completed owner experiment is documented in [September 30 mainnet evidence](mainnet-evidence.md).
 
 All samples are existing public transactions, **not transactions created by ArcMirror or its owner**. Raw receipts, transactions, blocks, RPC errors and traces are in [evidence/spike](evidence/spike/README.md). No funds were moved.
 
