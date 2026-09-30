@@ -125,7 +125,7 @@ flowchart LR
 
 ## Checks actually run
 
-49 analyzer/vector/RPC/tool tests, 10 spike evidence tests and 16 Foundry tests passed (including 256 fuzz runs). Type checking, standalone core packaging and the Next.js production build passed. Local and public production desktop/mobile UI, APIs and live digest comparisons were checked. Production dependency audit and source secret scan returned no findings. An ordinary Edge download saved the report to disk; its entire JSON and digest matched the fixture and fresh mainnet RPC. ArcScan challenged the automated browser, and independent clipboard read was denied. Details and outputs are in [validation](docs/validation.md).
+60 application tests passed, including five owner-mainnet regression vectors and six report-guide checks. The earlier 10 spike evidence tests and 16 Foundry tests passed (including 256 fuzz runs); unchanged components were not rerun for the September 30 evidence update. Type checking, standalone core packaging and the Next.js production build passed. Local and public production desktop/mobile UI, APIs and live digest comparisons were checked. Production dependency audit and source secret scan returned no findings. An ordinary Edge download saved the report to disk; its entire JSON and digest matched the fixture and fresh mainnet RPC. ArcScan challenged the automated browser, and independent clipboard read was denied. Details and outputs are in [validation](docs/validation.md).
 
 ## Limits and deployment status
 
