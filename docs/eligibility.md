@@ -1,17 +1,20 @@
 # Eligibility checkpoint
 
-Checked: **2026-09-25**. Software is live; the owner-created mainnet demo stage and final submission remain incomplete.
+Checked **2026-09-30**. The production analyzer works with Arc Mainnet data; Lab is deployed and all five owner-created demo categories have mined receipts. [Public deployment and demo evidence](mainnet-evidence.md) is the current technical record. Final submission has not been made by the agent.
 
-The [official Arc Microgrants page](https://community.arc.io/public/events/arc-microgrants-f8tijfjhyq) still lists 20 awards of 500 USDC, deadline October 14, 2026 at 23:59 ET and decisions by October 21. It requires a working mainnet project, public repo/profile, short description and no prior Circle/Arc funding; ownership and screening rules also apply. Recheck before submission; dates/counts can change.
+The [official Arc Microgrants page](https://community.arc.io/public/events/arc-microgrants-f8tijfjhyq), rechecked September 30, requires a project already deployed and working on Arc mainnet, public repo and builder profile, a short description and no prior Circle/Arc funding. It does not prescribe five transactions or an explorer verification badge. The five scenarios come from the owner's original brief. Technical evidence is not organizer acceptance, an award guarantee or a security audit.
 
-| Item | Actual evidence |
+| Item | Public evidence / actual state |
 | --- | --- |
+| Arc mainnet | Chain 5042 from both official primary and dRPC endpoints; production live reports match captured RPC analysis. |
+| Working application | [Production](https://arcmirror-six.vercel.app); [five live-report comparisons](evidence/mainnet/checks.json). |
+| Project contract | [Lab](https://arc.etherscan.io/address/0xa64439ea7c88d56e2888c377d55ae3e174b415c1), [deployment manifest](../contracts/deployments/5042.json), reproducible executable/immutable comparison. |
+| Owner-created activity | Native, ERC-20, forwarding, batch and mined intentional failure; [all receipts and reports](mainnet-evidence.md). |
+| Source verification | Public source and reproducible verifier; ArcScan still requests Verify and Publish at the recorded check. No explorer verification badge claimed. |
+| Public repo/license | [ArcMirror](https://github.com/aquattdabackup/ArcMirror), MIT. |
+| Builder profile | Owner-approved [aquattdabackup](https://github.com/aquattdabackup). |
 | Prior funding | Owner explicitly confirmed no Circle/Arc funding. |
-| Public repository/license | [ArcMirror](https://github.com/aquattdabackup/ArcMirror), GitHub REST 200, public main branch, MIT detected. |
-| Builder profile | Owner approved [aquattdabackup](https://github.com/aquattdabackup); public profile REST 200. |
-| Working mainnet analysis | [Production](https://arcmirror-six.vercel.app), [validation](validation.md): real chain 5042 data and live re-verification passed. Website is hosted on Vercel; no Lab deployment is claimed. |
-| Owner's requested demos | Lab is tested locally; no deployment or five owner-created transactions yet. |
-| Reward wallet | Owner supplied a distinct checksummed address; retained locally for final application entry. Payout verification is not performed. |
-| Submission | Not submitted; owner reviews and submits. |
+| Reward wallet | Supplied separately and retained locally for owner entry; payout screening is not completed. |
+| Submission | [Draft](application-draft.md) prepared; owner reviews and submits. |
 
-Software-first, GitHub access, Vercel destination, MIT and builder profile are explicitly authorized and resolved. Wallet addresses are supplied; burner funding and signing remain pending. The final application must distinguish the working read-only product from the undeployed Lab and must not claim the complete original brief is finished.
+Current published deadline: **October 14, 2026, 23:59 ET**. Recheck the linked page and registration form before submitting. Registration may require human verification; additional form-specific terms have not been certified. Memo, optional extra contract scenarios and npm publication are outside this completed five-demo proof. Do not claim they are delivered.
