@@ -1,6 +1,8 @@
 # Owner wallet and unsigned deployment checkpoint
 
-## Current check: 2026-09-27
+**Current status (2026-09-30):** Lab is deployed and all five owner-created demos are confirmed in [mainnet evidence](mainnet-evidence.md). Balances, nonces and estimates below are historical, not current signing instructions.
+
+## Historical funded check: 2026-09-27
 
 The owner resumed mainnet preparation and requested a balance check. At **08:13:10 UTC / 15:13:10 Vietnam time**, primary RPC chain 5042, block **22998025**, reported **5.409448 USDC** in the burner. The ERC-20 interface returned 5409448 raw units (6 decimals), agreeing with the native 5409448000000000000 raw units (18 decimals). These are two views of one balance, not funds to add together. dRPC independently returned the same native balance and block hash. Confirmed/pending nonce were both 0; burner code was empty.
 
@@ -18,9 +20,9 @@ The existing unsigned creation data exactly matches the compiled artifact plus t
 
 ### Remix error diagnosis: 2026-09-27 09:09 UTC
 
-The owner pasted Remix's deployment estimate error. Its transaction data has both constructor recipient arguments and value `0x0`; Remix then records **Transaction canceled by user**, so this attempt was not broadcast and did not deploy the Lab. The request set `maxFeePerGas` to `0x6426eda` = **105017050 wei / 0.10501705 Gwei**. At block 23004692, live Arc base fee was **20 Gwei**. Both primary and dRPC rejected that fee as below the block base fee. This explains the misleading generic `insufficient funds` estimate message; it is not fixed by changing the gas limit or topping up the account.
+The owner pasted Remix's deployment estimate error. Its transaction data has both constructor recipient arguments and value `0x0`; Remix then records **Transaction canceled by user**, so this attempt was not broadcast and did not deploy the Lab. The request set `maxFeePerGas` to `0x6426eda` = **105017050 wei / 0.10501705 Gwei**. At block 23004692, live Arc base fee was **20 Gwei**. Both primary and dRPC rejected that fee as below the block base fee. This independently demonstrates an underpriced request on Arc, but does not establish the sole cause of the original generic `insufficient funds` message: the Remix screenshot also showed an ambiguous network badge. The fee-cap probe used the locally prepared payload, not a byte-for-byte reproduction of the Remix metadata. Do not diagnose a need to top up from that message alone.
 
-The burner balance still reads **5.409448 USDC** at the same block; native and ERC-20 views agree. The exact deployment estimates at that block: with `maxFeePerGas = 20 Gwei` and priority fee 0, **806827 gas**; with max fee 21 Gwei and priority fee 1 Gwei, **806827 gas**. With a 968193 gas limit and a 21 Gwei fee cap, the transaction maximum is **0.020332053 USDC**. This is a snapshot, not an evergreen quote. If MetaMask lets the owner edit fees on the confirmation screen, refresh the base fee and set the cap at or above it; do not sign if the fee remains below the current base fee. Remix's gas-limit field controls gas units, not fee per gas. The missing-address `value=""` console entry in the screenshot is separate from the latest request, whose transaction data contains both arguments.
+The burner balance still reads **5.409448 USDC** at the same block; native and ERC-20 views agree. The locally prepared deployment estimates recorded at that block: with `maxFeePerGas = 20 Gwei` and priority fee 0, **806827 gas**; with max fee 21 Gwei and priority fee 1 Gwei, **806827 gas**. With a 968193 gas limit and a 21 Gwei fee cap, the transaction maximum is **0.020332053 USDC**. This is a snapshot, not an evergreen quote. If MetaMask lets the owner edit fees on the confirmation screen, refresh the base fee and set the cap at or above it; do not sign if the fee remains below the current base fee. Remix's gas-limit field controls gas units, not fee per gas. The missing-address `value=""` console entry in the screenshot is separate from the latest request, whose transaction data contains both arguments.
 
 ## Historical check: 2026-09-25
 
