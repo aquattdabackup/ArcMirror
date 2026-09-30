@@ -1,5 +1,7 @@
 # Validation record
 
+**Current mainnet checkpoint: 2026-09-30.** Lab is deployed and all five owner-created demo categories have actual receipts. [Evidence and reproduction](mainnet-evidence.md). Earlier dated sections below are historical.
+
 Checked on **2026-09-25**. The first table records local implementation checks. Public production verification is recorded separately below. No funds moved or wallet signatures were requested.
 
 | Check | Actual result | Evidence |
@@ -53,15 +55,15 @@ Production URL: https://arcmirror-six.vercel.app. [Deployment record](evidence/p
 - Blockscout loaded the correct mainnet transaction, Success, block 22533201 and matching fee. ArcScan's canonical link reached a Cloudflare challenge; its transaction contents were not certified. Copy link reported success; clipboard read permission remained denied.
 - GitHub REST returned public repository, main branch and MIT license; the approved builder profile returned 200. MIT package dry-run/metadata checks passed. Staged and full-history secret scans passed before license commit 272baa9 was pushed.
 
-## Still pending
+## Historical pending items (2026-09-25; superseded below)
 
-Burner funding and owner-local signing (all four public addresses have been supplied); Lab deployment/source verification and five owner-created mainnet scenarios; final grant application review and owner submission. ArcScan content and clipboard read remain subject to the above external limits. Standard EVM contract tests do not validate Arc-specific shared-balance behavior.
+At this historical checkpoint funding, signing, Lab deployment and five scenarios were unfinished. Deployment and all five demos are now complete; see [September 30 evidence](mainnet-evidence.md). Explorer verification and final owner submission remain separate statuses. ArcScan content and clipboard read remain subject to the above external limits. Standard EVM contract tests do not validate Arc-specific shared-balance behavior.
 
 ## Readiness recheck before owner funding
 
 At 2026-09-25T14:16:25Z, [fresh production checks](evidence/production/readiness-recheck.json) passed: home, methodology and native report returned HTTP 200; the API smoke passed health, three snapshots, malformed/unknown hashes and security headers. Both native and ERC-20 live reports matched their entire golden vectors, not only their digests. The native grade remained Verified; the ERC-20 grade remained Needs Review for unsupported call-value coverage.
 
-No blocking failure was observed in these checks. This supports proceeding with a bounded demo stage; it does not establish sustained uptime, high-load capacity, all-transaction coverage or independent contract security. Mainnet Lab deployment, source verification and owner-created transaction results remain untested. Existing limits include per-instance rate controls, public RPC availability, the ArcScan challenge and unverified clipboard contents. No runtime code changed, so previously passing unrelated tests/build were not repeated.
+No blocking failure was observed in these checks. This supports proceeding with a bounded demo stage; it does not establish sustained uptime, high-load capacity, all-transaction coverage or independent contract security. At that checkpoint Lab deployment and owner-created transaction results had not yet been tested; the September 30 evidence below supersedes this status. Existing limits include per-instance rate controls, public RPC availability, the ArcScan challenge and unverified clipboard contents. No runtime code changed, so previously passing unrelated tests/build were not repeated.
 
 ## Payment reconciliation milestone (2026-09-25)
 
@@ -89,4 +91,14 @@ All 49 existing application tests plus 6 report-guide checks passed. The new che
 
 Production browser verification followed the native example from home to the exact amount's log, opened the ERC-20 comparison (8.999998 versus 4.499999, still Needs Review), and carried that hash into reconciliation. Custom Dust Lab inputs 0.0000009 x10 returned exact0.000009 against truncated0. Mobile pages had no horizontal overflow; the guide remained below the sticky header. Page/console errors and the post-check Vercel error-level query were empty. See [full checks](evidence/product-focus/checks.json), [production home](evidence/product-focus/home-desktop.png) and [mobile explanation](evidence/product-focus/guide-mobile.png).
 
-This validates the revised implementation, not audience demand or owner comprehension. The owner still needs to try the new short walkthrough. Funding/signing is deferred; Lab, five owner-signed examples and memo support remain incomplete.
+This validates the revised implementation, not audience demand or owner comprehension. The owner still needs to try the new short walkthrough. At the time of this product-focus release funding/signing and the owner demos were deferred. Deployment and the five demos were subsequently completed; memo remains outside the delivered scope.
+
+## Owner mainnet completion (2026-09-30)
+
+[Structured checks](evidence/mainnet/checks.json) record five full production live reports matching local analysis of fresh RPC bundles. Primary/dRPC receipt block hashes, statuses and logs matched for each. Four demos succeeded; the fifth mined with status 0 and call-trace output 0xdaf7d1b0 (IntentionalFailure), with nonzero gas and no settled movement. ERC-20 retains Needs Review.
+
+Both Lab and Forwarder runtime executable code and every immutable value match the pinned source/compiler; the [verifier](../scripts/verify-deployment.mjs) passed captured-evidence and live modes. Solidity CBOR metadata is excluded. ArcScan still displayed Verify and Publish; no explorer verification badge or security audit is claimed. Contract balances were zero at the captured check.
+
+60 application tests passed (54 core/vector/RPC/tool tests including five new owner vectors, plus six report-guide checks); root/web typecheck passed. Public smoke passed chain-5042 health, all three unchanged third-party snapshots, invalid/unknown hashes, security headers and four tool pages. This round checked HTTP/API/RPC, not a new browser visual session. No application/contract execution code changed, so application build and unchanged Foundry tests were not rerun. forge build accepted the unchanged cache (compilation skipped, existing lint warnings); the sandbox initially failed home-directory lookup, and the authorized retry succeeded. tsx tests likewise required the authorized outside-sandbox retry after a userInfo error. Neither failure was an application failure.
+
+Staged files and full Git history are secret-scanned before publication. Reward-wallet mapping and unrelated wallet transactions are excluded. No transaction was signed or broadcast by the agent; final grant submission remains with the owner.
