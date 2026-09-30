@@ -6,12 +6,16 @@ Explorers show you what happened. ArcMirror shows you why the numbers add up, an
 
 ArcMirror explains Arc mainnet USDC movements, exact gas costs and their source evidence. Native USDC uses 18 decimals; the ERC-20 interface uses 6. Adding both log streams can count a movement twice. Paste a transaction hash or open a saved real example. No wallet, signature or payment is required to use the analyzer.
 
-**Status:** live read-only analyzer for Arc mainnet, hosted on Vercel. Owner-signed Lab scenarios remain pending. This is an onchain evidence analysis tool, not an audit service, custody service or refund guarantee.
+**Status:** live read-only analyzer for Arc mainnet, hosted on Vercel. ArcMirrorLab and all five owner-created demo categories have confirmed mainnet receipts. This is an onchain evidence analysis tool, not an audit service, custody service or refund guarantee.
 
 - [Repository](https://github.com/aquattdabackup/ArcMirror)
 - [Live website](https://arcmirror-six.vercel.app) (production); local address: http://localhost:3000
-- Lab contract: tested locally, not deployed; no mainnet deployment address exists.
+- [Deployed Lab](https://arc.etherscan.io/address/0xa64439ea7c88d56e2888c377d55ae3e174b415c1), chain 5042; [deployment and five owner-created demos](docs/mainnet-evidence.md).
 - [Validation](docs/validation.md), [spike findings](docs/spike-findings.md), [existing tools and overlap](docs/landscape.md)
+
+## Project mainnet proof
+
+Open the [owner-created forwarding report](https://arcmirror-six.vercel.app/tx/0x6539309ec60a263be08008ef134d4e15c6db8198fe1cd19e211959b5ef11df41) or the [complete five-demo evidence](docs/mainnet-evidence.md). Deployment addresses, receipt hashes, raw RPC vectors and a reproducible bytecode verifier are public. ArcScan source verification is not claimed; the verifier documents its exact scope.
 
 ## Try the software
 
@@ -116,7 +120,7 @@ flowchart LR
 - `apps/web`: `/`, `/tx/[hash]`, `/how-it-works`, `/tools` and its reconciliation/inspector/dust routes; `/api/health`, `/api/examples`, `/api/analyze/<hash>`.
 - `packages/core`: pure analyzer with compiled ESM/declarations, independent of UI and network.
 - `packages/rpc`: server/CLI RPC adapter, chain checks, fallback, timeout and bounded responses.
-- `contracts`: immutable-recipient ArcMirrorLab and Foundry tests; owner-signed deployment pending.
+- `contracts`: deployed immutable-recipient ArcMirrorLab, Foundry tests, mainnet manifest and reproducible executable-bytecode verification.
 - `vectors`, `docs/evidence/spike`: captured public evidence, expected reports and provenance.
 
 ## Checks actually run
@@ -129,9 +133,9 @@ flowchart LR
 - Historical fork/genesis coverage is not certified. Unusual trace types and precompile movements require review.
 - RPC endpoints may throttle or lose tracer support. Cache and rate limits are in-process (not distributed): 256 reports / one-hour TTL, 8 concurrent analyses, 30 client and 120 global requests per minute per instance. Hosting-level limits are still needed for a larger deployment.
 - Basic CSP/security headers are configured. Inline scripts/styles remain allowed for the Next.js bootstrap; nonce-based CSP is not implemented.
-- Contract mock tests do not emulate Arc's native/ERC-20 shared balance or mainnet system logs. The read-only production smoke passed. Lab validation on mainnet and at least five owner-created transactions remain required.
+- Contract mock tests do not emulate Arc's native/ERC-20 shared balance or mainnet system logs. The read-only production smoke passed. All five owner-created scenario receipts and matching live reports are published in [mainnet evidence](docs/mainnet-evidence.md); other contract paths are not certified.
 - Gitleaks and dependency checks are recorded in [validation](docs/validation.md); these are not an audit.
-- [Deployment and owner setup](docs/deployment.md), [eligibility](docs/eligibility.md), [application draft](docs/application-draft.md). The draft marks pending Lab/demo/reward-wallet fields; the user performs the final grant submission.
+- [Deployment and owner setup](docs/deployment.md), [eligibility](docs/eligibility.md), [application draft](docs/application-draft.md). The draft links the deployed Lab and five demos; the owner enters the separate reward wallet and performs the final grant submission.
 
 ## Continue with another coding agent
 
