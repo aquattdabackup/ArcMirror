@@ -1,6 +1,6 @@
 # Arc Microgrants application draft
 
-**Draft, not submitted.** Updated 2026-09-26 from the working read-only product and measured mainnet evidence. The owner-requested Lab deployment, five owner-created scenarios are still pending. The separate reward address has been supplied locally for owner entry at submission. Do not describe them as delivered or replace them with third-party examples.
+**Draft, not submitted.** Updated 2026-09-30: the live analyzer, deployed Lab and all five owner-created mainnet demos are backed by [public receipts, reports and reproducible verification](mainnet-evidence.md). The separate reward address remains local for owner entry at submission. Explorer source verification is not claimed.
 
 ## Short description
 
@@ -18,7 +18,7 @@ The product combines three practical capabilities:
 
 The [workbench](https://arcmirror-six.vercel.app/tools) extends this evidence into practical workflows. Payout reconciliation matches a local CSV to canonical movements by payer, recipient and exact amount; it preserves duplicate identities and distinguishes missing matches, amount differences and unassigned movements. One transaction is the scope; invoice identity and split-payment settlement are not inferred. The report inspector checks local JSON structure/digest and compares individual fields with another file or fresh RPC evidence. Dust Lab makes 18/6-decimal truncation and accumulated remainders visible through exact arithmetic, explicitly labelled simulation. Local files are not uploaded. These additions are built and checked, not roadmap promises.
 
-The website is live on Vercel and reads Arc mainnet, chain 5042. The MIT core is built as an independent package but has not been published to npm. Next steps are owner-signed Lab examples, broader supported-case vectors, and feedback from integrators. Those measured results could support a later Circle Grant Program proposal; no future award or production certification is claimed. [Validation](validation.md) and the [landscape survey](landscape.md) document the current scope.
+The website is live on Vercel and reads Arc mainnet, chain 5042. The MIT core is built as an independent package but has not been published to npm. Five owner-created mainnet scenarios are now recorded, including a mined intentional failure; broader supported-case vectors and integrator feedback remain future work. Those measured results could support a later Circle Grant Program proposal; no future award or production certification is claimed. [Validation](validation.md) and the [landscape survey](landscape.md) document the current scope.
 
 ## Links and evidence
 
@@ -30,14 +30,14 @@ The website is live on Vercel and reads Arc mainnet, chain 5042. The MIT core is
 | ERC-20 mainnet example | [Report](https://arcmirror-six.vercel.app/tx/0x376b287a795c449b0bf3f0ec3ffdfad8e913012edecf0a8eb6f00c007a47b24f), [Blockscout](https://explorer.arc.io/tx/0x376b287a795c449b0bf3f0ec3ffdfad8e913012edecf0a8eb6f00c007a47b24f); existing third-party activity |
 | Native mainnet example | [Report](https://arcmirror-six.vercel.app/tx/0xa0311ec4a00a190a55d2b32bbf03eb03e656d64c9bdaa306fdc1d9061ae6ad87); existing third-party activity |
 | Dust mainnet example | [Report](https://arcmirror-six.vercel.app/tx/0x37567ff71a01f4966f0c4d5c4155dde45a293fd4450a57ce3c69d96c9777b3de); existing third-party activity |
-| Lab contract / source verification | **Pending.** No deployment address or transaction exists. |
-| Five owner-created demos | **Pending.** Do not substitute the public examples above. |
+| Lab contract / source verification | [Deployed Lab](https://arc.etherscan.io/address/0xa64439ea7c88d56e2888c377d55ae3e174b415c1), [receipt and compiler manifest](../contracts/deployments/5042.json), reproducible executable/immutable verification. No explorer verification badge claimed. |
+| Five owner-created demos | **Completed and checked on mainnet.** [Native, ERC-20, forwarding, batch and intentional failure](mainnet-evidence.md), with independent receipt comparisons and matching production live reports. |
 | Reward address | **Supplied locally.** Distinct from demo burner; owner enters it in the application. Not published in this repo. |
 | Reproduction evidence | [Downloaded report](evidence/production/downloaded-report.json), [fresh CLI match](evidence/production/live-verify.txt), [public production checks](evidence/production/browser-checks.json) |
 
 ## Primary tour: one transaction in about one minute
 
-Updated 2026-09-27 after owner feedback on unclear tool usefulness. See [product review](product-review.md). Funding/signing remains deferred while product clarity is reviewed.
+Updated 2026-09-27 after owner feedback on unclear tool usefulness. See [product review](product-review.md). The five owner-signed demonstrations were subsequently completed; see the current evidence linked above.
 
 1. On the [home page](https://arcmirror-six.vercel.app), choose **Follow a real 0.01 USDC transfer in one minute**.
 2. Read **What can I conclude?**: the recipient receives 0.01 USDC and the transaction sender pays 0.00042 USDC in gas separately.
@@ -74,13 +74,13 @@ Program requirements were rechecked on the [official page](https://community.arc
 
 | Requirement | Evidence / remaining action |
 | --- | --- |
-| Working Arc mainnet project | Public read-only app uses chain 5042; API, live RPC and browser checks passed. Lab is not deployed. |
+| Working Arc mainnet project | Production uses chain 5042; live API/RPC evidence matches. Lab is deployed, with a public address and five owner-created demo receipts. |
 | Public repository | GitHub API confirmed public main branch and MIT. |
 | Description of product and Arc usage | Descriptions above. |
 | Public builder profile | Confirmed profile linked above. |
 | No previous Circle/Arc funding | Owner explicitly confirmed. |
 | Payout / submission | Reward address supplied locally; owner enters it, reviews and submits. |
-| Additional owner requirements | Deploy/verify Lab and capture five owner-created mainnet scenarios before closing the original brief. |
+| Additional owner requirements | Lab executable identity and five demo categories are verified; memo and optional extra paths remain unclaimed. Explorer source verification is a separate status. |
 
 ## Feature expansion and rules
 
@@ -88,7 +88,7 @@ The [official program page](https://community.arc.io/public/events/arc-microgran
 
 ## Before the owner submits
 
-- Complete the pending Lab/demo/reward fields with actual receipts and public addresses; review ownership and program rules.
-- Re-open the product, repository/profile and all final explorer links. Current automated ArcScan checks encounter Cloudflare; Blockscout loaded the measured transaction correctly.
+- Review the published Lab/demo links and evidence; enter the separate reward wallet in the form and confirm ownership/program declarations.
+- Re-open the product, repository/profile and all final explorer links. ArcScan address/transaction links were read during the September 30 checks; explorer APIs can still challenge automation. Use the published RPC reproduction path if an explorer is unavailable.
 - Confirm every claimed onchain artifact is chain 5042 and no testnet/local mock is labelled mainnet. Recheck the current program deadline on the official page.
 - The official page links to [DoraHacks registration](https://dorahacks.io/hackathon/arc-microgrants). Its automated-browser visit reached Human Verification on 2026-09-25, so form fields were not inspected or filled. The owner completes that check and presses the final submission button. No application has been sent by this agent.
