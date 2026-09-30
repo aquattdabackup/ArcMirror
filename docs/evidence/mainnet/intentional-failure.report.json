@@ -1,0 +1,61 @@
+{
+  "schemaVersion": "1.0.0",
+  "algorithmVersion": "0.1.0",
+  "chainId": 5042,
+  "txHash": "0x87b456003ef9194f99c71ea5af94273ba242beaffaaeacc4fb466885a2b47fe1",
+  "blockNumber": "23461134",
+  "blockHash": "0x1f5d6a9f1d29677c020478ebf91f6fbb6079bff57b074a5f1e0c306f34a27fd5",
+  "txIndex": "10",
+  "status": "confirmed_failed",
+  "evidenceLevel": "verified",
+  "reasons": [
+    "logs_call_values_and_transaction_state_match"
+  ],
+  "warnings": [],
+  "gas": {
+    "payer": "0x3987d91fd4adcd5ac30463166ed727310c4c1fed",
+    "beneficiary": "0x9be5f8a073c97925a5bbb6b6ee32ead59114a4fd",
+    "gasUsed": "21271",
+    "effectiveGasPrice": "21500000000",
+    "feeNative18": "457326500000000",
+    "feeExact": "0.0004573265"
+  },
+  "movements": [],
+  "logs": [],
+  "memo": null,
+  "totals": {
+    "grossMovementNative18": "0",
+    "grossMovementExact": "0",
+    "interfaceNative18": "0",
+    "naiveNative18": "0",
+    "naiveExact": "0",
+    "phantomEligible": false
+  },
+  "proof": {
+    "logs": "consistent",
+    "trace": "matches",
+    "state": "matches",
+    "balances": [
+      {
+        "address": "0x3987d91fd4adcd5ac30463166ed727310c4c1fed",
+        "expectedNative18": "-457326500000000",
+        "actualNative18": "-457326500000000",
+        "residualNative18": "0"
+      },
+      {
+        "address": "0x9be5f8a073c97925a5bbb6b6ee32ead59114a4fd",
+        "expectedNative18": "457326500000000",
+        "actualNative18": "457326500000000",
+        "residualNative18": "0"
+      }
+    ]
+  },
+  "limits": [
+    "USDC only; other tokens are visible as raw logs, excluded from totals.",
+    "Gross movement sums count each hop; they are not net wallet income.",
+    "Native call-value tracing does not cover USDC precompile mutations.",
+    "Memo decoding, historical fork coverage and independent provider consensus are not certified.",
+    "Digest commits to this report; it is not a cryptographic proof of blockchain consensus."
+  ],
+  "digest": "0xaca8753625d7182b969946e31d7b5e4e6427595dc1271f787e5a30e6584c75e9"
+}
