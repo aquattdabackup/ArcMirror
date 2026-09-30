@@ -205,7 +205,7 @@ npm.cmd run verify -- 0x376b287a795c449b0bf3f0ec3ffdfad8e913012edecf0a8eb6f00c00
 | Hash không tải được hoặc live RPC lỗi | `apps/web/app/api/analyze/[hash]/route.ts`, `packages/rpc` |
 | Snapshot đúng nhưng Re-verify khác | RPC/provider/evidence availability; so sánh digest và evidence reasons trước khi sửa core |
 | Nút, tab, download hoặc responsive lỗi | `apps/web/components`, `apps/web/app/globals.css` |
-| Contract/Lab lỗi | `contracts/src`, Foundry tests; Lab mainnet hiện vẫn chưa deploy |
+| Contract/Lab lỗi | `contracts/src`, Foundry tests; đối chiếu manifest và bằng chứng mainnet |
 
 ## 11. Mẫu báo bug
 
@@ -226,10 +226,10 @@ Tái hiện được bao nhiêu lần:
 
 Một lần full flow đạt khi ba report có đúng số lượng/tổng/evidence level, CSV phân biệt match và mismatch, Inspector phát hiện tamper, Dust Lab giữ đủ 18 decimals, API negative cases trả đúng status, desktop/mobile không tràn ngang và Console không có lỗi ứng dụng.
 
-## 12. Những phần chưa thể đánh dấu hoàn tất
+## 12. Trạng thái mainnet và giới hạn hiện tại
 
-- ArcMirrorLab chưa được deploy lên mainnet.
-- Chưa có năm giao dịch demo do chủ dự án ký/tạo.
-- Ba hash trong flow là giao dịch công khai của bên thứ ba.
+- ArcMirrorLab đã deploy trên chain 5042; xem [manifest và bằng chứng](mainnet-evidence.md).
+- Đủ năm demo do chủ dự án ký đã được xác minh ngày 30/09/2026, gồm giao dịch cố ý thất bại có receipt thật.
+- Ba hash mẫu trong flow vẫn là giao dịch bên thứ ba; năm hash của chủ dự án được công bố riêng trong trang bằng chứng.
 - ERC-20 precompile sample phải giữ `Needs Review` cho tới khi có coverage được chứng minh tốt hơn.
 - Kiểm thử viewport tự động không thay thế hoàn toàn thiết bị mobile thật.
