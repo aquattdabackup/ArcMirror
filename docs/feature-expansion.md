@@ -2,7 +2,7 @@
 
 Owner approved on 2026-09-25: payout CSV reconciliation, then local report inspection/comparison and Dust Lab. Funding/signing can wait while software work proceeds.
 
-On 2026-09-27 the owner reported that these tools were hard to understand and their value was unclear. They remain optional follow-up workflows; the original P0 transaction analyzer takes priority. Passing implementation tests does not validate customer usefulness. See [product focus review](product-review.md) for the reassessment and concrete use cases. Funding/signing work is deferred while product clarity is corrected.
+On 2026-09-27 the owner reported that these tools were hard to understand and their value was unclear. They remain optional follow-up workflows; the original P0 transaction analyzer takes priority. Passing implementation tests does not validate customer usefulness. See [product focus review](product-review.md) for the reassessment and concrete use cases. That funding/signing deferral was historical; [deployment and five owner-created demos](mainnet-evidence.md) were completed and verified September 30.
 
 ## Program fit
 
