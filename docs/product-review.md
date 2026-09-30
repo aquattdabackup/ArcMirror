@@ -17,7 +17,7 @@ The initial audience is people checking an Arc transfer and developers/support t
 | P0: share and rerun evidence | Share URL, JSON, digest, live refresh and CLI exist. | Make link sharing the normal path; place saved-file inspection with the export workflow. |
 | P0: first visit understandable in 30–60 seconds | Technical browser checks passed; owner comprehension did not. | Prioritize one transaction walkthrough on the landing page and in the application draft. A fresh owner walkthrough remains necessary. |
 | P1: three-view verification | Supported native sample reconciles; ERC-20 call-value coverage is incomplete. | Keep Needs Review visible. Receipt success does not mean the analysis is fully verified; provider views are not independent consensus. |
-| P1: own Lab and vectors | Local contract/tests and third-party mainnet vectors exist. | Lab deployment and five owner-signed examples remain incomplete. Funding/signing work is deferred while product clarity is corrected. |
+| P1: own Lab and vectors | Local contract/tests and third-party mainnet vectors exist. | Historical gap at this review; deployment and five owner-signed categories were completed and [verified September 30](mainnet-evidence.md). |
 | P2: memo | Report memo is null; no decoder certified. | Explicitly pending, not delivered. |
 
 ## Role of the optional tools
