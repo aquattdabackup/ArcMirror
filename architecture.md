@@ -14,7 +14,7 @@
 - Routes `/tools`, `/tools/reconcile`, `/tools/inspect`, `/tools/dust`, `/`, `/tx/[hash]`, `/how-it-works`; `/api/health`, `/api/examples`, `/api/analyze/[hash]`.
 - `scripts/verify.ts`: live or fixture verification; checks report digest and lists changed fields.
 - `scripts/generate-vectors.ts`: regenerates expected reports/snapshots from frozen public evidence. Tests deep-compare vectors offline.
-- `contracts/src/ArcMirrorLab.sol`: fixed immutable recipients, bounded scenarios, exact ERC-20 allowances, no admin, fixed-recipient sweep. No deployment exists.
+- `contracts/src/ArcMirrorLab.sol`: fixed immutable recipients, bounded scenarios, exact ERC-20 allowances, no admin, fixed-recipient sweep. Deployed on Arc Mainnet; addresses/source identity in `contracts/deployments/5042.json`, raw evidence in `5042.rpc.json`, reproduction via `scripts/verify-deployment.mjs`.
 
 ## Invariants
 
@@ -39,9 +39,9 @@
 ## Evidence and handoff
 
 - Frozen investigation: `docs/evidence/spike`, documented by `docs/spike-findings.md`. Read-only collection scripts never sign transactions.
-- `vectors`: three third-party mainnet samples, explicitly not owner-created demos.
+- `vectors`: three third-party root samples plus five owner-created samples in `vectors/owner`. Separate regression tests preserve provenance. `docs/mainnet-evidence.md` is the current public proof index; `docs/evidence/mainnet` holds reports and live-comparison results.
 - `docs/validation.md`: actual checks. `docs/deployment.md`: deployment settings/remaining owner steps. `task_on_progress.md`: temporary task status.
-- Owner confirmed no Circle/Arc funding and authorized software-first; public wallet addresses are supplied; funding and signing remain pending. Address mapping and unsigned deployment payload stay in ignored artifacts, outside the public repo. Owner approved MIT and builder profile aquattdabackup on 2026-09-25. Root/core license files and Solidity SPDX markers use MIT; npm packages remain private.
+- Owner confirmed no Circle/Arc funding and authorized software-first. Owner-local funding/signing, Lab deployment and the five requested demo categories are complete. Public contract/transaction evidence excludes the separate reward-wallet mapping; that mapping and historical unsigned preparation remain in ignored artifacts. Owner approved MIT and builder profile aquattdabackup on 2026-09-25. Root/core license files and Solidity SPDX markers use MIT; npm packages remain private.
 
 ## Agent continuity
 
