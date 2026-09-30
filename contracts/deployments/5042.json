@@ -1,0 +1,68 @@
+{
+  "chainId": 5042,
+  "network": "Arc Mainnet",
+  "checkedAt": "2026-09-30T01:54:55.648Z",
+  "transactionHash": "0x97bcd82e2d98eee0962c54e6bd2fbdbfa78ff908c0627d7f53fc52fe28032292",
+  "blockNumber": 23006461,
+  "deployedAt": "2026-09-27T09:24:31.000Z",
+  "constructorArguments": [
+    "0x9078519c691084110f44ea8f85d40850ac91acd4",
+    "0x7f045edecd9e1466e7e033e713344e9cb891cd22"
+  ],
+  "source": {
+    "path": "contracts/src/ArcMirrorLab.sol",
+    "revision": "52f6c9f6dc8f24562e57c628f21ba12e98f0e037",
+    "keccak256": "0x6ef6ef3619cf82003da2007a7bc5a6805f835479c91c4178168b38949795133f",
+    "note": "The pending-deployment comment is a historical pre-deployment note in the preserved source; this receipt supersedes it."
+  },
+  "compiler": {
+    "version": "0.8.28+commit.7893614a",
+    "evmVersion": "cancun",
+    "optimizer": {
+      "enabled": true,
+      "runs": 200
+    }
+  },
+  "contracts": {
+    "ArcMirrorLab": {
+      "address": "0xa64439ea7c88d56e2888c377d55ae3e174b415c1",
+      "runtimeKeccak256": "0x889f68ba851d389e21e540adf0fd2549c971ff1fd3c8359dd072d6016f355198",
+      "immutableValues": {
+        "151": "0x9078519c691084110f44ea8f85d40850ac91acd4",
+        "153": "0x7f045edecd9e1466e7e033e713344e9cb891cd22",
+        "156": "0x28fcbbf10fac1bad051d1870c8cb30fd9d3ded17"
+      },
+      "getters": {
+        "recipientA": "0x9078519c691084110f44ea8f85d40850ac91acd4",
+        "recipientB": "0x7f045edecd9e1466e7e033e713344e9cb891cd22",
+        "forwarder": "0x28fcbbf10fac1bad051d1870c8cb30fd9d3ded17"
+      },
+      "explorer": "https://arc.etherscan.io/address/0xa64439ea7c88d56e2888c377d55ae3e174b415c1"
+    },
+    "ArcMirrorForwarder": {
+      "address": "0x28fcbbf10fac1bad051d1870c8cb30fd9d3ded17",
+      "runtimeKeccak256": "0x7bf78151d76dc143c247d2266b4d9725f49b60bc759eb45d56be206366e442b8",
+      "immutableValues": {
+        "53": "0x9078519c691084110f44ea8f85d40850ac91acd4",
+        "55": "0xa64439ea7c88d56e2888c377d55ae3e174b415c1"
+      },
+      "getters": {
+        "recipient": "0x9078519c691084110f44ea8f85d40850ac91acd4",
+        "lab": "0xa64439ea7c88d56e2888c377d55ae3e174b415c1"
+      },
+      "explorer": "https://arc.etherscan.io/address/0x28fcbbf10fac1bad051d1870c8cb30fd9d3ded17"
+    }
+  },
+  "verification": {
+    "command": "node scripts/verify-deployment.mjs --live",
+    "prerequisite": "npm ci; then forge build in contracts",
+    "method": "Compiled executable bytecode with exact immutable addresses; excludes Solidity CBOR metadata, which differs between source paths.",
+    "explorer": {
+      "checkedAt": "2026-09-30T01:55:05.711Z",
+      "url": "https://arc.etherscan.io/address/0xa64439ea7c88d56e2888c377d55ae3e174b415c1#code",
+      "http": 200,
+      "sourceVerified": false
+    },
+    "limits": "Not an explorer verification badge, security audit or claim of all-scenario coverage."
+  }
+}
