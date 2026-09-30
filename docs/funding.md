@@ -1,6 +1,6 @@
 # Funding the demo burner
 
-**Update 2026-09-27:** the burner now has confirmed mainnet USDC. Do not repeat the purchase steps below. See the current [wallet preflight](wallet-preflight.md) and [five-scenario demo runbook](mainnet-demo.md).
+**Update 2026-09-30:** deployment and all five owner-created demos are complete. [Confirmed evidence](mainnet-evidence.md). Do not repeat these historical purchase steps or send more transactions to replay the reports.
 
 Historical owner context (2026-09-25): MetaMask is available; the owner does not yet have USDC. Four public addresses are already supplied locally. Only the burner needs funding to proceed with deployment; the recipients and reward address do not need a deposit for this preparation stage.
 
