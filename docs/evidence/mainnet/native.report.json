@@ -1,0 +1,91 @@
+{
+  "schemaVersion": "1.0.0",
+  "algorithmVersion": "0.1.0",
+  "chainId": 5042,
+  "txHash": "0x2f0c62b0ea5c601f053b96e6c59d624a5b769208cc9ea9242a31bef963ab8981",
+  "blockNumber": "23009545",
+  "blockHash": "0x2a6b96668c509d43543cf99b26c31c22bb943058d4f33ddcb0a2a49bf782d464",
+  "txIndex": "12",
+  "status": "confirmed_success",
+  "evidenceLevel": "verified",
+  "reasons": [
+    "logs_call_values_and_transaction_state_match"
+  ],
+  "warnings": [],
+  "gas": {
+    "payer": "0x3987d91fd4adcd5ac30463166ed727310c4c1fed",
+    "beneficiary": "0x5accc00d7e4db975ccbfc2801bc9447f37198797",
+    "gasUsed": "21000",
+    "effectiveGasPrice": "21500000000",
+    "feeNative18": "451500000000000",
+    "feeExact": "0.0004515"
+  },
+  "movements": [
+    {
+      "payer": "0x3987d91fd4adcd5ac30463166ed727310c4c1fed",
+      "payee": "0x9078519c691084110f44ea8f85d40850ac91acd4",
+      "amountNative18": "1000000000000000",
+      "amountExact": "0.001",
+      "amountDisplay6": "0.001000",
+      "dustRemainder18": "0",
+      "sourceLogIndex": "27",
+      "corroboratingLogIndexes": [],
+      "evidenceLevel": "verified"
+    }
+  ],
+  "logs": [
+    {
+      "address": "0xfffffffffffffffffffffffffffffffffffffffe",
+      "topics": [
+        "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+        "0x0000000000000000000000003987d91fd4adcd5ac30463166ed727310c4c1fed",
+        "0x0000000000000000000000009078519c691084110f44ea8f85d40850ac91acd4"
+      ],
+      "data": "0x00000000000000000000000000000000000000000000000000038d7ea4c68000",
+      "logIndex": "27",
+      "role": "native_movement"
+    }
+  ],
+  "memo": null,
+  "totals": {
+    "grossMovementNative18": "1000000000000000",
+    "grossMovementExact": "0.001",
+    "interfaceNative18": "0",
+    "naiveNative18": "1000000000000000",
+    "naiveExact": "0.001",
+    "phantomEligible": false
+  },
+  "proof": {
+    "logs": "consistent",
+    "trace": "matches",
+    "state": "matches",
+    "balances": [
+      {
+        "address": "0x3987d91fd4adcd5ac30463166ed727310c4c1fed",
+        "expectedNative18": "-1451500000000000",
+        "actualNative18": "-1451500000000000",
+        "residualNative18": "0"
+      },
+      {
+        "address": "0x5accc00d7e4db975ccbfc2801bc9447f37198797",
+        "expectedNative18": "451500000000000",
+        "actualNative18": "451500000000000",
+        "residualNative18": "0"
+      },
+      {
+        "address": "0x9078519c691084110f44ea8f85d40850ac91acd4",
+        "expectedNative18": "1000000000000000",
+        "actualNative18": "1000000000000000",
+        "residualNative18": "0"
+      }
+    ]
+  },
+  "limits": [
+    "USDC only; other tokens are visible as raw logs, excluded from totals.",
+    "Gross movement sums count each hop; they are not net wallet income.",
+    "Native call-value tracing does not cover USDC precompile mutations.",
+    "Memo decoding, historical fork coverage and independent provider consensus are not certified.",
+    "Digest commits to this report; it is not a cryptographic proof of blockchain consensus."
+  ],
+  "digest": "0x75baab36e3eef3769df23b2e9de93a1eae55f0bed9b740a3bcef46d274ec8595"
+}
