@@ -27,6 +27,7 @@ The website is live on Vercel and reads Arc mainnet, chain 5042. The MIT core is
 | Live product | [arcmirror-six.vercel.app](https://arcmirror-six.vercel.app) |
 | Public source | [aquattdabackup/ArcMirror](https://github.com/aquattdabackup/ArcMirror), MIT |
 | Builder | [aquattdabackup](https://github.com/aquattdabackup), owner-approved |
+| Direct project-created mainnet demonstration | [Owner forwarding report](https://arcmirror-six.vercel.app/tx/0x6539309ec60a263be08008ef134d4e15c6db8198fe1cd19e211959b5ef11df41), using the deployed Lab and Forwarder; [all five owner demos](mainnet-evidence.md). |
 | ERC-20 mainnet example | [Report](https://arcmirror-six.vercel.app/tx/0x376b287a795c449b0bf3f0ec3ffdfad8e913012edecf0a8eb6f00c007a47b24f), [Blockscout](https://explorer.arc.io/tx/0x376b287a795c449b0bf3f0ec3ffdfad8e913012edecf0a8eb6f00c007a47b24f); existing third-party activity |
 | Native mainnet example | [Report](https://arcmirror-six.vercel.app/tx/0xa0311ec4a00a190a55d2b32bbf03eb03e656d64c9bdaa306fdc1d9061ae6ad87); existing third-party activity |
 | Dust mainnet example | [Report](https://arcmirror-six.vercel.app/tx/0x37567ff71a01f4966f0c4d5c4155dde45a293fd4450a57ce3c69d96c9777b3de); existing third-party activity |
@@ -70,7 +71,7 @@ npm run verify -- 0x376b287a795c449b0bf3f0ec3ffdfad8e913012edecf0a8eb6f00c007a47
 
 ## Requirement-to-evidence matrix
 
-Program requirements were rechecked on the [official page](https://community.arc.io/public/events/arc-microgrants-f8tijfjhyq) on 2026-09-25. The owner's full brief also requires the additional Lab/demo stage below; this draft does not certify acceptance.
+Program requirements were rechecked on the [official page](https://community.arc.io/public/events/arc-microgrants-f8tijfjhyq) on 2026-09-30. The owner's full brief also requires the additional Lab/demo stage below; this draft does not certify acceptance.
 
 | Requirement | Evidence / remaining action |
 | --- | --- |
@@ -89,6 +90,7 @@ The [official program page](https://community.arc.io/public/events/arc-microgran
 ## Before the owner submits
 
 - Review the published Lab/demo links and evidence; enter the separate reward wallet in the form and confirm ownership/program declarations.
+- Submit only once for this project and confirm the right to submit the work. The owner has already confirmed no prior Circle/Arc funding. Restricted-jurisdiction screening and private payout verification remain organizer processes; the technical review does not certify them.
 - Re-open the product, repository/profile and all final explorer links. ArcScan address/transaction links were read during the September 30 checks; explorer APIs can still challenge automation. Use the published RPC reproduction path if an explorer is unavailable.
 - Confirm every claimed onchain artifact is chain 5042 and no testnet/local mock is labelled mainnet. Recheck the current program deadline on the official page.
-- The official page links to [DoraHacks registration](https://dorahacks.io/hackathon/arc-microgrants). Its automated-browser visit reached Human Verification on 2026-09-25, so form fields were not inspected or filled. The owner completes that check and presses the final submission button. No application has been sent by this agent.
+- The official page links to [DoraHacks registration](https://dorahacks.io/hackathon/arc-microgrants). The September 30 read-only request still returned HTTP 405 with a Human Verification page; form fields and any additional terms were not inspected or filled. The owner completes that check, reviews the actual form and presses the final submission button. No application has been sent by this agent.
