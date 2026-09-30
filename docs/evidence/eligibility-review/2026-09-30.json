@@ -1,0 +1,253 @@
+{
+  "checkedAt": "2026-09-30T12:26:10.957Z",
+  "base": "https://arcmirror-six.vercel.app",
+  "checks": [
+    {
+      "name": "network https://rpc.mainnet.arc.io",
+      "ok": true,
+      "endpoint": "https://rpc.mainnet.arc.io",
+      "chainId": 5042,
+      "block": 23538698
+    },
+    {
+      "name": "network https://rpc.drpc.mainnet.arc.io",
+      "ok": true,
+      "endpoint": "https://rpc.drpc.mainnet.arc.io",
+      "chainId": 5042,
+      "block": 23538700
+    },
+    {
+      "name": "owner native",
+      "ok": true,
+      "hash": "0x2f0c62b0ea5c601f053b96e6c59d624a5b769208cc9ea9242a31bef963ab8981",
+      "source": "live",
+      "status": "confirmed_success",
+      "evidenceLevel": "verified",
+      "digest": "0x75baab36e3eef3769df23b2e9de93a1eae55f0bed9b740a3bcef46d274ec8595",
+      "blockNumber": "23009545",
+      "from": "0x3987d91fd4adcd5ac30463166ed727310c4c1fed",
+      "productionMatchesLocal": true,
+      "twoReceiptsMatch": true,
+      "reportPageHttp": 200,
+      "elapsedMs": 2296
+    },
+    {
+      "name": "owner erc20",
+      "ok": true,
+      "hash": "0x4e0e57e776550e0118d86be5b84233eaecaa00f7fe085e3baf9f0af5e750370d",
+      "source": "live",
+      "status": "confirmed_success",
+      "evidenceLevel": "needs_review",
+      "digest": "0x0b291fc94033222b3162d61e49110331c9104a9357a3c1af40718a4bee055aa3",
+      "blockNumber": "23199433",
+      "from": "0x3987d91fd4adcd5ac30463166ed727310c4c1fed",
+      "productionMatchesLocal": true,
+      "twoReceiptsMatch": true,
+      "reportPageHttp": 200,
+      "elapsedMs": 1889
+    },
+    {
+      "name": "owner forwarding",
+      "ok": true,
+      "hash": "0x6539309ec60a263be08008ef134d4e15c6db8198fe1cd19e211959b5ef11df41",
+      "source": "live",
+      "status": "confirmed_success",
+      "evidenceLevel": "verified",
+      "digest": "0x3e6c99b6fdf4b18f45b908df21eff0d7237d0c9e576e53a992d0816b6221976d",
+      "blockNumber": "23315455",
+      "from": "0x3987d91fd4adcd5ac30463166ed727310c4c1fed",
+      "productionMatchesLocal": true,
+      "twoReceiptsMatch": true,
+      "reportPageHttp": 200,
+      "elapsedMs": 1633
+    },
+    {
+      "name": "owner batch",
+      "ok": true,
+      "hash": "0x0cecb2a9fb27abd8d463d5faec25279056d28f0a447061eba22120d339165ec8",
+      "source": "live",
+      "status": "confirmed_success",
+      "evidenceLevel": "verified",
+      "digest": "0xabc9f2ab18f5346c1ff9916b2cae9ddc51d46e833082cf7f5acf747b9c6edf75",
+      "blockNumber": "23458272",
+      "from": "0x3987d91fd4adcd5ac30463166ed727310c4c1fed",
+      "productionMatchesLocal": true,
+      "twoReceiptsMatch": true,
+      "reportPageHttp": 200,
+      "elapsedMs": 1704
+    },
+    {
+      "name": "owner intentional-failure",
+      "ok": true,
+      "hash": "0x87b456003ef9194f99c71ea5af94273ba242beaffaaeacc4fb466885a2b47fe1",
+      "source": "live",
+      "status": "confirmed_failed",
+      "evidenceLevel": "verified",
+      "digest": "0xaca8753625d7182b969946e31d7b5e4e6427595dc1271f787e5a30e6584c75e9",
+      "blockNumber": "23461134",
+      "from": "0x3987d91fd4adcd5ac30463166ed727310c4c1fed",
+      "productionMatchesLocal": true,
+      "twoReceiptsMatch": true,
+      "reportPageHttp": 200,
+      "elapsedMs": 1822
+    },
+    {
+      "name": "deployment runtime across providers",
+      "ok": true,
+      "contracts": [
+        {
+          "name": "ArcMirrorLab",
+          "address": "0xa64439ea7c88d56e2888c377d55ae3e174b415c1",
+          "runtimeKeccak256": "0x889f68ba851d389e21e540adf0fd2549c971ff1fd3c8359dd072d6016f355198"
+        },
+        {
+          "name": "ArcMirrorForwarder",
+          "address": "0x28fcbbf10fac1bad051d1870c8cb30fd9d3ded17",
+          "runtimeKeccak256": "0x7bf78151d76dc143c247d2266b4d9725f49b60bc759eb45d56be206366e442b8"
+        }
+      ]
+    },
+    {
+      "name": "public repository complete tree",
+      "ok": true,
+      "revision": "9797ac0bf591caf26033cef4769b9c3c410cb360",
+      "private": false,
+      "license": "MIT",
+      "matchedSourceFiles": 164
+    },
+    {
+      "name": "public builder",
+      "ok": true,
+      "profile": "https://github.com/aquattdabackup"
+    },
+    {
+      "name": "homepage",
+      "ok": true,
+      "url": "https://arcmirror-six.vercel.app",
+      "http": 200,
+      "bytes": 31315
+    },
+    {
+      "name": "how it works",
+      "ok": true,
+      "url": "https://arcmirror-six.vercel.app/how-it-works",
+      "http": 200,
+      "bytes": 19964
+    },
+    {
+      "name": "Lab explorer",
+      "ok": true,
+      "url": "https://arc.etherscan.io/address/0xa64439ea7c88d56e2888c377d55ae3e174b415c1#code",
+      "http": 200,
+      "bytes": 357189,
+      "sourceVerificationPrompt": true
+    },
+    {
+      "name": "deployment explorer",
+      "ok": true,
+      "url": "https://arc.etherscan.io/tx/0x97bcd82e2d98eee0962c54e6bd2fbdbfa78ff908c0627d7f53fc52fe28032292",
+      "http": 200,
+      "bytes": 170151
+    }
+  ],
+  "rules": {
+    "officialPage": "https://community.arc.io/public/events/arc-microgrants-f8tijfjhyq",
+    "networkReference": "https://docs.arc.io/arc/references/connect-to-arc",
+    "reviewDate": "2026-09-30",
+    "submissionDeadline": "2026-10-14T23:59:00-04:00",
+    "registration": {
+      "url": "https://dorahacks.io/hackathon/arc-microgrants",
+      "http": 405,
+      "title": "Human Verification",
+      "formInspected": false,
+      "submittedByAgent": false
+    }
+  },
+  "verification": {
+    "applicationTests": {
+      "passed": 60,
+      "failed": 0
+    },
+    "frozenSpikeTests": {
+      "passed": 10,
+      "failed": 0
+    },
+    "foundryTests": {
+      "passed": 16,
+      "failed": 0,
+      "fuzzRuns": 256,
+      "scope": "Local EVM tests; not Arc simulation"
+    },
+    "typecheck": "root and web pass",
+    "productionSmoke": {
+      "health": "pass",
+      "snapshots": 3,
+      "invalidHash": "pass",
+      "unknownHash": "pass",
+      "securityHeaders": "pass",
+      "toolPages": 4
+    },
+    "liveDeploymentVerifier": {
+      "passed": true,
+      "scope": "Receipt, source hash, compiler, executable bytecode and immutable values; excludes CBOR metadata; no explorer badge or audit"
+    },
+    "documentationLinks": {
+      "markdownFiles": 26,
+      "relativeLinks": 121,
+      "missing": 0
+    },
+    "productionDependencyAudit": {
+      "knownVulnerabilities": 0,
+      "scope": "npm audit --omit=dev"
+    },
+    "browserRetest": {
+      "completed": false,
+      "reason": "Cua kernel could not start: Windows sandbox helper setup refresh errors"
+    },
+    "productionEnvironmentVariables": {
+      "reread": false,
+      "note": "Source defaults inspected; production reports were checked against live chain-5042 receipts. No claim of inspecting encrypted Vercel settings."
+    },
+    "applicationBuild": {
+      "rerun": false,
+      "reason": "No application or contract execution changes"
+    }
+  },
+  "ownerExplorerLinks": [
+    {
+      "url": "https://arc.etherscan.io/tx/0x2f0c62b0ea5c601f053b96e6c59d624a5b769208cc9ea9242a31bef963ab8981",
+      "http": 200,
+      "requestedHashPresent": true
+    },
+    {
+      "url": "https://arc.etherscan.io/tx/0x4e0e57e776550e0118d86be5b84233eaecaa00f7fe085e3baf9f0af5e750370d",
+      "http": 200,
+      "requestedHashPresent": true
+    },
+    {
+      "url": "https://arc.etherscan.io/tx/0x6539309ec60a263be08008ef134d4e15c6db8198fe1cd19e211959b5ef11df41",
+      "http": 200,
+      "requestedHashPresent": true
+    },
+    {
+      "url": "https://arc.etherscan.io/tx/0x0cecb2a9fb27abd8d463d5faec25279056d28f0a447061eba22120d339165ec8",
+      "http": 200,
+      "requestedHashPresent": true
+    },
+    {
+      "url": "https://arc.etherscan.io/tx/0x87b456003ef9194f99c71ea5af94273ba242beaffaaeacc4fb466885a2b47fe1",
+      "http": 200,
+      "requestedHashPresent": true
+    }
+  ],
+  "documentationCorrections": [
+    {
+      "commit": "b444f4b",
+      "scope": "README tagline narrowed to supported evidence and limits"
+    },
+    {
+      "commit": "e6dbf70",
+      "scope": "Application draft adds direct owner demonstration and current form/declaration checks"
+    }
+  ]
+}
