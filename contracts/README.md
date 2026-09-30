@@ -1,17 +1,13 @@
 # ArcMirrorLab
 
-A small experiment contract with two immutable recipients, a 0.01 USDC per-call cap, a reentrancy guard, exact ERC-20 allowances, native forwarding, duplicate transfers, dust, batch and an explicit revert path. It has no owner/admin withdrawal role. Forced native balances may only be swept to the fixed first recipient.
+**Deployed on Arc Mainnet, chain 5042.** Lab: [0xa64439ea7c88d56e2888c377d55ae3e174b415c1](https://arc.etherscan.io/address/0xa64439ea7c88d56e2888c377d55ae3e174b415c1). [Deployment transaction](https://arc.etherscan.io/tx/0x97bcd82e2d98eee0962c54e6bd2fbdbfa78ff908c0627d7f53fc52fe28032292) succeeded at block 23006461. [Manifest](deployments/5042.json), [RPC evidence](deployments/5042.rpc.json), and [five completed owner demos](../docs/mainnet-evidence.md).
 
-**Not deployed.** The owner supplied recipient addresses and the burner is funded; user-controlled signing is pending. No deployment address or transaction hash exists yet. Source is licensed under [MIT](../LICENSE), approved by the owner on 2026-09-25.
+The bounded experiment contract has two immutable recipients, a 0.01 USDC per-call cap, reentrancy guard, exact ERC-20 allowances, native forwarding, duplicate transfers, dust, batch and explicit revert. It has no owner/admin withdrawal role. Forced native balances may only be swept to the fixed first recipient. Source is MIT.
 
-Run from this directory with Foundry:
+Run forge build and forge test -vv from this directory. From repository root run node scripts/verify-deployment.mjs --live to compare the deployed Lab and Forwarder with the compiled executable bytecode and exact immutable addresses. See the manifest for compiler/source identity. Solidity metadata is excluded; ArcScan source verification is not claimed.
 
-```
-forge test -vv
-```
+The source remains identical to its deployed revision, including a historical pre-deployment comment. The dated manifest and mainnet evidence supersede that comment. Do not redeploy to update a status label.
 
-The unit-test token is a conventional isolated mock. It does not reproduce Arc's shared native/ERC-20 balance, system logs, EVM differences or mainnet behavior. The same scenarios must still be exercised on real Arc using a funded burner, with amounts, recipients and gas shown before every signature. Prefer encrypted Foundry keystores or the user's wallet. No private key is accepted in source or chat.
+Standard EVM mock tests do not reproduce Arc shared native/ERC-20 balances or system logs. The real five-scenario evidence now covers native transfer, direct ERC-20 transfer, nativeForward, batch and a mined intentionalFailure. Duplicate-transfer and dust contract calls remain optional, unclaimed mainnet coverage. The pure failure function's normal Remix button only simulates; the recorded failed transaction is identified separately in the evidence.
 
-The explicit failure function always reverts by contract design. This avoids relying on an untested assumption about native sends to zero. It is not evidence of a failed mainnet transaction until the owner signs a bounded probe.
-
-The [mainnet demo runbook](../docs/mainnet-demo.md) describes deployment and the five required scenario categories. [Wallet preflight](../docs/wallet-preflight.md) records compiler settings, chain 5042, gas and bytecode checks; constructor addresses remain in ignored local artifacts. Refresh the exact transaction and gas before the owner's local signature. Only a real confirmed receipt permits a deployment artifact under `deployments/`.
+The [runbook](../docs/mainnet-demo.md) is retained for understanding/replaying the recorded flow. No additional signature or payment is required to view existing reports. New transactions, if ever requested, still require owner-local review and signing.
