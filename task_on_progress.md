@@ -1,64 +1,37 @@
 # Current task
 
-Current priority (2026-09-27): the owner resumed mainnet preparation and requested a USDC balance check plus the demo procedure. The burner is funded; the five-scenario runbook and local Remix files are prepared. No signature, broadcast, Lab deployment or owner demo has occurred. Next: refresh/review the exact deployment request with the owner, who signs locally in MetaMask. Product-focus correction is delivered; owner usability acceptance remains open. Do not add unrelated features.
+Updated 2026-09-30. Owner reported completing all five demos and asked what comes next. All five were independently found on Arc Mainnet and verified. Deployment/owner evidence, regression tests and public documentation are published; final owner application review/submission remains open. Do not repeat deployment, funding or transactions merely to record a video.
 
-## Owner decisions
+## Verified state and entry points
 
-- No prior Circle/Arc funding. Software-first authorized. MIT and builder profile aquattdabackup approved. English product/docs, Vietnamese updates.
-- Commit each coherent verified milestone and promptly push. GitHub aquattdabackup access works; no authentication blocker. Never force-push.
-- Existing Vercel project arcmirror in Luong Tuan's projects is approved; no billing changes.
-- Owner previously chose to obtain USDC, then prioritized extra features. Latest feature order was CSV reconciliation, JSON inspector/comparison, Dust Lab; completed.
-- Keys/signatures/purchases stay with the owner. No transaction is approved until chain, recipients, exact amounts and gas are reviewed locally.
+- Public app: https://arcmirror-six.vercel.app; public repo: https://github.com/aquattdabackup/ArcMirror. Chain 5042, official primary + dRPC. App source is unchanged since recorded UI release 229ba77 / dpl_AZbqQjnSuDLdtwLrjnojFko2jiEC. No UI redeployment was needed for this evidence/docs release.
+- Lab address, Forwarder, deployment hash/block, source/compiler identity and executable/immutable verification: contracts/deployments/5042.json, 5042.rpc.json, scripts/verify-deployment.mjs.
+- Current human-readable proof: docs/mainnet-evidence.md. Exact five hashes, dates, outcome, fee, report links and production/RPC comparison results: docs/evidence/mainnet/checks.json. Raw bundles + expected reports: vectors/owner. Standalone JSON: docs/evidence/mainnet/*.report.json.
+- Native, ERC-20, forwarding and batch have successful receipts. Intentional failure has mined receipt status 0 and call-trace output 0xdaf7d1b0, matching IntentionalFailure(), not out-of-gas. No settled movements; gas is charged.
+- ERC-20 retains Needs Review for unsupported precompile call-value coverage. Forwarding gross 0.003 represents three hops of 0.001; batch gross 0.006 includes 0.003 funding and 0.003 payouts. Total five-demo principal 0.006 USDC; five-demo gas 0.0044259685, deployment gas 0.017185294 separately.
+- Three homepage snapshots remain labelled third-party examples; owner demos are linked from public README and application draft. No fake ownership claim or unrelated wallet transfer is used as a demo.
 
-## Funded wallet and demo preparation (2026-09-27)
+## Checks actually completed
 
-- At 08:13:10 UTC (15:13 Vietnam), chain 5042, block 22998025: burner 5.409448 USDC. Native 18-decimal and ERC-20 6-decimal views agree; dRPC confirms the same native balance and block hash. Confirmed/pending nonce 0; burner code empty. Evidence: ignored artifacts/wallet-preflight-current.json. Do not repeat old funding instructions.
-- Ordinary funded estimates succeeded: deployment 806827 gas, native 0.001 transfer 21000, ERC-20 1000 raw transfer 74814. Price 20000000001; deployment about 0.01614 USDC, buffered gas 968193 about 0.01936 at that price. Later signatures require fresh quotes; remaining Lab calls need the deployed address. No full-demo fee or signed cap is approved.
-- Preflight d457345 and demo runbook/funding correction fd6d9fa are pushed. docs/mainnet-demo.md proposes native + ERC-20 + nativeForward + batch + intentional failure, total transferred value 0.006 USDC plus gas. It explains hop totals, Lab as CSV payer, and why a pure eth_call failure is not a mined demo.
-- Ignored artifacts/demo-remix contains unchanged source, three ABIs and review.json with public recipients. The failure transaction ABI retains the selector but uses nonpayable metadata; proposed 100000 gas still needs a fresh fee cap and owner review. MetaMask's September 2026 Added Protection supports Arc and may simulate/warn for the intentional revert. Never disable protection for the demo; proceed only if the wallet clearly offers the intended transaction for review.
-- Checks: source keccak matches compiled metadata; creation data matches saved hash/constructor; 18/6-decimal amounts and 0.006 total checked; failure ABI selector matches the pure source function. Staged docs and full Git history secret-scanned with no findings. App/contract source unchanged; application/Foundry tests were not rerun.
-- Remix deployment troubleshooting: owner canceled the attempt (no tx hash/deployment). Screenshot's latest request includes both constructor addresses and value 0. Its `maxFeePerGas=0x6426eda` is 105017050 wei = 0.10501705 Gwei, below Arc block base fee 20 Gwei. Both RPCs reproduce `max fee per gas less than block base fee`; generic Remix error said insufficient funds. Live balance remains 5.409448 USDC. Valid 20/0 and 21/1 Gwei caps each estimate at 806827 gas. At 968193 limit and 21 Gwei cap max cost is 0.020332053 USDC. See docs/wallet-preflight.md and docs/mainnet-demo.md. Next retry only after refreshing fee and reviewing/editing it in MetaMask; never sign underpriced request or top up based on that message.
+- Both RPCs return chain 5042 and same Lab runtime hash. Compiled executable bytecode of Lab and Forwarder matches with every immutable checked; source hash equals compiled metadata. Captured and live verifier modes pass. Metadata is excluded; no explorer source verification badge claimed. Source is deliberately preserved unchanged, including its historical pre-deployment comment, which current documentation explicitly supersedes.
+- Each complete production live report deep-matches local analysis; primary/dRPC receipt statuses, block hashes and logs match for all five.
+- npm.cmd test: 60 passing (54 core/vector/RPC/tool including five owner cases, 6 report-guide). npm.cmd run typecheck: root/web pass. Public scripts/smoke.mjs passes health, snapshots, invalid/unknown hashes, headers and four tools.
+- forge build accepted unchanged cache (compilation skipped; existing lint warnings). No app/contract execution changes, so prior build/Foundry/spike checks were not repeated. This round is HTTP/API/RPC verification, not a new visual browser session.
+- Sandbox home/userInfo errors affected Forge/tsx; authorized outside-sandbox retries succeeded. No active blocker. Staged files and full history passed gitleaks; relative Markdown links checked before publication.
 
-## Product-focus correction delivered (2026-09-27)
+## Commits and Git state
 
-- Focus audit `d7a34b9`; report explanation `2a4d1c9`; six regression checks `c323dc1`; homepage `2f0897e`; task-based tools catalog `59a4290`; independent tool routes `f9bbe4c`, `5765fec`, `f430b87`; standard test integration `229ba77`. All pushed.
-- Deployment `dpl_AZbqQjnSuDLdtwLrjnojFko2jiEC` is READY from `229ba77`, aliased to https://arcmirror-six.vercel.app. Local/remote production build and typecheck passed; npm test passed 49 existing plus 6 report-guide checks. Core schema, algorithm and contract unchanged.
-- Production verified native amount/source/gas, ERC-20 double-count comparison with Needs Review, current-hash continuity into CSV, custom dust arithmetic and mobile layout. Unknown hash has no confirmed-payment guide or reconciliation action. No captured browser errors/console entries; deployment error-log query empty. Evidence and screenshots: docs/evidence/product-focus, committed/pushed in `a96c1bc`.
-- Smoke initially expected old page headings; `5ef87ab` corrected them and production smoke passed. README `26fb451`, application draft `cfe3604` and owner walkthrough/feature review `761ccfa` restore the primary product focus. No funds moved or grant submitted.
-- Automatic approval review briefly hit its usage limit; after owner continuation, the same approved checks succeeded. No remaining approval blocker. Browser and dev server closed. Next.js-generated local AGENTS/CLAUDE files were removed; production build restored next-env.d.ts. Preserve the pre-existing, unrelated LICENSE indentation change.
+Deployment proof 03b0ec4; individual demo evidence 12064e1, 500360d, 4762823, 11e7047, 2bf5378; comparisons b406642; regressions ffff4f9; reviewer guide ce3db69. Separate README/contract/eligibility/application/runbook/validation corrections are in subsequent focused commits. All milestone pushes succeeded; consult git log and origin/main for the final handoff commit.
 
-## Earlier release details
+Preserve the pre-existing LICENSE indentation edit; never include it in task commits. No task implementation is intentionally left uncommitted. Regenerate/verify ignored artifacts/ArcMirror-handoff.bundle from main after final push. GitHub is canonical; the bundle excludes ignored address-only files and credentials.
 
-- `a2787c8`: exact one-to-one CSV payout reconciliation, local file parsing, mismatch/missing/unassigned evidence and JSON export; pushed.
-- `aebf0c6`: bounded local JSON schema/digest inspection, field comparison/fresh RPC, exact Dust Lab simulation, navigation and docs; pushed.
-- The workbench release was first deployed as `dpl_5grr6VLEgkj31Kovwz7fw3aWUXaV` from `aebf0c6`, followed by the sticky-header release `dpl_55YdtVKkThygJ2gxd5oegeGi3LpQ` from `701edfa`. The current production deployment is recorded in the correction section above. Full monorepo CLI upload preserves shared source.
-- Readable typography shipped in five focused commits: shared controls `ff95384`, landing page `ea3d628`, transaction evidence `05f65cd`, analysis tools `8cde6a3`, and responsive mobile layout `93ba99b`. Body copy is 17px desktop/16px mobile; high-value report and form text now stays in a 12–16px range. The mobile movement summary uses two rows instead of compressing four columns.
-- Obsolete static BETA branding was removed in `a429cff`. Production confirms the header text is exactly ArcMirror with no `.beta` element or BETA text. The complete Vietnamese owner walkthrough is `docs/owner-test-flow.vi.md` from `7a72162`; it covers product flow, expected values, negative cases, tools, API/CLI/contract checks, bug isolation and a report template.
-- Sticky navigation shipped in `6e9682c`; desktop and 390px mobile checks confirmed top=0 after deep scrolling, correct anchor offset and no overflow. Home copy `51516f0` and tools copy `701edfa` now state that saved examples are optional starters: the analyzer accepts other Arc mainnet hashes, reconciliation accepts owner CSV/hash input, Inspector accepts owner JSON and Dust Lab accepts custom exact amounts.
-- 49 application tests passed; typecheck, standalone core subpath imports and local/remote builds passed. Existing 10 spike and 16 Foundry/256-fuzz checks previously passed; those components did not change.
-- Local browser checked CSV duplicate/one-wei mismatches, tampered/invalid/equal JSON and fresh RPC, dust presets/invalid count, and three real JSON downloads read back from disk.
-- Public smoke checked all tool routes and APIs. Public browser: CSV 2/2 with 4.499999 USDC and Needs Review; JSON tamper identifies /evidenceLevel, fresh RPC identical; dust one native unit x1000 = 0.000000000000001 USDC. Typography was rechecked on production home/report/reconciliation at 390px after deployment, with no app console errors, framework overlays or horizontal overflow. See docs/evidence/tools/checks.json, docs/evidence/production/typography-checks.json and docs/validation.md.
-- React review: clear client/server boundaries, labelled inputs, alerts, bounded local imports, no uploaded file content, stale results cleared, disabled controls during async work. Existing analyzer algorithm/schema unchanged. No new dependency required.
+## Remaining work / exact next action
 
-## Commit granularity follow-up
+1. Open the public README evidence links and review docs/application-draft.md. Technical mainnet proof is now public; do not ask for five hashes again locally.
+2. Owner can replay recorded hashes using docs/mainnet-demo.md to record a video, if desired or required by the form. The official program page does not universally require a video. No extra wallet signature is needed for this replay.
+3. Owner enters their separate reward address, reviews form-specific requirements/human verification and submits. Official page was rechecked September 30; deadline currently October 14, 2026 23:59 ET. No submission has been made by the agent.
+4. Optional explorer source publication is not complete: ArcScan displayed Verify and Publish at the recorded check. Use exact deployed source/settings if pursuing it; never call executable comparison an explorer badge. Do not silently change pinned source for a status-comment edit. Memo, duplicate-transfer/dust contract probes, npm publication and security audit are not claimed complete.
 
-Owner requested a much finer breakdown. The three published workbench commits were reconstructed as 55 focused, nonempty commits on `history/workbench-granular` and merged into main while preserving all original ancestors. Merge a5bb53a and the detailed branch are pushed without force-push. The history-only merge did not change the deployed tree; the later typography release did. A temporary automatic-review usage-limit failure was resolved by the successful retry; no blocker remains. All 49 tests and root/web typecheck passed on the reconstructed checkout. The reconstructed tree exactly matched `3ee528f`; follow-up commits add commit-map/continuity instructions and the typography release. See docs/commit-map.md for the reconstructed hashes and validation scope. Future work follows the finer granularity in AGENTS.md.
+## Persistent owner decisions
 
-## Grant fit
-
-Official Microgrants rules allow prototypes/experiments and evaluate Arc relevance, technical credibility, quality and potential. No published feature cap or freeze before submission was found; fit is our inference, not organizer approval or an award guarantee. Post-submission review of updates is unspecified. DoraHacks form fields/additional terms are still behind human verification. docs/feature-expansion.md records source/limits. docs/application-draft.md has a revised 100-word description and working tool tour. No grant submitted.
-
-## Remaining original work / exact next action
-
-1. Follow docs/mainnet-demo.md. Owner opens Remix in the MetaMask browser, selects burner/Arc 5042, and compiles ArcMirrorLab using the recorded source path/settings. Agent refreshes balance/nonce/gas, compares creation data and presents exact recipient/value/fee details before owner-local signing. No extra deposit is indicated for deployment at the checked balance/fee.
-2. Addresses remain in ignored artifacts/owner-wallets.json. Do not ask again locally, publish the mapping or request secrets. artifacts/lab-deployment-unsigned.json is historical preparation with an expired quote and only a predicted address; recompute if nonce changes. Only a confirmed receipt supplies a real deployment address.
-3. Confirm deployment receipt/code/immutable recipients/source, then execute five scenarios one at a time under owner review/signing. Collect actual receipts/reports/vectors; preserve Needs Review for incomplete coverage. Third-party examples do not count as owner demos. Memo remains separate P2 work.
-4. Collect concrete usability feedback during the owner's real report walkthrough; technical checks do not establish comprehension. Finalize application links with real evidence; owner submits. npm publication remains unauthorized.
-
-## Continuity and operation
-
-Read AGENTS.md, architecture.md and docs/HANDOFF.md; original brief is docs/product-brief.vi.md. Keep this task file because the original mainnet/grant task remains open. Use npm.cmd on Windows. Gitleaks/Foundry are in ignored .local-tools. Never print .env/.vercel credentials.
-
-Before stopping: commit/push final documentation/evidence and verify no task changes remain uncommitted; preserve the unrelated LICENSE change. Regenerate and verify artifacts/ArcMirror-handoff.bundle from main only. GitHub is canonical. Consult git log for the final handoff hash. No need to redeploy docs/test-only follow-ups. The isolated browser and local server were closed after checks. Edge download popup targets can disrupt viewport controls, so reselect the real app tab for future checks.
-
-Last updated 2026-09-27.
+Read AGENTS.md. No prior Circle/Arc funding; MIT/profile aquattdabackup and existing Vercel project/team approved. English product/docs, Vietnamese updates. Small coherent commits and pushes; never force-push. Wallet signing stays local to owner. Reward mapping stays ignored; no secrets in source/chat. Final grant submission and npm publication remain owner actions. Original brief: docs/product-brief.vi.md. Do not restart completed features or equate technical checks with user adoption/usability acceptance.
