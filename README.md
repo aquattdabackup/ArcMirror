@@ -1,6 +1,6 @@
 # ArcMirror
 
-**One USDC movement. Every trace accounted for.**
+**Understand USDC movements, their source evidence, and verification limits.**
 
 Explorers show you what happened. ArcMirror shows you why the numbers add up, and lets you re-run the proof yourself.
 
