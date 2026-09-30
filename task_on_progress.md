@@ -1,6 +1,6 @@
 # Current task
 
-Updated 2026-09-30. Owner reported completing all five demos and asked what comes next. All five were independently found on Arc Mainnet and verified. Deployment/owner evidence, regression tests and public documentation are published; final owner application review/submission remains open. Do not repeat deployment, funding or transactions merely to record a video.
+Updated 2026-09-30. Owner requested a detailed recording script covering an introduction, all five demos and all three tools, and explicitly chose a five-minute limit. Completed docs/video-demo-script.vi.md: Vietnamese recording instructions, 496 words of English narration, 4:50 content plus ten seconds of buffer, exact owner hashes, CSV, expected results and public proof links. Script milestone c10a887 is pushed. Final recording/application review/submission remains with the owner. Do not repeat deployment, funding or transactions merely to record a video.
 
 ## Verified state and entry points
 
@@ -23,12 +23,14 @@ Updated 2026-09-30. Owner reported completing all five demos and asked what come
 
 Deployment proof 03b0ec4; individual demo evidence 12064e1, 500360d, 4762823, 11e7047, 2bf5378; comparisons b406642; regressions ffff4f9; reviewer guide ce3db69. Separate README/contract/eligibility/application/runbook/validation corrections are in subsequent focused commits. All milestone pushes succeeded; consult git log and origin/main for the final handoff commit.
 
+Recording script c10a887 was validated against existing source and captured owner evidence: all five status/amount/gas rows and deployment links match; relative links resolve; twelve contiguous time slots total 300 seconds; eleven narration blocks contain 496 words. Ran the actual core functions against the script CSV and batch report: 2/2 matched, 0 mismatches, 0 missing, 1 unassigned funding hop, matched total 0.003 USDC. Inspector accepted the batch report/digest; Dust inputs 0.0000009 x 10 yield exact/omitted 0.000009 and truncated total zero. These are local checks, not a new production/browser session or recording. No app code changed, so no build/full test rerun. The tsx attempt failed sandbox userInfo lookup; Node24 native TypeScript loading completed the checks without escalation. git diff --check and staged/full-history Gitleaks passed (140 commits before this handoff). The first push was not executed because automatic approval review hit a usage limit; after the owner asked to finish, the authorized retry pushed c10a887 successfully.
+
 Preserve the pre-existing LICENSE indentation edit; never include it in task commits. No task implementation is intentionally left uncommitted. Regenerate/verify ignored artifacts/ArcMirror-handoff.bundle from main after final push. GitHub is canonical; the bundle excludes ignored address-only files and credentials.
 
 ## Remaining work / exact next action
 
 1. Open the public README evidence links and review docs/application-draft.md. Technical mainnet proof is now public; do not ask for five hashes again locally.
-2. Owner can replay recorded hashes using docs/mainnet-demo.md to record a video, if desired or required by the form. The official program page does not universally require a video. No extra wallet signature is needed for this replay.
+2. Exact next action: open docs/video-demo-script.vi.md, prepare its tabs/CSV/downloaded batch JSON, then rehearse once with a timer and record within five minutes. It includes all five owner demos and all three tools. docs/mainnet-demo.md remains the historical execution runbook. No extra wallet signature is needed for this replay. The video has not been recorded by the agent.
 3. Owner enters their separate reward address, reviews form-specific requirements/human verification and submits. Official page was rechecked September 30; deadline currently October 14, 2026 23:59 ET. No submission has been made by the agent.
 4. Optional explorer source publication is not complete: ArcScan displayed Verify and Publish at the recorded check. Use exact deployed source/settings if pursuing it; never call executable comparison an explorer badge. Do not silently change pinned source for a status-comment edit. Memo, duplicate-transfer/dust contract probes, npm publication and security audit are not claimed complete.
 

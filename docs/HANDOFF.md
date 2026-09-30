@@ -10,6 +10,8 @@
 
 The latest work publishes evidence, tests and documentation. It does not change app/contract execution code or require redeploy. Last recorded UI deployment is dpl_AZbqQjnSuDLdtwLrjnojFko2jiEC from 229ba77. Existing report guides, reconciliation, Inspector, Dust Lab, readable text and sticky header are already delivered. Do not rebuild them.
 
+The owner then requested a complete video script and chose five minutes. [Recording script](video-demo-script.vi.md), commit c10a887, is completed and pushed: introduction, mainnet proof, five owner demos, all three tools, closing, exact links and CSV. Vietnamese stage directions accompany 496 words of English narration. Timeline: 4:50 content + ten seconds of buffer. Local checks verify evidence values, CSV 2/2 matches with one unassigned funding hop, Inspector digest, Dust arithmetic and relative links. No new live/browser verification or video recording is claimed for this documentation task.
+
 ## Important distinctions
 
 - ERC-20 Needs Review is correct; receipt success and evidence quality differ. A failed demo can have Verified evidence while its receipt is failed.
@@ -20,7 +22,7 @@ The latest work publishes evidence, tests and documentation. It does not change 
 
 ## Exact next owner steps
 
-Review [application draft](application-draft.md), optionally record the completed hashes using [runbook](mainnet-demo.md), enter the separate reward wallet in the form and submit after reviewing declarations/human verification. No additional mainnet transaction is needed to replay the evidence. Official program deadline rechecked September 30: October 14, 2026 23:59 ET; recheck before submission. No final submission performed.
+Prepare the tabs and CSV from the [five-minute recording script](video-demo-script.vi.md), download the batch report, rehearse once with a timer, and record. No additional mainnet transaction is needed. Review [application draft](application-draft.md), enter the separate reward wallet in the form and submit after reviewing declarations/human verification. Official program deadline rechecked September 30: October 14, 2026 23:59 ET; recheck before submission. No final submission performed.
 
 ## Git and operation
 
