@@ -2,6 +2,8 @@
 
 Checked **2026-09-30**. The production analyzer works with Arc Mainnet data; Lab is deployed and all five owner-created demo categories have mined receipts. [Public deployment and demo evidence](mainnet-evidence.md) is the current technical record. Final submission has not been made by the agent.
 
+The [September 30 rules and technical review](eligibility-review-2026-09-30.md) rechecked production live reports, both RPCs, public repository contents, deployed code and regression tests. No unresolved technical entry blocker was found. Actual DoraHacks form review, owner declarations and submission remain open; fresh interactive browser testing was unavailable during that review.
+
 The [official Arc Microgrants page](https://community.arc.io/public/events/arc-microgrants-f8tijfjhyq), rechecked September 30, requires a project already deployed and working on Arc mainnet, public repo and builder profile, a short description and no prior Circle/Arc funding. It does not prescribe five transactions or an explorer verification badge. The five scenarios come from the owner's original brief. Technical evidence is not organizer acceptance, an award guarantee or a security audit.
 
 | Item | Public evidence / actual state |
