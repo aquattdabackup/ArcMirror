@@ -10,4 +10,4 @@ Each `<txHash>.json` includes `provenance`, `capturedAt`, raw RPC `input` and th
 
 `npm run vectors` regenerates these reports and `apps/web/lib/snapshots.json` from frozen evidence under `docs/evidence/spike/`. It does not create transactions or fetch fresh evidence. Review any output change before accepting a new expected result. Use the CLI with `--fixture <file>` for offline comparisons; omit that flag to fetch live data.
 
-The five owner-signed scenarios and Lab deployment artifacts remain pending and should be added only after their receipts exist.
+Five owner-created mainnet vectors are now published in `owner/`, with their provenance distinct from the three third-party root vectors. `owner-mainnet.test.ts` checks the complete frozen reports plus exact scenario behavior. See [mainnet evidence](../docs/mainnet-evidence.md) and the [deployment manifest](../contracts/deployments/5042.json). The existing snapshot generator intentionally continues to generate only the three third-party homepage examples.
