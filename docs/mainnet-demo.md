@@ -1,10 +1,14 @@
 # Owner mainnet demo runbook
 
-Prepared 2026-09-27. The burner is funded; the Lab is **not deployed** and no owner demo has been executed by the agent. The current request authorizes balance checks and preparation. All amounts below are proposals for owner review, not permission for an agent to sign or broadcast.
+**Completed and verified 2026-09-30.** [Lab deployment and all five owner-created transactions](mainnet-evidence.md) have real receipts and matching production reports. The owner signed locally; the agent performed read-only verification. Replay these recorded hashes without another deployment or payment. The preparation/signing instructions below are retained as a historical procedure for understanding the demos, not a request to repeat them.
 
 ArcMirror analyzes transaction hashes. It does not connect a wallet, deploy contracts or send money. Use MetaMask for the direct native transfer and Remix with MetaMask for contract interactions. After each confirmed receipt, paste the hash into [ArcMirror](https://arcmirror-six.vercel.app), select **Analyze**, inspect the result and **Download JSON**. Do one transaction at a time.
 
-## Recording order
+## Record the completed demos without new transactions
+
+Open the [five-demo evidence table](mainnet-evidence.md), the deployment explorer page and ArcMirror. Show the deployed address and source-verification scope, then open each existing transaction, inspect its outcome/amount/gas, expand source evidence and select Re-verify live. For forwarding explain the three hops; for batch separate the funding hop from payouts; for failure show receipt status 0 and the gas charge. Export one JSON report to demonstrate reproducibility. Show the ERC-20 Needs Review limitation. Finish on the public repository/evidence links. No wallet signature is needed for this replay.
+
+## Original recording/signing procedure (historical)
 
 Prepare the tabs and compiled contract before recording. A clean video can show the deployment once, then each of the five scenarios below. If the deployment already has a confirmed receipt, begin with its address and the two immutable recipient getters instead of deploying it again. The deployment is a setup transaction; it is separate from the five demos.
 
@@ -27,7 +31,7 @@ The latest read-only deployment estimate was about **0.01614 USDC**, or **0.0193
 
 ### If Remix's estimate says insufficient funds
 
-Do not immediately add funds or increase Remix's gas limit. The gas limit is a count of computation units; it cannot fix a `maxFeePerGas` below Arc's current block base fee. In the owner's 2026-09-27 request, the fee cap was 0.10501705 Gwei while the live base fee was 20 Gwei, so Arc rejected the estimate. The on-chain burner balance was 5.409448 USDC, and the same deployment estimated at 806827 gas with valid 20/21 Gwei caps. If Remix offers **Force sending**, that only requests the wallet to proceed after estimation failed; it does not itself authorize you to sign. Continue to the MetaMask review only to inspect/edit the fee. If MetaMask offers a gas-fee pencil, select **Advanced**, refresh the fee quote, and ensure the max fee is at least the current base fee (the 20 Gwei observation is historical). A proposed snapshot cap of 21 Gwei with a 968193 gas limit would allow at most 0.020332053 USDC at that cap. Submit only if the chain, sender, constructor addresses, zero value and current fee all match; otherwise cancel. [MetaMask fee editing](https://support.metamask.io/th/configure/transactions/how-to-customize-gas-settings/).
+Do not immediately add funds or increase Remix's gas limit. The gas limit is a count of computation units; it cannot fix a `maxFeePerGas` below Arc's current block base fee. In the owner's 2026-09-27 request, the fee cap was 0.10501705 Gwei while the live base fee was 20 Gwei, which is an independently reproduced fee-cap rejection on Arc. The original Remix screenshot also had an ambiguous network badge, so this isolated check did not establish the sole cause of that earlier generic error. The on-chain burner balance was 5.409448 USDC, and the same deployment estimated at 806827 gas with valid 20/21 Gwei caps. If Remix offers **Force sending**, that only requests the wallet to proceed after estimation failed; it does not itself authorize you to sign. Continue to the MetaMask review only to inspect/edit the fee. If MetaMask offers a gas-fee pencil, select **Advanced**, refresh the fee quote, and ensure the max fee is at least the current base fee (the 20 Gwei observation is historical). A proposed snapshot cap of 21 Gwei with a 968193 gas limit would allow at most 0.020332053 USDC at that cap. Submit only if the chain, sender, constructor addresses, zero value and current fee all match; otherwise cancel. [MetaMask fee editing](https://support.metamask.io/th/configure/transactions/how-to-customize-gas-settings/).
 
 ## 2. Create the five owner transactions
 
@@ -67,4 +71,4 @@ First simulate and verify the expected `IntentionalFailure()` revert. Ordinary g
 
 Multi-hop satisfies the third original category; batch satisfies the fourth. `twoIdenticalTransfers` and `dust` remain optional extra demonstrations. If later exercising duplicate transfers, the Lab requires an exact allowance of twice the proposed 6-decimal amount, not an unlimited approval. Memo is a separate P2 task and is not covered by these five scenarios.
 
-Finish by source-verifying the real deployment, saving the five actual owner receipts/reports, then deriving regression vectors and updating README/application evidence. The original [owner specification](product-brief.vi.md) defines these five categories; completing this runbook alone is not organizer approval or grant submission.
+The actual deployment, five receipts/reports and regression vectors are now published in [mainnet evidence](mainnet-evidence.md). Executable/immutable source comparison is reproducible; explorer source verification is a separate, unclaimed status. The original [owner specification](product-brief.vi.md) defines these five categories; completing this runbook alone is not organizer approval or grant submission.
