@@ -12,6 +12,7 @@
 - `apps/web/components/tools/reconcile.tsx`: local CSV input, hash-only report fetch and reconciliation JSON export; `/tools` links the workbench.
 - `packages/core/src/inspection.ts`: bounded strict report schema, digest integrity check and capped field comparison. Report file processing and Dust Lab run locally in client components; only an explicit live check sends a hash to the existing API.
 - Routes `/tools`, `/tools/reconcile`, `/tools/inspect`, `/tools/dust`, `/`, `/tx/[hash]`, `/how-it-works`; `/api/health`, `/api/examples`, `/api/analyze/[hash]`.
+- `assets/brand`: submission-ready SVG/PNG exports of the existing two-ellipse website mark. Source identity remains `Mark` in `components/icons.tsx` and `.mark`/`.brand` in `globals.css`; these assets do not change the live UI.
 - `scripts/verify.ts`: live or fixture verification; checks report digest and lists changed fields.
 - `scripts/generate-vectors.ts`: regenerates expected reports/snapshots from frozen public evidence. Tests deep-compare vectors offline.
 - `contracts/src/ArcMirrorLab.sol`: fixed immutable recipients, bounded scenarios, exact ERC-20 allowances, no admin, fixed-recipient sweep. Deployed on Arc Mainnet; addresses/source identity in `contracts/deployments/5042.json`, raw evidence in `5042.rpc.json`, reproduction via `scripts/verify-deployment.mjs`.

@@ -1,6 +1,8 @@
 # Current task
 
-Updated 2026-09-30. Owner supplied the Microgrants rules and requested a thorough eligibility review. Completed docs/eligibility-review-2026-09-30.md with structured evidence in docs/evidence/eligibility-review/2026-09-30.json. Fresh production/API/RPC and public-source checks found no unresolved technical entry blocker; the actual DoraHacks form, owner declarations and submission remain open. Small documentation accuracy issues were corrected. No application/contract execution change or redeployment. Do not repeat funding or transactions.
+Updated 2026-10-01. Owner is preparing the application and requested a logo, then clarified it must match the existing website. Completed assets/brand exports, pushed as f5135de: 1024-square avatar on the site's light background, transparent 1024-square icon, and transparent 1640x420 horizontal wordmark, each with SVG source. Use arcmirror-avatar.png for the form. The initial generated M-shaped concept was rejected, not published, and is preserved only in ignored artifacts/brand-drafts. No app changes or redeployment.
+
+The September 30 eligibility review remains at docs/eligibility-review-2026-09-30.md with structured evidence in docs/evidence/eligibility-review/2026-09-30.json. No unresolved technical entry blocker was found; actual form review, owner declarations and submission remain open. Do not repeat funding or transactions.
 
 ## Verified state and entry points
 
@@ -12,6 +14,8 @@ Updated 2026-09-30. Owner supplied the Microgrants rules and requested a thoroug
 - Three homepage snapshots remain labelled third-party examples; owner demos are linked from public README and application draft. No fake ownership claim or unrelated wallet transfer is used as a demo.
 
 ## Checks actually completed
+
+Logo export (October 1): live homepage HTML/CSS confirms the same Mark component and ellipse geometry, colors and brand typography as local source. Final SVGs preserve the 23x31 border-box ellipses, 1.8 stroke, +/-26-degree rotations, 11-unit offset, #182e2c / #5c9079 colors and Arial wordmark. Sharp rendered the native SVGs; dimensions and real alpha ranges were checked, and the avatar/full-logo previews were visually inspected. Avatar is opaque; icon/full-logo backgrounds are transparent. PNG sizes are about 64/47/39 KiB. No runtime code changed, so application tests/build were not repeated for assets. Staged/full-history Gitleaks passed through asset commit f5135de (147 commits). README records regeneration and source provenance. Owner preference: export existing website identity; do not invent a replacement logo.
 
 Latest eligibility review (network observations began 2026-09-30T12:26:10Z): 14 structured checks passed; all five production live reports deep-match local owner-vector analysis and receipt statuses/logs/block hashes match on primary and dRPC. Both RPCs returned 5042. Lab/Forwarder code hashes agree on both endpoints, and the live source/compiler/bytecode/immutable verifier passed. All five ArcScan transaction links returned HTTP 200 with the requested hashes. Public GitHub tree matched all 164 tracked blobs at baseline 9797ac0; five critical raw documents matched too; public MIT/profile confirmed. Production HTTP smoke passed. Fresh tests: 60 application, 10 historical spike and 16 Foundry (256 fuzz runs); root/web typecheck passed; npm audit --omit=dev reported zero known vulnerabilities. All 121 relative targets in 26 existing Markdown files resolved; 28 links in the new/updated review documents checked separately. No build rerun for documentation-only work.
 

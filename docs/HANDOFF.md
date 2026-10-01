@@ -4,7 +4,9 @@
 
 > Continue ArcMirror in this repository. Read AGENTS.md, architecture.md, task_on_progress.md and this handoff first. Mainnet Lab deployment and all five owner demos are complete and publicly documented. Do not repeat wallet preparation or deployment. Read docs/mainnet-evidence.md and docs/evidence/mainnet/checks.json for exact evidence. Check Git status/origin, preserve LICENSE indentation, make small verified commits and push. Update memory before stopping. Report in Vietnamese. Never sign funds, invent verification badges or submit the grant on the owner's behalf.
 
-## Current state: 2026-09-30
+## Current state: 2026-10-01
+
+Owner is filling the application and requested a logo matching the existing website. [Brand exports](../assets/brand/README.md) are published in f5135de: use [square avatar PNG](../assets/brand/arcmirror-avatar.png) for the form; transparent icon and full wordmark PNG/SVG are also available. Live CSS was checked and SVG geometry/colors/font were copied from the actual two-ellipse Mark. PNG dimensions/alpha and visual previews passed. No live UI change. A generated M-shaped alternative was explicitly rejected and remains ignored, not part of the brand. Preserve this owner preference in future work.
 
 Latest task: owner requested a thorough check against newly pasted Microgrants rules. [Technical eligibility review](eligibility-review-2026-09-30.md) finds no unresolved technical entry blocker, with [fresh structured evidence](evidence/eligibility-review/2026-09-30.json). Four review commits b444f4b, e6dbf70, 6e00183 and 34a32f6 are pushed. README trace-coverage wording was narrowed and the application draft now foregrounds an owner-created report. No runtime change/redeployment. Fresh checks: 14 public/API/RPC/source checks, 60 application + 10 spike + 16 Foundry tests, typecheck, dependency audit (zero known production vulnerabilities) and documentation links passed. Baseline public tree matched all 164 files at 9797ac0.
 
