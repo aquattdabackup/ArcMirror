@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1640" height="420" viewBox="-8 -4 164 42" fill="none">
+  <title>ArcMirror website logo</title>
+  <desc>The existing website's overlapping ellipse mark and ArcMirror wordmark.</desc>
+  <ellipse cx="11.5" cy="16.5" rx="10.6" ry="14.6" transform="rotate(26 11.5 16.5)" stroke="#182e2c" stroke-width="1.8"/>
+  <ellipse cx="22.5" cy="16.5" rx="10.6" ry="14.6" transform="rotate(-26 22.5 16.5)" stroke="#5c9079" stroke-width="1.8"/>
+  <text x="44" y="25" fill="#182e2c" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="600" letter-spacing="-0.8">ArcMirror</text>
+</svg>
