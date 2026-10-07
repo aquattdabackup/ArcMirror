@@ -180,8 +180,11 @@ export default function Home() {
         </div>
         <p className="caption">
           These reusable starter cases come from existing public activity.
-          ArcMirror also analyzes other Arc mainnet transaction hashes;
-          owner-created Lab cases are planned.
+          ArcMirror also analyzes other Arc mainnet transaction hashes.{" "}
+          <a href="https://github.com/aquattdabackup/ArcMirror/blob/main/docs/mainnet-evidence.md">
+            Five owner-created mainnet demos
+          </a>{" "}
+          are completed and documented separately.
         </p>
       </section>
       <section className="shell tools-home">
