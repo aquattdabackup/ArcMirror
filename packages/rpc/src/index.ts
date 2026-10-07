@@ -15,6 +15,7 @@ export interface RpcOptions {
   urls: string[];
   traceUrls?: string[];
   timeoutMs?: number;
+  totalTimeoutMs?: number;
   fetcher?: Fetcher;
   trace?: boolean;
 }
@@ -32,13 +33,18 @@ export async function rpcRequest(
   endpoint: string,
   method: string,
   params: unknown[],
-  options: Pick<RpcOptions, "timeoutMs" | "fetcher"> = {},
+  options: Pick<RpcOptions, "timeoutMs" | "fetcher"> & { signal?: AbortSignal } = {},
 ): Promise<unknown> {
+  const timeout = AbortSignal.timeout(options.timeoutMs ?? 6500);
+  const signal = options.signal
+    ? AbortSignal.any([options.signal, timeout])
+    : timeout;
+  signal.throwIfAborted();
   const response = await (options.fetcher ?? fetch)(endpoint, {
     method: "POST",
     headers: { "content-type": "application/json" },
     body: JSON.stringify({ jsonrpc: "2.0", id: 1, method, params }),
-    signal: AbortSignal.timeout(options.timeoutMs ?? 6500),
+    signal,
     cache: "no-store",
   });
   if (!response.ok) throw new RpcUnavailable();
@@ -85,14 +91,19 @@ export async function fetchBundle(
       "A transaction hash must be 0x followed by 64 hexadecimal characters.",
     );
   const endpoints = urls(options.urls);
+  // Leave headroom below the browser's 55s and the server's 60s limits.
+  // All providers and optional evidence share this budget.
+  const signal = AbortSignal.timeout(options.totalTimeoutMs ?? 45_000);
+  const requestOptions = { ...options, signal };
   let bundle: Bundle | null = null;
   for (const endpoint of endpoints) {
+    if (signal.aborted) break;
     try {
-      if ((await rpcRequest(endpoint, "eth_chainId", [], options)) !== "0x13b2")
+      if ((await rpcRequest(endpoint, "eth_chainId", [], requestOptions)) !== "0x13b2")
         continue;
       const [transaction, receipt] = await Promise.all([
-        rpcRequest(endpoint, "eth_getTransactionByHash", [txHash], options),
-        rpcRequest(endpoint, "eth_getTransactionReceipt", [txHash], options),
+        rpcRequest(endpoint, "eth_getTransactionByHash", [txHash], requestOptions),
+        rpcRequest(endpoint, "eth_getTransactionReceipt", [txHash], requestOptions),
       ]);
       let block: unknown = null;
       const blockNumber = (receipt as { blockNumber?: unknown } | null)
@@ -106,7 +117,7 @@ export async function fetchBundle(
             endpoint,
             "eth_getBlockByNumber",
             [blockNumber, false],
-            options,
+            requestOptions,
           );
         } catch {
           // Block metadata adds context; missing it must not erase a receipt.
@@ -124,9 +135,10 @@ export async function fetchBundle(
     for (const endpoint of urls(
       options.traceUrls?.length ? options.traceUrls : endpoints,
     )) {
+      if (signal.aborted) break;
       try {
         if (
-          (await rpcRequest(endpoint, "eth_chainId", [], options)) !== "0x13b2"
+          (await rpcRequest(endpoint, "eth_chainId", [], requestOptions)) !== "0x13b2"
         )
           continue;
         const [call, state] = await Promise.allSettled([
@@ -134,7 +146,7 @@ export async function fetchBundle(
             endpoint,
             "debug_traceTransaction",
             [txHash, { tracer: "callTracer" }],
-            options,
+            requestOptions,
           ),
           rpcRequest(
             endpoint,
@@ -143,7 +155,7 @@ export async function fetchBundle(
               txHash,
               { tracer: "prestateTracer", tracerConfig: { diffMode: true } },
             ],
-            options,
+            requestOptions,
           ),
         ]);
         if (call.status === "fulfilled") bundle.callTrace = call.value;

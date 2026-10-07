@@ -1,6 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
+import { setTimeout as delay } from "node:timers/promises";
 import { analyze } from "../../core/src/index";
 import { fetchBundle, RpcUnavailable } from "../src/index";
 const H = "0x" + "11".repeat(32);
@@ -113,4 +114,57 @@ test("unsupported trace does not erase a fetched receipt", async () => {
   const b = await fetchBundle(H, { urls: ["https://ok.example"], fetcher });
   assert.ok(b.receipt);
   assert.equal(b.callTrace, undefined);
+});
+
+test("one shared time budget stops mandatory RPC fallback", async () => {
+  let calls = 0;
+  await assert.rejects(() => fetchBundle(H, {
+    urls: ["https://slow.example", "https://unused.example"],
+    totalTimeoutMs: 40,
+    timeoutMs: 1000,
+    fetcher: async (_, init) => {
+      calls++;
+      await delay(150, undefined, { signal: init?.signal ?? undefined });
+      throw Error("private upstream error");
+    },
+  }), RpcUnavailable);
+  assert.equal(calls, 1, "must not start another provider after the budget expires");
+});
+
+test("shared deadline aborts optional traces and retains confirmed evidence", async () => {
+  let aborted = 0;
+  const providers = new Set<string>();
+  const bundle = await fetchBundle(native.txHash, {
+    urls: ["https://ok.example"],
+    traceUrls: ["https://slow.example", "https://unused.example"],
+    totalTimeoutMs: 80,
+    timeoutMs: 1000,
+    fetcher: async (url, init) => {
+      providers.add(String(url));
+      const { method } = JSON.parse(init?.body as string);
+      if (method === "debug_traceTransaction") {
+        try {
+          await delay(150, undefined, { signal: init?.signal ?? undefined });
+        } catch (error) {
+          aborted++;
+          throw error;
+        }
+        return response(null);
+      }
+      const results: Record<string, unknown> = {
+        eth_chainId: "0x13b2",
+        eth_getTransactionByHash: native.transaction,
+        eth_getTransactionReceipt: native.receipt,
+        eth_getBlockByNumber: native.block,
+      };
+      return response(results[method]);
+    },
+  });
+  assert.equal(aborted, 2);
+  assert.ok(!providers.has("https://unused.example"));
+  assert.deepEqual(bundle.receipt, native.receipt);
+  const report = analyze(bundle);
+  assert.equal(report.status, "confirmed_success");
+  assert.equal(report.evidenceLevel, "consistent");
+  assert.ok(report.reasons.includes("call_trace_unavailable"));
 });

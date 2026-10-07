@@ -31,7 +31,7 @@
 
 - Node >=22, tested Node 24; Windows uses `npm.cmd` because npm.ps1 is blocked.
 - Server `ARC_RPC_URLS`, `ARC_TRACE_RPC_URLS`: comma-separated, up to four configured endpoints each. Defaults primary+dRPC and dRPC trace. Public capabilities can change.
-- Timeout 6.5 seconds per request; responses max 4 MB. Per-process cache 256/TTL1hour, max 8 in-flight analyses, per-minute 30/client, 120/global. Not a distributed limiter.
+- Timeout 6.5 seconds per request within a shared 45-second RPC budget; responses max 4 MB. Missing optional block/traces preserve the receipt and explicitly reduce available proof. Per-process cache 256/TTL1hour, max 8 in-flight analyses, per-minute 30/client, 120/global. Not a distributed limiter.
 - Basic CSP permits Next.js inline bootstrap/styles. No analytics, wallet connection or arbitrary endpoint request API.
 - `npm ci`, `npm test`, `npm run test:spike`, `npm run typecheck`, `npm run build`, `npm start`.
 - `forge test -vv` in contracts. Local mock is not an Arc simulator.
