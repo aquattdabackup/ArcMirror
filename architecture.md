@@ -6,6 +6,7 @@
 - `packages/core/src/index.ts`: `analyze(Bundle)`, canonical JSON/digest, exact bigint formatting and emitter constants. Types in `src/types.ts`; independent build emits `dist` declarations/ESM.
 - `packages/rpc/src/index.ts`: bounded JSON-RPC adapter, chain checks, fallback endpoints, optional callTracer/prestateTracer. Only configured server URLs; no client-supplied URL.
 - `apps/web/lib/service.ts`: snapshots first unless live requested, bounded in-process cache/deduplication/concurrency/rate limits; `server-only` import.
+- Live lookups emit structured `arc_rpc_lookup` events containing only provider index/outcome and transaction/receipt presence. No URLs, credentials or raw upstream errors are logged; diagnostic sink failures cannot alter the fetched bundle.
 - `apps/web/components/report.tsx`: evidence/flow/log/state views, live refresh preserving old evidence on transport failure, download/copy controls.
 - `apps/web/components/evidence-tabs.tsx`: controlled keyboard/ARIA tabs for the report; `apps/web/lib/browser-files.ts`: shared local file reading and JSON downloads for reports/tools.
 - `apps/web/components/report-guide.tsx`: plain-language explanation derived from existing report values. Separates receipt outcome from evidence completeness; absent for unconfirmed/unsupported states. The report links the money trail, conditional double-count comparison and sharing; tools are optional follow-up tasks. `apps/web/test/report-guide.test.tsx` guards the status/amount claims, included by `npm test` via `test:web`.
@@ -16,6 +17,8 @@
 - `assets/brand`: submission-ready SVG/PNG exports of the existing two-ellipse website mark. Source identity remains `Mark` in `components/icons.tsx` and `.mark`/`.brand` in `globals.css`; these assets do not change the live UI.
 - `scripts/verify.ts`: live or fixture verification; checks report digest and lists changed fields. `verify-options.ts` validates the entire invocation before IO; process-level regressions run with `npm test`.
 - `scripts/generate-vectors.ts`: regenerates expected reports/snapshots from frozen public evidence. Tests deep-compare vectors offline.
+- `playwright.config.ts` and `e2e`: Chromium desktop/mobile tests for actual keyboard focus, scroll, uploads/downloads and tools. Defaults use frozen examples and a local production server; `E2E_BASE_URL` targets a deployment, `E2E_LIVE=1` additionally exercises a real owner transaction without interception.
+- `.github/workflows/ci.yml`: pinned Actions, read-only permissions, Ubuntu24/Node24 application/build/browser checks plus Foundry1.8.3 contract tests. Documentation-only changes are excluded; no deployment or wallet secrets. See `docs/testing.md`.
 - `contracts/src/ArcMirrorLab.sol`: fixed immutable recipients, bounded scenarios, exact ERC-20 allowances, no admin, fixed-recipient sweep. Deployed on Arc Mainnet; addresses/source identity in `contracts/deployments/5042.json`, raw evidence in `5042.rpc.json`, reproduction via `scripts/verify-deployment.mjs`.
 
 ## Invariants

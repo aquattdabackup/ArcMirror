@@ -1,63 +1,54 @@
 # Current task
 
-Owner follow-up 2026-10-07: explicitly requested proceeding with production/RPC investigation, deployment, browser verification and CI. This supersedes the review-only deployment restriction below. Existing authorized Vercel project/team remain unchanged; no blockchain transaction is requested. Vercel CLI confirms the old deployment is still active and the project has no production environment overrides. Implementing safe lookup diagnostics, Playwright desktop/mobile tests and CI before release. First attempts were blocked by approval-review usage limits; owner's resumed request succeeded. LICENSE edit remains untouched. Current baseline: 2ca3d22.
+Updated October 7, 2026. **Complete:** finish the deferred production RPC investigation, deploy the reviewed maintenance fixes, exercise real browser workflows, and add CI. The owner explicitly requested proceeding after the earlier maintenance-only instruction; that later request authorized the release. No wallet connection, signature, funds movement or new blockchain transaction occurred.
 
-## Previous maintenance checkpoint
+## Verified current state
 
-Updated 2026-10-07. Completed the owner's targeted maintenance review and English README rewrite. The owner explicitly forbids production deployment and real blockchain transactions during this review. No deployment, environment mutation, wallet signature or blockchain write was performed.
+- Production: https://arcmirror-six.vercel.app. Application source afa03968cab414c6b54b8af8b94cfa5cfa48c28f, deployment dpl_9R9quumt8kbXozD8ZNWXQcV6EciT, READY, existing approved arcmirror project/team. Later documentation commits do not change deployed application code.
+- Read [release record](docs/releases/2026-10-07.md) and [compact evidence](docs/evidence/releases/2026-10-07/checks.json) first. They supersede the earlier production failure/browser blocker in the dated maintenance review; historical evidence is preserved.
+- At 11:42 UTC / 18:42 Vietnam, all five owner production API requests returned HTTP 200, source live, and complete expected-report equality. Native, forwarding and batch verified; ERC-20 correctly needs_review; intentional failure confirmed_failed with verified analysis.
+- No production environment overrides. Public primary+dRPC defaults are used and contacted providers must pass chain 5042 validation.
+- Safe Vercel logs show primary RPC returning incomplete transaction/receipt pairs and dRPC returning complete pairs. Old adapter could stop early; deployed adapter continues fallback and keeps whole provider bundles. This verifies the application-level cause/recovery. Upstream internal infrastructure cause remains unknown, not claimed fixed by us.
 
-## Start with these findings
+## Changes and focused commits (pushed)
 
-- Read [maintenance review](docs/maintenance-review-2026-10-07.md) and [structured evidence](docs/evidence/maintenance/2026-10-07.json). They distinguish confirmed defects, fixes, unverified risks and optional work.
-- **Production is currently unresolved:** at 2026-10-07T05:19:30Z, live native and batch API requests returned HTTP 404/not_found for confirmed owner transactions. Earlier local lookup also briefly lacked expected evidence. Both direct RPC endpoints returned chain 5042 and confirmed transaction/receipt data. The updated local server reproduced every field of all five owner reports. Exact Vercel-side upstream/configuration cause was not established.
-- Latest repository code has not been deployed. Last recorded production source remains 229ba77 / dpl_AZbqQjnSuDLdtwLrjnojFko2jiEC; production still displays the old “Every trace accounted for” title. Do not call the September 30 all-pass eligibility review a current production certification.
-- Local dependency audit found two High advisories; targeted lockfile patches sharp 0.35.4 → 0.35.5 and source-map-js 1.2.1 → 1.2.2 now pass audit. Production patches are not claimed installed.
+- Earlier maintenance changes 587bd48 through bb3f99c: preserve receipt on optional block failure, shared 45s RPC budget, incomplete-provider fallback, strict CLI parsing, keyboard tabs, shared browser-file helper, scoped UI claims and two dependency security patches. Baseline handoff 2ca3d22.
+- d7293c4: sanitized provider-outcome diagnostics and regression tests; diagnostic callback failure cannot affect analysis.
+- 25cc137: Playwright desktop/mobile flows, actual downloads/uploads and optional real owner live case.
+- ea6b9ea: exclude tests/generated artifacts/CI from Vercel upload.
+- 9ab920c: pinned, read-only GitHub Actions application/browser and Foundry jobs; no automatic deployment or wallet secrets.
+- afa0396: replace stale homepage planned-demo wording with the completed owner-evidence link; final application release.
+- d8427f4: testing/CI instructions. 230afb9: production/RPC/browser/CI evidence. 8035ed8: README/deployment/validation statuses reconciled.
+- The subsequent small handoff commit updates architecture, this file and docs/HANDOFF.md. Resolve its exact hash with git log; never rewrite published history.
 
-## Completed milestones, committed and pushed
+## Actual verification
 
-- 587bd48: retain transaction/receipt when optional block metadata fails; regression reproduces original failure.
-- 774b149: share a 45-second abort budget across RPC fallbacks/traces, retaining 6.5-second per-request timeout and acquired evidence.
-- 5417f73: strict CLI arguments before IO; missing --report no longer silently exits successfully. Parser/process regressions included in npm test.
-- e104505: keyboard/ARIA evidence tabs and labelled panel; rendered markup regression.
-- 85e5974: move components/tools/files.ts to lib/browser-files.ts and reuse JSON export in the report.
-- f73747c: patch vulnerable transitive dependencies, including matching sharp native bundles.
-- d15af22: scope UI metadata/footer to supported evidence.
-- dbbdc64: incomplete/null provider results try fallback; retain the most complete whole bundle, never mix provider transaction/receipt pairs.
-- 7c22c2f: publish detailed maintenance review and current local/production observations.
-- c72c477: rewrite README and add documentation index.
-- bb3f99c: update validation/deployment records with current production failures and undeployed fixes.
-- Final memory commit updates this file, architecture and HANDOFF; consult git log and origin/main for its actual hash. No history rewriting.
+- 72 application tests (65 core/RPC/CLI + 7 rendered components); 10 frozen spike checks; 16 Foundry tests including 256 fuzz runs passed. Types and production build passed locally/CI/Vercel.
+- Final public production browser suite: 18 passed, zero failures/flakes/skips/retries. Actual Chromium 153.0.8010.12, Playwright 1.63.0, desktop and Pixel 7 viewport/touch emulation. Not physical-device or screen-reader certification.
+- Covered tab arrows/wrap/Home/End/focus, sticky header, viewport width, real JSON disk downloads and uploads, CSV reconciliation/export, inspector tamper/digest comparison, dust arithmetic/validation, invalid/valid hash navigation and explicit simulated outage preserving the report. Live owner native re-verification/download in both projects used no interception.
+- Final public HTTP smoke passed health, 3 snapshots, 4 tool pages, negative hashes and security headers. All five live owner reports passed separately. Final screenshots were visually inspected for desktop/mobile; final homepage stale copy absent.
+- CI run 37615707125 at afa0396 passed application and contract jobs: https://github.com/aquattdabackup/ArcMirror/actions/runs/37615707125. CI runs 16 deterministic browser cases; the extra two live cases run during release checks.
+- Production dependency audit: zero known findings after sharp 0.35.5/source-map-js 1.2.2 patches. Secret scans of staged changes/full Git history passed before milestone publication. Relative Markdown links checked. No independent security or performance audit.
+- An initial local browser test matched both the app alert and Next route announcer; narrowed the test selector. Subsequent local affected tests, full CI and both complete production runs passed; no Dust product defect was found.
+- Initial Cua initialization failed, but actual Chromium through Playwright completed all requested browser checks. No service intentionally remains running. Default shell sandbox fails helper_unknown_error; authorized elevated shell calls work. First approval-review quota failure cleared after owner resumed.
 
-## Actual checks this review
+## Acceptance and remaining scope
 
-- Baseline 60 application tests; final 70 pass (63 core/RPC/CLI + 7 rendered web components).
-- 10 frozen spike tests; 16 Foundry tests with 256 fuzz runs pass. Deployed Solidity unchanged.
-- Root/web typecheck, Next production build, standalone core and all three ESM subpath imports, native sharp PNG smoke pass.
-- Local production server on 127.0.0.1:3100: HTTP smoke passed; five live owner reports deep-match fixtures. ERC-20 stays needs_review; intentional failure stays confirmed_failed with verified evidence. Local server was stopped after checks.
-- Both public RPCs returned 5042. Live contract verifier passed source/compiler, deployment receipt, executable bytecode, immutables and getters. CBOR metadata excluded; no explorer verification badge.
-- Production native/batch live lookups failed as described above. No all-five production success is claimed for October 7.
-- Cua failed Windows sandbox initialization; no fresh visual/mobile/focus/download/screen-reader test. Static tabs and HTTP panel markup pass. A helper incorrectly expected the default homepage title on a transaction route; corrected the check scope without changing runtime.
-- Post-update npm audit --omit=dev: zero known findings. Staged/full-history Gitleaks scans passed before milestone publication. Relative Markdown targets checked; final link/Git/bundle verification accompanies the memory commit.
-- Temporary command logs/helpers: ignored artifacts/maintenance. Public compact results: docs/evidence/maintenance/2026-10-07.json.
-- Sandbox shell startup fails with helper_unknown_error; authorized elevated shell retries work. Computer-use remains unavailable. No lint command/CI exists.
+No task blocker or required deployment/browser/CI work remains. Public providers can still throttle or omit data; dated checks are not an uptime guarantee. Unsupported precompile trace coverage remains needs_review. CI tests source but does not auto-deploy. No lint script exists; it was not required for this task.
 
-## Cleanup and preserved user state
+Final grant submission status is unknown. Owner reviews form/terms and submits personally. npm publication and explorer source verification remain unclaimed and outside this release. No additional demo transaction is needed to replay existing evidence.
 
-Only moved the browser file helper and removed its duplicate implementation from report.tsx. README rewritten in place; no historical Markdown, fixture, screenshot, evidence, contract or legal file deleted. Preserve the pre-existing LICENSE indentation edit; never stage/revert it. Do not modify deployed Solidity just to remove its old pending comment: the source hash is pinned and current manifest/docs supersede the comment.
+## Git state and exact next action
 
-## Exact next action and remaining scope
+The only preserved pre-existing worktree change is LICENSE indentation; do not stage/revert it. Implementation and documentation milestones above are on origin/main. Final handoff publication must scan the staged files/history, commit/push, verify HEAD equals origin/main and refresh/verify ignored artifacts/ArcMirror-handoff.bundle. If reading this from the published handoff commit, those publication checks were completed; independently run git status and git log before new work.
 
-The review is complete. A later, separately authorized production release should include the current lockfile/RPC fixes, inspect effective Vercel RPC configuration/responses without printing secrets, then recheck all five live owner reports and browser workflows. Do not assume deployment alone resolves an unidentified provider/configuration issue. Do not deploy under the October 7 review instruction. Optional future work: CI for existing commands and browser interaction tests; no architecture rewrite needed.
+There is no unfinished implementation to restart. Next agent: read AGENTS.md, architecture.md, docs/HANDOFF.md and this release record, inspect current Git state, then act on the owner's next request. Repeat live checks only for a new release, failure or current-status request. Do not redeploy unchanged source or rerun the five paid demos merely to resume.
 
-For grant preparation, owner reviews actual form/terms and submits personally; submission status is unknown. No additional demo transaction is necessary to replay existing evidence. Current production failures must be resolved/verified before making fresh eligibility claims.
+## Durable references
 
-## Durable project context
-
-- Public source: https://github.com/aquattdabackup/ArcMirror; app: https://arcmirror-six.vercel.app. Chain 5042, public primary+dRPC defaults; analyzer is read-only.
-- Lab and Forwarder deployed; manifest/raw evidence in contracts/deployments, verifier scripts/verify-deployment.mjs. All five owner hashes/proof: docs/mainnet-evidence.md, docs/evidence/mainnet/checks.json, vectors/owner.
-- Original three homepage snapshots are third-party examples. Never pass them off as owner demos.
-- Native/18-decimal and interface/6-decimal logs describe one balance. Preserve one-to-one pairing, exact amounts, gas separation and precompile needs_review. Gross forwarding/batch amounts include hops.
-- Owner chose existing two-ellipse website logo, not a replacement M mark. Use assets/brand/arcmirror-avatar.png for forms; transparent variants available.
-- Five-minute recording script: docs/video-demo-script.vi.md, English narration/Vietnamese directions; no agent recording/submission.
-- Read AGENTS.md for standing approvals: no prior Circle/Arc funding; MIT and aquattdabackup profile approved. English product/docs, Vietnamese updates, focused commits/pushes and portable handoff. Final submission/npm publication remain owner actions.
-- Regenerate/verify ignored artifacts/ArcMirror-handoff.bundle from main after final push. GitHub is canonical; credentials, ignored address mapping and temporary files are excluded.
+- Public repository: https://github.com/aquattdabackup/ArcMirror. Lab/Forwarder manifest: contracts/deployments/5042.json; verification: scripts/verify-deployment.mjs. Five owner hashes/evidence: docs/mainnet-evidence.md and vectors/owner.
+- Three homepage snapshots are third-party examples. Native 18-decimal and interface 6-decimal logs describe one balance; preserve exact one-to-one pairing, gas separation and gross-hop semantics.
+- Never edit pinned deployed Solidity just to remove its historical pending comment. Executable matching excludes CBOR metadata and is not an explorer badge.
+- Owner approved MIT, aquattdabackup profile and no prior Circle/Arc funding. English product/docs, Vietnamese updates; focused commits/pushes and handoff required. Signing stays owner-local.
+- Website two-ellipse logo retained; form avatar assets/brand/arcmirror-avatar.png. Five-minute English narration/Vietnamese directions: docs/video-demo-script.vi.md.
+- GitHub is canonical. The ignored Git bundle excludes credentials, ignored address mapping, temporary evidence and downloaded tools.
