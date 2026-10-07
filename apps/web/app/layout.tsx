@@ -4,7 +4,7 @@ import { Mark, Arrow } from "../components/icons";
 import "./globals.css";
 export const metadata: Metadata = {
   title: {
-    default: "ArcMirror | Every trace accounted for",
+    default: "ArcMirror | Understand USDC movements",
     template: "%s | ArcMirror",
   },
   description:
@@ -43,7 +43,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <Mark />
               ArcMirror
             </Link>
-            <p>One USDC movement. Every trace accounted for.</p>
+            <p>Understand USDC movements and their evidence.</p>
           </div>
           <div className="footer-note">
             <span>Built for Arc · Chain 5042</span>
