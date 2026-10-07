@@ -13,6 +13,7 @@
     "start": "npm run start --workspace @arcmirror/web",
     "test": "tsx --test packages/core/test/*.test.ts packages/rpc/test/*.test.ts scripts/*.test.ts && npm run test:web",
     "test:web": "tsx --tsconfig apps/web/tsconfig.json --test apps/web/test/*.test.tsx",
+    "test:e2e": "playwright test",
     "test:spike": "node --test scripts/spike-evidence.test.mjs",
     "typecheck": "tsc --noEmit && npm run typecheck --workspace @arcmirror/web",
     "verify": "tsx scripts/verify.ts",
@@ -23,9 +24,10 @@
     "zod": "^4.0.0"
   },
   "devDependencies": {
+    "@playwright/test": "1.63.0",
+    "@types/node": "^24.0.0",
     "tsx": "4.23.15",
-    "typescript": "~5.9.3",
-    "@types/node": "^24.0.0"
+    "typescript": "~5.9.3"
   },
   "engines": {
     "node": ">=22"
