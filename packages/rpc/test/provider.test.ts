@@ -1,9 +1,35 @@
 import test from "node:test";
 import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
+import { analyze } from "../../core/src/index";
 import { fetchBundle, RpcUnavailable } from "../src/index";
 const H = "0x" + "11".repeat(32);
 const response = (result: unknown) =>
   new Response(JSON.stringify({ jsonrpc: "2.0", id: 1, result }));
+const native = JSON.parse(readFileSync(new URL("../../../vectors/owner/0x2f0c62b0ea5c601f053b96e6c59d624a5b769208cc9ea9242a31bef963ab8981.json", import.meta.url), "utf8")).input;
+
+test("unavailable block metadata preserves the receipt, movements and gas", async () => {
+  const fetcher: typeof fetch = async (_, init) => {
+    const { method } = JSON.parse(init?.body as string);
+    if (method === "eth_getBlockByNumber") throw Error("block lookup unavailable");
+    const results: Record<string, unknown> = {
+      eth_chainId: "0x13b2",
+      eth_getTransactionByHash: native.transaction,
+      eth_getTransactionReceipt: native.receipt,
+    };
+    return response(results[method]);
+  };
+  const report = analyze(await fetchBundle(native.txHash, {
+    urls: ["https://ok.example"], fetcher, trace: false,
+  }));
+  const expected = analyze({ ...native, block: null, callTrace: undefined, stateDiff: undefined });
+  assert.equal(report.status, "confirmed_success");
+  assert.deepEqual(report.movements, expected.movements);
+  assert.deepEqual(report.gas, expected.gas);
+  assert.equal(report.gas?.feeNative18, analyze(native).gas?.feeNative18);
+  assert.notEqual(report.evidenceLevel, "verified");
+  assert.ok(report.warnings.includes("block_metadata_missing_or_mismatched"));
+});
 test("wrong chain provider skipped, fallback succeeds", async () => {
   const methods: string[] = [];
   const fetcher: typeof fetch = async (url, init) => {

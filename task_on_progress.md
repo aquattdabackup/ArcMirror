@@ -1,5 +1,9 @@
 # Current task
 
+Updated 2026-10-07. Active task: evidence-based maintenance review and README rewrite. Owner explicitly forbids production deployment and real blockchain transactions during this review. Preserve the pre-existing LICENSE edit. Baseline 60 application tests passed. Reproduced two bugs: unavailable optional block RPC discards a fetched receipt, and CLI --report without a value exits successfully without comparing a report. Fixing these in focused commits, then reviewing RPC time budgets and report accessibility. New checks are local unless explicitly stated; production remains the last recorded 229ba77 release. Full review and final handoff will follow.
+
+## Previous task and retained evidence
+
 Updated 2026-10-01. Owner is preparing the application and requested a logo, then clarified it must match the existing website. Completed assets/brand exports, pushed as f5135de: 1024-square avatar on the site's light background, transparent 1024-square icon, and transparent 1640x420 horizontal wordmark, each with SVG source. Use arcmirror-avatar.png for the form. The initial generated M-shaped concept was rejected, not published, and is preserved only in ignored artifacts/brand-drafts. No app changes or redeployment.
 
 The September 30 eligibility review remains at docs/eligibility-review-2026-09-30.md with structured evidence in docs/evidence/eligibility-review/2026-09-30.json. No unresolved technical entry blocker was found; actual form review, owner declarations and submission remain open. Do not repeat funding or transactions.

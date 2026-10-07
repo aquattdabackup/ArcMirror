@@ -101,12 +101,17 @@ export async function fetchBundle(
         typeof blockNumber === "string" &&
         /^0x[0-9a-f]+$/i.test(blockNumber)
       ) {
-        block = await rpcRequest(
-          endpoint,
-          "eth_getBlockByNumber",
-          [blockNumber, false],
-          options,
-        );
+        try {
+          block = await rpcRequest(
+            endpoint,
+            "eth_getBlockByNumber",
+            [blockNumber, false],
+            options,
+          );
+        } catch {
+          // Block metadata adds context; missing it must not erase a receipt.
+          // The analyzer explicitly reports the unavailable balance coverage.
+        }
       }
       bundle = { chainId: CHAIN_ID, txHash, transaction, receipt, block };
       break;
