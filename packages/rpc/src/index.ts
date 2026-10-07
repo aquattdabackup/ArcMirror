@@ -96,6 +96,7 @@ export async function fetchBundle(
   const signal = AbortSignal.timeout(options.totalTimeoutMs ?? 45_000);
   const requestOptions = { ...options, signal };
   let bundle: Bundle | null = null;
+  let completeness = -1;
   for (const endpoint of endpoints) {
     if (signal.aborted) break;
     try {
@@ -124,8 +125,14 @@ export async function fetchBundle(
           // The analyzer explicitly reports the unavailable balance coverage.
         }
       }
-      bundle = { chainId: CHAIN_ID, txHash, transaction, receipt, block };
-      break;
+      // A lagging provider may return null for an already-mined transaction.
+      // Keep the best whole bundle, but try fallback before claiming absence.
+      const available = Number(transaction != null) + Number(receipt != null);
+      if (available > completeness) {
+        bundle = { chainId: CHAIN_ID, txHash, transaction, receipt, block };
+        completeness = available;
+      }
+      if (available === 2) break;
     } catch {
       /* Credentials and upstream response bodies never cross this boundary. */
     }

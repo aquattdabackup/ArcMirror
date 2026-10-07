@@ -55,6 +55,49 @@ test("wrong chain provider skipped, fallback succeeds", async () => {
     1,
   );
 });
+
+test("empty or pending first-provider results cannot hide a confirmed fallback", async () => {
+  for (const partial of [null, native.transaction]) {
+    const bundle = await fetchBundle(native.txHash, {
+      urls: ["https://lagging.example", "https://complete.example"], trace: false,
+      fetcher: async (url, init) => {
+        const { method } = JSON.parse(init?.body as string);
+        if (method === "eth_chainId") return response("0x13b2");
+        if (String(url).includes("lagging"))
+          return response(method === "eth_getTransactionByHash" ? partial : null);
+        const results: Record<string, unknown> = {
+          eth_getTransactionByHash: native.transaction,
+          eth_getTransactionReceipt: native.receipt,
+          eth_getBlockByNumber: native.block,
+        };
+        return response(results[method]);
+      },
+    });
+    assert.equal(analyze(bundle).status, "confirmed_success");
+    assert.deepEqual(bundle.transaction, native.transaction);
+    assert.deepEqual(bundle.receipt, native.receipt);
+  }
+});
+
+test("a partial result survives failure of remaining providers without mixing evidence", async () => {
+  let fallbackCalls = 0;
+  const bundle = await fetchBundle(native.txHash, {
+    urls: ["https://pending.example", "https://failed.example"], trace: false,
+    fetcher: async (url, init) => {
+      if (String(url).includes("failed")) {
+        fallbackCalls++;
+        throw Error("upstream unavailable");
+      }
+      const { method } = JSON.parse(init?.body as string);
+      return response(method === "eth_chainId" ? "0x13b2"
+        : method === "eth_getTransactionByHash" ? native.transaction : null);
+    },
+  });
+  assert.deepEqual(bundle.transaction, native.transaction);
+  assert.equal(fallbackCalls, 1);
+  assert.equal(bundle.receipt, null);
+  assert.notEqual(analyze(bundle).status, "confirmed_success");
+});
 test("429 falls back without exposing provider details", async () => {
   const fetcher: typeof fetch = async (url, init) =>
     String(url).includes("limited")
