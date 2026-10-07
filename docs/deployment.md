@@ -2,7 +2,11 @@
 
 ## Current state
 
-[Production](https://arcmirror-six.vercel.app) is accessible and analyzes the five [owner-created Arc mainnet demos](mainnet-evidence.md). Lab is deployed on chain 5042; its address, receipt and bytecode checks are in [the manifest](../contracts/deployments/5042.json). This September 30 evidence/docs release changes no application or contract execution code and requires no Vercel redeployment.
+[Production](https://arcmirror-six.vercel.app) has published analyses of the five [owner-created Arc mainnet demos](mainnet-evidence.md). Lab is deployed on chain 5042; its address, receipt and bytecode checks are in [the manifest](../contracts/deployments/5042.json).
+
+**October 7 maintenance is repository-only.** RPC/CLI fixes, accessible tabs, shared file helpers, scoped UI wording and dependency patches have not been deployed. The owner explicitly prohibited production deployment and real blockchain transactions during this review. Local validation does not certify those fixes in production; a later authorized release must deploy and verify them. The dependency patches address two High advisories found by the new audit; an older production audit does not establish the current security state. See [the maintenance review](maintenance-review-2026-10-07.md).
+
+Live read-only observations at 2026-10-07T05:19:30Z: the production native and batch lookups returned HTTP 404 / `not_found`; the updated local server fetched all five owner reports from mainnet and matched every field. Both configured public RPC endpoints reported 5042. The exact Vercel-side provider/configuration cause was not established; do not claim the local failover fix has already restored production. Inspect effective server RPC configuration/responses during a later authorized release and recheck the five reports. [Structured observations](evidence/maintenance/2026-10-07.json).
 
 Last recorded UI deployment: dpl_AZbqQjnSuDLdtwLrjnojFko2jiEC from application source 229ba77, September 27. See [product-focus checks](evidence/product-focus/checks.json). The earlier aebf0c6 workbench deployment is historical. Project prj_Fl4rD67BDh21Zi4pj7UeMdaT9alh, arcmirror, in the approved Luong Tuan's projects team.
 
@@ -14,7 +18,7 @@ Last recorded UI deployment: dpl_AZbqQjnSuDLdtwLrjnojFko2jiEC from application s
 - Build npm run build. Public server RPC defaults are Arc primary + dRPC; optional ARC_RPC_URLS and ARC_TRACE_RPC_URLS stay server-only. The adapter rejects chain IDs other than 5042.
 - [Exact deployment settings](deployment-settings.json). Never publish real environment files, hosting credentials or wallet secrets.
 
-Use only the existing approved project/team. The CLI full-repository upload preserves workspace source; a past connector inline-file upload omitted it. When application code changes, deploy from the linked repository root with vercel deploy --prod --yes --scope luong-tuans-projects-a65355dc, then verify public pages, APIs, live reports and relevant browser flows. Do not redeploy solely for these documentation/evidence updates.
+For a separately authorized release, use only the existing project/team. The CLI full-repository upload preserves workspace source; a past connector inline-file upload omitted it. Deploy from the linked repository root with `vercel deploy --prod --yes --scope luong-tuans-projects-a65355dc`, then verify public pages, APIs, live reports and relevant browser flows. Do not run that command as part of the October 7 maintenance review.
 
 ## Deployed contract
 

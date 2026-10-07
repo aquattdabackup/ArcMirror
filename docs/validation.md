@@ -1,6 +1,20 @@
 # Validation record
 
-**Current mainnet checkpoint: 2026-09-30.** Lab is deployed and all five owner-created demo categories have actual receipts. [Evidence and reproduction](mainnet-evidence.md). Earlier dated sections below are historical.
+## Maintenance review — October 7, 2026
+
+Repository maintenance only; no production deployment or blockchain writes. [Review](maintenance-review-2026-10-07.md) and [structured results](evidence/maintenance/2026-10-07.json) distinguish fixed defects, live observations and remaining limits.
+
+Baseline 60 application tests passed. Final checks: 70 application tests (63 core/RPC/CLI + 7 rendered components), 10 frozen spike checks and 16 Foundry tests with 256 fuzz runs passed. Root/web typecheck, core ESM/subpath imports, Next.js production build, native sharp PNG smoke and local production HTTP/API smoke passed. Regressions reproduced optional-block receipt loss, incomplete-provider lookup and CLI missing-argument behavior before fixes; shared-deadline checks cover cancellation and evidence preservation.
+
+Five owner reports fetched live through the updated local API deep-match their expected reports. Both public RPC endpoints returned chain 5042; the read-only contract verifier matched source/compiler, deployment receipt, executable bytecode and immutable values/getters. Core report schema, digest algorithm, fixtures and deployed source were unchanged.
+
+**Production did not pass the new live lookup checks:** native and batch hashes returned HTTP 404 / `not_found` despite confirmed direct RPC evidence and successful updated local results. The older production title remains visible. Current patches, including sharp 0.35.5/source-map-js 1.2.2, have not been deployed; a later authorized release must inspect effective server RPC configuration and recheck all five reports. The new local audit reports zero production dependency findings after removing two High advisories; old passing audits below are historical.
+
+Cua failed during Windows sandbox initialization, so no new browser/mobile/focus/download validation is claimed. Rendered tabs and HTTP panel markup were checked; a helper's incorrect title expectation was corrected to target the homepage. Relative Markdown links and staged/full-history Gitleaks scans passed before publication. Temporary command logs are ignored under `artifacts/maintenance`. No lint script or CI workflow exists; no performance benchmark or independent audit was performed.
+
+## Earlier mainnet checkpoint — September 30, 2026
+
+Lab is deployed and all five owner-created demo categories have actual receipts. [Evidence and reproduction](mainnet-evidence.md). The dated results below are historical; they do not override the newer production lookup failures above.
 
 Checked on **2026-09-25**. The first table records local implementation checks. Public production verification is recorded separately below. No funds moved or wallet signatures were requested.
 
