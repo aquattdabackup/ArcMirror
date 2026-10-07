@@ -1,0 +1,553 @@
+{
+  "schemaVersion": 1,
+  "scope": "Read-only production release verification; no wallet connection, signature or blockchain writes.",
+  "deployment": {
+    "id": "dpl_9R9quumt8kbXozD8ZNWXQcV6EciT",
+    "sourceCommit": "afa03968cab414c6b54b8af8b94cfa5cfa48c28f",
+    "url": "https://arcmirror-six.vercel.app",
+    "immutableUrl": "https://arcmirror-36n0lrbl7-luong-tuans-projects-a65355dc.vercel.app",
+    "status": "READY",
+    "productionEnvironmentOverrides": 0
+  },
+  "production": {
+    "checkedAt": "2026-10-07T11:42:28.472Z",
+    "base": "https://arcmirror-six.vercel.app",
+    "deploymentId": "dpl_9R9quumt8kbXozD8ZNWXQcV6EciT",
+    "sourceCommit": "afa03968cab414c6b54b8af8b94cfa5cfa48c28f",
+    "reports": [
+      {
+        "txHash": "0x0cecb2a9fb27abd8d463d5faec25279056d28f0a447061eba22120d339165ec8",
+        "http": 200,
+        "source": "live",
+        "status": "confirmed_success",
+        "evidenceLevel": "verified",
+        "digest": "0xabc9f2ab18f5346c1ff9916b2cae9ddc51d46e833082cf7f5acf747b9c6edf75",
+        "fullReportMatch": true
+      },
+      {
+        "txHash": "0x2f0c62b0ea5c601f053b96e6c59d624a5b769208cc9ea9242a31bef963ab8981",
+        "http": 200,
+        "source": "live",
+        "status": "confirmed_success",
+        "evidenceLevel": "verified",
+        "digest": "0x75baab36e3eef3769df23b2e9de93a1eae55f0bed9b740a3bcef46d274ec8595",
+        "fullReportMatch": true
+      },
+      {
+        "txHash": "0x4e0e57e776550e0118d86be5b84233eaecaa00f7fe085e3baf9f0af5e750370d",
+        "http": 200,
+        "source": "live",
+        "status": "confirmed_success",
+        "evidenceLevel": "needs_review",
+        "digest": "0x0b291fc94033222b3162d61e49110331c9104a9357a3c1af40718a4bee055aa3",
+        "fullReportMatch": true
+      },
+      {
+        "txHash": "0x6539309ec60a263be08008ef134d4e15c6db8198fe1cd19e211959b5ef11df41",
+        "http": 200,
+        "source": "live",
+        "status": "confirmed_success",
+        "evidenceLevel": "verified",
+        "digest": "0x3e6c99b6fdf4b18f45b908df21eff0d7237d0c9e576e53a992d0816b6221976d",
+        "fullReportMatch": true
+      },
+      {
+        "txHash": "0x87b456003ef9194f99c71ea5af94273ba242beaffaaeacc4fb466885a2b47fe1",
+        "http": 200,
+        "source": "live",
+        "status": "confirmed_failed",
+        "evidenceLevel": "verified",
+        "digest": "0xaca8753625d7182b969946e31d7b5e4e6427595dc1271f787e5a30e6584c75e9",
+        "fullReportMatch": true
+      }
+    ],
+    "home": {
+      "http": 200,
+      "title": "ArcMirror | Understand USDC movements",
+      "ownerDemoLink": true,
+      "stalePlannedCopy": false
+    }
+  },
+  "browser": {
+    "engine": "Chromium 153.0.8010.12",
+    "automation": "Playwright 1.63.0",
+    "baseURL": "https://arcmirror-six.vercel.app",
+    "mobile": "Pixel 7 viewport/touch emulation, not a physical device",
+    "stats": {
+      "startTime": "2026-10-07T11:42:17.261Z",
+      "duration": 88913.761,
+      "expected": 18,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "cases": [
+      {
+        "file": "application.spec.ts",
+        "title": "evidence tabs support arrows, wrapping, Home/End and focus into the labelled panel",
+        "project": "desktop-chromium",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 6981
+          }
+        ]
+      },
+      {
+        "file": "application.spec.ts",
+        "title": "downloaded report is the complete captured JSON and can be inspected from disk",
+        "project": "desktop-chromium",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 4150
+          }
+        ]
+      },
+      {
+        "file": "application.spec.ts",
+        "title": "main pages fit the viewport and the header remains reachable while scrolling",
+        "project": "desktop-chromium",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 5547
+          }
+        ]
+      },
+      {
+        "file": "application.spec.ts",
+        "title": "CSV file reconciliation detects exact payment and amount mismatch, then exports evidence",
+        "project": "desktop-chromium",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 5786
+          }
+        ]
+      },
+      {
+        "file": "application.spec.ts",
+        "title": "Inspector compares real files and detects altered contents without claiming authenticity",
+        "project": "desktop-chromium",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 3582
+          }
+        ]
+      },
+      {
+        "file": "application.spec.ts",
+        "title": "Dust Lab preserves one native unit and exports the exact accumulated remainder",
+        "project": "desktop-chromium",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 3560
+          }
+        ]
+      },
+      {
+        "file": "application.spec.ts",
+        "title": "a simulated RPC outage preserves the visible report and its downloadable evidence",
+        "project": "desktop-chromium",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 3378
+          }
+        ]
+      },
+      {
+        "file": "application.spec.ts",
+        "title": "hash entry rejects invalid input and navigates to a saved real transaction",
+        "project": "desktop-chromium",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 3969
+          }
+        ]
+      },
+      {
+        "file": "application.spec.ts",
+        "title": "evidence tabs support arrows, wrapping, Home/End and focus into the labelled panel",
+        "project": "mobile-chromium",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 7189
+          }
+        ]
+      },
+      {
+        "file": "application.spec.ts",
+        "title": "downloaded report is the complete captured JSON and can be inspected from disk",
+        "project": "mobile-chromium",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 3291
+          }
+        ]
+      },
+      {
+        "file": "application.spec.ts",
+        "title": "main pages fit the viewport and the header remains reachable while scrolling",
+        "project": "mobile-chromium",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 6460
+          }
+        ]
+      },
+      {
+        "file": "application.spec.ts",
+        "title": "CSV file reconciliation detects exact payment and amount mismatch, then exports evidence",
+        "project": "mobile-chromium",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 6158
+          }
+        ]
+      },
+      {
+        "file": "application.spec.ts",
+        "title": "Inspector compares real files and detects altered contents without claiming authenticity",
+        "project": "mobile-chromium",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 3699
+          }
+        ]
+      },
+      {
+        "file": "application.spec.ts",
+        "title": "Dust Lab preserves one native unit and exports the exact accumulated remainder",
+        "project": "mobile-chromium",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 3012
+          }
+        ]
+      },
+      {
+        "file": "application.spec.ts",
+        "title": "a simulated RPC outage preserves the visible report and its downloadable evidence",
+        "project": "mobile-chromium",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 3406
+          }
+        ]
+      },
+      {
+        "file": "application.spec.ts",
+        "title": "hash entry rejects invalid input and navigates to a saved real transaction",
+        "project": "mobile-chromium",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 3458
+          }
+        ]
+      },
+      {
+        "file": "live.spec.ts",
+        "title": "owner transaction can be re-verified live and downloaded without mocked requests",
+        "project": "desktop-chromium",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 4507
+          }
+        ]
+      },
+      {
+        "file": "live.spec.ts",
+        "title": "owner transaction can be re-verified live and downloaded without mocked requests",
+        "project": "mobile-chromium",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 3973
+          }
+        ]
+      }
+    ]
+  },
+  "httpSmoke": {
+    "checkedAt": "2026-10-07T11:48:48.156Z",
+    "base": "https://arcmirror-six.vercel.app",
+    "health": "pass",
+    "snapshots": 3,
+    "invalidHash": "pass",
+    "unknownHash": "pass",
+    "securityHeaders": "pass",
+    "toolPages": 4
+  },
+  "rpcDiagnostics": {
+    "observedDeploymentId": "dpl_7p9V66xr6oGaxZttjXVzW8UJgpJr",
+    "sourceCommit": "9ab920ca8a5f6ff8c0e172d421f178e93273cc19",
+    "finalReleaseRpcCodeUnchanged": true,
+    "providers": [
+      "https://rpc.mainnet.arc.io",
+      "https://rpc.drpc.mainnet.arc.io"
+    ],
+    "observations": [
+      {
+        "timestamp": "2026-10-07T11:35:29.659Z",
+        "path": "/api/analyze/0x87b456003ef9194f99c71ea5af94273ba242beaffaaeacc4fb466885a2b47fe1",
+        "http": 200,
+        "lookups": [
+          {
+            "event": "arc_rpc_lookup",
+            "providerIndex": 0,
+            "outcome": "incomplete",
+            "transactionPresent": false,
+            "receiptPresent": true
+          },
+          {
+            "event": "arc_rpc_lookup",
+            "providerIndex": 1,
+            "outcome": "complete",
+            "transactionPresent": true,
+            "receiptPresent": true
+          }
+        ]
+      },
+      {
+        "timestamp": "2026-10-07T11:35:28.479Z",
+        "path": "/api/analyze/0x6539309ec60a263be08008ef134d4e15c6db8198fe1cd19e211959b5ef11df41",
+        "http": 200,
+        "lookups": [
+          {
+            "event": "arc_rpc_lookup",
+            "providerIndex": 0,
+            "outcome": "incomplete",
+            "transactionPresent": false,
+            "receiptPresent": true
+          },
+          {
+            "event": "arc_rpc_lookup",
+            "providerIndex": 1,
+            "outcome": "complete",
+            "transactionPresent": true,
+            "receiptPresent": true
+          }
+        ]
+      },
+      {
+        "timestamp": "2026-10-07T11:35:27.351Z",
+        "path": "/api/analyze/0x4e0e57e776550e0118d86be5b84233eaecaa00f7fe085e3baf9f0af5e750370d",
+        "http": 200,
+        "lookups": [
+          {
+            "event": "arc_rpc_lookup",
+            "providerIndex": 0,
+            "outcome": "incomplete",
+            "transactionPresent": false,
+            "receiptPresent": true
+          },
+          {
+            "event": "arc_rpc_lookup",
+            "providerIndex": 1,
+            "outcome": "complete",
+            "transactionPresent": true,
+            "receiptPresent": true
+          }
+        ]
+      },
+      {
+        "timestamp": "2026-10-07T11:35:25.649Z",
+        "path": "/api/analyze/0x2f0c62b0ea5c601f053b96e6c59d624a5b769208cc9ea9242a31bef963ab8981",
+        "http": 200,
+        "lookups": [
+          {
+            "event": "arc_rpc_lookup",
+            "providerIndex": 0,
+            "outcome": "incomplete",
+            "transactionPresent": true,
+            "receiptPresent": false
+          },
+          {
+            "event": "arc_rpc_lookup",
+            "providerIndex": 1,
+            "outcome": "complete",
+            "transactionPresent": true,
+            "receiptPresent": true
+          }
+        ]
+      },
+      {
+        "timestamp": "2026-10-07T11:35:24.188Z",
+        "path": "/api/analyze/0x0cecb2a9fb27abd8d463d5faec25279056d28f0a447061eba22120d339165ec8",
+        "http": 200,
+        "lookups": [
+          {
+            "event": "arc_rpc_lookup",
+            "providerIndex": 0,
+            "outcome": "incomplete",
+            "transactionPresent": false,
+            "receiptPresent": false
+          },
+          {
+            "event": "arc_rpc_lookup",
+            "providerIndex": 1,
+            "outcome": "complete",
+            "transactionPresent": true,
+            "receiptPresent": true
+          }
+        ]
+      }
+    ],
+    "conclusion": "Primary lookup returned incomplete transaction/receipt pairs; fallback returned complete pairs. Upstream internal infrastructure cause is unknown."
+  },
+  "ci": {
+    "id": 37615707125,
+    "url": "https://github.com/aquattdabackup/ArcMirror/actions/runs/37615707125",
+    "sha": "afa03968cab414c6b54b8af8b94cfa5cfa48c28f",
+    "status": "completed",
+    "conclusion": "success",
+    "jobs": [
+      {
+        "name": "application",
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/aquattdabackup/ArcMirror/actions/runs/37615707125/job/112773399844",
+        "steps": [
+          {
+            "name": "Set up job",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/setup-node@820762786026740c76f36085b0efc47a31fe5020",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run npm ci",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run npm audit --omit=dev",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run npm test",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run npm run test:spike",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run npm run typecheck",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run npm run build",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run npx playwright install --with-deps chromium",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run npm run test:e2e",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/setup-node@820762786026740c76f36085b0efc47a31fe5020",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+            "conclusion": "success"
+          },
+          {
+            "name": "Complete job",
+            "conclusion": "success"
+          }
+        ]
+      },
+      {
+        "name": "contracts",
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/aquattdabackup/ArcMirror/actions/runs/37615707125/job/112773400074",
+        "steps": [
+          {
+            "name": "Set up job",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run foundry-rs/foundry-toolchain@908c540300062bd5a7e473851cdb4282204cee09",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run forge test -vv",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run foundry-rs/foundry-toolchain@908c540300062bd5a7e473851cdb4282204cee09",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+            "conclusion": "success"
+          },
+          {
+            "name": "Complete job",
+            "conclusion": "success"
+          }
+        ]
+      }
+    ]
+  },
+  "checks": {
+    "applicationTests": 72,
+    "frozenSpikeTests": 10,
+    "foundryTests": 16,
+    "foundryFuzzRuns": 256,
+    "typecheck": "pass",
+    "productionBuild": "pass",
+    "productionDependencyAuditFindings": 0,
+    "ciBrowserTests": 16
+  }
+}
