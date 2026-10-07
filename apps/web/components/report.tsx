@@ -7,6 +7,7 @@ import { Arrow, Check } from "./icons";
 import { Search } from "./search";
 import { ReportGuide } from "./report-guide";
 import { EvidenceTabs, type EvidenceView } from "./evidence-tabs";
+import { downloadJson } from "../lib/browser-files";
 const short = (s: string) => s.slice(0, 8) + "…" + s.slice(-6);
 const label = (s: string) => s.replaceAll("_", " ");
 const reasons: Record<string, string> = {
@@ -75,16 +76,7 @@ export function TransactionReport({ initial }: { initial: Result }) {
     }
   }
   function download() {
-    const url = URL.createObjectURL(
-      new Blob([JSON.stringify(r, null, 2) + "\n"], {
-        type: "application/json",
-      }),
-    );
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = `arcmirror-${r.txHash}.json`;
-    a.click();
-    setTimeout(() => URL.revokeObjectURL(url), 1000);
+    downloadJson(r, `arcmirror-${r.txHash}.json`);
   }
   async function copy() {
     try {

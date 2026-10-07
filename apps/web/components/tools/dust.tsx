@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { precisionBreakdown } from "../../../../packages/core/src/precision";
-import { downloadJson } from "./files";
+import { downloadJson } from "../../lib/browser-files";
 const presets = [
   { name: "One native unit", value: "0.000000000000000001" },
   { name: "Just below one micro-USDC", value: "0.000000999999999999" },

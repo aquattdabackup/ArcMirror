@@ -7,7 +7,7 @@ import {
   REPORT_MAX_BYTES,
   type InspectedReport,
 } from "../../../../packages/core/src/inspection";
-import { downloadJson, readLocalFile } from "./files";
+import { downloadJson, readLocalFile } from "../../lib/browser-files";
 
 type Slot = { text: string; inspection: InspectedReport | null; error: string };
 const empty: Slot = { text: "", inspection: null, error: "" };

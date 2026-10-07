@@ -1,3 +1,4 @@
+/** Browser-only file helpers shared by transaction reports and tools. */
 export async function readLocalFile(
   file: File,
   maxBytes: number,

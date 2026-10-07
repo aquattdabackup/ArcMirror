@@ -8,7 +8,7 @@ import {
   reconcilePayouts,
 } from "../../../../packages/core/src/reconciliation";
 import type { Report } from "../../../../packages/core/src/types";
-import { downloadJson, readLocalFile } from "./files";
+import { downloadJson, readLocalFile } from "../../lib/browser-files";
 
 type Output = { result: ReturnType<typeof reconcilePayouts>; source: string };
 export function ReconcileTool({
