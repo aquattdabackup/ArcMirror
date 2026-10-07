@@ -1,0 +1,107 @@
+{
+  "checkedAt": "2026-10-07T05:19:30.894Z",
+  "localBase": "http://127.0.0.1:3100",
+  "chains": [
+    {
+      "endpoint": "https://rpc.mainnet.arc.io",
+      "chainId": 5042
+    },
+    {
+      "endpoint": "https://rpc.drpc.mainnet.arc.io",
+      "chainId": 5042
+    }
+  ],
+  "ownerReports": [
+    {
+      "txHash": "0x0cecb2a9fb27abd8d463d5faec25279056d28f0a447061eba22120d339165ec8",
+      "http": 200,
+      "source": "live",
+      "status": "confirmed_success",
+      "evidenceLevel": "verified",
+      "fullReportMatch": true
+    },
+    {
+      "txHash": "0x2f0c62b0ea5c601f053b96e6c59d624a5b769208cc9ea9242a31bef963ab8981",
+      "http": 200,
+      "source": "live",
+      "status": "confirmed_success",
+      "evidenceLevel": "verified",
+      "fullReportMatch": true
+    },
+    {
+      "txHash": "0x4e0e57e776550e0118d86be5b84233eaecaa00f7fe085e3baf9f0af5e750370d",
+      "http": 200,
+      "source": "live",
+      "status": "confirmed_success",
+      "evidenceLevel": "needs_review",
+      "fullReportMatch": true
+    },
+    {
+      "txHash": "0x6539309ec60a263be08008ef134d4e15c6db8198fe1cd19e211959b5ef11df41",
+      "http": 200,
+      "source": "live",
+      "status": "confirmed_success",
+      "evidenceLevel": "verified",
+      "fullReportMatch": true
+    },
+    {
+      "txHash": "0x87b456003ef9194f99c71ea5af94273ba242beaffaaeacc4fb466885a2b47fe1",
+      "http": 200,
+      "source": "live",
+      "status": "confirmed_failed",
+      "evidenceLevel": "verified",
+      "fullReportMatch": true
+    }
+  ],
+  "production": [
+    {
+      "txHash": "0x2f0c62b0ea5c601f053b96e6c59d624a5b769208cc9ea9242a31bef963ab8981",
+      "http": 404,
+      "source": "live",
+      "status": "not_found",
+      "fullReportMatch": false
+    },
+    {
+      "txHash": "0x0cecb2a9fb27abd8d463d5faec25279056d28f0a447061eba22120d339165ec8",
+      "http": 404,
+      "source": "live",
+      "status": "not_found",
+      "fullReportMatch": false
+    }
+  ],
+  "localMarkup": {
+    "panel": true,
+    "threeTabs": true,
+    "homeTitle": true,
+    "note": "The initial helper expected the default site title on the transaction route; that route correctly uses Transaction evidence | ArcMirror. Corrected the helper scope to the homepage; no runtime change was needed."
+  },
+  "productionTitle": "ArcMirror | Every trace accounted for",
+  "earlierObservation": "Before the incomplete-lookup fix, a local batch report failed fixture comparison; a separate production batch lookup returned HTTP 404/not_found while both direct RPC lookups returned the confirmed transaction and receipt. Cause of the transient upstream response is unproven. No production deployment performed.",
+  "checks": {
+    "applicationTests": 70,
+    "spikeTests": 10,
+    "foundryTests": 16,
+    "fuzzRuns": 256,
+    "typecheck": "pass",
+    "build": "pass",
+    "coreEsmImports": "pass",
+    "localHttpSmoke": "pass",
+    "nativeSharpPng": "pass",
+    "liveContractVerifier": "pass: source, compiler, executable bytecode and immutables; metadata excluded",
+    "browser": "unavailable: Cua kernel Windows sandbox setup failed",
+    "productionDeploymentPerformed": false,
+    "blockchainTransactionsSent": 0
+  },
+  "dependencies": {
+    "before": {
+      "sharp": "0.35.4",
+      "sourceMapJs": "1.2.1",
+      "highAdvisories": 2
+    },
+    "after": {
+      "sharp": "0.35.5",
+      "sourceMapJs": "1.2.2",
+      "productionAuditFindings": 0
+    }
+  }
+}
