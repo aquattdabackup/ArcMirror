@@ -1,11 +1,12 @@
 "use client";
-import { useState } from "react";
+import { useId, useState } from "react";
 import Link from "next/link";
 import type { Report } from "../../../packages/core/src/types";
 import type { Result } from "../lib/service";
 import { Arrow, Check } from "./icons";
 import { Search } from "./search";
 import { ReportGuide } from "./report-guide";
+import { EvidenceTabs, type EvidenceView } from "./evidence-tabs";
 const short = (s: string) => s.slice(0, 8) + "…" + s.slice(-6);
 const label = (s: string) => s.replaceAll("_", " ");
 const reasons: Record<string, string> = {
@@ -39,7 +40,8 @@ export function TransactionReport({ initial }: { initial: Result }) {
   const [busy, setBusy] = useState(false);
   const [message, setMessage] = useState("");
   const [phantom, setPhantom] = useState(false);
-  const [tab, setTab] = useState<"flow" | "logs" | "balances">("flow");
+  const [tab, setTab] = useState<EvidenceView>("flow");
+  const evidenceId = useId();
   const r: Report = result.report;
   const confirmed =
     r.status === "confirmed_success" || r.status === "confirmed_failed";
@@ -237,22 +239,8 @@ export function TransactionReport({ initial }: { initial: Result }) {
                   {String(r.movements.length).padStart(2, "0")} MOVEMENTS
                 </span>
               </div>
-              <div className="tabs" role="tablist" aria-label="Evidence view">
-                {(["flow", "logs", "balances"] as const).map((t) => (
-                  <button
-                    key={t}
-                    role="tab"
-                    aria-selected={tab === t}
-                    onClick={() => setTab(t)}
-                  >
-                    {t === "flow"
-                      ? "Money flow"
-                      : t === "logs"
-                        ? "Source logs"
-                        : "Balance proof"}
-                  </button>
-                ))}
-              </div>
+              <EvidenceTabs value={tab} onChange={setTab} id={evidenceId} />
+              <div role="tabpanel" id={`${evidenceId}-panel`} aria-labelledby={`${evidenceId}-${tab}`} tabIndex={0}>
               {tab === "flow" ? (
                 <div className="flows">
                   {r.movements.length === 0 ? (
@@ -434,6 +422,7 @@ export function TransactionReport({ initial }: { initial: Result }) {
                   )}
                 </div>
               )}
+              </div>
             </section>
             <aside className="panel evidence-panel" id="evidence-check">
               <span className="eyebrow">EVIDENCE CHECK</span>
