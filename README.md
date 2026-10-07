@@ -14,9 +14,7 @@ The analyzer is hosted on Vercel. ArcMirrorLab is deployed on **Arc mainnet, cha
 
 Open the [owner's forwarding report](https://arcmirror-six.vercel.app/tx/0x6539309ec60a263be08008ef134d4e15c6db8198fe1cd19e211959b5ef11df41). The [mainnet evidence index](docs/mainnet-evidence.md) links all five hashes, raw RPC captures, expected reports, and deployment verification. The three homepage snapshots are explicitly **third-party examples**, separate from owner demos.
 
-**Repository versus production:** the October 7 maintenance changes have not been deployed. The last recorded production application source is `229ba77` (September 27). Local test results do not certify the running deployment. See the [deployment runbook](docs/deployment.md) and dated [validation record](docs/validation.md).
-
-**Current service issue (October 7):** production live lookups returned `404/not_found` for the owner's mined native and batch transactions, while the updated local application reproduced all five reports from RPC. Production availability remains unresolved; the maintenance review records the observations and release follow-up.
+**Current release (October 7):** application source `afa0396` is deployed to the public site. All five owner reports fetched live from production match the recorded evidence. RPC fallback, dependency patches, accessible tabs and scoped UI wording are included. See the [release record](docs/releases/2026-10-07.md), [deployment runbook](docs/deployment.md) and dated [validation](docs/validation.md).
 
 ## Features
 
@@ -73,6 +71,7 @@ Run from the repository root unless noted:
 | --- | --- |
 | `npm test` | Analyzer, mainnet vectors, browser-tool logic, RPC adapter, CLI and rendered-component tests. |
 | `npm run test:web` | Rendered component tests; not a browser end-to-end suite. |
+| `npm run test:e2e` | Chromium desktop/mobile flows against the local build; install Chromium first. See [browser and CI instructions](docs/testing.md). |
 | `npm run test:spike` | Assertions over frozen investigation evidence. |
 | `npm run typecheck` | Shared source and web TypeScript checks. |
 | `npm run build` | Core ESM/declarations and Next.js production build. |
@@ -83,7 +82,7 @@ Run from the repository root unless noted:
 | `node scripts/verify-deployment.mjs --live` | Read-only check of deployed bytecode and getters. |
 | `npm run vectors` | Regenerate three root examples/snapshots from frozen evidence; review the diff. |
 
-There is no lint script or checked-in CI workflow. Dated outcomes and gaps are recorded in [validation](docs/validation.md).
+[GitHub Actions CI](.github/workflows/ci.yml) runs application, browser and contract checks for code changes. Documentation-only changes are excluded. There is no lint script. Dated outcomes and verification scope are recorded in [validation](docs/validation.md).
 
 ### Reproduce a report
 
@@ -134,7 +133,7 @@ APIs: `/api/health`, `/api/examples`, `/api/analyze/<hash>`. Add `?live=1` to by
 
 ## Deployment and limits
 
-Vercel uses `apps/web` as the project root, includes source outside it, and installs from the workspace root. See [exact settings and release procedure](docs/deployment.md). Neither production deployment nor new onchain activity is part of the October 7 maintenance review.
+Vercel uses `apps/web` as the project root, includes source outside it, and installs from the workspace root. See [exact settings and release procedure](docs/deployment.md). The owner authorized the October 7 release after the initial maintenance-only review; deployment and read-only mainnet/browser checks are recorded separately. No new onchain transaction was needed.
 
 - Cache and limits are per process: 256 reports/one-hour TTL, 8 active analyses, 30 client and 120 global admissions per minute. These are not distributed abuse controls. Self-hosting requires a trusted proxy for client-IP headers.
 - RPC throttling, missing history and unsupported traces can reduce evidence. All-history/fork coverage is not certified.

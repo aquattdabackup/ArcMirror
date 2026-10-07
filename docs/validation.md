@@ -1,6 +1,18 @@
 # Validation record
 
-## Maintenance review — October 7, 2026
+## Verified production release — October 7, 2026
+
+The owner authorized completing the release after the initial maintenance-only review. Application source `afa0396` is deployed as `dpl_9R9quumt8kbXozD8ZNWXQcV6EciT` at https://arcmirror-six.vercel.app. See [release details](releases/2026-10-07.md) and [structured evidence](evidence/releases/2026-10-07/checks.json).
+
+All five owner reports fetched through the final production API returned HTTP 200, `source: live`, and complete equality with the recorded owner reports at 11:42 UTC. Safe Vercel logs identify incomplete primary-provider transaction/receipt pairs and successful dRPC fallback. There are no production RPC environment overrides. The upstream provider's internal cause is unknown; the application-level handling and recovery are verified.
+
+Actual Chromium desktop/mobile-emulation checks on the final public deployment: **18 passed**, with zero failures, retries or skipped cases. They cover keyboard focus/navigation, sticky header and width, CSV/JSON uploads, disk downloads, all three tools, simulated-outage handling, and real owner native re-verification without interception. Mobile emulation is not physical-device or screen-reader certification. The public HTTP smoke passed after this final deployment.
+
+Both jobs in [CI run 37615707125](https://github.com/aquattdabackup/ArcMirror/actions/runs/37615707125) passed at the deployed source: 72 application tests, 10 spike tests, 16 Foundry tests (256 fuzz runs), types, build, zero production dependency audit findings and 16 deterministic browser cases. [Testing instructions](testing.md) explain the separate live checks. No new blockchain transaction was sent. These results supersede the production failures and unavailable-browser/CI statuses at the earlier checkpoint below.
+
+## Historical maintenance-only checkpoint — October 7, 2026
+
+The paragraphs in this subsection retain the earlier, pre-release results. Their undeployed/blocked statuses were resolved by the verified release above.
 
 Repository maintenance only; no production deployment or blockchain writes. [Review](maintenance-review-2026-10-07.md) and [structured results](evidence/maintenance/2026-10-07.json) distinguish fixed defects, live observations and remaining limits.
 
@@ -14,7 +26,7 @@ Cua failed during Windows sandbox initialization, so no new browser/mobile/focus
 
 ## Earlier mainnet checkpoint — September 30, 2026
 
-Lab is deployed and all five owner-created demo categories have actual receipts. [Evidence and reproduction](mainnet-evidence.md). The dated results below are historical; they do not override the newer production lookup failures above.
+Lab is deployed and all five owner-created demo categories have actual receipts. [Evidence and reproduction](mainnet-evidence.md). The dated results below are historical; consult the latest verified release at the top of this file for current production checks.
 
 Checked on **2026-09-25**. The first table records local implementation checks. Public production verification is recorded separately below. No funds moved or wallet signatures were requested.
 

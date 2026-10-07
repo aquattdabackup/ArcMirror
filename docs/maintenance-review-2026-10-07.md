@@ -1,5 +1,7 @@
 # Maintenance review — October 7, 2026
 
+**Historical checkpoint:** this document records the initial maintenance-only review. The owner subsequently authorized deployment, CI and browser checks; the [October 7 release record](releases/2026-10-07.md) supersedes the “not deployed”, production-lookup and browser-blocker statuses below. The original observations are preserved rather than overwritten.
+
 This review concerns correctness, maintainability and operation. It is not a grant award assessment or a security audit. Baseline source: `c8d63b8`. The owner's pre-existing LICENSE indentation edit was preserved. The owner expressly prohibited production deployment and real blockchain transactions during this task; only read-only network checks were performed.
 
 ## Scope and confirmed findings
