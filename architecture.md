@@ -7,13 +7,14 @@
 - `packages/rpc/src/index.ts`: bounded JSON-RPC adapter, chain checks, fallback endpoints, optional callTracer/prestateTracer. Only configured server URLs; no client-supplied URL.
 - `apps/web/lib/service.ts`: snapshots first unless live requested, bounded in-process cache/deduplication/concurrency/rate limits; `server-only` import.
 - `apps/web/components/report.tsx`: evidence/flow/log/state views, live refresh preserving old evidence on transport failure, download/copy controls.
+- `apps/web/components/evidence-tabs.tsx`: controlled keyboard/ARIA tabs for the report; `apps/web/lib/browser-files.ts`: shared local file reading and JSON downloads for reports/tools.
 - `apps/web/components/report-guide.tsx`: plain-language explanation derived from existing report values. Separates receipt outcome from evidence completeness; absent for unconfirmed/unsupported states. The report links the money trail, conditional double-count comparison and sharing; tools are optional follow-up tasks. `apps/web/test/report-guide.test.tsx` guards the status/amount claims, included by `npm test` via `test:web`.
 - `packages/core/src/reconciliation.ts`: bounded CSV parsing and exact one-to-one payout matching. `precision.ts`: decimal parsing and 18/6-decimal arithmetic. Both are package subpath exports; the standalone build rewrites TypeScript import extensions to ESM JavaScript.
 - `apps/web/components/tools/reconcile.tsx`: local CSV input, hash-only report fetch and reconciliation JSON export; `/tools` links the workbench.
 - `packages/core/src/inspection.ts`: bounded strict report schema, digest integrity check and capped field comparison. Report file processing and Dust Lab run locally in client components; only an explicit live check sends a hash to the existing API.
 - Routes `/tools`, `/tools/reconcile`, `/tools/inspect`, `/tools/dust`, `/`, `/tx/[hash]`, `/how-it-works`; `/api/health`, `/api/examples`, `/api/analyze/[hash]`.
 - `assets/brand`: submission-ready SVG/PNG exports of the existing two-ellipse website mark. Source identity remains `Mark` in `components/icons.tsx` and `.mark`/`.brand` in `globals.css`; these assets do not change the live UI.
-- `scripts/verify.ts`: live or fixture verification; checks report digest and lists changed fields.
+- `scripts/verify.ts`: live or fixture verification; checks report digest and lists changed fields. `verify-options.ts` validates the entire invocation before IO; process-level regressions run with `npm test`.
 - `scripts/generate-vectors.ts`: regenerates expected reports/snapshots from frozen public evidence. Tests deep-compare vectors offline.
 - `contracts/src/ArcMirrorLab.sol`: fixed immutable recipients, bounded scenarios, exact ERC-20 allowances, no admin, fixed-recipient sweep. Deployed on Arc Mainnet; addresses/source identity in `contracts/deployments/5042.json`, raw evidence in `5042.rpc.json`, reproduction via `scripts/verify-deployment.mjs`.
 
@@ -32,6 +33,7 @@
 - Node >=22, tested Node 24; Windows uses `npm.cmd` because npm.ps1 is blocked.
 - Server `ARC_RPC_URLS`, `ARC_TRACE_RPC_URLS`: comma-separated, up to four configured endpoints each. Defaults primary+dRPC and dRPC trace. Public capabilities can change.
 - Timeout 6.5 seconds per request within a shared 45-second RPC budget; responses max 4 MB. Missing optional block/traces preserve the receipt and explicitly reduce available proof. Per-process cache 256/TTL1hour, max 8 in-flight analyses, per-minute 30/client, 120/global. Not a distributed limiter.
+- Null/partial transaction lookups try other chain-valid providers within the same budget. Retain the most complete whole bundle; never assemble transaction/receipt from different provider responses.
 - Basic CSP permits Next.js inline bootstrap/styles. No analytics, wallet connection or arbitrary endpoint request API.
 - `npm ci`, `npm test`, `npm run test:spike`, `npm run typecheck`, `npm run build`, `npm start`.
 - `forge test -vv` in contracts. Local mock is not an Arc simulator.

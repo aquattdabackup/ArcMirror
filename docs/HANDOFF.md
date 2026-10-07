@@ -2,38 +2,36 @@
 
 ## Paste into the next agent
 
-> Continue ArcMirror in this repository. Read AGENTS.md, architecture.md, task_on_progress.md and this handoff first. Mainnet Lab deployment and all five owner demos are complete and publicly documented. Do not repeat wallet preparation or deployment. Read docs/mainnet-evidence.md and docs/evidence/mainnet/checks.json for exact evidence. Check Git status/origin, preserve LICENSE indentation, make small verified commits and push. Update memory before stopping. Report in Vietnamese. Never sign funds, invent verification badges or submit the grant on the owner's behalf.
+> Read AGENTS.md, architecture.md, task_on_progress.md and docs/maintenance-review-2026-10-07.md. October 7 maintenance is complete and committed, but changes are NOT deployed. Production live lookups returned not_found for mined owner transactions; updated local analysis passes all five. Do not repeat demos, erase evidence, change pinned Solidity or claim production passes. Preserve the user's LICENSE edit. Owner forbade deployment/blockchain writes for the review; wait for a later release instruction. Use focused verified commits/pushes and update memory. Report in Vietnamese.
 
-## Current state: 2026-10-01
+## Current state — October 7
 
-Owner is filling the application and requested a logo matching the existing website. [Brand exports](../assets/brand/README.md) are published in f5135de: use [square avatar PNG](../assets/brand/arcmirror-avatar.png) for the form; transparent icon and full wordmark PNG/SVG are also available. Live CSS was checked and SVG geometry/colors/font were copied from the actual two-ellipse Mark. PNG dimensions/alpha and visual previews passed. No live UI change. A generated M-shaped alternative was explicitly rejected and remains ignored, not part of the brand. Preserve this owner preference in future work.
+The [maintenance review](maintenance-review-2026-10-07.md) lists exact findings/fixes and [structured results](evidence/maintenance/2026-10-07.json) distinguish local success from production failure. README and [documentation index](README.md) were rewritten. Fixes cover partial-provider fallback, optional-block receipt loss, aggregate RPC deadline, CLI argument validation, evidence tab accessibility, duplicated file helpers, overly broad UI wording and two High dependency advisories.
 
-Latest task: owner requested a thorough check against newly pasted Microgrants rules. [Technical eligibility review](eligibility-review-2026-09-30.md) finds no unresolved technical entry blocker, with [fresh structured evidence](evidence/eligibility-review/2026-09-30.json). Four review commits b444f4b, e6dbf70, 6e00183 and 34a32f6 are pushed. README trace-coverage wording was narrowed and the application draft now foregrounds an owner-created report. No runtime change/redeployment. Fresh checks: 14 public/API/RPC/source checks, 60 application + 10 spike + 16 Foundry tests, typecheck, dependency audit (zero known production vulnerabilities) and documentation links passed. Baseline public tree matched all 164 files at 9797ac0.
+Implementation/review commits 587bd48 through bb3f99c are pushed; see task_on_progress.md for each milestone. Consult git log/origin for the subsequent memory commit. Only the pre-existing LICENSE indentation edit should remain dirty.
 
-New browser interaction could not run because the Cua kernel failed Windows sandbox setup; fresh claims are HTTP/API/RPC only. Production encrypted environment values were not reread. DoraHacks still returned Human Verification/405, so actual form fields and owner screening/declarations remain unverified. The pinned source's old pending comment is explained by current deployment documentation; do not silently change its hash or redeploy to fix a comment.
+**Unresolved production issue:** native and batch ?live=1 calls returned HTTP 404/not_found at 2026-10-07T05:19:30Z, although both public RPC endpoints reported 5042 and the updated local API reproduced all five expected reports. The exact Vercel-side configuration/upstream cause is unproven. Last recorded production source is 229ba77 / dpl_AZbqQjnSuDLdtwLrjnojFko2jiEC; its old title remains visible. Do not reuse September 30's passing review as a current availability claim.
 
-[Production](https://arcmirror-six.vercel.app), [public MIT source](https://github.com/aquattdabackup/ArcMirror), [mainnet proof](mainnet-evidence.md). The owner completed native, ERC-20, nativeForward, batch and a mined intentionalFailure. All five production live reports match captured RPC analysis; secondary receipts corroborate them. Deployment manifest and reproducible verifier live under contracts/deployments and scripts/verify-deployment.mjs. Tests: 60 pass; root/web typecheck passes; public API/page smoke passes.
+Local final checks: 70 application + 10 frozen spike + 16 Foundry tests (256 fuzz runs), typecheck, core ESM/subpaths, production build, HTTP smoke and all five live report comparisons pass. Live contract verifier confirms unchanged source/compiler/executable/immutables/getters. Audit is clear after sharp 0.35.5/source-map-js 1.2.2 updates. Browser Cua initialization failed, so focus/mobile/download interaction still needs rehearsal.
 
-The latest work publishes evidence, tests and documentation. It does not change app/contract execution code or require redeploy. Last recorded UI deployment is dpl_AZbqQjnSuDLdtwLrjnojFko2jiEC from 229ba77. Existing report guides, reconciliation, Inspector, Dust Lab, readable text and sticky header are already delivered. Do not rebuild them.
+## Next action
 
-The owner then requested a complete video script and chose five minutes. [Recording script](video-demo-script.vi.md), commit c10a887, is completed and pushed: introduction, mainnet proof, five owner demos, all three tools, closing, exact links and CSV. Vietnamese stage directions accompany 496 words of English narration. Timeline: 4:50 content + ten seconds of buffer. Local checks verify evidence values, CSV 2/2 matches with one unassigned funding hop, Inspector digest, Dust arithmetic and relative links. No new live/browser verification or video recording is claimed for this documentation task.
+For a separately authorized release, inspect effective server RPC settings/responses without leaking credentials, deploy the reviewed source to the already approved Vercel project/team and verify all five public live reports plus browser flows. **Do not deploy as part of the October 7 maintenance task.** No new mainnet transaction is needed. Deployment alone is not proof the provider issue is resolved.
 
-## Important distinctions
+Owner application submission status is unknown. The form screenshots in chat do not establish a completed submission. Owner reviews final terms/declarations and submits personally; resolve current production behavior before claiming newly verified eligibility.
 
-- ERC-20 Needs Review is correct; receipt success and evidence quality differ. A failed demo can have Verified evidence while its receipt is failed.
-- Forwarding/batch totals include each hop and are not unique spend. See proof page for exact amounts/fees.
-- Homepage snapshots remain third-party examples. Five owner vectors are separate in vectors/owner; reports/hashes are in docs/evidence/mainnet.
-- ArcScan source verification is unclaimed. Both contract executable bytecodes and immutable values match the pinned source after excluding CBOR metadata. Deployed source is preserved; its old comment is explicitly historical. No audit or all-path coverage claimed.
-- Standard local EVM mocks are not Arc simulators. Memo, extra contract scenarios and npm publication are not completed by this milestone.
+## Preserve these facts
 
-## Exact next owner steps
+- [Mainnet evidence](mainnet-evidence.md), contracts/deployments/5042.json and vectors/owner hold the deployed Lab and five actual owner demos. Do not repeat wallet setup/deployment or ask for the five hashes.
+- ERC-20 needs_review is correct. Receipt success differs from evidence completeness. Failed receipt may have verified analysis. Gross sums count hops; gas is separate.
+- Deployed source retains an old pending comment intentionally; current manifest/docs supersede it. Do not break the source hash to edit wording. Bytecode comparison excludes CBOR metadata and is not an explorer verification badge/security audit.
+- Three homepage snapshots are third-party evidence. Extra contract scenarios, memo decoding and npm publication are not certified complete.
+- Logo must match the site's two-ellipse identity: [brand exports](../assets/brand/README.md). Use square avatar PNG for forms; rejected M-logo remains ignored.
+- [Video script](video-demo-script.vi.md): five minutes, five demos plus three tools; English narration and Vietnamese directions.
+- MIT, public profile aquattdabackup and no prior Circle/Arc funding already confirmed. Signing remains local to the owner.
 
-Open the official DoraHacks form, complete Human Verification, review actual fields/terms and the [application draft](application-draft.md), enter the separate reward wallet and submit once after confirming required declarations. For the owner's video, use the [five-minute recording script](video-demo-script.vi.md), prepare tabs/CSV/batch JSON and rehearse. No additional mainnet transaction is needed; the reviewed public rules do not mandate video. Deadline rechecked September 30: October 14, 2026 23:59 ET (October 15, 2026 10:59 Vietnam); recheck before submission. No final submission performed.
+## Operation
 
-## Git and operation
+Use Node22+ and npm.cmd on Windows. Local Foundry/Gitleaks tools are in .local-tools. Shell sandbox startup fails; authorized elevated executions succeeded. Cua browser sandbox remains unavailable. No services are intentionally left running after review.
 
-All milestone changes are committed/pushed; consult git log for the final handoff hash. Only pre-existing LICENSE indentation should remain dirty. Ignored artifacts/ArcMirror-handoff.bundle is regenerated from main and verified after final push; GitHub is canonical. Reward/address mapping and old unsigned preparation stay in ignored artifacts, excluded from bundle. No secret material is needed by another AI to verify published results.
-
-Use npm.cmd on Windows and Node22+. Local Foundry/Gitleaks tools are under .local-tools. Forge/tsx can fail home/userInfo lookup in the sandbox; authorized outside-sandbox retries worked. No app build or new visual browser run was claimed for these docs/tests changes. The latest live verifier, 60 tests, typecheck, smoke, staged/history secret scan and relative-link checks are recorded in task_on_progress.md and docs/validation.md.
-
-Previous 55-commit retrospective workbench history reconstruction is documented in docs/commit-map.md; original ancestors are preserved. Do not rewrite published history. Existing aquattdabackup GitHub and Vercel arcmirror destination approvals persist; no need to ask again. No unrelated project/billing changes.
+Public GitHub is canonical. Ignored artifacts/ArcMirror-handoff.bundle is refreshed from main and verified after final push; it excludes temporary artifacts, address mapping and secrets. Never force-push published history. Exact checks, caveats, commits and next steps are in task_on_progress.md.

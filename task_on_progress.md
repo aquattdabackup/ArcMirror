@@ -1,55 +1,59 @@
 # Current task
 
-Updated 2026-10-07. Active task: evidence-based maintenance review and README rewrite. Owner explicitly forbids production deployment and real blockchain transactions during this review. Preserve the pre-existing LICENSE edit. Baseline 60 application tests passed. Reproduced two bugs: unavailable optional block RPC discards a fetched receipt, and CLI --report without a value exits successfully without comparing a report. Fixing these in focused commits, then reviewing RPC time budgets and report accessibility. New checks are local unless explicitly stated; production remains the last recorded 229ba77 release. Full review and final handoff will follow.
+Updated 2026-10-07. Completed the owner's targeted maintenance review and English README rewrite. The owner explicitly forbids production deployment and real blockchain transactions during this review. No deployment, environment mutation, wallet signature or blockchain write was performed.
 
-## Previous task and retained evidence
+## Start with these findings
 
-Updated 2026-10-01. Owner is preparing the application and requested a logo, then clarified it must match the existing website. Completed assets/brand exports, pushed as f5135de: 1024-square avatar on the site's light background, transparent 1024-square icon, and transparent 1640x420 horizontal wordmark, each with SVG source. Use arcmirror-avatar.png for the form. The initial generated M-shaped concept was rejected, not published, and is preserved only in ignored artifacts/brand-drafts. No app changes or redeployment.
+- Read [maintenance review](docs/maintenance-review-2026-10-07.md) and [structured evidence](docs/evidence/maintenance/2026-10-07.json). They distinguish confirmed defects, fixes, unverified risks and optional work.
+- **Production is currently unresolved:** at 2026-10-07T05:19:30Z, live native and batch API requests returned HTTP 404/not_found for confirmed owner transactions. Earlier local lookup also briefly lacked expected evidence. Both direct RPC endpoints returned chain 5042 and confirmed transaction/receipt data. The updated local server reproduced every field of all five owner reports. Exact Vercel-side upstream/configuration cause was not established.
+- Latest repository code has not been deployed. Last recorded production source remains 229ba77 / dpl_AZbqQjnSuDLdtwLrjnojFko2jiEC; production still displays the old “Every trace accounted for” title. Do not call the September 30 all-pass eligibility review a current production certification.
+- Local dependency audit found two High advisories; targeted lockfile patches sharp 0.35.4 → 0.35.5 and source-map-js 1.2.1 → 1.2.2 now pass audit. Production patches are not claimed installed.
 
-The September 30 eligibility review remains at docs/eligibility-review-2026-09-30.md with structured evidence in docs/evidence/eligibility-review/2026-09-30.json. No unresolved technical entry blocker was found; actual form review, owner declarations and submission remain open. Do not repeat funding or transactions.
+## Completed milestones, committed and pushed
 
-## Verified state and entry points
+- 587bd48: retain transaction/receipt when optional block metadata fails; regression reproduces original failure.
+- 774b149: share a 45-second abort budget across RPC fallbacks/traces, retaining 6.5-second per-request timeout and acquired evidence.
+- 5417f73: strict CLI arguments before IO; missing --report no longer silently exits successfully. Parser/process regressions included in npm test.
+- e104505: keyboard/ARIA evidence tabs and labelled panel; rendered markup regression.
+- 85e5974: move components/tools/files.ts to lib/browser-files.ts and reuse JSON export in the report.
+- f73747c: patch vulnerable transitive dependencies, including matching sharp native bundles.
+- d15af22: scope UI metadata/footer to supported evidence.
+- dbbdc64: incomplete/null provider results try fallback; retain the most complete whole bundle, never mix provider transaction/receipt pairs.
+- 7c22c2f: publish detailed maintenance review and current local/production observations.
+- c72c477: rewrite README and add documentation index.
+- bb3f99c: update validation/deployment records with current production failures and undeployed fixes.
+- Final memory commit updates this file, architecture and HANDOFF; consult git log and origin/main for its actual hash. No history rewriting.
 
-- Public app: https://arcmirror-six.vercel.app; public repo: https://github.com/aquattdabackup/ArcMirror. Chain 5042, official primary + dRPC. App source is unchanged since recorded UI release 229ba77 / dpl_AZbqQjnSuDLdtwLrjnojFko2jiEC. No UI redeployment was needed for this evidence/docs release.
-- Lab address, Forwarder, deployment hash/block, source/compiler identity and executable/immutable verification: contracts/deployments/5042.json, 5042.rpc.json, scripts/verify-deployment.mjs.
-- Current human-readable proof: docs/mainnet-evidence.md. Exact five hashes, dates, outcome, fee, report links and production/RPC comparison results: docs/evidence/mainnet/checks.json. Raw bundles + expected reports: vectors/owner. Standalone JSON: docs/evidence/mainnet/*.report.json.
-- Native, ERC-20, forwarding and batch have successful receipts. Intentional failure has mined receipt status 0 and call-trace output 0xdaf7d1b0, matching IntentionalFailure(), not out-of-gas. No settled movements; gas is charged.
-- ERC-20 retains Needs Review for unsupported precompile call-value coverage. Forwarding gross 0.003 represents three hops of 0.001; batch gross 0.006 includes 0.003 funding and 0.003 payouts. Total five-demo principal 0.006 USDC; five-demo gas 0.0044259685, deployment gas 0.017185294 separately.
-- Three homepage snapshots remain labelled third-party examples; owner demos are linked from public README and application draft. No fake ownership claim or unrelated wallet transfer is used as a demo.
+## Actual checks this review
 
-## Checks actually completed
+- Baseline 60 application tests; final 70 pass (63 core/RPC/CLI + 7 rendered web components).
+- 10 frozen spike tests; 16 Foundry tests with 256 fuzz runs pass. Deployed Solidity unchanged.
+- Root/web typecheck, Next production build, standalone core and all three ESM subpath imports, native sharp PNG smoke pass.
+- Local production server on 127.0.0.1:3100: HTTP smoke passed; five live owner reports deep-match fixtures. ERC-20 stays needs_review; intentional failure stays confirmed_failed with verified evidence. Local server was stopped after checks.
+- Both public RPCs returned 5042. Live contract verifier passed source/compiler, deployment receipt, executable bytecode, immutables and getters. CBOR metadata excluded; no explorer verification badge.
+- Production native/batch live lookups failed as described above. No all-five production success is claimed for October 7.
+- Cua failed Windows sandbox initialization; no fresh visual/mobile/focus/download/screen-reader test. Static tabs and HTTP panel markup pass. A helper incorrectly expected the default homepage title on a transaction route; corrected the check scope without changing runtime.
+- Post-update npm audit --omit=dev: zero known findings. Staged/full-history Gitleaks scans passed before milestone publication. Relative Markdown targets checked; final link/Git/bundle verification accompanies the memory commit.
+- Temporary command logs/helpers: ignored artifacts/maintenance. Public compact results: docs/evidence/maintenance/2026-10-07.json.
+- Sandbox shell startup fails with helper_unknown_error; authorized elevated shell retries work. Computer-use remains unavailable. No lint command/CI exists.
 
-Logo export (October 1): live homepage HTML/CSS confirms the same Mark component and ellipse geometry, colors and brand typography as local source. Final SVGs preserve the 23x31 border-box ellipses, 1.8 stroke, +/-26-degree rotations, 11-unit offset, #182e2c / #5c9079 colors and Arial wordmark. Sharp rendered the native SVGs; dimensions and real alpha ranges were checked, and the avatar/full-logo previews were visually inspected. Avatar is opaque; icon/full-logo backgrounds are transparent. PNG sizes are about 64/47/39 KiB. No runtime code changed, so application tests/build were not repeated for assets. Staged/full-history Gitleaks passed through asset commit f5135de (147 commits). README records regeneration and source provenance. Owner preference: export existing website identity; do not invent a replacement logo.
+## Cleanup and preserved user state
 
-Latest eligibility review (network observations began 2026-09-30T12:26:10Z): 14 structured checks passed; all five production live reports deep-match local owner-vector analysis and receipt statuses/logs/block hashes match on primary and dRPC. Both RPCs returned 5042. Lab/Forwarder code hashes agree on both endpoints, and the live source/compiler/bytecode/immutable verifier passed. All five ArcScan transaction links returned HTTP 200 with the requested hashes. Public GitHub tree matched all 164 tracked blobs at baseline 9797ac0; five critical raw documents matched too; public MIT/profile confirmed. Production HTTP smoke passed. Fresh tests: 60 application, 10 historical spike and 16 Foundry (256 fuzz runs); root/web typecheck passed; npm audit --omit=dev reported zero known vulnerabilities. All 121 relative targets in 26 existing Markdown files resolved; 28 links in the new/updated review documents checked separately. No build rerun for documentation-only work.
+Only moved the browser file helper and removed its duplicate implementation from report.tsx. README rewritten in place; no historical Markdown, fixture, screenshot, evidence, contract or legal file deleted. Preserve the pre-existing LICENSE indentation edit; never stage/revert it. Do not modify deployed Solidity just to remove its old pending comment: the source hash is pinned and current manifest/docs supersede the comment.
 
-Review limits: Cua kernel failed sandbox setup twice, so no new visual/click/download session was possible. Elevated read-only shell checks succeeded after sandbox setup errors. Encrypted Vercel environment values were not reread; official source defaults and effective chain-5042 production results were verified. DoraHacks returned HTTP 405 / Human Verification; no form fields, personal eligibility, screening or submission certified. ArcScan source badge remains unclaimed. The historical pending comment at contracts/src/ArcMirrorLab.sol:10 is explicitly superseded by current contract README/manifest/evidence; preserve pinned deployed source.
+## Exact next action and remaining scope
 
-The earlier deployment milestone also established:
+The review is complete. A later, separately authorized production release should include the current lockfile/RPC fixes, inspect effective Vercel RPC configuration/responses without printing secrets, then recheck all five live owner reports and browser workflows. Do not assume deployment alone resolves an unidentified provider/configuration issue. Do not deploy under the October 7 review instruction. Optional future work: CI for existing commands and browser interaction tests; no architecture rewrite needed.
 
-- Both RPCs return chain 5042 and same Lab runtime hash. Compiled executable bytecode of Lab and Forwarder matches with every immutable checked; source hash equals compiled metadata. Captured and live verifier modes pass. Metadata is excluded; no explorer source verification badge claimed. Source is deliberately preserved unchanged, including its historical pre-deployment comment, which current documentation explicitly supersedes.
-- Each complete production live report deep-matches local analysis; primary/dRPC receipt statuses, block hashes and logs match for all five.
-- npm.cmd test: 60 passing (54 core/vector/RPC/tool including five owner cases, 6 report-guide). npm.cmd run typecheck: root/web pass. Public scripts/smoke.mjs passes health, snapshots, invalid/unknown hashes, headers and four tools.
-- forge build accepted unchanged cache (compilation skipped; existing lint warnings). No app/contract execution changes, so prior build/Foundry/spike checks were not repeated. This round is HTTP/API/RPC verification, not a new visual browser session.
-- Sandbox home/userInfo errors affected Forge/tsx; authorized outside-sandbox retries succeeded. No active blocker. Staged files and full history passed gitleaks; relative Markdown links checked before publication.
+For grant preparation, owner reviews actual form/terms and submits personally; submission status is unknown. No additional demo transaction is necessary to replay existing evidence. Current production failures must be resolved/verified before making fresh eligibility claims.
 
-## Commits and Git state
+## Durable project context
 
-Deployment proof 03b0ec4; individual demo evidence 12064e1, 500360d, 4762823, 11e7047, 2bf5378; comparisons b406642; regressions ffff4f9; reviewer guide ce3db69. Separate README/contract/eligibility/application/runbook/validation corrections are in subsequent focused commits. All milestone pushes succeeded; consult git log and origin/main for the final handoff commit.
-
-Recording script c10a887 and handoff 9797ac0 are pushed. docs/video-demo-script.vi.md has 496 English words, Vietnamese directions, five demos, three tools, 4:50 content plus ten seconds buffer. Timeline, links, CSV 2/2 matches with one funding hop, Inspector digest and exact Dust arithmetic were checked locally. The first script push hit a review usage-limit failure; the owner's resumed request and retry succeeded. No video has been recorded by the agent.
-
-Eligibility-review commits: b444f4b scopes the README tagline; e6dbf70 adds direct owner proof and current form/declaration checks to the draft; 6e00183 records fresh evidence; 34a32f6 publishes the review and eligibility link. All four are pushed. Staged scans and full-history Gitleaks passed through the 145-commit review milestone. Consult git log/origin for the subsequent memory commit. Architecture is unchanged.
-
-Preserve the pre-existing LICENSE indentation edit; never include it in task commits. No task implementation is intentionally left uncommitted. Regenerate/verify ignored artifacts/ArcMirror-handoff.bundle from main after final push. GitHub is canonical; the bundle excludes ignored address-only files and credentials.
-
-## Remaining work / exact next action
-
-1. Read docs/eligibility-review-2026-09-30.md and the application draft. Technical mainnet proof is public and was rechecked. No missing technical prerequisite was identified. Do not ask for the five hashes again.
-2. Exact next owner action: open the official DoraHacks form, complete Human Verification and review its real fields/terms. Enter the existing live/repo/profile links and separate reward address; confirm right to submit, one submission per project and other required declarations, then submit. Prior no-Circle/Arc-funding declaration is already recorded. No submission has been made by the agent. Current deadline October 14, 2026 23:59 ET = October 15, 2026 10:59 Vietnam; recheck when submitting.
-3. If recording, use docs/video-demo-script.vi.md, prepare tabs/CSV/downloaded batch JSON, rehearse and stay within five minutes. The public rules do not require a video; actual form-specific requirements remain uninspected. No extra signature is needed. A new browser rehearsal also covers the interactive check unavailable during this review.
-4. Optional explorer source publication is not complete: ArcScan displayed Verify and Publish at the recorded check. Use exact deployed source/settings if pursuing it; never call executable comparison an explorer badge. Do not silently change pinned source for a status-comment edit. Memo, duplicate-transfer/dust contract probes, npm publication and security audit are not claimed complete.
-
-## Persistent owner decisions
-
-Read AGENTS.md. No prior Circle/Arc funding; MIT/profile aquattdabackup and existing Vercel project/team approved. English product/docs, Vietnamese updates. Small coherent commits and pushes; never force-push. Wallet signing stays local to owner. Reward mapping stays ignored; no secrets in source/chat. Final grant submission and npm publication remain owner actions. Original brief: docs/product-brief.vi.md. Do not restart completed features or equate technical checks with user adoption/usability acceptance.
+- Public source: https://github.com/aquattdabackup/ArcMirror; app: https://arcmirror-six.vercel.app. Chain 5042, public primary+dRPC defaults; analyzer is read-only.
+- Lab and Forwarder deployed; manifest/raw evidence in contracts/deployments, verifier scripts/verify-deployment.mjs. All five owner hashes/proof: docs/mainnet-evidence.md, docs/evidence/mainnet/checks.json, vectors/owner.
+- Original three homepage snapshots are third-party examples. Never pass them off as owner demos.
+- Native/18-decimal and interface/6-decimal logs describe one balance. Preserve one-to-one pairing, exact amounts, gas separation and precompile needs_review. Gross forwarding/batch amounts include hops.
+- Owner chose existing two-ellipse website logo, not a replacement M mark. Use assets/brand/arcmirror-avatar.png for forms; transparent variants available.
+- Five-minute recording script: docs/video-demo-script.vi.md, English narration/Vietnamese directions; no agent recording/submission.
+- Read AGENTS.md for standing approvals: no prior Circle/Arc funding; MIT and aquattdabackup profile approved. English product/docs, Vietnamese updates, focused commits/pushes and portable handoff. Final submission/npm publication remain owner actions.
+- Regenerate/verify ignored artifacts/ArcMirror-handoff.bundle from main after final push. GitHub is canonical; credentials, ignored address mapping and temporary files are excluded.
