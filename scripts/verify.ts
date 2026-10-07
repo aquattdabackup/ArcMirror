@@ -3,42 +3,38 @@ import {
   analyze,
   reportDigest,
   canonicalJson,
-  validHash,
   type Report,
   type Bundle,
 } from "../packages/core/src/index";
 import { fetchBundle, environmentOptions } from "../packages/rpc/src/index";
-const args = process.argv.slice(2);
-const value = (flag: string) => {
-  const i = args.indexOf(flag);
-  return i < 0 ? undefined : args[i + 1];
-};
-const hash = args[0];
-if (!hash || !validHash(hash)) {
-  console.error(
-    "Usage: npm run verify -- <hash> [--report report.json] [--out fresh.json] [--fixture vector.json] [--logs-only]\nSet ARC_RPC_URLS and ARC_TRACE_RPC_URLS locally to use your own provider.",
-  );
+import { parseVerifyOptions, VERIFY_USAGE } from "./verify-options";
+let options: ReturnType<typeof parseVerifyOptions>;
+try {
+  options = parseVerifyOptions(process.argv.slice(2));
+} catch {
+  console.error(VERIFY_USAGE);
   process.exit(2);
 }
+const { hash } = options;
 try {
   let input: Bundle;
-  if (value("--fixture")) {
-    const v = JSON.parse(await readFile(value("--fixture")!, "utf8"));
+  if (options.fixture) {
+    const v = JSON.parse(await readFile(options.fixture, "utf8"));
     input = v.input ?? v;
     if (input.txHash.toLowerCase() !== hash.toLowerCase())
       throw Error("Fixture hash does not match requested hash");
   } else
     input = await fetchBundle(hash, {
       ...environmentOptions(),
-      trace: !args.includes("--logs-only"),
+      trace: !options.logsOnly,
     });
   const report = analyze(input);
-  if (value("--out"))
-    await writeFile(value("--out")!, JSON.stringify(report, null, 2) + "\n");
+  if (options.out)
+    await writeFile(options.out, JSON.stringify(report, null, 2) + "\n");
   console.log(
     JSON.stringify(
       {
-        mode: value("--fixture") ? "offline fixture" : "live RPC",
+        mode: options.fixture ? "offline fixture" : "live RPC",
         txHash: report.txHash,
         status: report.status,
         evidenceLevel: report.evidenceLevel,
@@ -49,8 +45,8 @@ try {
       2,
     ),
   );
-  if (value("--report")) {
-    const file = JSON.parse(await readFile(value("--report")!, "utf8"));
+  if (options.report) {
+    const file = JSON.parse(await readFile(options.report, "utf8"));
     const expected: Report = file.expected ?? file.report ?? file;
     if (expected.digest !== reportDigest(expected))
       throw Error("Supplied report digest is invalid");

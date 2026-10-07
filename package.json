@@ -11,7 +11,7 @@
     "dev": "npm run dev --workspace @arcmirror/web",
     "build": "npm run build --workspace @arcmirror/core && npm run build --workspace @arcmirror/web",
     "start": "npm run start --workspace @arcmirror/web",
-    "test": "tsx --test packages/core/test/*.test.ts packages/rpc/test/*.test.ts && npm run test:web",
+    "test": "tsx --test packages/core/test/*.test.ts packages/rpc/test/*.test.ts scripts/*.test.ts && npm run test:web",
     "test:web": "tsx --tsconfig apps/web/tsconfig.json --test apps/web/test/*.test.tsx",
     "test:spike": "node --test scripts/spike-evidence.test.mjs",
     "typecheck": "tsc --noEmit && npm run typecheck --workspace @arcmirror/web",
