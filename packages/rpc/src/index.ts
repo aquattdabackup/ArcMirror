@@ -11,6 +11,12 @@ export class RpcUnavailable extends Error {
   }
 }
 type Fetcher = typeof fetch;
+export interface RpcLookupEvent {
+  providerIndex: number;
+  outcome: "complete" | "incomplete" | "unavailable" | "wrong_chain";
+  transactionPresent?: boolean;
+  receiptPresent?: boolean;
+}
 export interface RpcOptions {
   urls: string[];
   traceUrls?: string[];
@@ -18,6 +24,7 @@ export interface RpcOptions {
   totalTimeoutMs?: number;
   fetcher?: Fetcher;
   trace?: boolean;
+  onLookup?: (event: RpcLookupEvent) => void;
 }
 function urls(values: string[]): string[] {
   if (values.length === 0 || values.length > 4)
@@ -91,17 +98,23 @@ export async function fetchBundle(
       "A transaction hash must be 0x followed by 64 hexadecimal characters.",
     );
   const endpoints = urls(options.urls);
+  const observe = (event: RpcLookupEvent) => {
+    // Observability must not alter analysis or leak endpoint credentials/errors.
+    try { options.onLookup?.(event); } catch { /* Keep the evidence path intact. */ }
+  };
   // Leave headroom below the browser's 55s and the server's 60s limits.
   // All providers and optional evidence share this budget.
   const signal = AbortSignal.timeout(options.totalTimeoutMs ?? 45_000);
   const requestOptions = { ...options, signal };
   let bundle: Bundle | null = null;
   let completeness = -1;
-  for (const endpoint of endpoints) {
+  for (const [providerIndex, endpoint] of endpoints.entries()) {
     if (signal.aborted) break;
     try {
-      if ((await rpcRequest(endpoint, "eth_chainId", [], requestOptions)) !== "0x13b2")
+      if ((await rpcRequest(endpoint, "eth_chainId", [], requestOptions)) !== "0x13b2") {
+        observe({ providerIndex, outcome: "wrong_chain" });
         continue;
+      }
       const [transaction, receipt] = await Promise.all([
         rpcRequest(endpoint, "eth_getTransactionByHash", [txHash], requestOptions),
         rpcRequest(endpoint, "eth_getTransactionReceipt", [txHash], requestOptions),
@@ -128,6 +141,8 @@ export async function fetchBundle(
       // A lagging provider may return null for an already-mined transaction.
       // Keep the best whole bundle, but try fallback before claiming absence.
       const available = Number(transaction != null) + Number(receipt != null);
+      observe({ providerIndex, outcome: available === 2 ? "complete" : "incomplete",
+        transactionPresent: transaction != null, receiptPresent: receipt != null });
       if (available > completeness) {
         bundle = { chainId: CHAIN_ID, txHash, transaction, receipt, block };
         completeness = available;
@@ -135,6 +150,7 @@ export async function fetchBundle(
       if (available === 2) break;
     } catch {
       /* Credentials and upstream response bodies never cross this boundary. */
+      observe({ providerIndex, outcome: "unavailable" });
     }
   }
   if (!bundle) throw new RpcUnavailable();

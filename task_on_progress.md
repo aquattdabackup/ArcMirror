@@ -1,5 +1,9 @@
 # Current task
 
+Owner follow-up 2026-10-07: explicitly requested proceeding with production/RPC investigation, deployment, browser verification and CI. This supersedes the review-only deployment restriction below. Existing authorized Vercel project/team remain unchanged; no blockchain transaction is requested. Vercel CLI confirms the old deployment is still active and the project has no production environment overrides. Implementing safe lookup diagnostics, Playwright desktop/mobile tests and CI before release. First attempts were blocked by approval-review usage limits; owner's resumed request succeeded. LICENSE edit remains untouched. Current baseline: 2ca3d22.
+
+## Previous maintenance checkpoint
+
 Updated 2026-10-07. Completed the owner's targeted maintenance review and English README rewrite. The owner explicitly forbids production deployment and real blockchain transactions during this review. No deployment, environment mutation, wallet signature or blockchain write was performed.
 
 ## Start with these findings

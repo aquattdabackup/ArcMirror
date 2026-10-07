@@ -59,7 +59,10 @@ export async function getReport(hash: string, live = false): Promise<Result> {
   if (inFlight.size >= 8) throw new Error("busy");
   const promise = (async () => {
     try {
-      const report = await analyzeLive(key, environmentOptions());
+      const report = await analyzeLive(key, {
+        ...environmentOptions(),
+        onLookup: (event) => console.info(JSON.stringify({ event: "arc_rpc_lookup", ...event })),
+      });
       const result: Result = { report, source: "live" };
       if (["confirmed_success", "confirmed_failed"].includes(report.status)) {
         if (cache.size >= 256) cache.delete(cache.keys().next().value!);

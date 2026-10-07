@@ -4,10 +4,38 @@ import { readFileSync } from "node:fs";
 import { setTimeout as delay } from "node:timers/promises";
 import { analyze } from "../../core/src/index";
 import { fetchBundle, RpcUnavailable } from "../src/index";
+import type { RpcLookupEvent } from "../src/index";
 const H = "0x" + "11".repeat(32);
 const response = (result: unknown) =>
   new Response(JSON.stringify({ jsonrpc: "2.0", id: 1, result }));
 const native = JSON.parse(readFileSync(new URL("../../../vectors/owner/0x2f0c62b0ea5c601f053b96e6c59d624a5b769208cc9ea9242a31bef963ab8981.json", import.meta.url), "utf8")).input;
+
+test("lookup diagnostics identify fallback outcomes without leaking credentials or errors", async () => {
+  const events: RpcLookupEvent[] = [];
+  await fetchBundle(H, {
+    urls: ["https://bad.example/private-secret", "https://empty.example/rpc-secret"],
+    trace: false, onLookup: (event) => events.push(event),
+    fetcher: async (url, init) => {
+      if (String(url).includes("bad")) throw Error("private-secret upstream body");
+      return response(JSON.parse(init?.body as string).method === "eth_chainId" ? "0x13b2" : null);
+    },
+  });
+  assert.deepEqual(events, [
+    { providerIndex: 0, outcome: "unavailable" },
+    { providerIndex: 1, outcome: "incomplete", transactionPresent: false, receiptPresent: false },
+  ]);
+  assert.doesNotMatch(JSON.stringify(events), /secret|https|example/);
+});
+
+test("a failing diagnostic sink cannot change the fetched result", async () => {
+  const bundle = await fetchBundle(H, {
+    urls: ["https://ok.example"], trace: false,
+    onLookup: () => { throw Error("logger unavailable"); },
+    fetcher: async (_, init) => response(JSON.parse(init?.body as string).method === "eth_chainId" ? "0x13b2" : null),
+  });
+  assert.equal(bundle.chainId, 5042);
+  assert.equal(bundle.transaction, null);
+});
 
 test("unavailable block metadata preserves the receipt, movements and gas", async () => {
   const fetcher: typeof fetch = async (_, init) => {
