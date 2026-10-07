@@ -9,6 +9,7 @@ Start with the [project README](../README.md). Current operating instructions an
 - [Five-minute video script](video-demo-script.vi.md): English narration with Vietnamese recording directions.
 - [Core package](../packages/core/README.md) and [vectors](../vectors/README.md): standalone usage and fixture provenance.
 - [Validation](validation.md): dated commands, results and explicit limits.
+- [Automated testing](testing.md): local and production browser checks, CI, artifacts and safe RPC diagnostics.
 
 ## Develop and operate
 
