@@ -6,6 +6,8 @@ The bounded experiment contract has two immutable recipients, a 0.01 USDC per-ca
 
 Run forge build and forge test -vv from this directory. From repository root run node scripts/verify-deployment.mjs --live to compare the deployed Lab and Forwarder with the compiled executable bytecode and exact immutable addresses. See the manifest for compiler/source identity. Solidity metadata is excluded; ArcScan source verification is not claimed.
 
+Live verification tries the public Arc primary RPC and then dRPC when the deployment transaction/receipt pair is unavailable. It selects a complete matching pair from one chain-5042 provider and uses that provider for subsequent bytecode/getter reads. An explicit ARC_DEPLOYMENT_RPC_URL selects only that endpoint. An unavailable RPC is not evidence of an undeployed contract; retry or choose another mainnet provider.
+
 The source remains identical to its deployed revision, including a historical pre-deployment comment. The dated manifest and mainnet evidence supersede that comment. Do not redeploy to update a status label.
 
 Standard EVM mock tests do not reproduce Arc shared native/ERC-20 balances or system logs. The real five-scenario evidence now covers native transfer, direct ERC-20 transfer, nativeForward, batch and a mined intentionalFailure. Duplicate-transfer and dust contract calls remain optional, unclaimed mainnet coverage. The pure failure function's normal Remix button only simulates; the recorded failed transaction is identified separately in the evidence.

@@ -2,24 +2,12 @@
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { keccak256, toHex, encodeAbiParameters, encodeFunctionData, decodeFunctionResult } from 'viem';
+import { openDeploymentRpc } from './deployment-rpc.mjs';
 
 const read = path => JSON.parse(readFileSync(new URL('../' + path, import.meta.url), 'utf8'));
 const manifest = read('contracts/deployments/5042.json');
 const evidence = read('contracts/deployments/5042.rpc.json');
 const live = process.argv.includes('--live');
-const endpoint = process.env.ARC_DEPLOYMENT_RPC_URL ?? 'https://rpc.mainnet.arc.io';
-async function rpc(method, params) {
-  const response = await fetch(endpoint, {
-    method: 'POST', headers: { 'content-type': 'application/json' },
-    body: JSON.stringify({ jsonrpc: '2.0', id: 1, method, params }),
-    signal: AbortSignal.timeout(20000),
-  });
-  assert.ok(response.ok, 'RPC HTTP failure');
-  const value = await response.json();
-  assert.equal(value.error, undefined, 'RPC returned an error');
-  assert.equal(value.id, 1);
-  return value.result;
-}
 // Solidity appends CBOR metadata plus a two-byte length. It is not executable identity.
 function executable(hex) {
   const bytes = Buffer.from(hex.replace(/^0x/, ''), 'hex');
@@ -31,10 +19,12 @@ assert.equal(manifest.chainId, 5042);
 assert.equal(evidence.chainId, 5042);
 const source = readFileSync(new URL('../contracts/src/ArcMirrorLab.sol', import.meta.url));
 assert.equal(keccak256(toHex(source)), manifest.source.keccak256, 'Use the recorded deployed source revision');
-const chainId = live ? await rpc('eth_chainId', []) : '0x' + evidence.chainId.toString(16);
+const connection = live ? await openDeploymentRpc(manifest.transactionHash) : null;
+const rpc = connection?.rpc;
+const chainId = connection?.chainId ?? '0x' + evidence.chainId.toString(16);
 assert.equal(chainId, '0x13b2');
-const tx = live ? await rpc('eth_getTransactionByHash', [manifest.transactionHash]) : evidence.deployment.tx;
-const receipt = live ? await rpc('eth_getTransactionReceipt', [manifest.transactionHash]) : evidence.deployment.receipt;
+const tx = connection?.transaction ?? evidence.deployment.tx;
+const receipt = connection?.receipt ?? evidence.deployment.receipt;
 assert.equal(tx.hash, manifest.transactionHash);
 assert.equal(tx.chainId, '0x13b2');
 assert.equal(tx.to, null);
@@ -73,6 +63,7 @@ for (const [name, spec] of Object.entries(manifest.contracts)) {
   }
 }
 console.log(JSON.stringify({ mode: live ? 'live RPC' : 'captured RPC evidence', chainId: 5042,
+  ...(connection ? { providerIndex: connection.providerIndex } : {}),
   deployment: manifest.transactionHash, contracts: Object.keys(manifest.contracts),
   result: 'PASS: receipt, source hash, compiler, executable bytecode and immutable addresses match',
   scope: 'Solidity CBOR metadata is excluded; this is not an explorer verification badge or an audit.' }, null, 2));

@@ -57,7 +57,7 @@ Public defaults work without an environment file. For Next.js, place overrides i
 | --- | --- | --- |
 | `ARC_RPC_URLS` | `https://rpc.mainnet.arc.io,https://rpc.drpc.mainnet.arc.io` | Server/CLI transaction, receipt and block reads. |
 | `ARC_TRACE_RPC_URLS` | `https://rpc.drpc.mainnet.arc.io` | Optional call/state traces. |
-| `ARC_DEPLOYMENT_RPC_URL` | `https://rpc.mainnet.arc.io` | Deployment verifier's live mode only. |
+| `ARC_DEPLOYMENT_RPC_URL` | Unset: Arc primary, then dRPC fallback | Deployment verifier's live mode only; an explicit value selects that endpoint exclusively. |
 
 The first two variables accept one to four comma-separated HTTP(S) endpoints. Each contacted provider must report chain ID `0x13b2` (5042). RPC credentials stay server-side: never use `NEXT_PUBLIC_` or commit real environment files. No private key is needed.
 
