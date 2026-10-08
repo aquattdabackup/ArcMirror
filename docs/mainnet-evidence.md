@@ -2,6 +2,8 @@
 
 Verified 2026-09-30T01:59:12.665Z. The live analyzer reads **Arc Mainnet, chain 5042**. ArcMirrorLab is deployed, and all five owner-created demo categories have mined receipts. This is technical evidence, not organizer acceptance or a security audit.
 
+**Current recheck: October 8.** All five production live reports and deployed executable/immutable checks pass; 18 browser checks pass. The [new review](grant-review-2026-10-08.md) records the verifier fallback fix and [current results](evidence/grant-review/2026-10-08.json). The September 30 captures below retain their original observation dates.
+
 ## Deployment
 
 - Lab: [0xa64439ea7c88d56e2888c377d55ae3e174b415c1](https://arc.etherscan.io/address/0xa64439ea7c88d56e2888c377d55ae3e174b415c1).

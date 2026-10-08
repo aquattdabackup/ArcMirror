@@ -22,6 +22,7 @@ Start with the [project README](../README.md). Current operating instructions an
 
 ## Application materials
 
+- [October 8 program-fit review](grant-review-2026-10-08.md) and [short reviewer walkthrough](reviewer-walkthrough.md): current technical checks, remaining presentation risks and a direct owner-created example.
 - [Eligibility](eligibility.md), [September 30 review](eligibility-review-2026-09-30.md) and [application draft](application-draft.md): dated technical review and owner submission material. They do not establish that the application has been submitted or accepted.
 - [Original owner brief](product-brief.vi.md), [product review](product-review.md), [feature decisions](feature-expansion.md) and [landscape](landscape.md): requirements and rationale. Later owner decisions in AGENTS.md take precedence.
 

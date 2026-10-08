@@ -1,5 +1,15 @@
 # Validation record
 
+## Program review and security patch — October 8, 2026
+
+See the [current review](grant-review-2026-10-08.md) and [structured evidence](evidence/grant-review/2026-10-08.json). Fresh production checks reproduced all five owner reports and one additional transaction outside saved examples; native movement and fee were checked against its receipt. All 18 actual Chromium desktop/mobile-emulation tests passed before and after the patch release. Public repository/profile checks passed; the owner confirmed no submission yet.
+
+The documented deployment verifier initially crashed on a null primary receipt while dRPC verified the deployed contracts. Commit `c736b5d` adds complete-pair provider fallback and six regressions. Captured and default live verification now pass, including both executable bytecodes, immutables and getters; no explorer badge is claimed.
+
+CI at `c736b5d` exposed a production audit failure for Next 16.3.6 (six advisories, aggregate High). Commit `bb50586` pins 16.3.8 and matching Next components. Local types/build/component tests and zero-finding audit pass. [CI run 37729334260](https://github.com/aquattdabackup/ArcMirror/actions/runs/37729334260) passes application and contract jobs: 78 application tests, 10 spike, 16 Foundry (256 fuzz runs) and 16 deterministic browser tests. No exploit was demonstrated; the image-optimization High advisory's remote-image configuration is absent in this app.
+
+Source `bb50586856ac26d6de0998a45c194d3e8e6c92a8` is now production deployment `dpl_4cEZsMCAP8KcA9YbMDG9fB9K3pqk`, READY. Post-release public smoke, all five full live-report comparisons and 18 production browser cases pass. The initial CLI create request returned Not authorized; read-only identity/team/project checks worked and an unchanged authorized retry succeeded. No credentials/permissions changed. No blockchain write occurred.
+
 ## Verified production release — October 7, 2026
 
 The owner authorized completing the release after the initial maintenance-only review. Application source `afa0396` is deployed as `dpl_9R9quumt8kbXozD8ZNWXQcV6EciT` at https://arcmirror-six.vercel.app. See [release details](releases/2026-10-07.md) and [structured evidence](evidence/releases/2026-10-07/checks.json).

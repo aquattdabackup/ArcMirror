@@ -14,7 +14,7 @@ The analyzer is hosted on Vercel. ArcMirrorLab is deployed on **Arc mainnet, cha
 
 Open the [owner's forwarding report](https://arcmirror-six.vercel.app/tx/0x6539309ec60a263be08008ef134d4e15c6db8198fe1cd19e211959b5ef11df41). The [mainnet evidence index](docs/mainnet-evidence.md) links all five hashes, raw RPC captures, expected reports, and deployment verification. The three homepage snapshots are explicitly **third-party examples**, separate from owner demos.
 
-**Current release (October 7):** application source `afa0396` is deployed to the public site. All five owner reports fetched live from production match the recorded evidence. RPC fallback, dependency patches, accessible tabs and scoped UI wording are included. See the [release record](docs/releases/2026-10-07.md), [deployment runbook](docs/deployment.md) and dated [validation](docs/validation.md).
+**Current release (October 8):** application source `bb50586` is deployed with Next.js 16.3.8 security patches. All five owner reports fetched live from production match the recorded evidence. The repository's deployment verifier also now handles incomplete primary RPC responses. See the [current review and release checks](docs/grant-review-2026-10-08.md), [deployment runbook](docs/deployment.md) and [short reviewer walkthrough](docs/reviewer-walkthrough.md). The [October 7 release](docs/releases/2026-10-07.md) records the preceding RPC/accessibility fixes.
 
 ## Features
 

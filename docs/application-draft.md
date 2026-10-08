@@ -1,6 +1,18 @@
 # Arc Microgrants application draft
 
-**Draft, not submitted.** Updated 2026-09-30: the live analyzer, deployed Lab and all five owner-created mainnet demos are backed by [public receipts, reports and reproducible verification](mainnet-evidence.md). The separate reward address remains local for owner entry at submission. Explorer source verification is not claimed.
+**Draft, not submitted — confirmed by the owner October 8, 2026.** The live analyzer, deployed Lab and all five owner-created mainnet demos are backed by [public receipts, reports and reproducible verification](mainnet-evidence.md). See the [fresh technical and program-fit review](grant-review-2026-10-08.md) and [short reviewer walkthrough](reviewer-walkthrough.md). The separate reward address remains local for owner entry at submission. Explorer source verification is not claimed.
+
+## Two-sentence form answer
+
+ArcMirror helps Arc payment support teams and developers explain a USDC transaction by showing who received what, what gas cost, and why native and ERC-20 logs can represent the same payment. Its live mainnet analyzer links exact amounts to source evidence, keeps verification limits visible, and exports reproducible reports for independent review.
+
+## What it uses Arc for
+
+ArcMirror reads transaction receipts and available execution/state traces from Arc mainnet, chain 5042. Its core reconciles Arc's native 18-decimal USDC events with the 6-decimal ERC-20 interface, preserves sub-micro-USDC amounts and calculates native USDC gas separately; deployed Lab/Forwarder contracts and five owner-created transactions provide public demonstrations of these behaviors.
+
+## Suggested review link
+
+Start with the [owner ERC-20 report](https://arcmirror-six.vercel.app/tx/0x4e0e57e776550e0118d86be5b84233eaecaa00f7fe085e3baf9f0af5e750370d): adding its two log representations would incorrectly show 0.002 USDC; the actual movement is 0.001 USDC. [Walkthrough and batch follow-up](reviewer-walkthrough.md). The first minute should demonstrate this result and its evidence limits. No final video URL has been supplied or checked; omit a video claim until a real recording is available.
 
 ## Short description
 
@@ -34,7 +46,7 @@ The website is live on Vercel and reads Arc mainnet, chain 5042. The MIT core is
 | Lab contract / source verification | [Deployed Lab](https://arc.etherscan.io/address/0xa64439ea7c88d56e2888c377d55ae3e174b415c1), [receipt and compiler manifest](../contracts/deployments/5042.json), reproducible executable/immutable verification. No explorer verification badge claimed. |
 | Five owner-created demos | **Completed and checked on mainnet.** [Native, ERC-20, forwarding, batch and intentional failure](mainnet-evidence.md), with independent receipt comparisons and matching production live reports. |
 | Reward address | **Supplied locally.** Distinct from demo burner; owner enters it in the application. Not published in this repo. |
-| Reproduction evidence | [Downloaded report](evidence/production/downloaded-report.json), [fresh CLI match](evidence/production/live-verify.txt), [public production checks](evidence/production/browser-checks.json) |
+| Reproduction evidence | [October 8 live/browser/verifier checks](evidence/grant-review/2026-10-08.json), [October 7 deployed release](releases/2026-10-07.md), [CLI and browser instructions](testing.md). Historical [downloaded report](evidence/production/downloaded-report.json) and [CLI match](evidence/production/live-verify.txt) remain reproducible. |
 
 ## Primary tour: one transaction in about one minute
 
@@ -71,7 +83,7 @@ npm run verify -- 0x376b287a795c449b0bf3f0ec3ffdfad8e913012edecf0a8eb6f00c007a47
 
 ## Requirement-to-evidence matrix
 
-Program requirements were rechecked on the [official page](https://community.arc.io/public/events/arc-microgrants-f8tijfjhyq) on 2026-09-30. The owner's full brief also requires the additional Lab/demo stage below; this draft does not certify acceptance.
+Program requirements were rechecked on the [official page](https://community.arc.io/public/events/arc-microgrants-f8tijfjhyq) on 2026-10-08. The owner's full brief also requires the additional Lab/demo stage below; this draft does not certify acceptance.
 
 | Requirement | Evidence / remaining action |
 | --- | --- |
@@ -93,4 +105,4 @@ The [official program page](https://community.arc.io/public/events/arc-microgran
 - Submit only once for this project and confirm the right to submit the work. The owner has already confirmed no prior Circle/Arc funding. Restricted-jurisdiction screening and private payout verification remain organizer processes; the technical review does not certify them.
 - Re-open the product, repository/profile and all final explorer links. ArcScan address/transaction links were read during the September 30 checks; explorer APIs can still challenge automation. Use the published RPC reproduction path if an explorer is unavailable.
 - Confirm every claimed onchain artifact is chain 5042 and no testnet/local mock is labelled mainnet. Recheck the current program deadline on the official page.
-- The official page links to [DoraHacks registration](https://dorahacks.io/hackathon/arc-microgrants). The September 30 read-only request still returned HTTP 405 with a Human Verification page; form fields and any additional terms were not inspected or filled. The owner completes that check, reviews the actual form and presses the final submission button. No application has been sent by this agent.
+- The official page links to [DoraHacks registration](https://dorahacks.io/hackathon/arc-microgrants). The October 8 automated read returned HTTP 405; current additional terms and the final form payload were not verified or submitted. The owner reviews the actual form and presses the final submission button. No application has been sent by this agent, and the owner confirmed it is not yet submitted.
