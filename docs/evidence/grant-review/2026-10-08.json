@@ -1,0 +1,354 @@
+{
+  "checkedAt": "2026-10-08T04:34:05.835Z",
+  "source": "bac5ab9a06de0a0b7d5c7156e26487403cd3023a",
+  "base": "https://arcmirror-six.vercel.app",
+  "pages": [
+    {
+      "path": "/",
+      "http": 200,
+      "durationMs": 854,
+      "title": "ArcMirror | Understand USDC movements"
+    },
+    {
+      "path": "/api/health",
+      "http": 200,
+      "durationMs": 1405,
+      "data": {
+        "status": "ok",
+        "chainId": 5042,
+        "algorithmVersion": "0.1.0",
+        "snapshots": 3,
+        "rpc": "checked_on_demand",
+        "walletRequired": false
+      }
+    },
+    {
+      "path": "/tools",
+      "http": 200,
+      "durationMs": 590,
+      "title": "Optional tools | ArcMirror"
+    },
+    {
+      "path": "/tools/reconcile",
+      "http": 200,
+      "durationMs": 1239,
+      "title": "Payout reconciliation | ArcMirror"
+    },
+    {
+      "path": "/tools/inspect",
+      "http": 200,
+      "durationMs": 552,
+      "title": "Report inspector | ArcMirror"
+    },
+    {
+      "path": "/tools/dust",
+      "http": 200,
+      "durationMs": 325,
+      "title": "Dust Lab | ArcMirror"
+    },
+    {
+      "path": "/how-it-works",
+      "http": 200,
+      "durationMs": 542,
+      "title": "How it works | ArcMirror"
+    }
+  ],
+  "rpc": [
+    {
+      "endpoint": "https://rpc.mainnet.arc.io",
+      "chainId": 5042
+    },
+    {
+      "endpoint": "https://rpc.drpc.mainnet.arc.io",
+      "chainId": 5042
+    }
+  ],
+  "ownerReports": [
+    {
+      "hash": "0x0cecb2a9fb27abd8d463d5faec25279056d28f0a447061eba22120d339165ec8",
+      "http": 200,
+      "durationMs": 1473,
+      "source": "live",
+      "status": "confirmed_success",
+      "evidenceLevel": "verified",
+      "digest": "0xabc9f2ab18f5346c1ff9916b2cae9ddc51d46e833082cf7f5acf747b9c6edf75",
+      "fullReportMatch": true
+    },
+    {
+      "hash": "0x2f0c62b0ea5c601f053b96e6c59d624a5b769208cc9ea9242a31bef963ab8981",
+      "http": 200,
+      "durationMs": 867,
+      "source": "live",
+      "status": "confirmed_success",
+      "evidenceLevel": "verified",
+      "digest": "0x75baab36e3eef3769df23b2e9de93a1eae55f0bed9b740a3bcef46d274ec8595",
+      "fullReportMatch": true
+    },
+    {
+      "hash": "0x4e0e57e776550e0118d86be5b84233eaecaa00f7fe085e3baf9f0af5e750370d",
+      "http": 200,
+      "durationMs": 616,
+      "source": "live",
+      "status": "confirmed_success",
+      "evidenceLevel": "needs_review",
+      "digest": "0x0b291fc94033222b3162d61e49110331c9104a9357a3c1af40718a4bee055aa3",
+      "fullReportMatch": true
+    },
+    {
+      "hash": "0x6539309ec60a263be08008ef134d4e15c6db8198fe1cd19e211959b5ef11df41",
+      "http": 200,
+      "durationMs": 571,
+      "source": "live",
+      "status": "confirmed_success",
+      "evidenceLevel": "verified",
+      "digest": "0x3e6c99b6fdf4b18f45b908df21eff0d7237d0c9e576e53a992d0816b6221976d",
+      "fullReportMatch": true
+    },
+    {
+      "hash": "0x87b456003ef9194f99c71ea5af94273ba242beaffaaeacc4fb466885a2b47fe1",
+      "http": 200,
+      "durationMs": 580,
+      "source": "live",
+      "status": "confirmed_failed",
+      "evidenceLevel": "verified",
+      "digest": "0xaca8753625d7182b969946e31d7b5e4e6427595dc1271f787e5a30e6584c75e9",
+      "fullReportMatch": true
+    }
+  ],
+  "publicRepository": {
+    "http": 200,
+    "private": false,
+    "license": "MIT",
+    "defaultBranch": "main",
+    "head": "bac5ab9a06de0a0b7d5c7156e26487403cd3023a",
+    "matchesLocal": true,
+    "profileHttp": 200,
+    "profile": "https://github.com/aquattdabackup"
+  },
+  "recentSample": {
+    "selection": "First positive-value plain transfer in the latest dRPC block, otherwise first non-creation transaction; no transaction sent by reviewer.",
+    "block": 24844625,
+    "hash": "0x39bf65f2774fd3be06e943d3bbdca1edba10ec53460a8943b99f3886de75fe9d",
+    "chainId": 5042,
+    "receiptStatus": "0x1",
+    "http": 200,
+    "source": "live",
+    "reportStatus": "confirmed_success",
+    "evidenceLevel": "verified",
+    "movements": 1,
+    "receiptBlock": "0x17b1951",
+    "durationMs": 448,
+    "receiptMovementAndFeeMatch": true,
+    "nonUsdcTokenLogsExcluded": true,
+    "amountExact": "149.500450480760853844",
+    "gasExact": "0.002189320191456034"
+  },
+  "browser": {
+    "version": "Playwright 1.63.0 / Chromium 153.0.8010.12",
+    "base": "https://arcmirror-six.vercel.app",
+    "projects": [
+      "desktop-chromium",
+      "mobile-chromium"
+    ],
+    "scope": "Full existing 18-case release suite, including two unmocked owner live re-verification/download cases; mobile viewport/touch emulation, not physical device.",
+    "stats": {
+      "startTime": "2026-10-08T04:34:53.197Z",
+      "duration": 108412.633,
+      "expected": 18,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    }
+  },
+  "deploymentVerifier": {
+    "beforeFix": {
+      "command": "node scripts/verify-deployment.mjs --live",
+      "result": "FAIL: primary RPC returned null receipt; TypeError at original line 42"
+    },
+    "alternateProvider": {
+      "endpoint": "https://rpc.drpc.mainnet.arc.io",
+      "result": "PASS: source/compiler, receipt, executable bytecode, immutables and getters"
+    },
+    "afterFix": {
+      "sourceCommit": "c736b5d",
+      "command": "node scripts/verify-deployment.mjs --live",
+      "providerIndex": 1,
+      "result": "PASS"
+    },
+    "offlineAfterFix": "PASS",
+    "scope": "CBOR metadata excluded; no explorer badge or security audit"
+  },
+  "regression": {
+    "applicationTests": 78,
+    "newVerifierTests": 6,
+    "typecheck": "PASS"
+  },
+  "program": {
+    "officialUrl": "https://community.arc.io/public/events/arc-microgrants-f8tijfjhyq",
+    "checkedDate": "2026-10-08",
+    "deadlineEastern": "2026-10-14T23:59:00-04:00",
+    "deadlineVietnam": "2026-10-15T10:59:00+07:00",
+    "doraHacksAutomatedReadHttp": 405,
+    "ownerSubmissionStatus": "Owner confirmed not submitted on 2026-10-08",
+    "publicVideoUrl": "Not supplied; recording not inspected",
+    "competitorCount": "Not independently verified"
+  },
+  "dependencyAudit": {
+    "beforeVersion": "16.3.6",
+    "before": {
+      "info": 0,
+      "low": 0,
+      "moderate": 0,
+      "high": 1,
+      "critical": 0,
+      "total": 1
+    },
+    "advisories": [
+      {
+        "title": "Next.js: Pending `use cache` fill can leak Draft Mode content into regular responses and persisted pages",
+        "url": "https://github.com/advisories/GHSA-3w37-wq28-93x7",
+        "severity": "moderate",
+        "range": ">=16.3.0 <16.3.8"
+      },
+      {
+        "title": "Next.js has cache poisoning of SSG and ISR pages in self-hosted applications",
+        "url": "https://github.com/advisories/GHSA-4jqv-mc3x-m676",
+        "severity": "moderate",
+        "range": ">=16.0.0 <16.3.8"
+      },
+      {
+        "title": "Next.js has information disclosure in development server's Model Context Protocol endpoint",
+        "url": "https://github.com/advisories/GHSA-39w2-rjm5-chcv",
+        "severity": "low",
+        "range": ">=16.0.0 <16.3.8"
+      },
+      {
+        "title": "Next.js has information disclosure in App Router metadata image routes via dynamicParams bypass",
+        "url": "https://github.com/advisories/GHSA-f87g-xv8r-7p7x",
+        "severity": "moderate",
+        "range": ">=16.0.0 <16.3.8"
+      },
+      {
+        "title": "Next.js has cache poisoning in SSG/ISR rendering that leads to cross-user content substitution and persistent denial of service",
+        "url": "https://github.com/advisories/GHSA-mcj8-r9mp-w47p",
+        "severity": "moderate",
+        "range": ">=16.0.0 <16.3.8"
+      },
+      {
+        "title": "Next.js has Server-Side Request Forgery in Image Optimization",
+        "url": "https://github.com/advisories/GHSA-cjq9-62q9-8jv4",
+        "severity": "high",
+        "range": ">=16.0.0 <16.3.8"
+      }
+    ],
+    "failedCiRun": "https://github.com/aquattdabackup/ArcMirror/actions/runs/37728503218",
+    "patchVersion": "16.3.8",
+    "after": {
+      "info": 0,
+      "low": 0,
+      "moderate": 0,
+      "high": 0,
+      "critical": 0,
+      "total": 0
+    },
+    "scope": "Known dependency advisories; not an exploit demonstration. No images.remotePatterns configured for the image-optimization High advisory."
+  },
+  "patchRelease": {
+    "checkedAt": "2026-10-08T04:52:56.561Z",
+    "base": "https://arcmirror-six.vercel.app",
+    "deploymentId": "dpl_4cEZsMCAP8KcA9YbMDG9fB9K3pqk",
+    "sourceCommit": "bb50586856ac26d6de0998a45c194d3e8e6c92a8",
+    "nextVersion": "16.3.8",
+    "reports": [
+      {
+        "hash": "0x0cecb2a9fb27abd8d463d5faec25279056d28f0a447061eba22120d339165ec8",
+        "http": 200,
+        "source": "live",
+        "status": "confirmed_success",
+        "evidenceLevel": "verified",
+        "fullReportMatch": true
+      },
+      {
+        "hash": "0x2f0c62b0ea5c601f053b96e6c59d624a5b769208cc9ea9242a31bef963ab8981",
+        "http": 200,
+        "source": "live",
+        "status": "confirmed_success",
+        "evidenceLevel": "verified",
+        "fullReportMatch": true
+      },
+      {
+        "hash": "0x4e0e57e776550e0118d86be5b84233eaecaa00f7fe085e3baf9f0af5e750370d",
+        "http": 200,
+        "source": "live",
+        "status": "confirmed_success",
+        "evidenceLevel": "needs_review",
+        "fullReportMatch": true
+      },
+      {
+        "hash": "0x6539309ec60a263be08008ef134d4e15c6db8198fe1cd19e211959b5ef11df41",
+        "http": 200,
+        "source": "live",
+        "status": "confirmed_success",
+        "evidenceLevel": "verified",
+        "fullReportMatch": true
+      },
+      {
+        "hash": "0x87b456003ef9194f99c71ea5af94273ba242beaffaaeacc4fb466885a2b47fe1",
+        "http": 200,
+        "source": "live",
+        "status": "confirmed_failed",
+        "evidenceLevel": "verified",
+        "fullReportMatch": true
+      }
+    ],
+    "home": {
+      "http": 200,
+      "title": "ArcMirror | Understand USDC movements"
+    },
+    "state": "READY",
+    "immutableUrl": "https://arcmirror-fnodkg607-luong-tuans-projects-a65355dc.vercel.app",
+    "browser": {
+      "stats": {
+        "startTime": "2026-10-08T04:52:34.939Z",
+        "duration": 114705.769,
+        "expected": 18,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "projects": [
+        "desktop-chromium",
+        "mobile-chromium"
+      ],
+      "scope": "Actual production Chromium; mobile viewport/touch emulation. Same 18-case suite including unmocked owner native live refresh and disk download."
+    },
+    "ci": {
+      "id": 37729334260,
+      "url": "https://github.com/aquattdabackup/ArcMirror/actions/runs/37729334260",
+      "sourceCommit": "bb50586856ac26d6de0998a45c194d3e8e6c92a8",
+      "status": "completed",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "name": "application",
+          "conclusion": "success",
+          "url": "https://github.com/aquattdabackup/ArcMirror/actions/runs/37729334260/job/113154657930"
+        },
+        {
+          "name": "contracts",
+          "conclusion": "success",
+          "url": "https://github.com/aquattdabackup/ArcMirror/actions/runs/37729334260/job/113154658059"
+        }
+      ]
+    },
+    "smoke": {
+      "health": "pass",
+      "snapshots": 3,
+      "invalidHash": "pass",
+      "unknownHash": "pass",
+      "securityHeaders": "pass",
+      "toolPages": 4
+    },
+    "deploymentAttemptNote": "Initial CLI attempt returned Not authorized. Identity/team/project reads succeeded; unchanged authorized retry deployed successfully. No credentials or permissions changed; underlying first-error cause unproven."
+  }
+}
