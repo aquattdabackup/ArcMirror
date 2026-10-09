@@ -36,11 +36,11 @@ function Address({ value }: { value: string }) {
     </a>
   );
 }
-export function TransactionReport({ initial }: { initial: Result }) {
+export function TransactionReport({ initial, compareOnLoad = false }: { initial: Result; compareOnLoad?: boolean }) {
   const [result, setResult] = useState(initial);
   const [busy, setBusy] = useState(false);
   const [message, setMessage] = useState("");
-  const [phantom, setPhantom] = useState(false);
+  const [phantom, setPhantom] = useState(compareOnLoad);
   const [tab, setTab] = useState<EvidenceView>("flow");
   const evidenceId = useId();
   const r: Report = result.report;

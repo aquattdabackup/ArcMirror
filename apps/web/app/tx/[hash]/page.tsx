@@ -9,10 +9,13 @@ export async function generateMetadata() {
 }
 export default async function TransactionPage({
   params,
+  searchParams,
 }: {
   params: Promise<{ hash: string }>;
+  searchParams: Promise<{ compare?: string | string[] }>;
 }) {
   const { hash } = await params;
+  const compareOnLoad = (await searchParams).compare === "1";
   const client = (await headers()).get("x-real-ip") ?? "anonymous";
   let result;
   try {
@@ -30,5 +33,5 @@ export default async function TransactionPage({
       }),
     };
   }
-  return <TransactionReport key={hash} initial={result} />;
+  return <TransactionReport key={`${hash}:${compareOnLoad}`} initial={result} compareOnLoad={compareOnLoad} />;
 }

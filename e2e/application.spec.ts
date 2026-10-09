@@ -14,6 +14,23 @@ async function downloadedJson(download: Download) {
   return JSON.parse(await promisify(readFile)(path!, "utf8"));
 }
 
+test("comparison links open eligible log pairs without inventing a native-only comparison", async ({ page }) => {
+  const paired = examples[0];
+  await page.goto(`/tx/${paired.hash}?compare=1#double-count`);
+  const comparison = page.locator("#double-count");
+  const toggle = page.getByRole("button", { name: "Hide comparison", exact: true });
+  await expect(toggle).toBeVisible();
+  await expect(toggle).toHaveAttribute("aria-pressed", "true");
+  await expect(comparison.locator(".naive strong")).toContainText(paired.report.totals.naiveExact!);
+  await toggle.click();
+  await expect(page.getByRole("button", { name: "Show double-count comparison", exact: true })).toBeVisible();
+  await page.reload();
+  await expect(toggle).toBeVisible();
+  await page.goto(`/tx/${native.hash}?compare=1`);
+  await expect(page.getByRole("tab", { name: "Money flow" })).toBeVisible();
+  await expect(page.locator("#double-count")).toHaveCount(0);
+});
+
 test("evidence tabs support arrows, wrapping, Home/End and focus into the labelled panel", async ({ page }) => {
   await openReport(page);
   const flow = page.getByRole("tab", { name: "Money flow" });
