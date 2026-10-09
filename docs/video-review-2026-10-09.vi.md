@@ -25,7 +25,7 @@ Mainnet evidence: https://github.com/aquattdabackup/ArcMirror/blob/main/docs/mai
 Nếu giữ nguyên bản quay cũ, thêm ghi chú trung thực:
 
 ```text
-Recorded before the October 9 homepage update. The live application now opens the owner-created ERC-20 comparison directly from its primary demo button. The five transaction hashes remain the same.
+Recorded before the October 9 homepage update. The live application prioritizes transaction hash entry and also links directly to the owner-created ERC-20 comparison. The five transaction hashes remain the same.
 ```
 
 Agent chưa đăng nhập kênh và **chưa sửa mô tả YouTube**. Những thay đổi này đang ở dạng nội dung copy cho chủ kênh.

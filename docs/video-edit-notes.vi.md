@@ -4,7 +4,7 @@ Ngày 09/10/2026: đã nhận [video 4:14](https://www.youtube.com/watch?v=urPAL
 
 ## Giữ lại và thay phần nào
 
-1. Thu lại cảnh trang chủ cùng lời mở đầu **00:00–00:15** trong [kịch bản 5 phút](video-demo-script.vi.md). Nút chính hiện dẫn tới giao dịch ERC-20 của bạn và mở sẵn so sánh.
+1. Nếu cập nhật cảnh trang chủ, dùng lời mở đầu **00:00–00:15** trong [kịch bản 5 phút](video-demo-script.vi.md). Tiêu đề đã trở lại **Understand your USDC transaction.**, ưu tiên ô nhập hash. Liên kết demo bên dưới vẫn mở sẵn so sánh ERC-20; không cần đổi phần minh họa bên phải.
 2. Đưa cảnh ERC-20 lên **00:15–00:50**. Nếu cảnh cũ đã rõ `0.002` naive, `0.001` thực chuyển và `Needs Review`, có thể dùng lại hình. Thay lời “The second payment” bằng lời đọc mới; thêm cảnh Re-verify live hoàn tất nếu bản cũ chưa có.
 3. Đặt bằng chứng triển khai vào **00:50–01:10**, native **01:10–01:35**, forwarding **01:35–02:00**. Sửa chữ “First”/đánh số demo cho đúng thứ tự. Giữ các cảnh cũ nếu hash, số tiền và nhãn khớp.
 4. Batch **02:00–02:30**, failed **02:30–02:55**, ba tools **02:55–04:35** và kết **04:35–04:50** có thể giữ nếu đúng nội dung canonical script. Dành 10 giây dự phòng, bản xuất tối đa **5:00**.

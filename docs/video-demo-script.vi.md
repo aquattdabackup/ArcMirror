@@ -40,7 +40,7 @@ Video xem lại các giao dịch đã hoàn tất. Không cần triển khai l�
 
 ### 00:00–00:15 — Mở đầu
 
-**Màn hình:** homepage, giữ tên ArcMirror, tiêu đề **Two records. One USDC payment.** và nút demo trong khung hình. Bấm nút vào cuối câu.
+**Màn hình:** homepage với tiêu đề **Understand your USDC transaction.** và ô nhập hash ngay bên dưới. Với đoạn giới thiệu demo, cuộn nhẹ tới liên kết **Explore our 0.001 USDC demo** dưới ô nhập và phần mô tả, hoặc dùng tab ERC-20 đã chuẩn bị; mở báo cáo vào cuối câu.
 
 **Lời đọc:**
 
