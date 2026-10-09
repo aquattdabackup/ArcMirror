@@ -13,22 +13,23 @@ export default function Home() {
             <span className="status-dot" /> ARC MAINNET / USDC EVIDENCE
           </div>
           <h1>
-            Two records.
+            Understand
             <br />
-            One USDC
+            your USDC
             <br />
-            <em>payment.</em>
+            <em>transaction.</em>
           </h1>
-          <p className="hero-description">
-            On Arc, native and ERC-20 logs can describe the same payment.
-            Check what moved, inspect the sources, and share a report others
-            can recheck. Built for payment support and developers.
-          </p>
-          <Link className="button primary owner-primary-cta" href={ownerDemoHref(featuredOwnerDemo)}>
-            Explore our 0.001 USDC demo <Arrow />
-          </Link>
-          <p className="caption">Or investigate your own Arc transaction:</p>
           <Search />
+          <p className="hero-description">
+            See who received what, what gas cost, and what the evidence
+            supports. Understand your Arc payment, then share the result.
+          </p>
+          <p className="hero-demo-link">
+            No hash yet?{" "}
+            <Link className="text-link" href={ownerDemoHref(featuredOwnerDemo)}>
+              Explore our 0.001 USDC demo <Arrow />
+            </Link>
+          </p>
           <div className="hero-small">
             <span>
               <Check /> See the actual gas fee

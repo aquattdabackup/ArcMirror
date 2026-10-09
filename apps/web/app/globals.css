@@ -200,12 +200,28 @@ small {
   background: #599a7e;
   box-shadow: 0 0 0 4px #599a7e16;
 }
-.hero-copy .owner-primary-cta {
-  white-space: normal;
-  text-align: left;
+.hero.shell {
+  padding-top: clamp(24px, 4vh, 48px);
 }
-.owner-primary-cta + .caption {
-  margin-top: 26px;
+.hero-copy {
+  align-self: start;
+  min-width: 0;
+}
+.hero-copy h1 {
+  font-size: clamp(44px, 4.5vw, 64px);
+  margin: 16px 0;
+}
+.hero-copy .hero-description {
+  margin: 18px 0;
+}
+.hero-demo-link {
+  font-size: 14px;
+  line-height: 1.7;
+}
+.hero-demo-link .text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
 }
 .featured-owner .visual-top {
   flex-wrap: wrap;
