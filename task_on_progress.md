@@ -1,48 +1,43 @@
-# Current task
+﻿# Current task
 
-Updated October 9, 2026. **Complete:** strict review against the owner's Arc Microgrants brief, fixes for issues discovered, updated public evidence and submission materials. Owner confirmed **not submitted** on October 8. Do not infer a final video exists from the script or claim the form was sent.
+Updated October 9, 2026. Implementation and production release are complete. Owner authorized addressing the grant-review presentation/documentation gaps, supplied a video, and will recruit 2-3 testers. Actual independent feedback and full audiovisual review remain open; do not invent them. Last owner submission status: not submitted (October 8); agent has not submitted.
 
 ## Read first
 
-[October 8 review with October 9 follow-up](docs/grant-review-2026-10-08.md), [structured review/release results](docs/evidence/grant-review/2026-10-08.json), [October 9 live results](docs/evidence/grant-review/2026-10-09-live.json), [short reviewer walkthrough](docs/reviewer-walkthrough.md).
+- [October 9 release](docs/releases/2026-10-09.md) and [structured results](docs/evidence/releases/2026-10-09/checks.json).
+- [Application draft](docs/application-draft.md), [reviewer walkthrough](docs/reviewer-walkthrough.md).
+- [Video findings](docs/video-review-2026-10-09.vi.md), [participant tasks](docs/user-test-task.vi.md), [facilitation guide](docs/user-test-kit.vi.md), [empty feedback log](docs/user-feedback.md).
 
-No unresolved technical mainnet entry blocker was found after the fixes. This is not organizer acceptance or a selection prediction. Reported 800-plus competitors were not independently verified. Official page rechecked October 8 and 9: deadline October 14, 23:59 ET = October 15, 10:59 Vietnam; rolling review. No published required feature count, five-demo mandate, video mandate or explorer-badge requirement. Automated DoraHacks read returned HTTP 405; final terms/payload remain owner-reviewed.
+## Production and commits
 
-## Production / published milestones
+- Public https://arcmirror-six.vercel.app. Source 4fbe4829f8cc024b72f00892a58eb15394621a6e, Next 16.3.8, READY deployment dpl_3uRkVXLX6ZiMDYLD8dr5ycUTbR1f. Immutable arcmirror-7rocln065-luong-tuans-projects-a65355dc.vercel.app may require Vercel authentication; public alias was checked without login.
+- bdfe40d: direct compare=1 report links. f1bd7d4: independent test kit, no fabricated responses. 21fbe85: owner ERC-20 homepage, all five demos and recorded-provenance labels. f344db1: browser journey tests. 4e13f52: aligned submission/video script and edit notes.
+- 4fbe482: comparison position fix, found by actual screenshot review after the first release. Eligible panel is positioned once after rendering; live refresh does not pull readers back. Tests now require 90% of panel in viewport, not just DOM visibility.
+- f9313ee: supplied video metadata/thumbnail review and URL correction text. 7e98f4f: release evidence/screenshots. 7ec1631: current public status docs. These milestones are committed; final handoff commit records this file and architecture/HANDOFF. Resolve that hash with git log and confirm remote before claiming the final push.
+- Earlier dpl_Bob6x7JVDBmSouJasiAisetert5n / upload 4e13f52 and October 8 bb50586 deployment are historical. No blockchain write, contract redeployment, accounting/schema or RPC configuration change occurred.
 
-- Live https://arcmirror-six.vercel.app. Application source bb50586856ac26d6de0998a45c194d3e8e6c92a8, Next.js 16.3.8, deployment dpl_4cEZsMCAP8KcA9YbMDG9fB9K3pqk, READY as verified October 8. Existing approved arcmirror project/team. October 9 live data still passes. The prior afa0396 deployment is historical.
-- c736b5d: default deployment-verifier fallback fix and six regressions.
-- bb50586: Next security patch, matching env/SWC lockfile packages only.
-- e3c34ef: full review, evidence, short reviewer walkthrough. 6b87586: current eligibility, two-sentence pitch, README/deployment/validation. bc2ae98: October 9 live follow-up.
-- Above commits are pushed. Subsequent small handoff commit updates this file, architecture and docs/HANDOFF.md; obtain its actual hash from git log.
-- Analyzer schema/logic and deployed Solidity remain unchanged. No wallet signature, contract redeployment, new blockchain transaction, environment/billing/account modification or final grant submission occurred.
+## Actual checks
 
-## Confirmed defects fixed
+- Local homepage revision: 80 application tests passed (71 core/RPC/CLI/verifier + 9 rendered components), production build/types and 18 deterministic browser cases plus two owner live cases passed.
+- Final positioning fix: build/types and 4 focused desktop/mobile tests passed, including real owner RPC refresh/download and viewport coverage.
+- Final public production: 20 browser cases passed at 2026-10-09T12:11:38Z, zero failures/flakes/skips. Includes all tools, real uploads/downloads, keyboard, width, sticky header, comparison navigation, one deliberate simulated outage and two unmocked owner ERC-20 live cases. Actual Chromium/Pixel 7 viewport-touch emulation, not physical-device/screen-reader certification.
+- Five final production live reports at 12:11:33Z: HTTP 200/source live/full equality; ERC-20 needs_review and failed receipt confirmed_failed retained. HTTP smoke passed. Final screenshots inspected; comparison starts below header at desktop y120/header100 and mobile y107.6/header88.
+- CI https://github.com/aquattdabackup/ArcMirror/actions/runs/37928140139 at 4fbe482 passed both jobs: audit, application/spike, types/build/default browser suite and Foundry. CI evidence captured at 12:14:13Z.
+- Staged/full-history Gitleaks and relative Markdown links pass before publication. No new test run is needed merely to resume documentation work.
 
-1. node scripts/verify-deployment.mjs --live crashed at original line 42 on null primary receipt, while explicit dRPC verified both contracts. New scripts/deployment-rpc.mjs selects one complete matching transaction/receipt pair on chain 5042 and pins later bytecode/getter reads to that provider. Default primary then dRPC; explicit ARC_DEPLOYMENT_RPC_URL is exclusive. No mixing partial pairs. Unavailability is not proof of non-deployment. Captured mode stays offline.
-2. New npm audit at c736b5d flagged six Next 16.3.6 advisories, aggregate High, failing CI run 37728503218. Patch to 16.3.8 restored zero findings and was deployed. No exploit was demonstrated. The High image-optimization issue requires remotePatterns, absent in this app; do not claim every listed issue was exploitable. Keep audit gate enabled.
+## Video and user follow-up
 
-## Actual verification
+- Video https://www.youtube.com/watch?v=urPALNc8Y2Q. Use canonical URL without incoming &t=56s in the application. Title: ArcMirror Demo | USDC Transaction Analysis on Arc Mainnet. Channel ArcMirror. Public oEmbed/watch HTTP200; metadata 254 seconds (4:14), player OK, embed allowed.
+- Three YouTube description URLs have a space after https://. Correction text in docs/video-review-2026-10-09.vi.md; owner must edit the channel description. Agent did not edit YouTube.
+- Sampled public storyboard frames show the old homepage/report/evidence workflow. No complete audio/video playback or transcript verified: browser connector unavailable, web reader failed, public caption endpoint empty. Do not say the whole video was watched or verified. Existing-video edit notes describe optional opening changes without requiring a full rerecord.
+- Owner agreed to recruit 2-3 testers. No actual responses received. Use the participant sheet; record unassisted/assisted completion honestly and obtain quote consent. Agent has not contacted anyone.
+- Final form/terms/owner declarations/submission remain owner actions. No unresolved technical mainnet entry blocker found in dated checks; no organizer acceptance or award prediction. Official deadline last checked October 9: October 14 23:59 ET / October 15 10:59 Vietnam. Recheck actual form before final submission; earlier automated form fetch returned 405.
 
-- October 8: local 78 application tests (71 core/RPC/CLI/verifier + 7 rendered components), types/build passed. Captured and default live deployment checks pass source/compiler, receipt, both executable bytecodes and immutable/getter values; CBOR metadata excluded, no explorer badge/audit claimed.
-- October 8 CI **37729334260** at bb50586 passed both jobs: https://github.com/aquattdabackup/ArcMirror/actions/runs/37729334260. Includes 78 application, 10 frozen spike, 16 Foundry with 256 fuzz runs, 16 deterministic Chromium browser cases, types/build and production dependency audit.
-- October 8 baseline and final patched production: all five owner reports return HTTP 200/source live/full equality; ERC-20 needs_review and intentional confirmed_failed retained. Two full 18-case production browser runs passed before/after patch, zero failures/flakes/skips: actual desktop Chromium and Pixel7 viewport/touch emulation, not physical devices/screen reader certification. Includes keyboard focus, sticky header, actual download/upload, all tools and unmocked owner live refresh. Final public smoke passed pages/API/negative hashes/security headers.
-- October 8 arbitrary third-party transaction 0x39bf65f2774fd3be06e943d3bbdca1edba10ec53460a8943b99f3886de75fe9d from latest dRPC block 24844625 matched canonical receipt movement/fee; unrelated token excluded. Separate from owner demos, not all-history coverage. Public raw receipt/report capture is in review evidence.
-- October 9 at 02:33:44Z: five live owner reports again full-match. Do not relabel October 8 browser/CI/audit as new October 9 checks. Both default RPCs reported 5042 and GitHub repo/profile were public/MIT at full review.
-- First October 8 Vercel create returned Not authorized. Identity/team/project reads succeeded; unchanged authorized retry deployed without credential/permission changes. Underlying first-error cause unproven; no ongoing auth blocker.
-- October 8 final memory write was NOT executed because automatic approval review hit a usage limit. Owner resumed October 9; authorized shell works again. No unsafe-action determination. All implementation/review commits were already public before interruption.
-- Relative links and staged/full-history Gitleaks scans passed before publication. Temporary output: ignored artifacts/grant-review-2026-10-08. No service intentionally left running. Shell sandbox helper fails; authorized elevated calls work. Playwright worked despite earlier Cua initialization failures.
+## Git state, blockers and exact next action
 
-## Remaining recommendations, not incomplete technical fixes
+- Preserve the pre-existing LICENSE indentation edit; never include it accidentally. After the handoff commit, only LICENSE should remain dirty. Confirm local/remote main match. GitHub is canonical; refresh/verify ignored artifacts/ArcMirror-handoff.bundle after final push.
+- Initial Vercel creates returned Not authorized; identity/project reads and unchanged retries succeeded. No credential/security settings changed; initial upstream cause unproven, no ongoing deployment blocker.
+- One automatic approval usage-limit failure interrupted work; owner resumed, commands recovered and final release completed. Windows sandbox helper fails; authorized require_escalated commands work. Node24/npm.cmd; no service intentionally left running.
+- Next user-dependent action: correct YouTube description links and watch from start anonymously; collect the real tester responses and fix any reproducible findings. Do not redeploy unchanged code, repeat paid demos, or claim feedback already exists.
 
-- Hero still leads with third-party 0.01-USDC native example; own demos sit below example cards. New reviewer-walkthrough and draft opening lead with owner ERC-20 0.002-versus-0.001 case. No homepage CTA redesign was performed. A targeted CTA change is an appropriate possible next owner task.
-- Dune already deduplicates interface logs. Differentiate source explanation, explicit evidence limits and reproducible individual reports; do not claim first/only, independent consensus or unmeasured superiority.
-- Independent usefulness/comprehension unproven. Optional 2?3 relevant testers could try the case unaided; no such feedback collected by agent. Never invent traction/time saved. Existing owner confusion is recorded in product-review.md.
-- Final video URL not supplied/inspected. Five-minute script exists; recommend core result in first 30?60 seconds. Owner checks anonymous playback and final form, then submits once.
-- More tools, paid demos, memo/MCP, npm publication or an explorer badge are not needed merely for the published entry criteria. Do not expand scope automatically.
-
-## Exact next action / handoff
-
-Finish the small memory commit, push, confirm remote HEAD and preserve only pre-existing LICENSE indentation dirty; refresh/verify ignored artifacts/ArcMirror-handoff.bundle. Once reading the published handoff, inspect Git state and continue the owner's next chosen improvement or final recording/form review. Review and necessary corrections are done; do not redeploy unchanged code or repeat paid demonstrations just to resume.
-
-Follow AGENTS.md: focused commits/pushes, portable memory, English product/docs and Vietnamese updates. Preserve LICENSE edit, pinned Solidity, native/interface one-to-one accounting, separate gas, gross-hop semantics and unsupported needs_review. Lab/Forwarder manifest contracts/deployments/5042.json and docs/mainnet-evidence.md contain owner proofs. MIT, aquattdabackup public profile, no prior Circle/Arc funding and Vercel destination approvals persist. Signing stays owner-local; reward mapping/credentials remain ignored. Keep existing two-ellipse logo and docs/video-demo-script.vi.md. GitHub is canonical.
+Preserve AGENTS.md approvals, current two-ellipse branding, pinned Solidity, exact one-to-one native/interface pairing, separate gas, gross-hop semantics and incomplete needs_review. The owner evidence is in contracts/deployments/5042.json, vectors/owner and docs/mainnet-evidence.md. Owner metadata on the homepage is not additional API snapshots; owner reports use RPC/cache. MIT, aquattdabackup builder profile, no previous Circle/Arc funding and approved Vercel team persist. Keys/reward mapping remain local; signing stays owner-local.

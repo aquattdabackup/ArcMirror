@@ -1,32 +1,29 @@
-# Continue ArcMirror with another AI
+﻿# Continue ArcMirror with another AI
 
 ## Paste into the next agent
 
-> Read AGENTS.md, architecture.md, task_on_progress.md and docs/grant-review-2026-10-08.md. Program review is complete: verifier fallback and Next advisories fixed, source bb50586 deployed with Next 16.3.8. Five live owner reports, 18 production browser checks and both CI jobs pass; five reports were rechecked October 9. Owner confirmed not submitted. Remaining priorities are a clear core demonstration, optional real comprehension feedback and final recording/form review, not more paid demos. Preserve LICENSE and pinned Solidity. Commit/push focused milestones and maintain handoff; report in Vietnamese.
+> Read AGENTS.md, architecture.md, task_on_progress.md and docs/releases/2026-10-09.md. The owner-demo homepage and direct comparison navigation are implemented and deployed at source 4fbe482. Twenty production browser cases, all five live owner reports and both CI jobs pass. Video URL is supplied (4:14); metadata and sampled thumbnails checked, full audio/video not verified. Fix text for three malformed description links is ready for the owner. User-test kit is ready; no responses received. Preserve LICENSE. Commit/push focused milestones and maintain this handoff. Report in Vietnamese.
 
-## Current status
+## Current production
 
-Production https://arcmirror-six.vercel.app, application source bb50586856ac26d6de0998a45c194d3e8e6c92a8, deployment dpl_4cEZsMCAP8KcA9YbMDG9fB9K3pqk. [Review](grant-review-2026-10-08.md), [October 8 evidence](evidence/grant-review/2026-10-08.json), [October 9 live check](evidence/grant-review/2026-10-09-live.json), [CI](https://github.com/aquattdabackup/ArcMirror/actions/runs/37729334260), [reviewer walkthrough](reviewer-walkthrough.md). Older deployment records are historical.
+https://arcmirror-six.vercel.app, source **4fbe4829f8cc024b72f00892a58eb15394621a6e**, deployment **dpl_3uRkVXLX6ZiMDYLD8dr5ycUTbR1f**, Next 16.3.8. [Release](releases/2026-10-09.md), [checks and screenshots](evidence/releases/2026-10-09/checks.json), [CI](https://github.com/aquattdabackup/ArcMirror/actions/runs/37928140139).
 
-October 8: 78 application + 10 spike + 16 Foundry tests (256 fuzz), types/build/audit and CI pass. Both complete 18-case actual Chromium production runs pass before/after framework patch, including real uploads/downloads and unmocked owner re-verification. Mobile is viewport/touch emulation, not physical-device/screen-reader coverage. Five live owner reports still match October 9. Separate recent third-party hash matched native receipt/fee, not proof of every transaction class.
+Homepage leads with owner ERC-20: 0.002 naive versus 0.001 actual, successful receipt with incomplete evidence. Five owner cases and Lab proof follow; third-party snapshots remain separate. Direct compare links are positioned after render and tested in the viewport, including beneath the sticky mobile header. Public owner routes use RPC/cache, not added snapshots. Accounting/schema/contracts/RPC config unchanged.
 
-Published commits: c736b5d verifier; bb50586 Next patch; e3c34ef review/evidence/walkthrough; 6b87586 submission/status docs; bc2ae98 October 9 follow-up. Subsequent memory commit contains this file; resolve hash via git log. Only pre-existing LICENSE indentation should remain dirty. October 8 memory write hit automatic-review usage limit and did not execute; resumed October 9.
+All five live owner reports fully matched at October 9 12:11:33 UTC. Final 20 browser cases passed without flakes/failures/skips; two use real owner RPC/download, default cases use labelled snapshots with one simulated outage. CI application and Foundry jobs pass. Mobile is Chromium viewport/touch emulation, not a physical device. Local 80 application tests and build passed; four targeted position checks passed after the final fix.
 
-## Next action
+## Owner follow-up
 
-No unresolved technical mainnet entry blocker found; no organizer acceptance or award prediction. Owner confirmed not submitted October 8. Official deadline rechecked October 9: October 14, 23:59 ET / October 15, 10:59 Vietnam. Automated form read returned 405; final terms/payload and final public video remain unchecked. Reported 800 competitors not verified.
+- [Video](https://www.youtube.com/watch?v=urPALNc8Y2Q), 4:14. Use the link from the beginning, without &t=56s. [Specific review](video-review-2026-10-09.vi.md) has replacement URLs for three description links containing spaces after https://. Agent has not edited YouTube. Browser unavailable/captions empty: only metadata and storyboard samples inspected, no complete audiovisual verification. [Edit notes](video-edit-notes.vi.md) reuse existing footage if updating the opening.
+- Owner will recruit 2-3 testers. [Participant sheet](user-test-task.vi.md), [facilitation guide](user-test-kit.vi.md), [feedback record](user-feedback.md). No actual sessions received; do not invent adoption or quotes.
+- Last owner submission status: not submitted. Use [application draft](application-draft.md) and [reviewer path](reviewer-walkthrough.md). Owner reviews final terms/form and submits. No unresolved technical entry blocker in dated checks; no selection guarantee. Deadline last verified October 9: October 14 23:59 ET / October 15 10:59 Vietnam; recheck before submission.
 
-Read the [two-sentence pitch](application-draft.md) and direct owner example. Homepage still leads with a third-party native transfer; no CTA redesign was made. A possible next improvement is immediately showing the Arc-specific 0.002-versus-0.001 accounting example. Optional 2?3 relevant testers can evaluate comprehension; none recruited by agent. Dune already deduplicates: do not claim first/only or invent traction.
+## Preserve and resume
 
-Use the five-minute video script with core result in first 30?60 seconds. Owner reviews/accepts terms and submits once. No new paid transaction, extra tool, npm release or explorer badge is required by the published entry list. CI does not auto-deploy. Inspect Git state, then act on the owner's next request.
+1. Inspect git status/log and remote before editing. Published milestones include bdfe40d, f1bd7d4, 21fbe85, f344db1, 4e13f52, 4fbe482, f9313ee, 7e98f4f and 7ec1631. The later small handoff commit contains this file; obtain its hash from git log. Only pre-existing LICENSE indentation should remain dirty.
+2. Do not redo deployed work or paid demos. Next useful work depends on actual tester responses, owner video corrections or a new request. Read detailed results only where needed.
+3. Preserve native/interface one-to-one accounting, separate gas, gross-hop meaning and ERC-20 needs_review. Failed receipt can have a verified analysis. [Mainnet proof](mainnet-evidence.md) and the contract manifest remain authoritative; no explorer source-verification badge claimed.
+4. Initial Vercel authorization errors resolved by unchanged authorized retries; underlying first-error cause unknown. No credential, permission, billing or wallet changes. Prior automatic-review usage-limit interruption recovered after owner resumed.
+5. Node22+/Node24, npm.cmd on Windows. Sandbox helper fails but authorized elevated commands work. Playwright works for app testing; Cua has no browser for video review. No service intentionally running.
 
-## Preserve and operate
-
-- [Mainnet evidence](mainnet-evidence.md), contracts/deployments/5042.json and vectors/owner hold deployed Lab/Forwarder and five owner demos. Do not repeat for setup or edit pinned source's historical comment.
-- Receipt outcome differs from evidence completeness; ERC-20 needs_review stays. Failed receipt can have verified analysis. Gross sums count hops; gas separate. Three homepage snapshots are third-party examples.
-- New deployment reader selects one complete matching pair from chain-5042 primary/dRPC and pins code/getter reads. Explicit ARC_DEPLOYMENT_RPC_URL is exclusive. Captured mode offline. CBOR metadata excluded; not explorer verification/security audit.
-- First October 8 deploy said Not authorized; unchanged retry after valid identity/team/project reads succeeded. No credential/permission change or ongoing blocker established.
-- Node22+ / Node24 CI, npm.cmd on Windows. Shell helper initialization fails; authorized elevated execution works. Playwright supplies real browser checks despite earlier Cua failure. No service intentionally running.
-- MIT, aquattdabackup profile, no prior Circle/Arc funding and approved Vercel destination persist. Signing owner-local; keep existing two-ellipse branding.
-
-GitHub is canonical. Refresh/verify ignored artifacts/ArcMirror-handoff.bundle after final push; it excludes ignored credentials, reward mapping, tools and temporary files. Never force-push, fabricate evidence or discard LICENSE edits.
+GitHub is canonical. Refresh/verify ignored artifacts/ArcMirror-handoff.bundle after the final push; it excludes credentials, reward mapping, temporary downloads and local tools. Never force-push or discard LICENSE changes. Existing MIT/profile/funding/deployment approvals remain valid.
