@@ -8,6 +8,7 @@ test("homepage owner demo opens the comparison, re-verifies live and downloads w
   await page.goto("/");
   await page.getByRole("link", { name: "Explore our 0.001 USDC demo" }).click();
   await expect(page).toHaveURL(`/tx/${hash}?compare=1#double-count`);
+  await expect(page.locator("#double-count")).toBeInViewport({ ratio: 0.9 });
   await expect(page.getByRole("button", { name: "Hide comparison" })).toHaveAttribute("aria-pressed", "true");
   await expect(page.locator("#double-count")).toContainText("0.002");
   await expect(page.locator("#double-count")).toContainText("0.001");

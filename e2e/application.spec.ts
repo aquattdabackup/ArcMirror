@@ -18,6 +18,7 @@ test("comparison links open eligible log pairs without inventing a native-only c
   const paired = examples[0];
   await page.goto(`/tx/${paired.hash}?compare=1#double-count`);
   const comparison = page.locator("#double-count");
+  await expect(comparison).toBeInViewport({ ratio: 0.9 });
   const toggle = page.getByRole("button", { name: "Hide comparison", exact: true });
   await expect(toggle).toBeVisible();
   await expect(toggle).toHaveAttribute("aria-pressed", "true");

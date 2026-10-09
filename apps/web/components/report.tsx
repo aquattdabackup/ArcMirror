@@ -1,5 +1,5 @@
 "use client";
-import { useId, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import Link from "next/link";
 import type { Report } from "../../../packages/core/src/types";
 import type { Result } from "../lib/service";
@@ -43,9 +43,24 @@ export function TransactionReport({ initial, compareOnLoad = false }: { initial:
   const [phantom, setPhantom] = useState(compareOnLoad);
   const [tab, setTab] = useState<EvidenceView>("flow");
   const evidenceId = useId();
+  const comparisonRef = useRef<HTMLElement>(null);
+  const comparisonPositioned = useRef(false);
   const r: Report = result.report;
   const confirmed =
     r.status === "confirmed_success" || r.status === "confirmed_failed";
+  useEffect(() => {
+    // The fragment can arrive before a streamed report exists in the DOM.
+    // Position once after hydration; live refreshes must not pull the reader back.
+    if (!compareOnLoad || comparisonPositioned.current ||
+      r.status !== "confirmed_success" || !r.totals.phantomEligible ||
+      window.location.hash !== "#double-count") return;
+    const frame = requestAnimationFrame(() => {
+      if (!comparisonRef.current) return;
+      comparisonRef.current.scrollIntoView({ behavior: "instant", block: "start" });
+      comparisonPositioned.current = true;
+    });
+    return () => cancelAnimationFrame(frame);
+  }, [compareOnLoad, r.status, r.totals.phantomEligible]);
   async function refresh() {
     setBusy(true);
     setMessage("");
@@ -470,6 +485,7 @@ export function TransactionReport({ initial, compareOnLoad = false }: { initial:
             <section
               className={"phantom panel " + (phantom ? "phantom-on" : "")}
               id="double-count"
+              ref={comparisonRef}
             >
               <div>
                 <div className="eyebrow">PHANTOM DOUBLE COUNT</div>
