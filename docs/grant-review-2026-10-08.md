@@ -8,6 +8,10 @@ The owner's supplied rules match the current [official program page](https://com
 
 The owner confirmed **not submitted** on October 8. Public deadline: October 14, 23:59 US Eastern, equivalent to **October 15, 10:59 Vietnam time** under the applicable daylight-saving offset. Review is rolling. Aim to submit the checked version well before the deadline; the program's handling of post-submission updates is not specified. The registration URL still returned HTTP 405 to automated reading, so additional current form terms and the final submitted payload remain unchecked.
 
+## October 9 follow-up
+
+Resumed after an automatic approval-review usage limit interrupted only the final handoff update. The implementation fixes, production release and review were already published. At 2026-10-09T02:33:44.722Z, all five owner production live reports again returned HTTP 200 and matched every expected field; [dated results](evidence/grant-review/2026-10-09-live.json). The official program page still listed the same deadline and criteria. The full browser/CI/deployment tests below were performed October 8, not rerun or relabelled as October 9 tests.
+
 ## Fresh evidence
 
 [Machine-readable results](evidence/grant-review/2026-10-08.json) distinguish live checks, regression tests and limitations. Audit baseline: `bac5ab9`, with initial live checks against `afa0396` / `dpl_9R9quumt8kbXozD8ZNWXQcV6EciT`. The security patch is now deployed as source **`bb50586`**, deployment **`dpl_4cEZsMCAP8KcA9YbMDG9fB9K3pqk`**, READY, at the same public production alias. Final release results are recorded separately from baseline checks. No blockchain transaction was sent.
