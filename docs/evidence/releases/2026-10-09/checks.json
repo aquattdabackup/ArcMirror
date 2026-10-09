@@ -1,0 +1,447 @@
+{
+  "recordedAt": "2026-10-09T15:43:27.574Z",
+  "deployment": {
+    "source": "4fbe4829f8cc024b72f00892a58eb15394621a6e",
+    "id": "dpl_3uRkVXLX6ZiMDYLD8dr5ycUTbR1f",
+    "readyState": "READY",
+    "production": "https://arcmirror-six.vercel.app",
+    "immutable": "https://arcmirror-7rocln065-luong-tuans-projects-a65355dc.vercel.app",
+    "next": "16.3.8"
+  },
+  "liveReports": {
+    "checkedAt": "2026-10-09T12:11:33.677Z",
+    "base": "https://arcmirror-six.vercel.app",
+    "applicationSource": "4fbe482",
+    "uploadRevision": "4fbe482",
+    "reports": [
+      {
+        "hash": "0x0cecb2a9fb27abd8d463d5faec25279056d28f0a447061eba22120d339165ec8",
+        "http": 200,
+        "source": "live",
+        "status": "confirmed_success",
+        "evidenceLevel": "verified",
+        "fullReportMatch": true
+      },
+      {
+        "hash": "0x2f0c62b0ea5c601f053b96e6c59d624a5b769208cc9ea9242a31bef963ab8981",
+        "http": 200,
+        "source": "live",
+        "status": "confirmed_success",
+        "evidenceLevel": "verified",
+        "fullReportMatch": true
+      },
+      {
+        "hash": "0x4e0e57e776550e0118d86be5b84233eaecaa00f7fe085e3baf9f0af5e750370d",
+        "http": 200,
+        "source": "live",
+        "status": "confirmed_success",
+        "evidenceLevel": "needs_review",
+        "fullReportMatch": true
+      },
+      {
+        "hash": "0x6539309ec60a263be08008ef134d4e15c6db8198fe1cd19e211959b5ef11df41",
+        "http": 200,
+        "source": "live",
+        "status": "confirmed_success",
+        "evidenceLevel": "verified",
+        "fullReportMatch": true
+      },
+      {
+        "hash": "0x87b456003ef9194f99c71ea5af94273ba242beaffaaeacc4fb466885a2b47fe1",
+        "http": 200,
+        "source": "live",
+        "status": "confirmed_failed",
+        "evidenceLevel": "verified",
+        "fullReportMatch": true
+      }
+    ]
+  },
+  "productionBrowser": {
+    "command": "E2E_BASE_URL=https://arcmirror-six.vercel.app E2E_LIVE=1 npm run test:e2e",
+    "stats": {
+      "startTime": "2026-10-09T12:11:38.146Z",
+      "duration": 108968.062,
+      "expected": 20,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "cases": [
+      {
+        "name": "comparison links open eligible log pairs without inventing a native-only comparison",
+        "project": "desktop-chromium",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 14991
+          }
+        ]
+      },
+      {
+        "name": "evidence tabs support arrows, wrapping, Home/End and focus into the labelled panel",
+        "project": "desktop-chromium",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 3103
+          }
+        ]
+      },
+      {
+        "name": "downloaded report is the complete captured JSON and can be inspected from disk",
+        "project": "desktop-chromium",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 3911
+          }
+        ]
+      },
+      {
+        "name": "main pages fit the viewport and the header remains reachable while scrolling",
+        "project": "desktop-chromium",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 5862
+          }
+        ]
+      },
+      {
+        "name": "CSV file reconciliation detects exact payment and amount mismatch, then exports evidence",
+        "project": "desktop-chromium",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 5114
+          }
+        ]
+      },
+      {
+        "name": "Inspector compares real files and detects altered contents without claiming authenticity",
+        "project": "desktop-chromium",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 2654
+          }
+        ]
+      },
+      {
+        "name": "Dust Lab preserves one native unit and exports the exact accumulated remainder",
+        "project": "desktop-chromium",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 3309
+          }
+        ]
+      },
+      {
+        "name": "a simulated RPC outage preserves the visible report and its downloadable evidence",
+        "project": "desktop-chromium",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 2924
+          }
+        ]
+      },
+      {
+        "name": "hash entry rejects invalid input and navigates to a saved real transaction",
+        "project": "desktop-chromium",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 4494
+          }
+        ]
+      },
+      {
+        "name": "comparison links open eligible log pairs without inventing a native-only comparison",
+        "project": "mobile-chromium",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 7389
+          }
+        ]
+      },
+      {
+        "name": "evidence tabs support arrows, wrapping, Home/End and focus into the labelled panel",
+        "project": "mobile-chromium",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 3491
+          }
+        ]
+      },
+      {
+        "name": "downloaded report is the complete captured JSON and can be inspected from disk",
+        "project": "mobile-chromium",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 3383
+          }
+        ]
+      },
+      {
+        "name": "main pages fit the viewport and the header remains reachable while scrolling",
+        "project": "mobile-chromium",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 6869
+          }
+        ]
+      },
+      {
+        "name": "CSV file reconciliation detects exact payment and amount mismatch, then exports evidence",
+        "project": "mobile-chromium",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 6161
+          }
+        ]
+      },
+      {
+        "name": "Inspector compares real files and detects altered contents without claiming authenticity",
+        "project": "mobile-chromium",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 2760
+          }
+        ]
+      },
+      {
+        "name": "Dust Lab preserves one native unit and exports the exact accumulated remainder",
+        "project": "mobile-chromium",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 3136
+          }
+        ]
+      },
+      {
+        "name": "a simulated RPC outage preserves the visible report and its downloadable evidence",
+        "project": "mobile-chromium",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 3823
+          }
+        ]
+      },
+      {
+        "name": "hash entry rejects invalid input and navigates to a saved real transaction",
+        "project": "mobile-chromium",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 5245
+          }
+        ]
+      },
+      {
+        "name": "homepage owner demo opens the comparison, re-verifies live and downloads without mocked requests",
+        "project": "desktop-chromium",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 7988
+          }
+        ]
+      },
+      {
+        "name": "homepage owner demo opens the comparison, re-verifies live and downloads without mocked requests",
+        "project": "mobile-chromium",
+        "status": "expected",
+        "attempts": [
+          {
+            "status": "passed",
+            "durationMs": 5527
+          }
+        ]
+      }
+    ]
+  },
+  "positionRegression": {
+    "localStats": {
+      "startTime": "2026-10-09T12:07:40.596Z",
+      "duration": 37114.219,
+      "expected": 4,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "productionDesktop": {
+      "sectionY": 120,
+      "headerHeight": 100
+    },
+    "productionMobile": {
+      "sectionY": 107.609375,
+      "headerHeight": 88
+    },
+    "minimumViewportRatio": 0.9
+  },
+  "ci": {
+    "checkedAt": "2026-10-09T12:14:13.698Z",
+    "run": 37928140139,
+    "url": "https://github.com/aquattdabackup/ArcMirror/actions/runs/37928140139",
+    "jobs": [
+      {
+        "name": "application",
+        "conclusion": "success",
+        "head": "4fbe4829f8cc024b72f00892a58eb15394621a6e",
+        "startedAt": "2026-10-09T12:08:57Z",
+        "completedAt": "2026-10-09T12:10:42Z",
+        "steps": [
+          {
+            "name": "Set up job",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/setup-node@820762786026740c76f36085b0efc47a31fe5020",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run npm ci",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run npm audit --omit=dev",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run npm test",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run npm run test:spike",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run npm run typecheck",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run npm run build",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run npx playwright install --with-deps chromium",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run npm run test:e2e",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/setup-node@820762786026740c76f36085b0efc47a31fe5020",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+            "conclusion": "success"
+          },
+          {
+            "name": "Complete job",
+            "conclusion": "success"
+          }
+        ]
+      },
+      {
+        "name": "contracts",
+        "conclusion": "success",
+        "head": "4fbe4829f8cc024b72f00892a58eb15394621a6e",
+        "startedAt": "2026-10-09T12:08:57Z",
+        "completedAt": "2026-10-09T12:09:10Z",
+        "steps": [
+          {
+            "name": "Set up job",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run foundry-rs/foundry-toolchain@908c540300062bd5a7e473851cdb4282204cee09",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run forge test -vv",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run foundry-rs/foundry-toolchain@908c540300062bd5a7e473851cdb4282204cee09",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+            "conclusion": "success"
+          },
+          {
+            "name": "Complete job",
+            "conclusion": "success"
+          }
+        ]
+      }
+    ]
+  },
+  "local": {
+    "applicationTests": 80,
+    "applicationTestsSource": "21fbe85",
+    "buildAndTypecheck": "passed again after position fix",
+    "defaultBrowserTests": 18,
+    "ownerLiveBrowserTests": 2
+  },
+  "smoke": {
+    "command": "node scripts/smoke.mjs https://arcmirror-six.vercel.app",
+    "health": "pass",
+    "snapshots": 3,
+    "invalidHash": "pass",
+    "unknownHash": "pass",
+    "securityHeaders": "pass",
+    "toolPages": 4
+  },
+  "limits": [
+    "Desktop Chromium and Pixel 7 viewport/touch emulation; not physical-device or screen-reader certification.",
+    "18 default browser cases use labelled third-party snapshots; the deliberate outage is simulated. Two owner ERC-20 tests use real RPC without interception.",
+    "Homepage owner labels are recorded metadata. Owner report routes use RPC or a recent cache; live=1 forces a fresh lookup.",
+    "No blockchain transaction, wallet signing, source re-verification badge or independent audit is claimed.",
+    "Video metadata and sampled storyboard thumbnails only; no complete audiovisual playback or transcript. No independent user-test responses received."
+  ]
+}
