@@ -1,6 +1,6 @@
 # ArcMirror — Kịch bản video demo tối đa 5 phút
 
-Ngày soạn: 30/09/2026; cập nhật luồng mở đầu 09/10/2026. Bản dành cho chủ dự án: hướng dẫn quay bằng tiếng Việt, lời đọc bằng tiếng Anh. **Chỉ đọc các đoạn “Lời đọc”; không đọc hướng dẫn, hash hoặc địa chỉ dài.** Chủ dự án cho biết đã có video nhưng chưa gửi URL; agent chưa xem bản đó. Xem [hướng dẫn sửa bản đã quay](video-edit-notes.vi.md) trước khi quyết định quay lại.
+Ngày soạn: 30/09/2026; cập nhật luồng mở đầu 09/10/2026. Bản dành cho chủ dự án: hướng dẫn quay bằng tiếng Việt, lời đọc bằng tiếng Anh. **Chỉ đọc các đoạn “Lời đọc”; không đọc hướng dẫn, hash hoặc địa chỉ dài.** Đã nhận [video 4:14](https://www.youtube.com/watch?v=urPALNc8Y2Q); [metadata/ảnh lấy mẫu đã được kiểm tra](video-review-2026-10-09.vi.md), chưa xác minh toàn bộ hình/âm thanh. Xem [hướng dẫn sửa bản đã quay](video-edit-notes.vi.md) trước khi quyết định quay lại.
 
 Mục tiêu: giới thiệu vấn đề, chứng minh ArcMirror phân tích 5 giao dịch do chủ dự án thực hiện trên Arc Mainnet, rồi trình bày ích lợi của cả 3 tools. Phần nội dung kết thúc ở **4:50**, chừa **10 giây dự phòng**; tổng video xuất ra không vượt **5:00**. Đây là thời lượng chủ dự án chọn, không phải tuyên bố về giới hạn của ban tổ chức.
 
@@ -279,4 +279,4 @@ Không cộng cột “Tổng theo chặng” để suy ra chi tiêu. Forwarding
 - CSV khớp đúng hai khoản từ Lab; giải thích một funding movement chưa gán. Inspector phân biệt integrity với authenticity. Dust hiện rõ simulation.
 - Lời đọc khoảng 500 từ tiếng Anh; đọc tự nhiên khoảng 120–130 từ/phút, thao tác đồng thời với lời đọc. Tập bằng đồng hồ vì số thập phân, chuyển tab và RPC có thể kéo dài hơn dự tính.
 - Nếu vượt thời gian: cắt khoảng chờ, cảnh mở explorer thứ hai hoặc thao tác mở file vừa export. Giữ đủ 5 demo, 3 tools và các câu phân biệt trạng thái/bằng chứng; không tăng tốc lời đọc tới mức khó nghe.
-- Xuất bản cuối cùng **≤ 5:00**. Kịch bản không chứng minh nội dung bản quay hiện có; URL và phát lại công khai còn chờ kiểm tra. Hồ sơ chưa được agent gửi.
+- Xuất bản cuối cùng **≤ 5:00**. Video đã gửi có metadata 4:14; kịch bản không chứng minh nội dung bản quay hiện có. Phát lại công khai trọn video còn chờ xác minh. Hồ sơ chưa được agent gửi.

@@ -1,6 +1,6 @@
 # Chỉnh video hiện có theo luồng demo mới
 
-Ngày 09/10/2026: bạn cho biết đã có video và sẽ gửi link. **Chưa có URL để xem; đây là hướng dẫn dựng, không phải kết quả đánh giá bản quay.** Không cần mặc định quay lại toàn bộ.
+Ngày 09/10/2026: đã nhận [video 4:14](https://www.youtube.com/watch?v=urPALNc8Y2Q). [Kiểm tra metadata/ảnh lấy mẫu](video-review-2026-10-09.vi.md) phát hiện ba URL trong mô tả có khoảng trắng sau https://; phát lại hình/âm thanh đầy đủ chưa được xác minh. Đây là hướng dẫn dựng nếu cập nhật video, không phải yêu cầu quay lại toàn bộ.
 
 ## Giữ lại và thay phần nào
 
@@ -29,8 +29,8 @@ Dust Lab is a local precision simulation. A successful receipt is not the same a
 
 Chapters phải lấy timestamp **thực tế của bản xuất**, không dán timeline dự kiến nếu cảnh đã bị dịch thời gian. Đăng Public hoặc Unlisted để người có link xem được; không dùng Private.
 
-## Khi bạn gửi URL
+## Phạm vi kiểm tra URL đã nhận
 
-Agent kiểm tra quyền xem không đăng nhập nếu công cụ cho phép, thời lượng, sự khớp giữa narration/màn hình/hash và links. Nếu chỉ đọc được metadata/transcript, phải ghi rõ phần hình/âm thanh chưa kiểm tra; không coi script là bằng chứng video đã đạt. Bạn tự xem một lần bằng cửa sổ ẩn danh trước khi đưa link vào hồ sơ.
+Agent đọc được metadata không đăng nhập và ảnh storyboard; browser không khả dụng, phụ đề trả body rỗng. Xem các phát hiện cụ thể trong tài liệu review, sửa URL mô tả và tự phát lại từ đầu bằng cửa sổ ẩn danh. Không coi script hoặc metadata là bằng chứng toàn bộ hình/âm thanh đã đạt.
 
 Không đưa vào hồ sơ tuyên bố “first/only”, tất cả năm thanh toán đều thành công, hoặc có người dùng thật khi chưa có phản hồi được ghi nhận. Dune đã xử lý duplicate logs; điểm trình bày của ArcMirror là giải thích nguồn, giới hạn và tái kiểm tra báo cáo từng giao dịch.
