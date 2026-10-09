@@ -2,8 +2,9 @@ import Link from "next/link";
 import { Search } from "../components/search";
 import { Arrow, Check } from "../components/icons";
 import { examples } from "../lib/examples";
+import { FeaturedOwnerDemo, OwnerDemos } from "../components/owner-demos";
+import { featuredOwnerDemo, ownerDemoHref } from "../lib/owner-demos";
 export default function Home() {
-  const native = examples[1];
   return (
     <>
       <section className="hero shell">
@@ -12,24 +13,22 @@ export default function Home() {
             <span className="status-dot" /> ARC MAINNET / USDC EVIDENCE
           </div>
           <h1>
-            Understand
+            Two records.
             <br />
-            your USDC
+            One USDC
             <br />
-            <em>transaction.</em>
+            <em>payment.</em>
           </h1>
           <p className="hero-description">
-            Checking an Arc payment? See who received what, what gas cost,
-            and whether the evidence supports the result. Paste a transaction
-            hash from your wallet or explorer.
+            On Arc, native and ERC-20 logs can describe the same payment.
+            Check what moved, inspect the sources, and share a report others
+            can recheck. Built for payment support and developers.
           </p>
+          <Link className="button primary owner-primary-cta" href={ownerDemoHref(featuredOwnerDemo)}>
+            Explore our 0.001 USDC demo <Arrow />
+          </Link>
+          <p className="caption">Or investigate your own Arc transaction:</p>
           <Search />
-          <p className="caption">
-            No hash yet?{" "}
-            <Link className="text-link" href={"/tx/" + native.hash}>
-              Follow a real 0.01 USDC transfer in one minute →
-            </Link>
-          </p>
           <div className="hero-small">
             <span>
               <Check /> See the actual gas fee
@@ -39,56 +38,7 @@ export default function Home() {
             </span>
           </div>
         </div>
-        <div className="hero-visual">
-          <div className="visual-grid" />
-          <div className="visual-top">
-            <span className="mono">A CLOSER LOOK</span>
-            <span className="pill">Real mainnet example</span>
-          </div>
-          <div className="visual-title">Follow the cent.</div>
-          <div className="visual-subtitle">
-            The recipient gets 0.01 USDC. Gas is an additional cost.
-          </div>
-          <div className="orbit">
-            <span className="orbit-line" />
-            <div className="coin">
-              <span>$</span>
-              <small>USDC</small>
-            </div>
-            <div className="orbit-tag tag-one">
-              18 decimals <span>native</span>
-            </div>
-            <div className="orbit-tag tag-two">
-              6 decimals <span>ERC-20 interface</span>
-            </div>
-          </div>
-          <div className="visual-ledger">
-            <div>
-              <span>Recipient received</span>
-              <strong>
-                0.010000 <small>USDC</small>
-              </strong>
-            </div>
-            <div>
-              <span>Gas paid separately</span>
-              <strong>
-                0.000420 <small>USDC</small>
-              </strong>
-            </div>
-            <div className="ledger-final">
-              <span>
-                <Check /> Logs + trace + state match
-              </span>
-              <span>0 residual</span>
-            </div>
-          </div>
-          <Link href={"/tx/" + native.hash} className="visual-cta">
-            See the transfer and its fee <Arrow />
-          </Link>
-          <div className="visual-footnote">
-            Public transaction · snapshot from September 24, 2026
-          </div>
-        </div>
+        <FeaturedOwnerDemo />
       </section>
       <section className="principle-strip">
         <div className="shell principle-inner">
@@ -123,19 +73,20 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section id="examples" className="shell section examples">
+      <OwnerDemos />
+      <section id="public-examples" className="shell section examples">
         <div className="section-heading">
           <div>
-            <div className="eyebrow">START WITH THE EVIDENCE</div>
+            <div className="eyebrow">ADDITIONAL PUBLIC EXAMPLES</div>
             <h2>
-              Small transactions.
+              Other transactions.
               <br />
-              Useful questions.
+              More evidence to inspect.
             </h2>
           </div>
           <p>
-            Start with a payment and its gas fee. Then investigate why a
-            report can count money twice, or display a tiny amount as zero.
+            Explore captured third-party activity: a payment and its gas,
+            another paired-log example, and an amount that can round to zero.
           </p>
         </div>
         <div className="example-grid">
@@ -179,12 +130,8 @@ export default function Home() {
           ))}
         </div>
         <p className="caption">
-          These reusable starter cases come from existing public activity.
-          ArcMirror also analyzes other Arc mainnet transaction hashes.{" "}
-          <a href="https://github.com/aquattdabackup/ArcMirror/blob/main/docs/mainnet-evidence.md">
-            Five owner-created mainnet demos
-          </a>{" "}
-          are completed and documented separately.
+          These three reports open as labelled snapshots of third-party activity.
+          Use Re-verify live to fetch current RPC evidence.
         </p>
       </section>
       <section className="shell tools-home">

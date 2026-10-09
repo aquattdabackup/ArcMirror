@@ -484,6 +484,7 @@ export function TransactionReport({ initial, compareOnLoad = false }: { initial:
                   Summing both representations inflates the result.
                   This can make a payment report look larger than the recorded movements.
                 </p>
+                <p className="caption">Receipt succeeded. Evidence: <strong>{label(r.evidenceLevel)}</strong>. <a className="text-link" href="#evidence-check">Read the coverage limits</a>.</p>
                 <button
                   className="button"
                   onClick={() => setPhantom(!phantom)}
