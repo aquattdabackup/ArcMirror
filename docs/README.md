@@ -7,6 +7,7 @@ Start with the [project README](../README.md). Current operating instructions an
 - [Mainnet evidence](mainnet-evidence.md): deployed addresses, five owner-created transactions, outcomes and reproducible proof.
 - [Owner test walkthrough](owner-test-flow.vi.md): Vietnamese directions for exercising the app and tools.
 - [Five-minute video script](video-demo-script.vi.md): English narration with Vietnamese recording directions.
+- [User-test participant tasks](user-test-task.vi.md), [owner facilitation guide](user-test-kit.vi.md) and [feedback record](user-feedback.md): short, unpaid, read-only usability sessions; no feedback is claimed before it is collected.
 - [Core package](../packages/core/README.md) and [vectors](../vectors/README.md): standalone usage and fixture provenance.
 - [Validation](validation.md): dated commands, results and explicit limits.
 - [Automated testing](testing.md): local and production browser checks, CI, artifacts and safe RPC diagnostics.
