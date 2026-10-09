@@ -18,7 +18,7 @@ Run `forge test -vv` from `contracts/` for the separate Solidity suite. CI pins 
 
 Playwright starts the built Next.js server on `127.0.0.1:3100`, checks it is ready, and stops its process when finished. It refuses to reuse an unrelated server on that port. The two projects run actual Chromium with desktop and Pixel 7 viewport/touch settings. Mobile emulation is not a physical-device test or a screen-reader certification.
 
-Eight scenarios run in both projects:
+Nine scenarios run in both projects:
 
 1. Evidence tabs: arrows, wraparound, Home/End, focus and labelled panel.
 2. Actual report download, full JSON equality and re-import from disk.
@@ -28,12 +28,13 @@ Eight scenarios run in both projects:
 6. Exact dust accumulation, calculation export and invalid-input state.
 7. A deliberately simulated RPC outage preserving the visible/downloadable report.
 8. Invalid hash feedback and valid report navigation.
+9. Direct comparison links open paired-log evidence, preserve the toggle, and do not invent a comparison for a native-only transaction.
 
 These default checks use labelled, captured mainnet examples and local browser inputs. They do not need live RPC access. Only the outage scenario intercepts a browser API request, to return an explicit synthetic error. Never present that result as successful mainnet verification.
 
 ## Real production checks
 
-`E2E_BASE_URL` selects an existing deployment instead of starting a local server. `E2E_LIVE=1` also enables an owner-created native transaction: real live re-verification, complete report comparison and actual JSON download. It uses no request interception.
+`E2E_BASE_URL` selects an existing deployment instead of starting a local server. `E2E_LIVE=1` also follows the homepage's owner-created ERC-20 demo: the comparison opens immediately, the evidence limit stays visible, and real live re-verification and the downloaded JSON must fully match the recorded report. It uses no request interception.
 
 POSIX shell:
 

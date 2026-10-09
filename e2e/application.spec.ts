@@ -72,6 +72,12 @@ test("main pages fit the viewport and the header remains reachable while scrolli
   for (const [name, path] of [["home", "/"], ["report", `/tx/${native.hash}`], ["tools", "/tools"]]) {
     await page.goto(path);
     await expect(page.getByRole("main")).toBeVisible();
+    if (name === "home") {
+      await expect(page.getByRole("link", { name: "Explore our 0.001 USDC demo" })).toHaveAttribute("href", /\?compare=1#double-count$/);
+      await expect(page.locator("#examples .owner-demo-card")).toHaveCount(5);
+      await expect(page.locator("#public-examples .example-card")).toHaveCount(3);
+      await expect(page.getByRole("region", { name: "Recorded owner ERC-20 demonstration" })).toContainText("Evidence needs review");
+    }
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
     await page.screenshot({ path: info.outputPath(`${name}.png`), fullPage: true });
     await page.evaluate(() => window.scrollTo(0, 900));

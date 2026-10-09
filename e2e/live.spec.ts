@@ -1,11 +1,17 @@
 import { expect, test } from "@playwright/test";
 import { readFile } from "node:fs/promises";
-const hash = "0x2f0c62b0ea5c601f053b96e6c59d624a5b769208cc9ea9242a31bef963ab8981";
+const hash = "0x4e0e57e776550e0118d86be5b84233eaecaa00f7fe085e3baf9f0af5e750370d";
 
-test("owner transaction can be re-verified live and downloaded without mocked requests", async ({ page }) => {
+test("homepage owner demo opens the comparison, re-verifies live and downloads without mocked requests", async ({ page }) => {
   test.setTimeout(120_000);
   const { expected } = JSON.parse(await readFile(new URL(`../vectors/owner/${hash}.json`, import.meta.url), "utf8"));
-  await page.goto(`/tx/${hash}`);
+  await page.goto("/");
+  await page.getByRole("link", { name: "Explore our 0.001 USDC demo" }).click();
+  await expect(page).toHaveURL(`/tx/${hash}?compare=1#double-count`);
+  await expect(page.getByRole("button", { name: "Hide comparison" })).toHaveAttribute("aria-pressed", "true");
+  await expect(page.locator("#double-count")).toContainText("0.002");
+  await expect(page.locator("#double-count")).toContainText("0.001");
+  await expect(page.locator("#double-count")).toContainText("needs review");
   const request = page.waitForResponse(response => response.url().endsWith(`/api/analyze/${hash}?live=1`));
   await page.getByRole("button", { name: "Re-verify live" }).click();
   const response = await request;
