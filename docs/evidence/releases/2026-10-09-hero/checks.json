@@ -1,0 +1,314 @@
+{
+  "source": "059469bf887a9836e8191eb71ec8490bfa09b6b6",
+  "deployment": "dpl_3bCgwihgTu112pUkSnUZ7BXzNdGa",
+  "production": "https://arcmirror-six.vercel.app",
+  "local": {
+    "checkedAt": "2026-10-09T15:58:48.307Z",
+    "base": "http://127.0.0.1:3101",
+    "results": [
+      {
+        "width": 1440,
+        "height": 900,
+        "inputBox": {
+          "x": 163.546875,
+          "y": 447.984375,
+          "width": 414.15625,
+          "height": 34
+        },
+        "fullyVisibleWithoutScroll": true,
+        "analyzeNavigation": "passed"
+      },
+      {
+        "width": 1366,
+        "height": 600,
+        "inputBox": {
+          "x": 126.546875,
+          "y": 428.109375,
+          "width": 414.15625,
+          "height": 34
+        },
+        "fullyVisibleWithoutScroll": true,
+        "analyzeNavigation": "passed"
+      },
+      {
+        "width": 1024,
+        "height": 550,
+        "inputBox": {
+          "x": 65.546875,
+          "y": 414.234375,
+          "width": 316.421875,
+          "height": 34
+        },
+        "fullyVisibleWithoutScroll": true,
+        "analyzeNavigation": "passed"
+      },
+      {
+        "width": 980,
+        "height": 466,
+        "inputBox": {
+          "x": 65.546875,
+          "y": 414.234375,
+          "width": 293.1875,
+          "height": 34
+        },
+        "fullyVisibleWithoutScroll": true,
+        "analyzeNavigation": "passed"
+      },
+      {
+        "width": 768,
+        "height": 600,
+        "inputBox": {
+          "x": 37,
+          "y": 380.296875,
+          "width": 327.5,
+          "height": 38
+        },
+        "fullyVisibleWithoutScroll": true,
+        "analyzeNavigation": "passed"
+      },
+      {
+        "width": 360,
+        "height": 640,
+        "inputBox": {
+          "x": 56.546875,
+          "y": 407.5,
+          "width": 168.3125,
+          "height": 39
+        },
+        "fullyVisibleWithoutScroll": true,
+        "analyzeNavigation": "passed"
+      },
+      {
+        "width": 390,
+        "height": 844,
+        "inputBox": {
+          "x": 56.546875,
+          "y": 415.65625,
+          "width": 198.3125,
+          "height": 39
+        },
+        "fullyVisibleWithoutScroll": true,
+        "analyzeNavigation": "passed"
+      }
+    ]
+  },
+  "productionViewports": {
+    "checkedAt": "2026-10-09T16:02:36.779Z",
+    "base": "https://arcmirror-six.vercel.app",
+    "results": [
+      {
+        "width": 1440,
+        "height": 900,
+        "inputBox": {
+          "x": 163.546875,
+          "y": 447.984375,
+          "width": 414.15625,
+          "height": 34
+        },
+        "fullyVisibleWithoutScroll": true,
+        "analyzeNavigation": "passed"
+      },
+      {
+        "width": 1366,
+        "height": 600,
+        "inputBox": {
+          "x": 126.546875,
+          "y": 428.109375,
+          "width": 414.15625,
+          "height": 34
+        },
+        "fullyVisibleWithoutScroll": true,
+        "analyzeNavigation": "passed"
+      },
+      {
+        "width": 1024,
+        "height": 550,
+        "inputBox": {
+          "x": 65.546875,
+          "y": 414.234375,
+          "width": 316.421875,
+          "height": 34
+        },
+        "fullyVisibleWithoutScroll": true,
+        "analyzeNavigation": "passed"
+      },
+      {
+        "width": 980,
+        "height": 466,
+        "inputBox": {
+          "x": 65.546875,
+          "y": 414.234375,
+          "width": 293.1875,
+          "height": 34
+        },
+        "fullyVisibleWithoutScroll": true,
+        "analyzeNavigation": "passed"
+      },
+      {
+        "width": 768,
+        "height": 600,
+        "inputBox": {
+          "x": 37,
+          "y": 380.296875,
+          "width": 327.5,
+          "height": 38
+        },
+        "fullyVisibleWithoutScroll": true,
+        "analyzeNavigation": "passed"
+      },
+      {
+        "width": 360,
+        "height": 640,
+        "inputBox": {
+          "x": 56.546875,
+          "y": 407.5,
+          "width": 168.3125,
+          "height": 39
+        },
+        "fullyVisibleWithoutScroll": true,
+        "analyzeNavigation": "passed"
+      },
+      {
+        "width": 390,
+        "height": 844,
+        "inputBox": {
+          "x": 56.546875,
+          "y": 415.65625,
+          "width": 198.3125,
+          "height": 39
+        },
+        "fullyVisibleWithoutScroll": true,
+        "analyzeNavigation": "passed"
+      }
+    ]
+  },
+  "browser": {
+    "local": {
+      "startTime": "2026-10-09T15:58:06.875Z",
+      "duration": 57289.759,
+      "expected": 6,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "production": {
+      "startTime": "2026-10-09T16:01:48.813Z",
+      "duration": 77265.64,
+      "expected": 6,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "scope": "Existing main-page width/sticky header, hash validation/navigation and unmocked owner comparison/live download, desktop and mobile"
+  },
+  "ci": {
+    "checkedAt": "2026-10-09T16:03:25.400Z",
+    "run": 37955871683,
+    "url": "https://github.com/aquattdabackup/ArcMirror/actions/runs/37955871683",
+    "jobs": [
+      {
+        "name": "contracts",
+        "conclusion": "success",
+        "head": "059469bf887a9836e8191eb71ec8490bfa09b6b6",
+        "steps": [
+          {
+            "name": "Set up job",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run foundry-rs/foundry-toolchain@908c540300062bd5a7e473851cdb4282204cee09",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run forge test -vv",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run foundry-rs/foundry-toolchain@908c540300062bd5a7e473851cdb4282204cee09",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+            "conclusion": "success"
+          },
+          {
+            "name": "Complete job",
+            "conclusion": "success"
+          }
+        ]
+      },
+      {
+        "name": "application",
+        "conclusion": "success",
+        "head": "059469bf887a9836e8191eb71ec8490bfa09b6b6",
+        "steps": [
+          {
+            "name": "Set up job",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/setup-node@820762786026740c76f36085b0efc47a31fe5020",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run npm ci",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run npm audit --omit=dev",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run npm test",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run npm run test:spike",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run npm run typecheck",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run npm run build",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run npx playwright install --with-deps chromium",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run npm run test:e2e",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/setup-node@820762786026740c76f36085b0efc47a31fe5020",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+            "conclusion": "success"
+          },
+          {
+            "name": "Complete job",
+            "conclusion": "success"
+          }
+        ]
+      }
+    ]
+  },
+  "limits": "Browser viewport emulation, not physical devices. Only hero code changed. Earlier five-owner-report and full-suite evidence remains dated in the preceding release."
+}

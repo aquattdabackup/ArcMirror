@@ -1,5 +1,9 @@
 # Validation record
 
+## Hero input correction - October 9, 2026
+
+Source `059469b` is deployed as `dpl_3bCgwihgTu112pUkSnUZ7BXzNdGa`. [Release and screenshots](releases/2026-10-09-hero.md) record seven local and production viewport checks, including 980x466 and 360x640: the input and Analyze are fully visible at scrollY=0, typing does not scroll, and submission opens the correct report. Six existing targeted browser checks pass both locally and on production, including unmocked owner live re-verification/download. Build/types and both [CI jobs](https://github.com/aquattdabackup/ArcMirror/actions/runs/37955871683) pass. The right illustration and all later sections are unchanged. Earlier full-suite and five-owner-report checks below retain their dates; this layout-only release did not rerun all five hashes.
+
 ## Owner demo flow — October 9, 2026
 
 Source `4fbe482` is deployed as `dpl_3uRkVXLX6ZiMDYLD8dr5ycUTbR1f`. [Release](releases/2026-10-09.md) and [structured evidence](evidence/releases/2026-10-09/checks.json) record the checks: local 80 application tests after homepage changes, production build/types, four focused position/live browser regressions after the final fix, all five final production live reports matching completely, public smoke and **20 passing production browser cases** with no failures/flakes/skips. [CI 37928140139](https://github.com/aquattdabackup/ArcMirror/actions/runs/37928140139) passed both application and contract jobs at the deployed source.

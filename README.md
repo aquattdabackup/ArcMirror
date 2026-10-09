@@ -14,7 +14,7 @@ The analyzer is hosted on Vercel. ArcMirrorLab is deployed on **Arc mainnet, cha
 
 Start with the [owner's ERC-20 comparison](https://arcmirror-six.vercel.app/tx/0x4e0e57e776550e0118d86be5b84233eaecaa00f7fe085e3baf9f0af5e750370d?compare=1#double-count): one 0.001 USDC movement, two log representations. The homepage features all five owner demonstrations. The [mainnet evidence index](docs/mainnet-evidence.md) links their hashes, raw RPC captures, expected reports, and deployment verification. The three additional homepage snapshots are explicitly **third-party examples**.
 
-**Current release (October 9):** source `4fbe482` is deployed with the owner demonstration flow. All five live owner reports match; 20 production browser checks and both CI jobs pass. See the [release evidence](docs/releases/2026-10-09.md), [deployment runbook](docs/deployment.md) and [short reviewer walkthrough](docs/reviewer-walkthrough.md). Next.js 16.3.8 and the RPC/verifier fixes from the [October 8 review](docs/grant-review-2026-10-08.md) remain in place.
+**Current release (October 9, hero correction):** source `059469b` restores "Understand your USDC transaction" and puts hash entry before supporting copy/demo links. Seven production viewport checks confirm that input and Analyze are visible without scrolling; six targeted browser cases and CI pass. The right illustration and other sections are preserved. See [current release](docs/releases/2026-10-09-hero.md), [previous broader checks](docs/releases/2026-10-09.md) and [deployment runbook](docs/deployment.md).
 
 ## Features
 
