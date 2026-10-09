@@ -1,5 +1,13 @@
 # Validation record
 
+## Owner demo flow — October 9, 2026
+
+Source `4fbe482` is deployed as `dpl_3uRkVXLX6ZiMDYLD8dr5ycUTbR1f`. [Release](releases/2026-10-09.md) and [structured evidence](evidence/releases/2026-10-09/checks.json) record the checks: local 80 application tests after homepage changes, production build/types, four focused position/live browser regressions after the final fix, all five final production live reports matching completely, public smoke and **20 passing production browser cases** with no failures/flakes/skips. [CI 37928140139](https://github.com/aquattdabackup/ArcMirror/actions/runs/37928140139) passed both application and contract jobs at the deployed source.
+
+Screenshot review of the first release found the comparison open but outside the viewport after navigation; the final fix positions it after rendering. Browser checks now assert actual viewport coverage, beyond control visibility. Final desktop/mobile screenshots show the panel below the sticky header. Mobile uses viewport/touch emulation; no physical-device or screen-reader certification. No new blockchain transaction, algorithm/schema or RPC configuration change occurred.
+
+The [4:14 owner video](https://www.youtube.com/watch?v=urPALNc8Y2Q) received metadata/thumbnail review only. [Description URL corrections and review limits](video-review-2026-10-09.vi.md) remain explicit. Independent user feedback is not yet collected; the [test kit](user-test-kit.vi.md) is ready. Older checkpoints below retain their original dates and scope.
+
 ## Program review and security patch — October 8, 2026
 
 See the [current review](grant-review-2026-10-08.md) and [structured evidence](evidence/grant-review/2026-10-08.json). Fresh production checks reproduced all five owner reports and one additional transaction outside saved examples; native movement and fee were checked against its receipt. All 18 actual Chromium desktop/mobile-emulation tests passed before and after the patch release. Public repository/profile checks passed; the owner confirmed no submission yet.

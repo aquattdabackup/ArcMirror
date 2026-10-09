@@ -49,7 +49,7 @@ The website is live on Vercel and reads Arc mainnet, chain 5042. The MIT core is
 | Lab contract / source verification | [Deployed Lab](https://arc.etherscan.io/address/0xa64439ea7c88d56e2888c377d55ae3e174b415c1), [receipt and compiler manifest](../contracts/deployments/5042.json), reproducible executable/immutable verification. No explorer verification badge claimed. |
 | Five owner-created demos | **Completed and checked on mainnet.** [Native, ERC-20, forwarding, batch and intentional failure](mainnet-evidence.md), with independent receipt comparisons and matching production live reports. |
 | Reward address | **Supplied locally.** Distinct from demo burner; owner enters it in the application. Not published in this repo. |
-| Reproduction evidence | [October 8 live/browser/verifier checks](evidence/grant-review/2026-10-08.json), [October 7 deployed release](releases/2026-10-07.md), [CLI and browser instructions](testing.md). Historical [downloaded report](evidence/production/downloaded-report.json) and [CLI match](evidence/production/live-verify.txt) remain reproducible. |
+| Reproduction evidence | [October 9 live/browser/CI checks](evidence/releases/2026-10-09/checks.json), [current release](releases/2026-10-09.md), [CLI and browser instructions](testing.md). [October 8 verifier checks](evidence/grant-review/2026-10-08.json), the historical [downloaded report](evidence/production/downloaded-report.json) and [CLI match](evidence/production/live-verify.txt) remain reproducible. |
 
 ## Primary tour: one transaction in about one minute
 

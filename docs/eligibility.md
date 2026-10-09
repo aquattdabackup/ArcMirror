@@ -1,15 +1,15 @@
 # Eligibility checkpoint
 
-Checked **2026-10-08**. The production analyzer works with Arc Mainnet data; Lab is deployed and all five owner-created demo categories have mined receipts. [Public deployment and demo evidence](mainnet-evidence.md), the [October 7 release](releases/2026-10-07.md) and [October 8 review](grant-review-2026-10-08.md) record the current checks. The owner confirmed the application has **not been submitted**.
+Technical release rechecked **2026-10-09**. The production analyzer works with Arc Mainnet data; Lab is deployed and all five owner-created demo categories have mined receipts. [Public deployment and demo evidence](mainnet-evidence.md), the [October 9 release](releases/2026-10-09.md) and [October 8 program review](grant-review-2026-10-08.md) record the checks. The owner's last submission status is **not submitted**; the agent has not submitted a form.
 
-The fresh review rechecked all five production live reports, both RPC chain IDs, public repository/profile, deployed code and an additional transaction outside saved examples. All 18 actual Chromium desktop/mobile-emulation checks passed. The documented deployment verifier initially failed on an incomplete primary response; fallback is now fixed and verified. No unresolved technical entry blocker was found in these checks. Actual final form review, owner declarations and submission remain open. The [September 30 review](eligibility-review-2026-09-30.md) is historical; its unavailable-browser status is superseded.
+The October 8 review checked both RPC chain IDs, public repository/profile, deployed code and an additional transaction outside saved examples. October 9's final production release rechecked all five live owner reports and passed **20 actual Chromium desktop/mobile-emulation checks**. The documented verifier's primary-response fallback remains fixed. No unresolved technical entry blocker was found in these checks. Actual final form review, owner declarations and submission remain open. The [September 30 review](eligibility-review-2026-09-30.md) is historical; its unavailable-browser status is superseded.
 
 The [official Arc Microgrants page](https://community.arc.io/public/events/arc-microgrants-f8tijfjhyq), rechecked October 8, requires a project already deployed and working on Arc mainnet, public repo and builder profile, a short description and no prior Circle/Arc funding. It does not prescribe five transactions or an explorer verification badge. The five scenarios come from the owner's original brief. Technical evidence is not organizer acceptance, an award guarantee or a security audit.
 
 | Item | Public evidence / actual state |
 | --- | --- |
 | Arc mainnet | Chain 5042 from both official primary and dRPC endpoints; production live reports match captured RPC analysis. |
-| Working application | [Production](https://arcmirror-six.vercel.app); [fresh five live-report comparisons and browser checks](evidence/grant-review/2026-10-08.json). |
+| Working application | [Production](https://arcmirror-six.vercel.app); [October 9 five live-report comparisons and browser checks](evidence/releases/2026-10-09/checks.json). |
 | Project contract | [Lab](https://arc.etherscan.io/address/0xa64439ea7c88d56e2888c377d55ae3e174b415c1), [deployment manifest](../contracts/deployments/5042.json), reproducible executable/immutable comparison. |
 | Owner-created activity | Native, ERC-20, forwarding, batch and mined intentional failure; [all receipts and reports](mainnet-evidence.md). |
 | Source verification | Public source and reproducible verifier; ArcScan still requests Verify and Publish at the recorded check. No explorer verification badge claimed. |

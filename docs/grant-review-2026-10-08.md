@@ -14,6 +14,8 @@ Resumed after an automatic approval-review usage limit interrupted only the fina
 
 ## Fresh evidence
 
+**Later implementation update, October 9:** the [owner-demo release](releases/2026-10-09.md) implements the homepage/first-visit recommendation and verifies the final production build with five full live-report matches, 20 browser checks and passing CI. The original issue table below describes the October 8 reading path; its homepage presentation item is now addressed in code. Independent usefulness remains unmeasured. The [test kit](user-test-kit.vi.md) is prepared; no responses have been received. The owner supplied a [4:14 video](https://www.youtube.com/watch?v=urPALNc8Y2Q); [limited metadata/thumbnail review](video-review-2026-10-09.vi.md) found description URL spacing errors. Full audiovisual verification and final form submission remain owner follow-up items.
+
 [Machine-readable results](evidence/grant-review/2026-10-08.json) distinguish live checks, regression tests and limitations. Audit baseline: `bac5ab9`, with initial live checks against `afa0396` / `dpl_9R9quumt8kbXozD8ZNWXQcV6EciT`. The security patch is now deployed as source **`bb50586`**, deployment **`dpl_4cEZsMCAP8KcA9YbMDG9fB9K3pqk`**, READY, at the same public production alias. Final release results are recorded separately from baseline checks. No blockchain transaction was sent.
 
 | Check on October 8 | Observed result |
