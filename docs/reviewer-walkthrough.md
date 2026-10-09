@@ -6,14 +6,14 @@ ArcMirror helps Arc payment support teams and developers explain a USDC transact
 
 ## Start with the Arc-specific problem
 
-Open the [owner-created ERC-20 transfer](https://arcmirror-six.vercel.app/tx/0x4e0e57e776550e0118d86be5b84233eaecaa00f7fe085e3baf9f0af5e750370d). The actual transfer is **0.001 USDC**. Arc records native 18-decimal and interface 6-decimal representations of that movement. Adding both would incorrectly suggest **0.002 USDC**.
+Choose **Explore our 0.001 USDC demo** on the homepage, or open the [owner-created ERC-20 comparison](https://arcmirror-six.vercel.app/tx/0x4e0e57e776550e0118d86be5b84233eaecaa00f7fe085e3baf9f0af5e750370d?compare=1#double-count). The actual transfer is **0.001 USDC**. Arc records native 18-decimal and interface 6-decimal representations of that movement. Adding both would incorrectly suggest **0.002 USDC**.
 
-1. Read **What can I conclude?** and the separate gas fee.
-2. Select **See why two logs are not two payments** to open the comparison. Expand the movement to inspect the two source logs.
-3. Read **Needs Review**: the receipt confirms success, but native call-value traces cannot fully cover the USDC precompile mutation. The app preserves this distinction.
+1. The comparison is already open. Read the actual amount and the receipt/evidence distinction immediately above the control.
+2. Follow **Read the coverage limits**: the receipt confirms success, but native call-value traces cannot fully cover the USDC precompile mutation. The app preserves **needs review**.
+3. Read **What can I conclude?**, the separate gas fee, and the movement's two source logs.
 4. Select **Re-verify live**, then **Download JSON**. The current RPC result and exported report can be checked independently using the public source and CLI.
 
-The review path is designed to take roughly one minute excluding network waits; this is a walkthrough target, not a measured usability result. The comparison demonstrates what naive addition would do, not that every explorer or indexer has this bug. [Dune already excludes the duplicate interface stream](https://docs.dune.com/data-catalog/curated/token-transfers/arc/arc-token-transfers). ArcMirror's focus is explaining and reproducing an individual transaction's evidence.
+The review path is designed to take roughly one minute excluding network waits; this is a walkthrough target, not a measured usability result. The homepage's **Five transactions** section links all five owner demonstrations and the deployment evidence. Its labels summarize recorded results; owner report pages use live RPC or a recent cache, not bundled owner snapshots. The comparison demonstrates what naive addition would do, not that every explorer or indexer has this bug. [Dune already excludes the duplicate interface stream](https://docs.dune.com/data-catalog/curated/token-transfers/arc/arc-token-transfers). ArcMirror's focus is explaining and reproducing an individual transaction's evidence.
 
 ## Optional: check a real two-recipient payout
 

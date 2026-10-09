@@ -12,7 +12,9 @@ ArcMirror reads transaction receipts and available execution/state traces from A
 
 ## Suggested review link
 
-Start with the [owner ERC-20 report](https://arcmirror-six.vercel.app/tx/0x4e0e57e776550e0118d86be5b84233eaecaa00f7fe085e3baf9f0af5e750370d): adding its two log representations would incorrectly show 0.002 USDC; the actual movement is 0.001 USDC. [Walkthrough and batch follow-up](reviewer-walkthrough.md). The first minute should demonstrate this result and its evidence limits. No final video URL has been supplied or checked; omit a video claim until a real recording is available.
+Start with the [owner ERC-20 comparison](https://arcmirror-six.vercel.app/tx/0x4e0e57e776550e0118d86be5b84233eaecaa00f7fe085e3baf9f0af5e750370d?compare=1#double-count): adding its two log representations would incorrectly show 0.002 USDC; the actual movement is 0.001 USDC. [Walkthrough and batch follow-up](reviewer-walkthrough.md). The homepage's primary demo button opens this comparison; the five owner demos have their own prominent section. The owner reports having a video and will supply its URL; no playback or final cut has been reviewed. The [updated script](video-demo-script.vi.md) and [edit notes](video-edit-notes.vi.md) place this result and its evidence limits in the first 50 seconds.
+
+The owner will recruit 2–3 independent testers using the [participant tasks](user-test-task.vi.md). [No sessions or responses have been recorded yet](user-feedback.md). Do not include a user count, testimonial or time-saving claim until actual results support it.
 
 ## Short description
 
@@ -39,7 +41,7 @@ The website is live on Vercel and reads Arc mainnet, chain 5042. The MIT core is
 | Live product | [arcmirror-six.vercel.app](https://arcmirror-six.vercel.app) |
 | Public source | [aquattdabackup/ArcMirror](https://github.com/aquattdabackup/ArcMirror), MIT |
 | Builder | [aquattdabackup](https://github.com/aquattdabackup), owner-approved |
-| Direct project-created mainnet demonstration | [Owner forwarding report](https://arcmirror-six.vercel.app/tx/0x6539309ec60a263be08008ef134d4e15c6db8198fe1cd19e211959b5ef11df41), using the deployed Lab and Forwarder; [all five owner demos](mainnet-evidence.md). |
+| Direct project-created mainnet demonstration | [Owner ERC-20 comparison](https://arcmirror-six.vercel.app/tx/0x4e0e57e776550e0118d86be5b84233eaecaa00f7fe085e3baf9f0af5e750370d?compare=1#double-count); [owner forwarding report](https://arcmirror-six.vercel.app/tx/0x6539309ec60a263be08008ef134d4e15c6db8198fe1cd19e211959b5ef11df41), using the deployed Lab and Forwarder; [all five owner demos](mainnet-evidence.md). |
 | ERC-20 mainnet example | [Report](https://arcmirror-six.vercel.app/tx/0x376b287a795c449b0bf3f0ec3ffdfad8e913012edecf0a8eb6f00c007a47b24f), [Blockscout](https://explorer.arc.io/tx/0x376b287a795c449b0bf3f0ec3ffdfad8e913012edecf0a8eb6f00c007a47b24f); existing third-party activity |
 | Native mainnet example | [Report](https://arcmirror-six.vercel.app/tx/0xa0311ec4a00a190a55d2b32bbf03eb03e656d64c9bdaa306fdc1d9061ae6ad87); existing third-party activity |
 | Dust mainnet example | [Report](https://arcmirror-six.vercel.app/tx/0x37567ff71a01f4966f0c4d5c4155dde45a293fd4450a57ce3c69d96c9777b3de); existing third-party activity |
@@ -50,15 +52,15 @@ The website is live on Vercel and reads Arc mainnet, chain 5042. The MIT core is
 
 ## Primary tour: one transaction in about one minute
 
-Updated 2026-09-27 after owner feedback on unclear tool usefulness. See [product review](product-review.md). The five owner-signed demonstrations were subsequently completed; see the current evidence linked above.
+Updated 2026-10-09 to lead with the owner's Arc-specific accounting demonstration. See [product review](product-review.md) for the original usefulness concern.
 
-1. On the [home page](https://arcmirror-six.vercel.app), choose **Follow a real 0.01 USDC transfer in one minute**.
-2. Read **What can I conclude?**: the recipient receives 0.01 USDC and the transaction sender pays 0.00042 USDC in gas separately.
-3. Select **Follow the money**, expand the movement and inspect the system log. Expand the fee to see its receipt inputs.
-4. Read the evidence checks, then use **Copy link**. No CSV, JSON or wallet is needed for this path.
-5. For the Arc-specific double-count problem, use the ERC-20 investigation below.
+1. On the [home page](https://arcmirror-six.vercel.app), choose **Explore our 0.001 USDC demo**.
+2. The comparison opens: adding both representations would count 0.002 USDC, while the actual movement is 0.001 USDC.
+3. Read the visible receipt/evidence distinction, then **Read the coverage limits**. Native call-value traces do not fully cover the ERC-20 precompile mutation; the evidence stays **needs review** despite a successful receipt.
+4. Inspect the movement's paired source logs and the separate 0.001052167 USDC gas fee. **Re-verify live** fetches current evidence; report the actual outcome.
+5. Use **Copy link** or **Download JSON** to share. Return to **Five transactions** for native, forwarding, batch and intentional failure. No wallet or new transaction is required.
 
-This is a proposed walkthrough, not a measured claim that all visitors understand the product within one minute. Owner feedback remains necessary.
+This is a walkthrough target, not a measured claim that visitors understand the product within one minute. Independent feedback remains uncollected.
 
 ## Optional workbench checks
 
@@ -67,9 +69,9 @@ This is a proposed walkthrough, not a measured claim that all visitors understan
 3. Open [Report inspector](https://arcmirror-six.vercel.app/tools/inspect), load the example into A and compare with fresh RPC. Import an edited report in B to see its changed fields and digest warning.
 4. Open [Dust Lab](https://arcmirror-six.vercel.app/tools/dust), select **One native unit** and inspect the exact remainder and repeated-amount sum. Follow the real mainnet evidence link.
 
-## Transaction evidence tour
+## Additional third-party transaction evidence tour
 
-1. Open the [home page](https://arcmirror-six.vercel.app) and choose **Two logs. One movement.**
+1. Open the [home page](https://arcmirror-six.vercel.app), scroll to **Additional public examples**, and choose **Two logs. One movement.** This is a third-party snapshot, separate from the owner's five demonstrations.
 2. Expand the 0.090000 USDC movement to see native log 5 and interface log 6, with exact raw amounts.
 3. Choose **Source logs** or **Balance proof**. Read why the overall result still says **Needs Review**.
 4. Select **Show double-count comparison**: 8.999998 USDC would be counted naively; 4.499999 is the reconciled movement total.

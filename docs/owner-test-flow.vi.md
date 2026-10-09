@@ -4,9 +4,9 @@ Tài liệu này dành cho chủ dự án tự đi qua toàn bộ sản phẩm, 
 
 ## 1. Hệ thống hoạt động như thế nào
 
-Ưu tiên kiểm tra từ 2026-09-27: chưa cần dùng ba Tools. Tại trang chủ chọn **Follow a real 0.01 USDC transfer in one minute**, đọc **What can I conclude?**, chọn **Follow the money**, mở số tiền và phí, rồi dùng **Copy link**. Bạn cần giải thích lại được: ai gửi cho ai, số tiền nhận, phí riêng bao nhiêu và bằng chứng có đủ không. Nếu chưa trả lời được thì luồng chính vẫn chưa đạt yêu cầu dễ hiểu, kể cả khi các test kỹ thuật đều qua.
+Luồng mở đầu cập nhật 2026-10-09: tại trang chủ chọn **Explore our 0.001 USDC demo**. So sánh mở sẵn cho giao dịch ERC-20 của bạn: `0.002` nếu cộng hai biểu diễn, `0.001` thực chuyển. Đọc **Receipt succeeded. Evidence: needs review**, mở **Read the coverage limits**, rồi xem số tiền và phí riêng `0.001052167 USDC`. Dùng **Re-verify live** và **Copy link**. Bạn cần giải thích lại được ai gửi cho ai, tiền nhận, phí và giới hạn bằng chứng; các test kỹ thuật không tự chứng minh điều này dễ hiểu với người mới.
 
-Với ví dụ ERC-20, chọn **See why two logs are not two payments**. So sánh `8.999998` với `4.499999` và đọc lý do vẫn **Needs Review**. Các phần Tools phía sau chỉ dành cho nhu cầu cụ thể: có danh sách thanh toán riêng, có báo cáo JSON cần kiểm tra, hoặc đang viết code xử lý decimals. Không cần nạp ví để thực hiện flow này.
+Khu **Five transactions** chứa đủ năm giao dịch owner. Bài thử chi tiết phía sau còn dùng ba snapshot bên thứ ba trong khu **Additional public examples**; ví dụ ERC-20 bên thứ ba so sánh `8.999998` với `4.499999`, khác hash/số tiền với demo nổi bật. Các Tools chỉ dành cho nhu cầu cụ thể: có danh sách thanh toán, báo cáo JSON cần kiểm tra hoặc đang xử lý decimals. Không cần nạp ví. Nếu nhờ người mới thử độc lập, dùng [phiếu nhiệm vụ không có đáp án](user-test-task.vi.md) và [hướng dẫn ghi nhận](user-test-kit.vi.md).
 
 ```mermaid
 flowchart LR

@@ -1,6 +1,6 @@
 # ArcMirror — Kịch bản video demo tối đa 5 phút
 
-Ngày soạn: 30/09/2026. Bản dành cho chủ dự án: hướng dẫn quay bằng tiếng Việt, lời đọc bằng tiếng Anh. **Chỉ đọc các đoạn “Lời đọc”; không đọc hướng dẫn, hash hoặc địa chỉ dài.**
+Ngày soạn: 30/09/2026; cập nhật luồng mở đầu 09/10/2026. Bản dành cho chủ dự án: hướng dẫn quay bằng tiếng Việt, lời đọc bằng tiếng Anh. **Chỉ đọc các đoạn “Lời đọc”; không đọc hướng dẫn, hash hoặc địa chỉ dài.** Chủ dự án cho biết đã có video nhưng chưa gửi URL; agent chưa xem bản đó. Xem [hướng dẫn sửa bản đã quay](video-edit-notes.vi.md) trước khi quyết định quay lại.
 
 Mục tiêu: giới thiệu vấn đề, chứng minh ArcMirror phân tích 5 giao dịch do chủ dự án thực hiện trên Arc Mainnet, rồi trình bày ích lợi của cả 3 tools. Phần nội dung kết thúc ở **4:50**, chừa **10 giây dự phòng**; tổng video xuất ra không vượt **5:00**. Đây là thời lượng chủ dự án chọn, không phải tuyên bố về giới hạn của ban tổ chức.
 
@@ -8,7 +8,7 @@ Video xem lại các giao dịch đã hoàn tất. Không cần triển khai l�
 
 ## 1. Chuẩn bị trước khi bấm quay — không tính vào video
 
-1. Mở [website production](https://arcmirror-six.vercel.app) và các tab trong bảng liên kết cuối file. Dùng chính 5 hash của bạn; các nút tải ví dụ trên homepage/tools dùng dữ liệu mẫu bên thứ ba, không thay thế 5 demo này.
+1. Mở [website production](https://arcmirror-six.vercel.app) và các tab trong bảng liên kết cuối file. Nút **Explore our 0.001 USDC demo** và khu **Five transactions** dùng chính 5 hash của bạn. Khu **Additional public examples** và nút tải mẫu trong tools vẫn là dữ liệu bên thứ ba; không thay thế các demo owner.
 2. Mở từng báo cáo, bấm **Re-verify live**, chờ hoàn tất và kiểm tra kết quả theo bảng số liệu ở cuối file. Nếu RPC lỗi hoặc thiếu bằng chứng, chờ và thử lại trước khi quay; không đọc rằng kiểm tra đã thành công khi màn hình chưa cho thấy điều đó.
 3. Tại báo cáo **batch**, bấm **Download JSON** và lưu vào thư mục dễ chọn. File tải xuống này là đầu vào cho Report Inspector. Bản đã lưu trong repo để đối chiếu: [batch.report.json](evidence/mainnet/batch.report.json). Dùng report đầy đủ, không dùng `checks.json` hay JSON xuất từ công cụ đối soát.
 4. Sao chép CSV ở mục 4 vào **Or paste CSV** của Payout Reconciliation, nhập hash batch, chọn **Fetch fresh RPC evidence**, chạy thử. Kết quả cần là **2 of 2 expectations matched**, tổng khớp `0.003 USDC`, **1 unassigned movement**. Để sẵn dữ liệu nhập cho lúc quay.
@@ -17,18 +17,18 @@ Video xem lại các giao dịch đã hoàn tất. Không cần triển khai l�
 7. Thu ở 1080p, chọn mức zoom trình duyệt để chữ và số dễ đọc. Đóng thông báo và tab không liên quan. Đặt kịch bản trên màn hình khác hoặc điện thoại; không để cửa sổ chọn file che màn hình quá lâu.
 8. Quay thử một lượt có đồng hồ. Có thể thu màn hình và lời đọc riêng. Được cắt khoảng chờ RPC, chuyển tab và chọn file; ghi chú `RPC wait trimmed` nếu cắt thời gian chờ. Giữ nguyên kết quả thực tế và hash, không ghép lỗi thành cảnh thành công hoặc gọi báo cáo cache là vừa truy vấn RPC.
 
-**Bố trí tab:** homepage → bằng chứng mainnet trên GitHub → Native → ERC-20 → Forwarding → Batch → Failed → Reconcile → Inspector → Dust. Tab báo cáo có thể mở sẵn và cuộn sẵn tới phần cần quay. Riêng cảnh Native cần cho thấy dán hash và bấm Analyze từ homepage.
+**Bố trí tab:** homepage → ERC-20 → bằng chứng mainnet trên GitHub → Native → Forwarding → Batch → Failed → Reconcile → Inspector → Dust. Tab báo cáo có thể mở sẵn và cuộn sẵn tới phần cần quay. Riêng cảnh Native cần cho thấy dán hash và bấm Analyze từ homepage.
 
 ## 2. Timeline cố định
 
 | Mốc video | Thời lượng | Nội dung | Người xem cần hiểu |
 | --- | ---: | --- | --- |
-| 00:00–00:25 | 25 giây | Mở đầu | ArcMirror giải quyết việc đọc và đối chiếu thanh toán USDC |
-| 00:25–00:45 | 20 giây | Bằng chứng mainnet | Chain 5042, hợp đồng và 5 giao dịch của dự án có địa chỉ/hash công khai |
-| 00:45–01:10 | 25 giây | Demo 1 — Native | Tiền chuyển và gas là hai khoản khác nhau |
-| 01:10–01:40 | 30 giây | Demo 2 — ERC-20 | Hai biểu diễn log không phải hai lần thanh toán |
-| 01:40–02:05 | 25 giây | Demo 3 — Forwarding | Theo dõi tiền qua hợp đồng, không cộng các chặng thành tiền nhận |
-| 02:05–02:30 | 25 giây | Demo 4 — Batch | Hai người nhận, tổng chi trả thực tế 0.003 USDC |
+| 00:00–00:15 | 15 giây | Mở đầu | Vấn đề hai bản ghi của cùng một khoản USDC |
+| 00:15–00:50 | 35 giây | Demo 1 — ERC-20 | 0.002 nếu cộng trùng; 0.001 thực chuyển; giữ giới hạn bằng chứng |
+| 00:50–01:10 | 20 giây | Bằng chứng mainnet | Chain 5042, hợp đồng và 5 giao dịch của dự án có địa chỉ/hash công khai |
+| 01:10–01:35 | 25 giây | Demo 2 — Native | Tiền chuyển và gas là hai khoản khác nhau |
+| 01:35–02:00 | 25 giây | Demo 3 — Forwarding | Theo dõi tiền qua hợp đồng, không cộng các chặng thành tiền nhận |
+| 02:00–02:30 | 30 giây | Demo 4 — Batch | Hai người nhận, tổng chi trả thực tế 0.003 USDC |
 | 02:30–02:55 | 25 giây | Demo 5 — Intentional failure | Thất bại, không có chuyển tiền hoàn tất, vẫn tính gas |
 | 02:55–03:35 | 40 giây | Tool 1 — Payout Reconciliation | Đối chiếu danh sách dự kiến với các khoản chuyển thực tế |
 | 03:35–04:10 | 35 giây | Tool 2 — Report Inspector | Kiểm tra file báo cáo và so sánh với dữ liệu RPC mới |
@@ -38,17 +38,31 @@ Video xem lại các giao dịch đã hoàn tất. Không cần triển khai l�
 
 ## 3. Kịch bản quay từng cảnh
 
-### 00:00–00:25 — Mở đầu
+### 00:00–00:15 — Mở đầu
 
-**Màn hình:** homepage, giữ tên ArcMirror và ô nhập hash trong khung hình. Chưa cuộn qua các thẻ example.
+**Màn hình:** homepage, giữ tên ArcMirror, tiêu đề **Two records. One USDC payment.** và nút demo trong khung hình. Bấm nút vào cuối câu.
 
 **Lời đọc:**
 
-> Hi, I'm the builder of ArcMirror, a read-only USDC transaction analyzer for Arc Mainnet. It helps users answer three questions: did the payment succeed, where did the money go, and what did gas cost? I'll show five transactions I created, followed by three supporting tools.
+> Hi, I'm the builder of ArcMirror. On Arc, two log entries can describe one USDC payment. ArcMirror helps payment support teams and developers explain the amount, its sources, and the limits of the evidence.
 
 **Chữ chèn ngắn:** `ArcMirror | Arc Mainnet | Read-only USDC analysis`.
 
-### 00:25–00:45 — Bằng chứng triển khai
+### 00:15–00:50 — Demo 1: ERC-20 transfer và tránh đếm trùng
+
+**Thao tác:**
+
+1. Từ nút **Explore our 0.001 USDC demo**, báo cáo owner mở thẳng phần so sánh. Giữ cặp số `0.002` / `0.001 USDC` trong khung hình.
+2. Chỉ dòng **Receipt succeeded. Evidence: needs review**, rồi liên kết **Read the coverage limits**. Không che giới hạn này khi giải thích.
+3. Cuộn lên **Re-verify live**, bấm và chờ kết quả thật. Nếu cắt thời gian chờ, ghi `RPC wait trimmed`. Có thể giữ cảnh hoàn tất ở cuối đoạn trước khi chuyển trang.
+
+**Lời đọc:**
+
+> Here is my own mainnet payment. Adding both log representations would show zero point zero zero two USDC. Only zero point zero zero one moved. The receipt succeeded, but native call-value traces do not fully cover this ERC-20 transfer, so the evidence remains Needs Review. Re-verify live fetches fresh evidence for this same hash.
+
+**Chữ chèn ngắn:** `1. ERC-20 | 0.002 naive → 0.001 actual` và `Receipt: success | Evidence: Needs Review`.
+
+### 00:50–01:10 — Bằng chứng triển khai
 
 **Màn hình:** chuyển sang [public mainnet evidence](https://github.com/aquattdabackup/ArcMirror/blob/main/docs/mainnet-evidence.md). Cho thấy chain `5042`, địa chỉ Lab và bảng giao dịch. Mở liên kết giao dịch triển khai trên ArcScan, cho thấy trạng thái thành công và địa chỉ hợp đồng; trở về homepage trước cảnh kế tiếp.
 
@@ -58,35 +72,21 @@ Video xem lại các giao dịch đã hoàn tất. Không cần triển khai l�
 
 **Lưu ý quay:** đây là bằng chứng deployment, không phải tuyên bố hợp đồng được audit hoặc có badge xác minh source trên explorer. Trang bằng chứng giải thích riêng việc đối chiếu bytecode.
 
-### 00:45–01:10 — Demo 1: Native USDC transfer
+### 01:10–01:35 — Demo 2: Native USDC transfer
 
 **Thao tác:**
 
 1. Trên homepage, dán hash **Native** ở mục 5 vào **Paste an Arc mainnet transaction hash**, bấm **Analyze**.
 2. Cho thấy **Confirmed success**, số tiền `0.001 USDC` và gas `0.0004515 USDC`.
-3. Bấm **Re-verify live**, chờ kết quả thật; giữ nhãn **Live RPC result** trong khung hình. Cắt khoảng chờ nếu cần.
+3. Mở chi tiết phí để thấy đầu vào từ receipt; không cần lặp lại cảnh Re-verify đã quay ở demo ERC-20.
 
 **Lời đọc:**
 
-> First, I paste my native transfer hash and analyze it. The receipt confirms a payment of zero point zero zero one USDC. Gas is shown separately. Re-verify live requests current RPC evidence, so viewers can check the result themselves using this same hash.
+> Now I paste my native transfer hash and analyze it. The receipt confirms a payment of zero point zero zero one USDC. Gas is shown separately, with its receipt inputs. The recipient's amount and the sender's network fee are different amounts, and each can be checked.
 
-**Chữ chèn ngắn:** `1. Native: 0.001 USDC payment + separate gas`.
+**Chữ chèn ngắn:** `2. Native: 0.001 USDC payment + separate gas`.
 
-### 01:10–01:40 — Demo 2: ERC-20 transfer và tránh đếm trùng
-
-**Thao tác:**
-
-1. Chuyển sang báo cáo **ERC-20**; cho thấy **Confirmed success** và mức bằng chứng **needs review**.
-2. Bấm **See why two logs are not two payments**. Liên kết này mở sẵn phần so sánh; nếu cuộn tới phần đó bằng tay, bấm **Show double-count comparison**.
-3. Giữ cặp số `0.002` / `0.001 USDC` trong khung hình. Khi nhắc giới hạn, chỉ vào phần evidence hoặc chèn chú thích.
-
-**Lời đọc:**
-
-> The second payment uses the ERC-20 interface. Adding both log representations would incorrectly show twice the amount. ArcMirror counts one movement of zero point zero zero one USDC. The transaction succeeded, but the evidence remains Needs Review because native call-value traces do not cover USDC precompile mutations. That limitation stays visible.
-
-**Chữ chèn ngắn:** `Receipt: success | Evidence: Needs Review` và `Two representations ≠ two payments`.
-
-### 01:40–02:05 — Demo 3: Forwarding qua hợp đồng
+### 01:35–02:00 — Demo 3: Forwarding qua hợp đồng
 
 **Thao tác:** mở báo cáo **Forwarding**, bấm **Follow the money**, giữ tab **Money flow**. Chỉ lần lượt ba chặng: burner → Lab → Forwarder → recipient A. Có thể chèn tên ngắn này lên video vì UI hiển thị địa chỉ.
 
@@ -98,7 +98,7 @@ Video xem lại các giao dịch đã hoàn tất. Không cần triển khai l�
 
 **Điểm phải thấy:** 3 movements; `0.003` là tổng theo chặng, không phải người nhận được `0.003`.
 
-### 02:05–02:30 — Demo 4: Batch cho hai người nhận
+### 02:00–02:30 — Demo 4: Batch cho hai người nhận
 
 **Thao tác:** mở báo cáo **Batch**, xem **Money flow**. Chỉ chặng funding `0.003` vào Lab, sau đó hai chặng `0.001` tới A và `0.002` tới B. Bấm **Download JSON** để nối với Inspector ở phần sau; có thể dùng file đã chuẩn bị trước.
 
@@ -219,7 +219,7 @@ Hash nhập vào **Transaction hash** của công cụ:
 - [Forwarder trên ArcScan](https://arc.etherscan.io/address/0x28fcbbf10fac1bad051d1870c8cb30fd9d3ded17): `0x28fcbbf10fac1bad051d1870c8cb30fd9d3ded17`.
 - [Giao dịch triển khai](https://arc.etherscan.io/tx/0x97bcd82e2d98eee0962c54e6bd2fbdbfa78ff908c0627d7f53fc52fe28032292): receipt thành công, block `23006461`. Deployment riêng với 5 demo, không tính là demo thứ sáu.
 
-### Demo 1 — Native
+### Demo 2 — Native
 
 ```text
 0x2f0c62b0ea5c601f053b96e6c59d624a5b769208cc9ea9242a31bef963ab8981
@@ -227,7 +227,7 @@ Hash nhập vào **Transaction hash** của công cụ:
 
 [Mở báo cáo](https://arcmirror-six.vercel.app/tx/0x2f0c62b0ea5c601f053b96e6c59d624a5b769208cc9ea9242a31bef963ab8981) · [ArcScan](https://arc.etherscan.io/tx/0x2f0c62b0ea5c601f053b96e6c59d624a5b769208cc9ea9242a31bef963ab8981).
 
-### Demo 2 — ERC-20
+### Demo 1 — ERC-20
 
 ```text
 0x4e0e57e776550e0118d86be5b84233eaecaa00f7fe085e3baf9f0af5e750370d
@@ -273,10 +273,10 @@ Không cộng cột “Tổng theo chặng” để suy ra chi tiêu. Forwarding
 
 ## 6. Kiểm tra video trước khi xuất
 
-- Đủ: mở đầu → bằng chứng mainnet → 5 demo → 3 tools → kết thúc. Dùng caption đánh số để người xem theo kịp.
+- Đủ: mở đầu → ERC-20 → bằng chứng mainnet → 4 demo còn lại → 3 tools → kết thúc. Kết quả cốt lõi xuất hiện trước giây 50. Dùng caption đánh số để người xem theo kịp.
 - Có ít nhất một cảnh thực sự dán hash, bấm **Analyze**, và một lần truy vấn **Re-verify live** hoàn tất.
 - Giữ rõ **Needs Review** ở ERC-20 và **Confirmed failed** ở demo thất bại; không dùng câu “all five payments succeeded”.
 - CSV khớp đúng hai khoản từ Lab; giải thích một funding movement chưa gán. Inspector phân biệt integrity với authenticity. Dust hiện rõ simulation.
-- Lời đọc khoảng 500 từ tiếng Anh (496 từ đếm theo khoảng trắng); đọc tự nhiên khoảng 120–130 từ/phút, thao tác đồng thời với lời đọc. Tập bằng đồng hồ vì số thập phân, chuyển tab và RPC có thể kéo dài hơn dự tính.
+- Lời đọc khoảng 500 từ tiếng Anh; đọc tự nhiên khoảng 120–130 từ/phút, thao tác đồng thời với lời đọc. Tập bằng đồng hồ vì số thập phân, chuyển tab và RPC có thể kéo dài hơn dự tính.
 - Nếu vượt thời gian: cắt khoảng chờ, cảnh mở explorer thứ hai hoặc thao tác mở file vừa export. Giữ đủ 5 demo, 3 tools và các câu phân biệt trạng thái/bằng chứng; không tăng tốc lời đọc tới mức khó nghe.
-- Xuất bản cuối cùng **≤ 5:00**. Kịch bản này chuẩn bị nội dung quay; chưa phải video đã được quay hoặc gửi hồ sơ.
+- Xuất bản cuối cùng **≤ 5:00**. Kịch bản không chứng minh nội dung bản quay hiện có; URL và phát lại công khai còn chờ kiểm tra. Hồ sơ chưa được agent gửi.
