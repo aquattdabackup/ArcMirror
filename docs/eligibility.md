@@ -1,5 +1,7 @@
 # Eligibility checkpoint
 
+**Latest targeted recheck: October 10, 2026.** All five production live reports, both chain IDs, public links, live deployment verification and production dependency audit pass. See the [readiness review](readiness-review-2026-10-10.md) for exact scope, deferred requirements and open presentation/resilience limits. Current UI release is [059469b](releases/2026-10-09-hero.md); the browser results below retain their actual October 9 dates.
+
 Technical release rechecked **2026-10-09**. The production analyzer works with Arc Mainnet data; Lab is deployed and all five owner-created demo categories have mined receipts. [Public deployment and demo evidence](mainnet-evidence.md), the [October 9 release](releases/2026-10-09.md) and [October 8 program review](grant-review-2026-10-08.md) record the checks. The owner's last submission status is **not submitted**; the agent has not submitted a form.
 
 The October 8 review checked both RPC chain IDs, public repository/profile, deployed code and an additional transaction outside saved examples. October 9's final production release rechecked all five live owner reports and passed **20 actual Chromium desktop/mobile-emulation checks**. The documented verifier's primary-response fallback remains fixed. No unresolved technical entry blocker was found in these checks. Actual final form review, owner declarations and submission remain open. The [September 30 review](eligibility-review-2026-09-30.md) is historical; its unavailable-browser status is superseded.

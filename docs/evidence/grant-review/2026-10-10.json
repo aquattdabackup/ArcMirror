@@ -1,0 +1,170 @@
+{
+  "checkedAt": "2026-10-10T04:39:09.967Z",
+  "applicationSource": "059469bf887a9836e8191eb71ec8490bfa09b6b6",
+  "deployment": "dpl_3bCgwihgTu112pUkSnUZ7BXzNdGa",
+  "scope": "Read-only readiness review; no application changes, new deployment or blockchain writes. Application source/deployment identify the recorded current release, not a new hosting provenance check.",
+  "publicChecks": {
+    "checkedAt": "2026-10-10T04:39:09.967Z",
+    "pages": [
+      {
+        "url": "https://arcmirror-six.vercel.app",
+        "http": 200,
+        "headlinePresent": true,
+        "hashInputPresent": true
+      },
+      {
+        "url": "https://arcmirror-six.vercel.app/how-it-works",
+        "http": 200
+      },
+      {
+        "url": "https://github.com/aquattdabackup/ArcMirror",
+        "http": 200
+      },
+      {
+        "url": "https://github.com/aquattdabackup",
+        "http": 200
+      }
+    ],
+    "rpc": [
+      {
+        "url": "https://rpc.mainnet.arc.io",
+        "http": 200,
+        "chainId": 5042
+      },
+      {
+        "url": "https://rpc.drpc.mainnet.arc.io",
+        "http": 200,
+        "chainId": 5042
+      }
+    ],
+    "repository": {
+      "http": 200,
+      "private": false,
+      "defaultBranch": "main",
+      "license": "MIT"
+    }
+  },
+  "liveReports": {
+    "checkedAt": "2026-10-10T04:38:23.572Z",
+    "base": "https://arcmirror-six.vercel.app",
+    "applicationSource": "059469bf887a9836e8191eb71ec8490bfa09b6b6",
+    "uploadRevision": "059469bf887a9836e8191eb71ec8490bfa09b6b6",
+    "reports": [
+      {
+        "hash": "0x0cecb2a9fb27abd8d463d5faec25279056d28f0a447061eba22120d339165ec8",
+        "http": 200,
+        "source": "live",
+        "status": "confirmed_success",
+        "evidenceLevel": "verified",
+        "fullReportMatch": true
+      },
+      {
+        "hash": "0x2f0c62b0ea5c601f053b96e6c59d624a5b769208cc9ea9242a31bef963ab8981",
+        "http": 200,
+        "source": "live",
+        "status": "confirmed_success",
+        "evidenceLevel": "verified",
+        "fullReportMatch": true
+      },
+      {
+        "hash": "0x4e0e57e776550e0118d86be5b84233eaecaa00f7fe085e3baf9f0af5e750370d",
+        "http": 200,
+        "source": "live",
+        "status": "confirmed_success",
+        "evidenceLevel": "needs_review",
+        "fullReportMatch": true
+      },
+      {
+        "hash": "0x6539309ec60a263be08008ef134d4e15c6db8198fe1cd19e211959b5ef11df41",
+        "http": 200,
+        "source": "live",
+        "status": "confirmed_success",
+        "evidenceLevel": "verified",
+        "fullReportMatch": true
+      },
+      {
+        "hash": "0x87b456003ef9194f99c71ea5af94273ba242beaffaaeacc4fb466885a2b47fe1",
+        "http": 200,
+        "source": "live",
+        "status": "confirmed_failed",
+        "evidenceLevel": "verified",
+        "fullReportMatch": true
+      }
+    ]
+  },
+  "deploymentVerifier": {
+    "command": "node scripts/verify-deployment.mjs --live",
+    "exitCode": 0,
+    "chainId": 5042,
+    "providerIndex": 1,
+    "deploymentTransaction": "0x97bcd82e2d98eee0962c54e6bd2fbdbfa78ff908c0627d7f53fc52fe28032292",
+    "contracts": [
+      "ArcMirrorLab",
+      "ArcMirrorForwarder"
+    ],
+    "checks": [
+      "deployment transaction and receipt",
+      "source hash and compiler",
+      "executable bytecode and immutables",
+      "live getters"
+    ],
+    "limit": "Solidity CBOR metadata excluded; no explorer verification badge or audit claimed."
+  },
+  "smoke": {
+    "command": "node scripts/smoke.mjs https://arcmirror-six.vercel.app",
+    "exitCode": 0,
+    "health": "pass",
+    "snapshots": 3,
+    "invalidHash": "pass",
+    "unknownHash": "pass",
+    "securityHeaders": "pass",
+    "toolPages": 4
+  },
+  "productionAudit": {
+    "command": "npm.cmd audit --omit=dev --json",
+    "exitCode": 0,
+    "vulnerabilities": {
+      "info": 0,
+      "low": 0,
+      "moderate": 0,
+      "high": 0,
+      "critical": 0,
+      "total": 0
+    }
+  },
+  "video": {
+    "checkedAt": "2026-10-10T04:38:21.192Z",
+    "url": "https://www.youtube.com/watch?v=urPALNc8Y2Q",
+    "oembedHttp": 200,
+    "watchHttp": 200,
+    "playability": "OK",
+    "seconds": 254,
+    "malformedDescriptionLinks": [
+      "Try ArcMirror: https:// arcmirror-six.vercel.app",
+      "Source code: https:// github.com/aquattdabackup/ArcMirror",
+      "https:// github.com/aquattdabackup/ArcMirror/blob/main/docs/mainnet-evidence.md"
+    ],
+    "fullAudiovisualPlaybackVerified": false
+  },
+  "officialRules": {
+    "checkedDate": "2026-10-10",
+    "url": "https://community.arc.io/public/events/arc-microgrants-f8tijfjhyq",
+    "networkReference": "https://docs.arc.io/arc/references/connect-to-arc",
+    "deadline": "October 14, 2026, 23:59 ET",
+    "deadlineVietnam": "October 15, 2026, 10:59 ICT"
+  },
+  "notRepeated": [
+    "full unit/spike/Foundry suite",
+    "full browser suite",
+    "physical-device testing",
+    "production load or upstream outage testing",
+    "final submission form review"
+  ],
+  "knownLimits": [
+    "owner reports use live RPC or process cache; only three third-party samples are bundled snapshots",
+    "cache and rate limits are per process",
+    "ERC-20 precompile movements are not covered by native call-value traces",
+    "independent user feedback not received",
+    "memo, Dune queries, MCP, OG cards and npm publication deferred"
+  ]
+}
