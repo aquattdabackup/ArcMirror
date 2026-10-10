@@ -1,9 +1,16 @@
 import { defineConfig, devices } from "@playwright/test";
 
 const remote = process.env.E2E_BASE_URL;
+const rpcUnavailable = process.env.E2E_RPC_UNAVAILABLE === "1";
+if (rpcUnavailable && (remote || process.env.E2E_LIVE === "1")) {
+  throw new Error("RPC outage checks require a local server and cannot run as live mainnet checks.");
+}
 export default defineConfig({
   testDir: "./e2e",
-  testIgnore: process.env.E2E_LIVE === "1" ? [] : ["**/live.spec.ts"],
+  testIgnore: [
+    ...(process.env.E2E_LIVE === "1" ? [] : ["**/live.spec.ts"]),
+    ...(rpcUnavailable ? [] : ["**/rpc-outage.spec.ts"]),
+  ],
   fullyParallel: false,
   workers: 1,
   forbidOnly: !!process.env.CI,
@@ -26,5 +33,9 @@ export default defineConfig({
     url: "http://127.0.0.1:3100/api/health",
     reuseExistingServer: false,
     timeout: 60_000,
+    ...(rpcUnavailable ? { env: {
+      ARC_RPC_URLS: "http://127.0.0.1:1",
+      ARC_TRACE_RPC_URLS: "http://127.0.0.1:1",
+    } } : {}),
   },
 });

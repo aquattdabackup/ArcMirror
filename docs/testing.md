@@ -18,7 +18,7 @@ Run `forge test -vv` from `contracts/` for the separate Solidity suite. CI pins 
 
 Playwright starts the built Next.js server on `127.0.0.1:3100`, checks it is ready, and stops its process when finished. It refuses to reuse an unrelated server on that port. The two projects run actual Chromium with desktop and Pixel 7 viewport/touch settings. Mobile emulation is not a physical-device test or a screen-reader certification.
 
-Nine scenarios run in both projects:
+Ten scenarios run in both projects:
 
 1. Evidence tabs: arrows, wraparound, Home/End, focus and labelled panel.
 2. Actual report download, full JSON equality and re-import from disk.
@@ -29,8 +29,23 @@ Nine scenarios run in both projects:
 7. A deliberately simulated RPC outage preserving the visible/downloadable report.
 8. Invalid hash feedback and valid report navigation.
 9. Direct comparison links open paired-log evidence, preserve the toggle, and do not invent a comparison for a native-only transaction.
+10. All five saved owner reports retain their original capture dates/provenance and match every expected field.
 
 These default checks use labelled, captured mainnet examples and local browser inputs. They do not need live RPC access. Only the outage scenario intercepts a browser API request, to return an explicit synthetic error. Never present that result as successful mainnet verification.
+
+### Server RPC outage regression
+
+Run the following separately after building (PowerShell):
+
+```powershell
+$env:E2E_RPC_UNAVAILABLE = '1'
+npm.cmd run test:e2e -- e2e/owner-snapshots.spec.ts e2e/rpc-outage.spec.ts
+Remove-Item Env:E2E_RPC_UNAVAILABLE
+```
+
+This starts only the local Next server with unusable RPC endpoints. Six desktop/mobile checks exercise its real API without browser request interception: owner snapshots still match, explicit live/unknown-hash requests report RPC failure, and successful/failed owner reports preserve labels and complete downloads after a failed refresh. It cannot be combined with `E2E_BASE_URL` or `E2E_LIVE=1`. These are controlled outage tests, not proof of a public-provider outage or live mainnet access. CI runs this separate step and retains its artifacts under `rpc-outage`.
+
+`npm run snapshots:owner` regenerates the five saved owner reports from `vectors/owner`, checks them against the current analyzer and preserves capture dates. Review any changed expected evidence before publication; never update capture dates just because the generator ran.
 
 ## Real production checks
 
