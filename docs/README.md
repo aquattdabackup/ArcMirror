@@ -18,7 +18,8 @@ Start with the [project README](../README.md). Current operating instructions an
 - [Deployment](deployment.md) and [settings](deployment-settings.json): current repository/production distinction and release procedure.
 - [Contract documentation](../contracts/README.md): deployed source identity, compiler and verification scope.
 - [October 7 maintenance review](maintenance-review-2026-10-07.md): confirmed defects, fixes, checks and unresolved risks.
-- [October 9 owner-demo release](releases/2026-10-09.md): current production source, five live reports, 20 browser checks and CI evidence.
+- [October 10 resilience release](releases/2026-10-10-snapshots.md): current production, saved/live evidence, outage regression and 22 browser checks.
+- Historical [October 9 owner-demo release](releases/2026-10-09.md): current production source, five live reports, 20 browser checks and CI evidence.
 - [Agent instructions](../AGENTS.md), [active state](../task_on_progress.md) and [handoff](HANDOFF.md): resume work without reconstructing the chat.
 - [Brand assets](../assets/brand/README.md): exports of the existing website identity.
 

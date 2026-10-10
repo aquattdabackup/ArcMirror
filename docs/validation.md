@@ -1,5 +1,9 @@
 # Validation record
 
+## Owner demo resilience - October 10, 2026
+
+[Current release](releases/2026-10-10-snapshots.md) / [evidence](evidence/releases/2026-10-10-snapshots/checks.json): source 4ee1f21, READY deployment dpl_EN2XfCpfkGGVWgFR8Xe8uGxdeCu3. Local 81 application, 20 normal-browser and 6 server-outage checks pass, as do build/types. Production 22 browser checks and five saved/five live full-report comparisons pass. CI 38025858747 passes application/contract jobs including the new outage step. Controlled outage is local-only; no production RPC configuration changed. Prior releases below are historical.
+
 ## Hero input correction - October 9, 2026
 
 Source `059469b` is deployed as `dpl_3bCgwihgTu112pUkSnUZ7BXzNdGa`. [Release and screenshots](releases/2026-10-09-hero.md) record seven local and production viewport checks, including 980x466 and 360x640: the input and Analyze are fully visible at scrollY=0, typing does not scroll, and submission opens the correct report. Six existing targeted browser checks pass both locally and on production, including unmocked owner live re-verification/download. Build/types and both [CI jobs](https://github.com/aquattdabackup/ArcMirror/actions/runs/37955871683) pass. The right illustration and all later sections are unchanged. Earlier full-suite and five-owner-report checks below retain their dates; this layout-only release did not rerun all five hashes.

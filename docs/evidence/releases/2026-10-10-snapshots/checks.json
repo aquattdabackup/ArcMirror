@@ -1,0 +1,333 @@
+{
+  "recordedAt": "2026-10-10T14:52:48.133Z",
+  "applicationSource": "4ee1f21c25a25fdb208677580d9597671cab2e43",
+  "runtimeChange": "abaf6e7",
+  "ciSource": "784ef4c21558c63298437a943f8b7d629e5531d0",
+  "deployment": {
+    "id": "dpl_EN2XfCpfkGGVWgFR8Xe8uGxdeCu3",
+    "readyState": "READY",
+    "publicUrl": "https://arcmirror-six.vercel.app",
+    "immutableUrl": "https://arcmirror-5ngx182th-luong-tuans-projects-a65355dc.vercel.app"
+  },
+  "local": {
+    "applicationTests": 81,
+    "typecheck": "pass",
+    "build": "pass",
+    "browser": {
+      "startTime": "2026-10-10T04:54:39.666Z",
+      "duration": 83496.46699999999,
+      "expected": 20,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "rpcUnavailableBrowser": {
+      "startTime": "2026-10-10T04:52:42.956Z",
+      "duration": 30239.912,
+      "expected": 6,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    }
+  },
+  "production": {
+    "browser": {
+      "startTime": "2026-10-10T14:49:13.653Z",
+      "duration": 130540.355,
+      "expected": 22,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "reports": {
+      "checkedAt": "2026-10-10T14:46:52.690Z",
+      "base": "https://arcmirror-six.vercel.app",
+      "applicationSource": "4ee1f21",
+      "health": {
+        "http": 200,
+        "status": "ok",
+        "chainId": 5042,
+        "algorithmVersion": "0.1.0",
+        "snapshots": 3,
+        "ownerSnapshots": 5,
+        "rpc": "checked_on_demand",
+        "walletRequired": false
+      },
+      "reports": [
+        {
+          "hash": "0x0cecb2a9fb27abd8d463d5faec25279056d28f0a447061eba22120d339165ec8",
+          "requested": "saved",
+          "http": 200,
+          "source": "snapshot",
+          "status": "confirmed_success",
+          "evidenceLevel": "verified",
+          "fullReportMatch": true,
+          "captureDateMatch": true,
+          "provenanceMatch": true
+        },
+        {
+          "hash": "0x0cecb2a9fb27abd8d463d5faec25279056d28f0a447061eba22120d339165ec8",
+          "requested": "live",
+          "http": 200,
+          "source": "live",
+          "status": "confirmed_success",
+          "evidenceLevel": "verified",
+          "fullReportMatch": true
+        },
+        {
+          "hash": "0x2f0c62b0ea5c601f053b96e6c59d624a5b769208cc9ea9242a31bef963ab8981",
+          "requested": "saved",
+          "http": 200,
+          "source": "snapshot",
+          "status": "confirmed_success",
+          "evidenceLevel": "verified",
+          "fullReportMatch": true,
+          "captureDateMatch": true,
+          "provenanceMatch": true
+        },
+        {
+          "hash": "0x2f0c62b0ea5c601f053b96e6c59d624a5b769208cc9ea9242a31bef963ab8981",
+          "requested": "live",
+          "http": 200,
+          "source": "live",
+          "status": "confirmed_success",
+          "evidenceLevel": "verified",
+          "fullReportMatch": true
+        },
+        {
+          "hash": "0x4e0e57e776550e0118d86be5b84233eaecaa00f7fe085e3baf9f0af5e750370d",
+          "requested": "saved",
+          "http": 200,
+          "source": "snapshot",
+          "status": "confirmed_success",
+          "evidenceLevel": "needs_review",
+          "fullReportMatch": true,
+          "captureDateMatch": true,
+          "provenanceMatch": true
+        },
+        {
+          "hash": "0x4e0e57e776550e0118d86be5b84233eaecaa00f7fe085e3baf9f0af5e750370d",
+          "requested": "live",
+          "http": 200,
+          "source": "live",
+          "status": "confirmed_success",
+          "evidenceLevel": "needs_review",
+          "fullReportMatch": true
+        },
+        {
+          "hash": "0x6539309ec60a263be08008ef134d4e15c6db8198fe1cd19e211959b5ef11df41",
+          "requested": "saved",
+          "http": 200,
+          "source": "snapshot",
+          "status": "confirmed_success",
+          "evidenceLevel": "verified",
+          "fullReportMatch": true,
+          "captureDateMatch": true,
+          "provenanceMatch": true
+        },
+        {
+          "hash": "0x6539309ec60a263be08008ef134d4e15c6db8198fe1cd19e211959b5ef11df41",
+          "requested": "live",
+          "http": 200,
+          "source": "live",
+          "status": "confirmed_success",
+          "evidenceLevel": "verified",
+          "fullReportMatch": true
+        },
+        {
+          "hash": "0x87b456003ef9194f99c71ea5af94273ba242beaffaaeacc4fb466885a2b47fe1",
+          "requested": "saved",
+          "http": 200,
+          "source": "snapshot",
+          "status": "confirmed_failed",
+          "evidenceLevel": "verified",
+          "fullReportMatch": true,
+          "captureDateMatch": true,
+          "provenanceMatch": true
+        },
+        {
+          "hash": "0x87b456003ef9194f99c71ea5af94273ba242beaffaaeacc4fb466885a2b47fe1",
+          "requested": "live",
+          "http": 200,
+          "source": "live",
+          "status": "confirmed_failed",
+          "evidenceLevel": "verified",
+          "fullReportMatch": true
+        }
+      ]
+    },
+    "smoke": {
+      "health": "pass",
+      "thirdPartySnapshots": 3,
+      "invalidHash": "pass",
+      "unknownHash": "pass",
+      "securityHeaders": "pass",
+      "toolPages": 4
+    }
+  },
+  "ci": {
+    "checkedAt": "2026-10-10T05:00:00.655Z",
+    "id": 38025858747,
+    "head": "784ef4c21558c63298437a943f8b7d629e5531d0",
+    "status": "completed",
+    "conclusion": "success",
+    "url": "https://github.com/aquattdabackup/ArcMirror/actions/runs/38025858747",
+    "jobs": [
+      {
+        "name": "application",
+        "status": "completed",
+        "conclusion": "success",
+        "steps": [
+          {
+            "name": "Set up job",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/setup-node@820762786026740c76f36085b0efc47a31fe5020",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run npm ci",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run npm audit --omit=dev",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run npm test",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run npm run test:spike",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run npm run typecheck",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run npm run build",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run npx playwright install --with-deps chromium",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run npm run test:e2e",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Owner demos with server RPC unavailable",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/setup-node@820762786026740c76f36085b0efc47a31fe5020",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Complete job",
+            "status": "completed",
+            "conclusion": "success"
+          }
+        ]
+      },
+      {
+        "name": "contracts",
+        "status": "completed",
+        "conclusion": "success",
+        "steps": [
+          {
+            "name": "Set up job",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run foundry-rs/foundry-toolchain@908c540300062bd5a7e473851cdb4282204cee09",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run forge test -vv",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run foundry-rs/foundry-toolchain@908c540300062bd5a7e473851cdb4282204cee09",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Complete job",
+            "status": "completed",
+            "conclusion": "success"
+          }
+        ]
+      }
+    ]
+  },
+  "videoLinks": {
+    "checkedAt": "2026-10-10T04:50:48.980Z",
+    "kind": "prepared replacement text; channel not edited",
+    "links": [
+      {
+        "url": "https://arcmirror-six.vercel.app",
+        "http": 200
+      },
+      {
+        "url": "https://github.com/aquattdabackup/ArcMirror",
+        "http": 200
+      },
+      {
+        "url": "https://github.com/aquattdabackup/ArcMirror/blob/main/docs/mainnet-evidence.md",
+        "http": 200
+      }
+    ]
+  },
+  "limits": [
+    "Outage simulated only on local server; production RPC settings unchanged.",
+    "First outage attempt had two incorrect test selectors, corrected before the recorded passing run.",
+    "Mobile is Chromium viewport/touch emulation, not physical-device testing.",
+    "YouTube replacement text prepared and links checked; channel not edited; browser later connected but is signed out of YouTube. Public playback start and full transcript were inspected.",
+    "No independent tester feedback received; no final grant submission or new blockchain transaction.",
+    "Initial deploy returned Not authorized; account/project read succeeded and unchanged retry deployed. Upstream internal cause unknown."
+  ]
+}

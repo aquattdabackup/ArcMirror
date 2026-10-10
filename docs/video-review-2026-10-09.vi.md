@@ -47,3 +47,9 @@ Chủ dự án cần mở URL từ đầu trong cửa sổ ẩn danh, kiểm tra
 Đã chuẩn bị [toàn bộ mô tả đã sửa](youtube-description.txt): giữ nguyên nội dung đang công khai và chỉ bỏ khoảng trắng sau `https://` ở ba URL. Cả ba link trả HTTP 200 khi kiểm tra. Mở YouTube Studio → Nội dung → video `urPALNc8Y2Q` → Chi tiết, dán nội dung file vào Mô tả và bấm Lưu; sau đó mở trang video công khai và thử từng link.
 
 Công cụ hiện trả danh sách trình duyệt rỗng; thử mở trình duyệt tích hợp cũng báo không khả dụng. Vì vậy file này là bản sửa sẵn để dán, **chưa phải thay đổi đã lưu lên YouTube**. Người dùng cũng xác nhận chưa nhận phản hồi người thử; không đánh dấu mục đó hoàn tất.
+
+## Later October 10 browser check
+
+The browser integration became available after the tool-session update. Anonymous video playback started and advanced to 0:25; the full public auto-generated transcript was displayed/exported and inspected. It covers native transfer (0:27), ERC-20/Needs Review (1:18), forwarding (1:42), batch (2:10), failed transaction (2:33), CSV reconciliation (2:57), Inspector (3:16) and Dust Lab simulation (3:39), consistent with the documented scope. This resolves the earlier transcript-access limitation, not full audiovisual verification.
+
+The page still shows Sign in and all three malformed description URLs. Owner login was requested and the tab retained for handoff; no channel edit or submission has occurred. Prepared replacement text remains in [youtube-description.txt](youtube-description.txt).

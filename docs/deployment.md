@@ -2,13 +2,9 @@
 
 ## Current state
 
-[Production](https://arcmirror-six.vercel.app) has published analyses of the five [owner-created Arc mainnet demos](mainnet-evidence.md). Lab is deployed on chain 5042; its address, receipt and bytecode checks are in [the manifest](../contracts/deployments/5042.json).
+[Production](https://arcmirror-six.vercel.app) runs source 4ee1f21c25a25fdb208677580d9597671cab2e43, READY deployment dpl_EN2XfCpfkGGVWgFR8Xe8uGxdeCu3. [October 10 release and checks](releases/2026-10-10-snapshots.md): five owner snapshots with capture dates, explicit live verification, five saved/five live full-report matches and 22 production browser passes. Lab and the five owner transactions remain deployed/completed; no new signing or onchain activity occurred.
 
-**Current release: October 9, hero correction, source `059469b`, Next.js 16.3.8.** Hash entry is the first action under the restored "Understand your USDC transaction" heading; the right illustration and other sections are preserved. Seven production viewports and six targeted browser cases pass; [current evidence](releases/2026-10-09-hero.md). The [preceding release](releases/2026-10-09.md) retains the broader five-owner-report/20-browser checks. No backend, RPC, contract or blockchain changes occurred.
-
-The earlier 05:19 UTC production failures are retained in [historical observations](evidence/maintenance/2026-10-07.json). New Vercel logs establish that the primary provider returned incomplete transaction/receipt pairs, whereas fallback dRPC returned complete pairs. The project has no production RPC environment overrides. The new adapter continues to fallback instead of stopping at the incomplete pair; all five production live reports now match every expected field. This identifies the application-level cause and recovery; it does not establish the upstream provider's internal reason for missing data.
-
-Current deployment: `dpl_3bCgwihgTu112pUkSnUZ7BXzNdGa`, source `059469bf887a9836e8191eb71ec8490bfa09b6b6`, public alias https://arcmirror-six.vercel.app. Immutable URL: https://arcmirror-5d59segri-luong-tuans-projects-a65355dc.vercel.app (may require Vercel authentication; the public alias was checked without login). Earlier `dpl_3uRkVXLX6ZiMDYLD8dr5ycUTbR1f` / `4fbe482` and other dated releases are historical. Project `prj_Fl4rD67BDh21Zi4pj7UeMdaT9alh`, arcmirror, remains in the approved team.
+Immutable URL: https://arcmirror-5ngx182th-luong-tuans-projects-a65355dc.vercel.app may require Vercel authentication; the public alias was tested without login. Project prj_Fl4rD67BDh21Zi4pj7UeMdaT9alh remains arcmirror in the approved team. [Previous hero release](releases/2026-10-09-hero.md) and [earlier RPC maintenance](releases/2026-10-07.md) are historical. This release did not change RPC endpoints, contracts, headline or illustration. Default owner reports are saved evidence; live=1 still uses real RPC and can fail honestly.
 
 ## Approved website configuration
 

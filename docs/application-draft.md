@@ -1,6 +1,6 @@
 # Arc Microgrants application draft
 
-[October 10 readiness recheck](readiness-review-2026-10-10.md): fresh production/mainnet checks pass; video description links, independent comprehension feedback and final submission remain open. [Current UI release](releases/2026-10-09-hero.md) preserves the general transaction headline and prioritizes hash entry. Optional demo-outage resilience is not yet implemented.
+[October 10 readiness recheck](readiness-review-2026-10-10.md): fresh production/mainnet checks pass; video description links, independent comprehension feedback and final submission remain open. [Current UI release](releases/2026-10-09-hero.md) preserves the general transaction headline and prioritizes hash entry. Owner demo-outage resilience is now [implemented and deployed](releases/2026-10-10-snapshots.md), with five saved/live report matches and 22 production browser checks. Public video transcript is now inspected; channel description edits still require owner login.
 
 **Draft, not submitted — confirmed by the owner October 8, 2026.** The live analyzer, deployed Lab and all five owner-created mainnet demos are backed by [public receipts, reports and reproducible verification](mainnet-evidence.md). See the [fresh technical and program-fit review](grant-review-2026-10-08.md) and [short reviewer walkthrough](reviewer-walkthrough.md). The separate reward address remains local for owner entry at submission. Explorer source verification is not claimed.
 

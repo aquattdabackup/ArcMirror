@@ -4,6 +4,10 @@ ArcMirror's delivered core addresses the owner's primary requirement: paste an A
 
 This was a targeted requirements/source review and fresh read-only production check, not an exhaustive security audit. No application code, wallet state, production settings or deployed contracts changed. [Machine-readable evidence](evidence/grant-review/2026-10-10.json).
 
+## Implemented follow-up
+
+The owner-demo resilience issue below is now **fixed and deployed**; see the [October 10 release](releases/2026-10-10-snapshots.md). Five saved and five live reports match, 22 production browser checks and both CI jobs pass. YouTube replacement text is ready, but the connected browser is signed out and the channel is not edited. The full public transcript is now inspected; complete audiovisual accuracy remains unchecked. Owner confirms no independent feedback yet. The table below preserves the earlier review findings and is superseded by this status for the snapshot item.
+
 ## Fresh checks
 
 At approximately 04:38-04:39 UTC / 11:38-11:39 Vietnam time:

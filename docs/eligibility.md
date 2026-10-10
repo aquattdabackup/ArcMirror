@@ -1,6 +1,6 @@
 # Eligibility checkpoint
 
-**Latest targeted recheck: October 10, 2026.** All five production live reports, both chain IDs, public links, live deployment verification and production dependency audit pass. See the [readiness review](readiness-review-2026-10-10.md) for exact scope, deferred requirements and open presentation/resilience limits. Current UI release is [059469b](releases/2026-10-09-hero.md); the browser results below retain their actual October 9 dates.
+**Latest release: October 10, 2026.** [Owner demo resilience is deployed](releases/2026-10-10-snapshots.md), source 4ee1f21. All five saved and five live reports fully match, 22 production browser checks and both CI jobs pass. The earlier [readiness review](readiness-review-2026-10-10.md) now records resolution of its snapshot gap; final owner submission remains open. Older dated results below retain their original scope.
 
 Technical release rechecked **2026-10-09**. The production analyzer works with Arc Mainnet data; Lab is deployed and all five owner-created demo categories have mined receipts. [Public deployment and demo evidence](mainnet-evidence.md), the [October 9 release](releases/2026-10-09.md) and [October 8 program review](grant-review-2026-10-08.md) record the checks. The owner's last submission status is **not submitted**; the agent has not submitted a form.
 
