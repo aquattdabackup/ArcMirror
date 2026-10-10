@@ -1,6 +1,12 @@
 ﻿# Current task
 
-Completed October 9, 2026: owner requested only the hero correction shown in screenshots. Restore **Understand your USDC transaction**, make hash input/Analyze usable immediately without scrolling, keep the right illustration and later sections. The hash form now follows the headline; explanation and owner demo are secondary. This preference is recorded in AGENTS.md and overrides the earlier decision to lead with the duplicate-log slogan.
+Completed October 10, 2026: owner asked whether all issues are resolved and the project follows requirements. Targeted requirements/source review and fresh read-only public checks are recorded in [readiness review](docs/readiness-review-2026-10-10.md), [evidence](docs/evidence/grant-review/2026-10-10.json), published commit **fd40e0a**. Core/mainnet checks pass; do not claim zero bugs or every original idea implemented. No application change or deployment in this review.
+
+Fresh checks at 04:38-04:39 UTC: five owner reports HTTP 200/source live/full equality; both official RPCs chain 5042; live Lab/Forwarder executable/immutable/getter verification passes via fallback; public pages/repo/profile and API smoke pass; production audit zero findings. Rules/deadline rechecked. Full browser/unit/contract suites were not repeated; retain their actual dates below. Relative Markdown links and staged/full-history scans pass.
+
+Open points: YouTube still has three malformed description URLs; no independent tester responses; full video playback/final form/submission unchecked. Owner report pages lack bundled snapshot fallback (only three third-party examples have it); a labelled owner fallback is a bounded reliability improvement, with live verification preserved. Cache/limits are per process, not heavy-traffic certification. Memo/MCP/Dune query/OG/npm publication are deferred, not entry requirements.
+
+The October 9 hero correction remains complete: **Understand your USDC transaction**, hash entry/Analyze before supporting copy/demo, existing right illustration and later sections preserved. AGENTS.md makes this preference authoritative.
 
 ## Current production
 
@@ -24,12 +30,12 @@ Completed October 9, 2026: owner requested only the hero correction shown in scr
 - Video https://www.youtube.com/watch?v=urPALNc8Y2Q, metadata duration 254s (4:14). Use canonical URL without &t=56s. [Video review](docs/video-review-2026-10-09.vi.md) supplies fixes for three description URLs containing spaces after https://. Agent has not edited YouTube.
 - Public metadata/player OK and storyboard samples inspected; no complete audiovisual playback or transcript verified. Cua browser unavailable, web reader failed, public caption response empty. Do not claim the video was fully watched. Script/edit notes are optional and now describe the restored hero correctly.
 - Owner will recruit 2-3 testers; no responses received. [Participant tasks](docs/user-test-task.vi.md), [facilitation guide](docs/user-test-kit.vi.md), [empty feedback](docs/user-feedback.md). No invented traction, quotations or outreach.
-- Owner last confirmed not submitted October 8; agent has not submitted. Final terms/declarations/form remain owner actions. Program deadline last checked October 9: October 14 23:59 ET / October 15 10:59 Vietnam. Recheck final form before submission. Technical evidence is not acceptance or an award prediction.
+- Owner last confirmed not submitted October 8; agent has not submitted. Final terms/declarations/form remain owner actions. Program deadline last checked October 10: October 14 23:59 ET / October 15 10:59 Vietnam. Recheck final form before submission. Technical evidence is not acceptance or an award prediction.
 
 ## Resume safely
 
-Read AGENTS.md and architecture.md. Do not restore the old double-count slogan or move the hash form below promotional copy. Do not repeat completed paid demos or redeploy unchanged code. Act on actual new feedback/request next.
+Read AGENTS.md and architecture.md. Do not restore the old double-count slogan or move the hash form below promotional copy. Do not repeat completed paid demos or redeploy unchanged code. Next: act on owner feedback, verify corrected video links/tester responses when available, or implement the bounded owner-demo fallback if continuing reliability work. No new tools or paid demos are needed for these findings.
 
 Use Node24/npm.cmd, approved Vercel arcmirror team, focused commits/pushes and secret scans. Windows sandbox helper fails; authorized elevated tools work. Temporary Next server on 3101 was stopped with Ctrl+C and Y; Playwright server closed. Earlier transient Vercel authorization and automatic-review usage-limit interruptions were resolved, not active blockers. No credentials/security/billing changes.
 
-GitHub is canonical. Verify local/remote main after the final push, refresh and verify ignored artifacts/ArcMirror-handoff.bundle. Keep MIT, aquattdabackup builder profile, no prior Circle/Arc funding and approved deployment destination. Preserve exact pairing, separate gas, gross-hop semantics and ERC-20 needs_review. Contract/owner evidence: contracts/deployments/5042.json, vectors/owner, docs/mainnet-evidence.md. Reward mapping/keys stay local; signing stays with owner.
+Review/evidence commit fd40e0a is pushed; this memory update is a separate handoff commit (resolve via git log). No server started during this review. GitHub is canonical. Verify local/remote main after the final push, refresh and verify ignored artifacts/ArcMirror-handoff.bundle. Keep MIT, aquattdabackup builder profile, no prior Circle/Arc funding and approved deployment destination. Preserve exact pairing, separate gas, gross-hop semantics and ERC-20 needs_review. Contract/owner evidence: contracts/deployments/5042.json, vectors/owner, docs/mainnet-evidence.md. Reward mapping/keys stay local; signing stays with owner.

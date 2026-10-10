@@ -2,7 +2,13 @@
 
 ## Paste into the next agent
 
-> Read AGENTS.md, architecture.md, task_on_progress.md and docs/releases/2026-10-09-hero.md. Owner's hero correction is complete and deployed at 059469b: Understand your USDC transaction, hash input before supporting copy/demo, existing right illustration and other sections preserved. Seven production viewport checks, six targeted browser cases and CI pass. Do not revert this preference to the duplicate-log headline. Preserve LICENSE. Commit/push focused milestones, maintain handoff, report in Vietnamese.
+> Read AGENTS.md, architecture.md, task_on_progress.md and docs/readiness-review-2026-10-10.md. Latest task was an honest completeness/focus review; fresh live checks pass, but video links, independent comprehension and demo-outage resilience remain open. No application changes. Deployed 059469b retains Understand your USDC transaction, immediate hash entry and existing right illustration. Do not revert that owner preference. Preserve LICENSE. Commit/push focused milestones, maintain handoff, report in Vietnamese.
+
+## Latest review
+
+October 10 [readiness review](readiness-review-2026-10-10.md) / [evidence](evidence/grant-review/2026-10-10.json), published commit **fd40e0a**. Five live production reports fully match; both RPCs return 5042; live contracts, public pages/repo/profile, API smoke and production audit pass. Rules/deadline unchanged. No new deployment, wallet write or full/browser suite run. Prior dates below remain correct. Scoped evidence is not zero-bug or selection assurance.
+
+Owner report pages still rely on RPC/process cache; only three third-party snapshots are bundled. A labelled owner snapshot fallback is an unimplemented resilience improvement, not a reproduced current outage. Preserve real live requests if implementing it. Per-process cache/limits and deferred P2 features remain disclosed. Three YouTube description links still contain spaces after https://; no tester responses or final submission received. Next: targeted owner feedback/reliability work and presentation completion. Link/staged/full-history scans passed; a small handoff commit follows this review. Only pre-existing LICENSE should remain dirty.
 
 ## Current release
 
@@ -20,7 +26,7 @@ No UI implementation remains for this request. Continue only from new user feedb
 
 [Video](https://www.youtube.com/watch?v=urPALNc8Y2Q) is 4:14 by metadata. [Video review](video-review-2026-10-09.vi.md) has three corrected description URLs for the owner to paste into YouTube; agent has not edited the channel. Metadata/thumbnail sampling only: full audiovisual playback and transcript unavailable. Use URL from the beginning. Script/edit notes describe the current hero; rerecording the whole video is not required by these findings.
 
-Last owner submission status: not submitted. Owner reviews terms/form and submits, using [draft](application-draft.md). No unresolved technical entry blocker in dated checks, no selection guarantee. Deadline last checked October 9: October 14 23:59 ET / October 15 10:59 Vietnam; recheck before submission.
+Last owner submission status: not submitted. Owner reviews terms/form and submits, using [draft](application-draft.md). No unresolved technical entry blocker in dated checks, no selection guarantee. Deadline last checked October 10: October 14 23:59 ET / October 15 10:59 Vietnam; recheck before submission.
 
 ## Preserve
 
