@@ -1,35 +1,36 @@
-﻿# Continue ArcMirror with another AI
+# Continue ArcMirror with another AI
 
 ## Paste into the next agent
 
-> Read AGENTS.md, architecture.md, task_on_progress.md and docs/readiness-review-2026-10-10.md. Latest task was an honest completeness/focus review; fresh live checks pass, but video links, independent comprehension and demo-outage resilience remain open. No application changes. Deployed 059469b retains Understand your USDC transaction, immediate hash entry and existing right illustration. Do not revert that owner preference. Preserve LICENSE. Commit/push focused milestones, maintain handoff, report in Vietnamese.
-
-## Latest review
-
-October 10 [readiness review](readiness-review-2026-10-10.md) / [evidence](evidence/grant-review/2026-10-10.json), published commit **fd40e0a**. Five live production reports fully match; both RPCs return 5042; live contracts, public pages/repo/profile, API smoke and production audit pass. Rules/deadline unchanged. No new deployment, wallet write or full/browser suite run. Prior dates below remain correct. Scoped evidence is not zero-bug or selection assurance.
-
-Owner report pages still rely on RPC/process cache; only three third-party snapshots are bundled. A labelled owner snapshot fallback is an unimplemented resilience improvement, not a reproduced current outage. Preserve real live requests if implementing it. Per-process cache/limits and deferred P2 features remain disclosed. Three YouTube description links still contain spaces after https://; no tester responses or final submission received. Next: targeted owner feedback/reliability work and presentation completion. Link/staged/full-history scans passed; a small handoff commit follows this review. Only pre-existing LICENSE should remain dirty.
+> Read AGENTS.md, architecture.md and task_on_progress.md. The October 10 review fixes are deployed and verified. Technical evidence supports submission; do not promise acceptance or winning. Preserve the general headline, hash-first hero, right illustration and unrelated LICENSE indentation. Report in Vietnamese, commit/push focused milestones and keep this handoff current. Do not restart completed audits or add unrelated features.
 
 ## Current release
 
-https://arcmirror-six.vercel.app; source **059469bf887a9836e8191eb71ec8490bfa09b6b6**, deployment **dpl_3bCgwihgTu112pUkSnUZ7BXzNdGa**, Next 16.3.8. [Release](releases/2026-10-09-hero.md), [evidence](evidence/releases/2026-10-09-hero/checks.json), [CI](https://github.com/aquattdabackup/ArcMirror/actions/runs/37955871683).
+- Website: https://arcmirror-six.vercel.app
+- Repository: https://github.com/aquattdabackup/ArcMirror
+- Source: **4ee1f21c25a25fdb208677580d9597671cab2e43**.
+- READY deployment: **dpl_EN2XfCpfkGGVWgFR8Xe8uGxdeCu3**.
+- Immutable URL: https://arcmirror-5ngx182th-luong-tuans-projects-a65355dc.vercel.app (may require Vercel authentication; public alias verified anonymously).
+- [Release](releases/2026-10-10-snapshots.md), [structured checks](evidence/releases/2026-10-10-snapshots/checks.json), [CI](https://github.com/aquattdabackup/ArcMirror/actions/runs/38025858747).
 
-Build/types pass. All seven local/production sizes, including 980x466 and 360x640, show the entire input/button without scrolling; typing and Analyze navigation pass. Six targeted desktop/mobile cases pass locally and on production, including actual owner ERC-20 live refresh/download. Both CI jobs pass. Mobile is viewport emulation, not physical-device certification.
+Five owner-created reports now open as labelled saved mainnet snapshots, retaining original September 30 capture dates and provenance. Explicit live verification bypasses snapshots/cache, reports genuine RPC errors and preserves the displayed report if refresh fails. Arbitrary hashes require RPC. Three third-party examples remain separate. No analyzer/contract/hero changes. Mainnet evidence remains in [mainnet-evidence.md](mainnet-evidence.md); ERC-20 needs_review and the intentional failure are correct, not unfinished demonstrations.
 
-Only hero markup/spacing changed. Right illustration, five owner demos, tools, analysis, RPC/config and contracts unchanged. Prior [4fbe482 release](releases/2026-10-09.md) retains the full 20-browser/five-live-report evidence; do not mislabel it as a new full run. Direct comparison still positions correctly beneath the sticky header.
+## Verified scope
 
-Published milestones for this correction: 059469b UI, b5a53f4 owner preference/canonical directions, 156fa73 release evidence/status. Later small handoff commit contains this file; resolve its hash via git log. Only pre-existing LICENSE indentation should remain dirty. GitHub is canonical; ignored artifacts/ArcMirror-handoff.bundle is refreshed/verified after final push.
+81 local application tests, typecheck/build, 20 normal local browser checks, 6 server-RPC-outage checks pass. CI application/contracts jobs pass. Final production: **22 browser checks pass**, including desktop/mobile emulation, live refresh and actual JSON downloads. Five saved plus five live reports fully match recorded results; health reports chain 5042 and three public/five owner snapshots; HTTP smoke passes. Latest production report check: 2026-10-10T14:46:52.690Z. No new on-chain transaction. No physical-device, load or security audit claim.
 
-## Next actions
+Vercel initially returned Not authorized; account/project reads and the identical deployment retry succeeded. No permissions, billing, security or RPC configuration was changed. This is resolved for this release; internal cause is unknown.
 
-No UI implementation remains for this request. Continue only from new user feedback/task. Owner will recruit 2-3 testers; no sessions received. Use [participant sheet](user-test-task.vi.md), [facilitation guide](user-test-kit.vi.md), [feedback record](user-feedback.md).
+## Exact remaining actions
 
-[Video](https://www.youtube.com/watch?v=urPALNc8Y2Q) is 4:14 by metadata. [Video review](video-review-2026-10-09.vi.md) has three corrected description URLs for the owner to paste into YouTube; agent has not edited the channel. Metadata/thumbnail sampling only: full audiovisual playback and transcript unavailable. Use URL from the beginning. Script/edit notes describe the current hero; rerecording the whole video is not required by these findings.
+1. [YouTube](https://www.youtube.com/watch?v=urPALNc8Y2Q) description still has three malformed URLs. [Prepared replacement](youtube-description.txt) fixes only those links; destinations return HTTP 200. Cua browser became available, public playback started, and the full public transcript was inspected: five demos, three tools and limitations are covered. Session is signed out; owner was asked to log into the channel, no reply yet. Do not claim the description was saved or full audiovisual quality certified. After owner login, edit and verify the public description.
+2. Owner confirms no independent tester feedback yet. Use [test task](user-test-task.vi.md) and [feedback record](user-feedback.md) if responses arrive; no invented testimonials or outreach. This is useful competitive evidence, not a stated entry requirement.
+3. Owner reviews terms/declarations and submits using [application draft](application-draft.md). Last known submission status: not submitted. Deadline last checked October 10: October 14, 2026 23:59 ET / October 15 10:59 Vietnam; verify if time has passed. Technical readiness is not an organizer eligibility ruling or selection guarantee.
 
-Last owner submission status: not submitted. Owner reviews terms/form and submits, using [draft](application-draft.md). No unresolved technical entry blocker in dated checks, no selection guarantee. Deadline last checked October 10: October 14 23:59 ET / October 15 10:59 Vietnam; recheck before submission.
+No further paid transaction, feature work, repeat testing or unchanged redeployment is needed for the current findings. Proceed only from these owner actions or a new concrete issue.
 
-## Preserve
+## Git and operating notes
 
-AGENTS.md now explicitly records the general headline and hash-first preference. Preserve pinned Solidity, one-to-one native/interface pairing, separate gas, gross-hop meaning and ERC-20 needs_review. Failed receipt can have verified analysis. [Mainnet evidence](mainnet-evidence.md) remains authoritative; no explorer source-verification badge claimed.
+Pushed milestones: 37df811 video text, abaf6e7 runtime snapshots, 784ef4c browser/outage CI, 4ee1f21 documentation, 875aad3 production release evidence. A small handoff commit follows; resolve its hash with git log. Only pre-existing LICENSE indentation should remain dirty. GitHub is canonical; ignored artifacts/ArcMirror-handoff.bundle is refreshed/verified after final push. Staged source and full history are secret-scanned before publication.
 
-Node24/npm.cmd; authorized elevated shell works despite sandbox helper failure. Local 3101 server stopped; no service intentionally running. Older transient Vercel/automatic-review limits resolved. Existing MIT/profile/funding/deploy approvals persist. No wallet writes, billing/security changes, outreach or submission. Never force-push or discard LICENSE.
+Node24/npm.cmd, Next16.3.8. No service intentionally running. All existing MIT/profile/funding/Vercel approvals persist. Wallet signing and final submission stay with the owner. Never force-push, discard LICENSE, relabel snapshots as live, remove evidence uncertainty or invent explorer verification badges.
