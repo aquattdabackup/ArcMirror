@@ -41,3 +41,9 @@ Dùng [hướng dẫn tận dụng cảnh cũ](video-edit-notes.vi.md): thay int
 Browser connector báo không có trình duyệt khả dụng. Web reader không tải được trang; HTTP trực tiếp đọc được metadata. Metadata liệt kê phụ đề tiếng Anh tự động nhưng endpoint trả body rỗng, vì vậy không có transcript để đối chiếu lời đọc. Storyboard không chứa âm thanh.
 
 Chủ dự án cần mở URL từ đầu trong cửa sổ ẩn danh, kiểm tra âm thanh/hình rõ, năm hash/số tiền, nhãn `needs review`, giao dịch `confirmed_failed`, CSV 2/2 và Dust Lab simulation. Không có kết luận rằng các phần này sai; chúng chưa được agent xác minh trọn vẹn. Không dùng kết quả lấy mẫu này như xác nhận video đã được ban tổ chức chấp nhận.
+
+## Cập nhật ngày 10/10/2026
+
+Đã chuẩn bị [toàn bộ mô tả đã sửa](youtube-description.txt): giữ nguyên nội dung đang công khai và chỉ bỏ khoảng trắng sau `https://` ở ba URL. Cả ba link trả HTTP 200 khi kiểm tra. Mở YouTube Studio → Nội dung → video `urPALNc8Y2Q` → Chi tiết, dán nội dung file vào Mô tả và bấm Lưu; sau đó mở trang video công khai và thử từng link.
+
+Công cụ hiện trả danh sách trình duyệt rỗng; thử mở trình duyệt tích hợp cũng báo không khả dụng. Vì vậy file này là bản sửa sẵn để dán, **chưa phải thay đổi đã lưu lên YouTube**. Người dùng cũng xác nhận chưa nhận phản hồi người thử; không đánh dấu mục đó hoàn tất.

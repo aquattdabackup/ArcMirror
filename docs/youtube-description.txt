@@ -1,0 +1,16 @@
+ArcMirror helps users understand USDC transactions on Arc Mainnet: where the money went, what gas cost, and why two logs can represent one payment.
+
+This demo covers five transactions I created on mainnet:
+• Native USDC transfer
+• ERC-20 transfer and duplicate-log reconciliation
+• Contract forwarding
+• Batch payments
+• An intentionally failed transaction
+
+It also demonstrates Payout Reconciliation, Report Inspector, and Dust Lab.
+
+ArcMirror is read-only and requires no wallet connection. Reports distinguish transaction success from evidence completeness. Dust Lab is an arithmetic simulation.
+
+Try ArcMirror: https://arcmirror-six.vercel.app
+Source code: https://github.com/aquattdabackup/ArcMirror
+Mainnet evidence: https://github.com/aquattdabackup/ArcMirror/blob/main/docs/mainnet-evidence.md
