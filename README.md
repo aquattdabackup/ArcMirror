@@ -81,6 +81,7 @@ Run from the repository root unless noted:
 | `node scripts/verify-deployment.mjs` | Check compiled artifacts against captured deployment evidence; first run `forge build` in `contracts/`. |
 | `node scripts/verify-deployment.mjs --live` | Read-only check of deployed bytecode and getters. |
 | `npm run vectors` | Regenerate three root examples/snapshots from frozen evidence; review the diff. |
+| `npm run snapshots:owner` | Regenerate five labelled owner snapshots from captured vectors, preserving their capture dates. |
 
 [GitHub Actions CI](.github/workflows/ci.yml) runs application, browser and contract checks for code changes. Documentation-only changes are excluded. There is no lint script. Dated outcomes and verification scope are recorded in [validation](docs/validation.md).
 
@@ -130,6 +131,8 @@ assets/brand/       Exports of the existing website logo
 ```
 
 APIs: `/api/health`, `/api/examples`, `/api/analyze/<hash>`. Add `?live=1` to bypass saved snapshots/cache. There is no database or signing backend. See [architecture](architecture.md) for entry points and invariants.
+
+The five owner demos and three additional third-party examples open as **Saved mainnet snapshot**, with original capture dates and provenance. Their stored reports remain usable when RPC is unavailable. **Re-verify live** requests fresh Arc evidence; a failed refresh preserves the displayed report and reports the failure. Arbitrary hashes still require RPC. `/api/examples` lists only the three third-party examples; health exposes their count and the five `ownerSnapshots` separately.
 
 ## Deployment and limits
 
