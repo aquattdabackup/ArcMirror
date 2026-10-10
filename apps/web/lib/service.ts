@@ -9,6 +9,7 @@ import {
   environmentOptions,
 } from "../../../packages/rpc/src/index";
 import { exampleFor } from "./examples";
+import { ownerSnapshotFor } from "./owner-snapshots";
 export interface Result {
   report: Report;
   source: "snapshot" | "live" | "cache";
@@ -44,7 +45,7 @@ export async function getReport(hash: string, live = false): Promise<Result> {
       }),
       source: "live",
     };
-  const example = exampleFor(key);
+  const example = exampleFor(key) ?? ownerSnapshotFor(key);
   if (example && !live)
     return {
       report: example.report,

@@ -17,7 +17,8 @@
     "test:spike": "node --test scripts/spike-evidence.test.mjs",
     "typecheck": "tsc --noEmit && npm run typecheck --workspace @arcmirror/web",
     "verify": "tsx scripts/verify.ts",
-    "vectors": "tsx scripts/generate-vectors.ts"
+    "vectors": "tsx scripts/generate-vectors.ts",
+    "snapshots:owner": "tsx scripts/generate-owner-snapshots.ts"
   },
   "dependencies": {
     "viem": "2.56.8",

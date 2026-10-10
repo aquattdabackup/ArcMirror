@@ -4,6 +4,8 @@ import { readFileSync } from "node:fs";
 import { renderToStaticMarkup } from "react-dom/server";
 import { FeaturedOwnerDemo } from "../components/owner-demos";
 import { featuredOwnerDemo, ownerDemos, labAddress } from "../lib/owner-demos";
+import { ownerSnapshots, ownerSnapshotFor } from "../lib/owner-snapshots";
+import { analyze } from "../../../packages/core/src/index";
 
 test("homepage owner-demo claims agree with captured mainnet reports and deployment", () => {
   assert.equal(new Set(ownerDemos.map(d => d.hash)).size, 5);
@@ -29,4 +31,18 @@ test("featured successful ERC-20 demo discloses incomplete evidence and recorded
   assert.match(html, /Native call-value traces do not fully cover/);
   assert.match(html, /Recorded owner-signed result/);
   assert.doesNotMatch(html, /Logs \+ trace \+ state match|0 residual|Live RPC result/);
+});
+
+test("saved owner reports retain captured provenance and reproduce full mainnet evidence", () => {
+  assert.equal(ownerSnapshots.length, ownerDemos.length);
+  for (const demo of ownerDemos) {
+    const vector = JSON.parse(readFileSync(new URL(`../../../vectors/owner/${demo.hash}.json`, import.meta.url), "utf8"));
+    const snapshot = ownerSnapshotFor(demo.hash.toUpperCase());
+    assert.ok(snapshot);
+    assert.equal(snapshot.capturedAt, vector.capturedAt);
+    assert.equal(snapshot.provenance, vector.provenance);
+    assert.deepEqual(snapshot.report, vector.expected);
+    assert.deepEqual(snapshot.report, analyze(vector.input));
+  }
+  assert.equal(ownerSnapshotFor("0x" + "0".repeat(64)), undefined);
 });
